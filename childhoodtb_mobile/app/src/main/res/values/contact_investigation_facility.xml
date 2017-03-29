@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contact_tracing_category">Contact tracing category</string>
+    <string-array name="contact_tracing_category_options">
+        <item>@string/contact_tracing</item>
+        <item>@string/reverse_contact_tracing</item>
+    </string-array>
+    <string name="indexcase_tb_registration_number">Index Case TB Registration number</string>
+    <string name="indexcase_tb_registration_number_hint">Enter index Case TB Registration number</string>
+    <string name="indexCase_diagnosis">Index Case Diagnosis</string>
+    <string-array name="indexCase_diagnosis_options">
+        <item>@string/ptb</item>
+        <item>@string/eptb</item>
+    </string-array>
+    <string name="playfulness">playfulness?</string>
+    <string-array name="playfulness_option">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/less_than_before</item>
+    </string-array>
+
+
+</resources>

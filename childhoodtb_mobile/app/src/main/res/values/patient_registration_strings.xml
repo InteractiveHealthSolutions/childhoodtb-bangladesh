@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+<resources>
+    <string name="cnic">CNIC</string>
+    <string name="cnic_hint">Enter CNIC</string>
+    <string name="cnic_holder">Whose CNIC is this?</string>
+    <string name="father_husband_name">Suspect\'s Father\'s Name/Husband\'s Name</string>
+    <string name="father_husband_name_hint">Enter Name</string>
+    <string name="father_in_law_name">Suspect\'s Grandfather\'s Name/Father-in-Law\'s Name</string>
+    <string name="father_in_law_name_hint">Enter Name</string>
+    <string name="ethnicity">Ethnicity</string>
+    <string name="marital_status">Marital Status</string>
+    <string name="phone1">Phone Number 1</string>
+    <string name="phone1_hint">Enter Phone Number 1</string>
+    <string name="phone2">Phone Number 2</string>
+    <string name="phone2_hint">Enter Phone Number 2</string>
+    <string name="address">Address</string>
+    <string name="address_hint">Complete Address</string>
+    <string name="house_number">Address: House number</string>
+    <string name="house_number_hint">Enter House Number</string>
+    <string name="street_name">Address: Street Name/Number</string>
+    <string name="street_name_hint">Enter Street Name/Number</string>
+    <string name="colony_name">Address: Colony Name</string>
+    <string name="colony_name_hint">Enter Colony Name</string>
+    <string name="town">Address: Town</string>
+    <string name="town_hint">Enter Town</string>
+    <string name="city">Address: City</string>
+    <string name="city_hint">Enter City</string>
+    <string name="landmark">Address: Landmark</string>
+    <string name="landmark_hint">Enter Landmark</string>
+    
+    
+    <string-array name="marital_options">
+		<item >Single</item>
+		<item >Married</item>
+		<item >Divorced</item>
+		<item >Widow</item>
+		<item >Refused</item>
+		<item >Child</item>
+	</string-array>
+    
+    <string-array name="ethnicity_options">
+        <item >Sindhi</item>
+        <item >Muhajir</item>
+        <item >Pakthoon</item>
+        <item >Punjabi</item>
+        <item >Balochi</item>
+        <item >Bengali</item>
+        <item >Bihari</item>
+        <item >Memon</item>
+        <item >Gujrati</item>
+        <item >Brohi</item>
+        <item >Hindko</item>
+        <item >Saraiki</item>
+        <item >Jadgal</item>
+        <item >Kathiawari</item>
+        <item >Other Ethnicity</item>
+        <item >Unknown</item>
+        <item >Refused</item>
+    </string-array>
+    
+    <string-array name="cnic_holder_options">
+        <item >Self</item>
+        <item >Mother</item>
+        <item >Father</item>
+        <item >Sister</item>
+        <item >Brother</item>
+        <item >Grandfather</item>
+        <item >Grandmother</item>
+        <item >Uncle</item>
+        <item >Aunt</item>
+        <item >Other</item>
+    </string-array>
+    
+</resources>

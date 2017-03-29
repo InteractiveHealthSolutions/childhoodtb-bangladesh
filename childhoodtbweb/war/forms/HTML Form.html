@@ -1,0 +1,275 @@
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+<htmlform>
+<script type="text/javascript">
+$j(function() {
+     getField('transfertoward.value').change(function() {
+              if( getValue('transfertoward.value') == getValue('ward.value') ) {
+                    setValue('transfertoward.value', '');
+              }
+     });
+});
+</script>
+ 
+<script type="text/javascript">
+$j(function() {
+      getField('dischargeDate.value').change(function() {
+             if ( getValue('encounterDate.value') > getValue('dischargeDate.value')) {
+                   window.alert('Dat dichaj ou antre pa kapab avan dat admisyon an.\nThe discharge date you entered is before the admission date.')
+             }
+     });
+});
+</script>
+ 
+ 
+<script type="text/javascript">
+<!-- Error Checking before Form Submit -->
+beforeSubmit.push(function() {
+    var error = false;
+    <!-- Clear the previous errors -->
+    setValue('returnDate.error', '');
+    setValue('returnPlace.error', '');
+    setValue('dischargeDate.error', '');
+    setValue('procedureOne.error', '');
+    setValue('procedureTwo.error', '');
+    setValue('diagOne.error', '');
+    setValue('diagTwo.error', '');
+    setValue('diagThree.error', '');
+    setValue('diagFour.error', '');
+    setValue('transfertoward.error', '');
+ 
+    <!-- For Admission/Discharge Dates -->
+    if ( (getValue('dischargeDate.value') != '') &amp;&amp; (getValue('dischargeDate.value') &lt; getValue('encounterDate.value'))) {
+        getField('dischargeDate.error').html('Dat dichaj ou antre a pa kapab avan dat admisyon an.\nThe discharge date cannot be before the admission date.').show();
+        error=true;
+    }
+ 
+    <!-- For Return Visit Date -->
+    if ( (getValue('returnDate.value') != '') &amp;&amp; (getValue('dischargeDate.value') &gt; getValue('returnDate.value'))) {
+        getField('returnDate.error').html('Dat randevou ou antre a pa kapab avan dat dichaj la.\nThe return visit date cannot be before the discharge date.').show();
+        error=true;
+    }
+ 
+    <!-- For abandon with Follow-up Date -->
+    if ( (getValue('abandon.value') == 'true') &amp;&amp; (getValue('returnDate.value') != '') ) {
+        getField('returnDate.error').html('Ou pa kapab antre dat randevou si pasyan an sove.\nYou cannot enter a return visit date if the patient left without authorization.').show();
+        error=true;
+    }
+ 
+    <!-- For Abandon with Follow-up Place -->
+    if ( (getValue('abandon.value') == 'true') &amp;&amp; (getValue('returnPlace.value') != '') ) {
+        getField('returnPlace.error').html('Ou pa kapab antre ki kote yo bay pasyan an randevou si li sove.\nYou cannot enter a return visit location if the patient left without authorization.').show();
+        error=true;
+    }
+ 
+    <!-- For status=died with Follow-up Date -->
+    if ( (getValue('status.value') == '159') &amp;&amp; (getValue('returnDate.value') != '') ) {
+        getField('returnDate.error').html('Ou pa kapab antre dat randevou si pasyan an mouri.\nYou cannot enter a return visit date if the patient died.').show();
+        error=true;
+    }
+ 
+    <!-- For status=died with Follow-up Place -->
+    if ( (getValue('status.value') == '159') &amp;&amp; (getValue('returnPlace.value') != '') ) {
+        getField('returnPlace.error').html('Ou pa kapab antre ki kote yo bay pasyan an randevou si li mouri.\nYou cannot enter a return visit location if the patient died.').show();
+        error=true;
+    }
+ 
+    <!-- For Abandon with Transfer -->
+    if ( (getValue('abandon.value') == 'true') &amp;&amp; (getValue('transfertoward.value') != '') ) {
+        getField('transfertoward.error').html('Ou pa kapab antre nan ki wòd yo tranfere pasyan an  si li sove.\nYou cannot enter a transfer ward if the patient left without authorization.').show();
+        error=true;
+    }
+ 
+    <!-- For Both Procedures the Same -->
+    if ( ( (getValue('procedureOne.value') != '') &amp;&amp; (getValue('procedureTwo.value') != '') ) &amp;&amp; (getValue('procedureOne.value') == getValue('procedureTwo.value'))) {
+        getField('procedureTwo.error').html('Ou pa kapab genyen yon menm pwosedi de (2) fwa.\nYou cannot have the same procedure twice').show();
+        error=true;
+    }
+ 
+    <!-- For Diagnosis Two Same -->
+    if ( (getValue('diagTwo.value') != '') &amp;&amp;
+        ( getValue('diagTwo.value') == getValue('diagOne.value') ||
+          getValue('diagTwo.value') == getValue('diagThree.value') ||
+          getValue('diagTwo.value') == getValue('diagFour.value') ) ) {
+        getField('diagTwo.error').html('Ou pa kapab genyen yon menm diagnosis de (2) fwa.\nYou cannot have the same diagnosis twice').show();
+        error=true;
+    }
+ 
+    <!-- For Diagnosis Three Same -->
+    if ( (getValue('diagThree.value') != '') &amp;&amp;
+        ( getValue('diagThree.value') == getValue('diagOne.value') ||
+          getValue('diagThree.value') == getValue('diagTwo.value') ||
+          getValue('diagThree.value') == getValue('diagFour.value') ) ) {
+        getField('diagThree.error').html('Ou pa kapab genyen yon menm diagnosis de (2) fwa.\nYou cannot have the same diagnosis twice').show();
+        error=true;
+    }
+    
+    <!-- For Diagnosis Four Same -->
+    if ( (getValue('diagFour.value') != '') &amp;&amp;
+        ( getValue('diagFour.value') == getValue('diagOne.value') ||
+          getValue('diagFour.value') == getValue('diagTwo.value') ||
+          getValue('diagFour.value') == getValue('diagThree.value') ) ) {
+        getField('diagFour.error').html('Ou pa kapab genyen yon menm diagnosis de (2) fwa.\nYou cannot have the same diagnosis twice').show();
+        error=true;
+    }
+ 
+    if (error == true) {
+          return false;
+    }
+    return true;
+});
+</script>
+ 
+    <macros>
+        lightgrey=#e0e0e0
+        lightblue=#95ADCA
+        darkblue=#4444ff
+    </macros>
+ 
+<div style="background-color: $lightblue"><b><center>Hospital Admission Form</center></b></div>
+ 
+<table border="1" width="800px"  cellspacing="0" align="center" cellpadding="1">
+<tr>
+<td colspan="3">
+<table border="1" width="100%"  valign="middle" cellspacing="0" cellpadding="1" ><tr><td><b>LAST NAME</b></td><td><b>FIRST NAME</b></td><td><b>DATE OF BIRTH</b></td><td><b>DOSSIER #</b> </td></tr>
+<tr>
+<td><span><lookup expression="patient.personName.familyName"/></span></td>
+<td><span><lookup expression="patient.personName.givenName"/></span></td>
+<td><span><lookup expression="patient.birthdate"/></span></td>
+<td><span><lookup expression="patient.getPatientIdentifier(1)"/></span></td>
+</tr>
+<tr><td colspan="2"><B>LOCALITY</B></td><td><B>ADDRESS</B></td><td><B>CITY</B></td></tr>
+<tr><td colspan="2"><lookup complexExpression="
+#set( $locality = 0 )
+#set( $locality = $personAttributes.get('Tribe') )
+#if( $locality == 0 || $locality == 'no tribe name specified' )
+    OUT DISTRICT
+#else
+    $locality
+#end
+"/></td>
+<td><lookup expression="patient.personAddress.address1"/></td>
+<td><lookup expression="patient.personAddress.cityVillage"/></td>
+</tr>
+ 
+<tr><td><B>PATIENT AGE</B></td><td><B>GENDER</B></td><td colspan="2"><B>PARENT (Mother)</B></td></tr>
+<tr><td><span> <lookup expression="patient.age"/></span></td>
+<td>   <span><lookup expression="patient.gender" codePrefix="gender_"/></span></td>
+<td colspan="2"><lookup complexExpression="#foreach ( $relationship in $relationshipList )
+    #if( $relationship.relationshipType.bIsToA == 'Parent' )
+          #if( !($relationship.personB.patientId == $patient.patientId ))
+             #if( $relationship.personB.gender == 'F' )
+                   $relationship.personB.personName
+             #end
+          #end
+    #end
+#end
+"/>
+</td>
+</tr>
+ 
+</table>
+</td><td align="center" valign="middle">
+<img src="http://intranet.hashaiti.org:81/image/HASlogo_circle_black_small_whitebackground.gif"  />
+<br />
+ 
+<lookup complexExpression="
+&#60;img src=&#34;http://intranet.hashaiti.org:81/frontdesk/barre_code.php?string=${patient.getPatientIdentifier(1)}&#34;/&#62;
+" />
+ 
+</td>
+</tr>
+</table>
+<table border="1" width="800px" cellspacing="0" align="center" cellpadding="1">
+<includeIf velocityTest="!(($patient.gender == 'F') || ($patient.gender == 'M')) || (! $patient.age)">
+<tr>
+<td>
+<b><font color='darkorange' size='+2'>ERROR: Unknown gender or date of birth.  Please update patient demographics before filling out this form.<hr></hr>
+Erè: Pasyan an pa gen sèks li oubyen dat nesans li antre nan sistèm nan, tanpri ajoute enfòmasyon sa yo avan ou ranpli fòm nan.</font></b>
+</td>
+</tr>
+</includeIf>
+ 
+<excludeIf velocityTest="!(($patient.gender == 'F') || ($patient.gender == 'M')) || (! $patient.age)">
+<tr>
+<td valign="middle" style="width:220px"><br/><b>Services: </b><br/><br/>
+</td><td style="width:256px">
+ 
+<includeIf velocityTest="$patient.gender == 'F' ">
+<obs id="ward" conceptId="1827" required="true" answerConceptIds="1691,2037,3036,6206,2034,2036,1542,2035,1692,6196,6194" answerLabels="ADULT ISOLATION,ADULT SURGERY (GENERAL),ANNEXE (MALNUTRITION),CHOLERA,INTERNAL MEDICINE,OBGYN,OBSERVATION,PEDIATRIC GENERAL,PEDITRIC ISOLATION,PEDIATRIC NEONATAL,PEDIATRIC SURGERY" />
+</includeIf>
+<includeIf velocityTest="$patient.gender == 'M' ">
+<obs id="ward" conceptId="1827" required="true" answerConceptIds="1691,2037,3036,6206,2034,1542,2035,1692,6196,6194" answerLabels="ADULT ISOLATION,ADULT SURGERY (GENERAL),ANNEXE (MALNUTRITION),CHOLERA,INTERNAL MEDICINE,OBSERVATION,PEDIATRIC GENERAL,PEDITRIC ISOLATION,PEDIATRIC NEONATAL,PEDIATRIC SURGERY" />
+</includeIf>
+ 
+</td><td ></td>
+</tr>
+<tr><td><b>Durée de l'hospitalisation:</b><br/>(Duration of Hospitalization)</td><td><b>Du</b> (From)<encounterDate id="encounterDate" default="today" disallowMultipleEncountersOnDate="warn" /></td><td><b>Au</b> (To)<obs id="dischargeDate" conceptId="1829" />
+</td></tr>
+ 
+<tr ><td valign="top"><b>Diagnostics(s)<br/></b>(Diagnosis)</td><td colspan="3" >
+ 
+<obs id="diagOne" conceptId="6042" answerClasses="Diagnosis" style="autocomplete" labelText="1" size="80" /><br/>
+ 
+<obs id="diagTwo" conceptId="6042" answerClasses="Diagnosis" style="autocomplete" labelText="2" size="80"/><br/>
+ 
+<obs id="diagThree" conceptId="6042" answerClasses="Diagnosis" style="autocomplete" labelText="3" size="80" /><br/>
+ 
+<obs id="diagFour" conceptId="6042" answerClasses="Diagnosis" style="autocomplete" labelText="4" size="80" />
+ 
+</td></tr>
+ 
+<tr><td valign="top"><b>Traitement ou Procédure</b><br/>(Treatment or Procedure)</td> <td colspan="3"><obs id="procedureOne" conceptId="6193" answerClasses="Procedure" style="autocomplete" labelText="1" size="80"/><br/>
+ 
+<obs id="procedureTwo" conceptId="6193" answerClasses="Procedure" style="autocomplete" labelText="2" size="80"/><br/>
+ 
+</td></tr>
+<tr><td valign="top"><b>Transféré à </b><br/>(Tranferred to)</td><td colspan="2">
+ 
+<includeIf velocityTest="$patient.gender == 'F' ">
+<obs id="transfertoward" conceptId="1285" answerConceptIds="1691,2037,3036,6206,2034,2036,1542,2035,1692,6196,6194" answerLabels="ADULT ISOLATION,ADULT SURGERY (GENERAL),ANNEXE (MALNUTRITION),CHOLERA,INTERNAL MEDICINE,OBGYN,OBSERVATION,PEDIATRIC GENERAL,PEDITRIC ISOLATION,PEDIATRIC NEONATAL,PEDIATRIC SURGERY" />
+</includeIf>
+<includeIf velocityTest="$patient.gender == 'M' ">
+<obs id="transfertoward" conceptId="1285" answerConceptIds="1691,2037,3036,6206,2034,1542,2035,1692,6196,6194" answerLabels="ADULT ISOLATION,ADULT SURGERY (GENERAL),ANNEXE (MALNUTRITION),CHOLERA,INTERNAL MEDICINE,OBSERVATION,PEDIATRIC GENERAL,PEDITRIC ISOLATION,PEDIATRIC NEONATAL,PEDIATRIC SURGERY" />
+</includeIf>
+ 
+</td></tr>
+<tr><td valign="top"><b>Condition à L'éxeat</b><br/>(Status at Discharge)</td><td colspan="3"><obs id="status" conceptId="2044" style="radio"/></td></tr>
+ 
+<tr><td valign="top"><b>Patir sans Autorisation</b><br/>(Left without Authorization)</td><td colspan="3"><obs id="abandon" conceptId="6505" style="checkbox" /></td></tr>
+ 
+<tr><td><b>Rendez vous:</b><br/>(Return Visit)</td><td><b>Date de Rendez-vous</b><br/><obs id="returnDate" conceptId="5096" allowFutureDates="true" />  </td><td><b> Lieu </b>(Place)<br/><obs id="returnPlace" conceptId="2639" answers="HAS,Dispensaire HAS,Dispensaire non HAS,HIV/TB Clinic,Autre" /></td>
+</tr>
+ 
+<tr>
+<td  colspan="4" align="center"> <b>Lieu</b> (Location) <encounterLocation default="15" order="15" type="hidden" /> <b>Nom du Medecin</b> (Doctor Name)<encounterProvider role="Hospital Provider"/>
+<submit submitClass="submitButton"/>
+</td>
+</tr>     
+ 
+</excludeIf>
+</table>
+ 
+<script type="text/javascript">
+$j(function() {
+    $j('.submitButton').click(function(event) {
+        if ( getValue('dischargedate.value') ) {
+          if (!(getValue('status.value'))) {
+             window.alert("Please select the discharge status.");
+             event.preventDefault();
+          }
+        }
+    });
+});
+</script>
+</htmlform>

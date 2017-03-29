@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+
+<resources>
+    <string name="contact_tracing_strategy">Contact Tracing Strategy</string>
+    <string name="index_patient_type">Index Patient Type</string>
+    <string name="index_case_id">Index Case ID</string>
+    <string name="index_case_id_hint">Enter Index Case ID</string>
+    <string name="index_district_number">Index case District TB Number</string>
+    <string name="index_district_number_hint">Enter Index District TB Number</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="total_adult_household_members">Total Number of Adult Household Members</string>
+    <string name="total_adult_household_members_hint">Enter total number of adult household members</string>
+    
+    <string name="adult_members_with_symptoms">Total Number of Adult Household Members with cough, fever, weight loss or night sweats</string>
+    <string name="adult_members_with_symptoms_hint">Enter total number</string>
+    
+    <string name="total_paediatric_household_members">Total Number of Paediatric Household Members</string>
+    <string name="total_paediatric_household_members_hint">Enter total number of Paediatric Household Members</string>
+    
+    <string name="paediatric_members_with_symptoms">Total Number of Paediatric Household Members with cough, fever, weight loss or night sweats</string>
+    <string name="paediatric_members_with_symptoms_hint">Enter total numbers</string>
+    
+    <string name="total_household_members">Total Number of Household Members</string>
+    <string name="total_household_members_hint">Enter total number of household members</string>
+    <string name="total_household_members_with_symptoms">Total Number of Household Members with cough, fever, weigh loss or night sweats</string>
+    <string name="total_household_members_with_symptoms_hint">Enter total number</string>
+    <string name="total_members_count"></string>
+    <string name="names_adult_symptomatic_members">Names of Adult Symptomatic household members</string>
+    <string name="names_adult_symptomatic_members_hint">Enter names separately</string>
+    <string name="names_paediatric_symptomatic_members">Names of Paediatric Symptomatic household members</string>
+    <string name="names_paediatric_symptomatic_members_hint">Enter names separately</string>
+    
+    <string name="tbr4pk_patient">TBR4 Patient</string>
+    
+    <string-array name="diagnosis_options">
+        <item >Pulmonary</item>
+        <item >Extra-Pulmonary</item>
+    </string-array>
+    
+    <string-array name="tracing_strategies">
+        <item >Contact Tracing</item>
+        <item >Reverse Contact Tracing</item>
+    </string-array>
+    
+    <string-array name="index_patient_types">
+        <item >TBR4 Patient</item>
+        <item >Private Patient</item>
+    </string-array>
+    
+</resources>

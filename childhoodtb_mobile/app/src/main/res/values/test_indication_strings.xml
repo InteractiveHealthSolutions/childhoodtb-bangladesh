@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chest_x_ray">Chest X-ray?</string>
+    <string-array name="chest_x_ray_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string name="ultrasound_abdomen">Ultrasound Abdomen</string>
+    <string-array name="ultrasound_abdomen_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string name="ct_scan">CT Scan</string>
+    <string-array name="ct_scan_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string name="ct_scan_area">CT Scan Area</string>
+    <string name="ct_scan_area_hint">Enter CT Scan Area</string>
+
+    <string name="xpert_mtb_rif">Xpert MTB/RIF?</string>
+    <string-array name="xpert_mtb_rif_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string name="mantoux">Mantoux (TST, PPD, TB Skin test)?</string>
+    <string-array name="mantoux_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string name="smear_microscopy">Smear Microscopy?</string>
+    <string-array name="smear_microscopy_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string name="histopathology">Histopathology</string>
+    <string-array name="histopathology_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string name="histopathology_sample">Site for histopathology sample</string>
+    <string name="histopathology_sample_hint">Enter Site for histopathology sample</string>
+    <string name="esr">ESR</string>
+    <string-array name="esr_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="family_screening">Were you asked by program team to bring family for screening?</string>
+    <string name="unable_to_bring_family">Why were you unable to bring family for screening?</string>
+    <string name="others">Others</string>
+    <string name="others_hint">Others hint</string>
+    
+    <string-array name="unable_to_bring_family_options">
+        <item>Children Unavailable in Morning</item>
+        <item>Problems at Work</item>
+        <item>Busy with Household Work</item>
+        <item>Lack of Conveyance Charges</item>
+        <item>My Family is Well and Asymptomtic</item>
+        <item>Distant from Facility</item>
+        <item>Other Reason</item>
+    </string-array>
+    
+</resources>

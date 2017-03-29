@@ -1,0 +1,97 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <style name="DayTheme" parent="@android:style/Theme.Light"></style>
+
+    <style name="NightTheme" parent="@android:style/Theme.Black"></style>
+
+    <style name="CyanTheme" parent="@style/NightTheme">
+        <item name="android:textColor">@color/WhiteSmoke</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_cyan</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+
+    <style name="BeigeTheme" parent="@style/DayTheme">
+        <item name="android:textColor">@color/Chocolate</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_beige</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+
+    <style name="WoodTheme" parent="@style/DayTheme">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_wood</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+
+    <style name="LemonTheme" parent="@style/DayTheme">
+        <item name="android:textColor">@color/Green</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_lemon</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+
+    <style name="OrangeTheme" parent="@style/DayTheme">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_orange</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+
+    <style name="global" parent="@style/BeigeTheme">
+        <item name="android:textColorHint">@color/DarkGray</item>
+        <item name="android:textColorHighlight">@color/DarkGreen</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="plain" parent="@style/DayTheme">
+        <item name="android:textColor">@color/Chocolate</item>
+        <item name="android:textColorHint">@color/DarkGray</item>
+        <item name="android:textColorHighlight">@color/DarkGreen</item>
+        <item name="android:checkboxStyle">@color/Chocolate</item>
+        <item name="android:textSize">@dimen/medium</item>
+    </style>
+
+    <style name="text" parent="@style/global">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@color/Transparent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/medium</item>
+    </style>
+
+    <style name="edit" parent="@style/global">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/medium</item>
+    </style>
+
+    <style name="button" parent="@style/global">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/xlarge</item>
+    </style>
+
+    <style name="spinner" parent="@style/global">
+        <item name="android:background">@drawable/custom_spinner_beige</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/xlarge</item>
+    </style>
+
+    <style name="radio" parent="@style/plain">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+</resources>

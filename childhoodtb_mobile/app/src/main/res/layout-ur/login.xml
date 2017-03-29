@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+login_id/mainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableRow
+        android:id="@+login_id/usernameTableRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+login_id/usernameEditText"
+            style="@style/text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="@string/login_name_hint"
+            android:textSize="@dimen/large" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+login_id/textView1"
+            style="@style/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_name"
+            android:textSize="@dimen/large" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+login_id/passwordTableRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+login_id/passwordEditText"
+            style="@style/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:ems="10"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:textSize="@dimen/large" />
+
+        <TextView
+            android:id="@+login_id/textView2"
+            style="@style/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textSize="@dimen/large" />
+
+    </TableRow>
+
+    <Button
+        android:id="@+login_id/loginButton"
+        style="@style/button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login" />
+
+</TableLayout>

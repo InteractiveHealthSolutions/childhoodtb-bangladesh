@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ihsinformatics.childhoodtb_mobile"
+    android:versionCode="23"
+    android:versionName="1.6.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.android.tools.fd.runtime.BootstrapApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ihs_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppBaseTheme" >
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.MainMenuActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.LoginActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.Preferences"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.PediatricScreeningActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.AdultScreeningActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.PatientRegistrationActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ContactTracingActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.PaediatricContactTracingActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.AdultReverseContactTracingActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ClinicalVisitBarriersActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.PrivatePatientActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.FeedbackActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.PatientSearchActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.SavedFormsActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.Barcode"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.PaediatricScreeningFormActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.PaedsPresumptiveConfirmationActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.PaediatricContactTracingAtHomeActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.PediatricContactInvestigationAtFacilityActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.EndFollowUpActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.TestIndicationActivity"
+            android:configChanges="keyboardHidden|orientation" />
+    </application>
+
+</manifest>

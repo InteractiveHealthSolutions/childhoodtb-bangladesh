@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--PaediatricScreening Form strings-->
+    <string name="screening_facility">Screening Facility</string>
+    <string-array name="facility">
+        <item>@string/dhaka_mc</item>
+        <item>@string/salimulla_mc</item>
+        <item>@string/shishu_mc</item>
+        <item>@string/ich_hospital</item>
+        <item>@string/ich_matuail</item>
+        <item>@string/mag_college</item>
+    </string-array>
+    <!---->
+    <string name="chw_id">CHW ID</string>
+    <string name="chw_hint">Enter CHW Id</string>
+    <!---->
+    <string name="_child_cough">Does your child have Cough?</string>
+    <string-array name="cough_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string name="cough_selection_hint">Select an option</string>
+
+    <!--cough Durations-->
+    <string name="cough_weeks">Duration of cough in Weeks</string>
+
+    <string-array name="cough_durations">
+        <item>@string/less_then_two_Weeks</item>
+        <item>@string/two_to_three_Weeks</item>
+        <item>@string/more_then_three_weeks</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string name="cough_duration_options_hint">Select an option</string>
+    <!--Fever-->
+    <string name="fever_week">Fever more than two weeks?</string>
+    <string-array name="fever_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+
+    </string-array>
+    <!--Night Sweats-->
+
+    <string-array name="night_sweats_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <!--weight Loss-->
+    <string name="weight_loss">Unexplained weight loss?</string>
+    <string-array name="weight_loss_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+  <!--Appetite strings-->
+    <string name="appetite_decreased">Appetite</string>
+    <string-array name="appetite_decreased_options">
+        <item>@string/poor</item>
+        <item>@string/ok</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+
+    <!--Contact  with TB  strings-->
+    <string name="conclusion">Does the child have history of contact with TB patient in the last two years?</string>
+     <string-array name="conclusion_options">
+         <item>@string/yes</item>
+         <item>@string/no</item>
+         <item>@string/do_not_know</item>
+         <item>@string/refused</item>
+     </string-array>
+
+    <!--presumptive TB case string-->
+    <string name="presumptive_tb_case">Is the child a presumptive TB case?</string>
+    <string-array name="presumptive_tb_case_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+
+    <!--Confirmation of smoking at child  home-->
+    <string name="smoking_confirmation_at_home">Does anybody at home smoke cigarette?</string>
+    <string-array name="smoking_confirmation_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+
+    <!--Presumptive Id-->
+    <string name="_patient_id">ID assigned to the presumptive</string>
+    <!--Age Modifier-->
+    <string name="age_modifier">Age modifier</string>
+    <string-array name="age_modifier_options">
+        <item>@string/day</item>
+        <item>@string/week</item>
+        <item>@string/month</item>
+        <item>@string/year</item>
+
+    </string-array>
+
+    <!--Before Screening-->
+   <string-array name="screened_before_options">
+       <item>@string/yes</item>
+       <item>@string/no</item>
+       <item>@string/do_not_know</item>
+       <item>@string/refused</item>
+
+   </string-array>
+    
+    <!--Invalid Date -->
+    <string name="invalid_future_date">Invalid Date,Future date are not Allowed</string>
+   
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+<resources>
+    
+    <string name="child_night_sweats">Does your child have night sweats?</string>
+    <string name="child_weight_loss">Does your child have unexplained weight loss?</string>
+    <string name="child_appetite">Child\'s Appetite</string>
+    <string name="child_cough">Does your child have cough?</string>
+    <string name="child_cough_duration">What is the duration of cough?</string>
+    <string name="child_fever">Does your child have fever for more than 2 weeks?</string>
+    <string name="client_suspect">TB Suspect</string>
+    <string name="contact_history">Does the child has history of contact with TB patient over past 2 years?</string>
+    <string name="contact_history_adult">Do you have history of contact with TB patient over past 2 years?</string>
+    
+<!--     the two concepts (lymph and joint) are used in all four Screening Forms (Regular + Contact) -->
+		 <string name="positive_report">In possession of a previous positive report?</string>
+	 	 <string name="lymph_node_swelling">Lymph node swelling of greater than 2 weeks?</string>
+		 <string name="joint_spine_swelling">Joint/Spine swelling of greater than 2 weeks?</string>
+		 
+		 
+    
+    <string name="more_than_three_weeks">More than 3 Weeks</string>
+    <string name="two_to_three_weeks">2 to 3 Weeks</string>
+    <string name="poor">Poor</string>
+    
+    
+    <string-array name="four_options_with_poor">
+        <item>OK</item>
+        <item>Poor</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    
+    <string-array name="child_cough_durations">
+        <item>Less than 2 Weeks</item>
+        <item>2 to 3 Weeks</item>
+        <item>More than 3 Weeks</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    
+</resources>

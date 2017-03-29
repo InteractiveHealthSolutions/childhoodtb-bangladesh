@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+<resources>
+
+    <string-array name="tables">
+        <item>CREATE TABLE IF NOT EXISTS identifiers (
+            id INT NOT NULL UNIQUE COLLATE NOCASE, 
+            type TEXT NOT NULL COLLATE NOCASE, 
+            name TEXT NOT NULL COLLATE NOCASE,
+            PRIMARY KEY (id, type))
+		</item>
+		<item>CREATE TABLE IF NOT EXISTS forms (
+            form_date DATETIME,
+            timestamp DATETIME NOT NULL,
+            form TEXT NOT NULL COLLATE NOCASE,
+            content TEXT NOT NULL COLLATE NOCASE,
+            obs TEXT NOT NULL COLLATE NOCASE)
+		</item>
+		<item>CREATE TABLE IF NOT EXISTS offline_forms (
+            timestamp DATETIME NOT NULL,
+		    username TEXT NOT NULL COLLATE NOCASE,
+            form TEXT NOT NULL COLLATE NOCASE,
+            json TEXT NOT NULL COLLATE NOCASE, 
+            PRIMARY KEY (timestamp))
+		</item>
+	</string-array>
+</resources>

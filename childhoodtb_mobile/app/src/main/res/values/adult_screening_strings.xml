@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+<resources>
+    
+    <string name="adult_cough">Do you have Cough?</string>
+    <string name="adult_cough_duration">Duration of cough in Weeks	</string>
+    <string name="cough_productive">Do you have productive cough?</string>
+    <string name="tb_before">Have you ever had TB before?</string>
+    <string name="tb_medication">Have you ever taken medication for TB that lasted or was supposed to last for 6/8 months?</string>
+    <string name="fever_weeks">Have you had fever in the last two weeks?</string>
+    <string name="adult_night_sweats">Have you had night sweats during the last 2 weeks?</string>
+    <string name="adult_weight_loss">Have you had unexplained weight loss during the last 2 weeks</string>
+    
+    <string-array name="adult_cough_durations">
+        <item>Less than 2 Weeks</item>
+        <item>2 to 3 Weeks</item>
+        <item>More than 3 Weeks</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    
+    <string-array name="tb_treatment_options">
+        <item>Less than 1 month</item>
+        <item>More than 1 month</item>
+    </string-array>
+    
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reason_for_followup_options">
+        <item>@string/referred_to_another_facility</item>
+        <item>@string/cured</item>
+        <item>@string/treatment_completed</item>
+        <item>@string/treatment_failure</item>
+        <item>@string/moved_out_of_area</item>
+        <item>@string/Died</item>
+        <item>@string/transfer_out</item>
+        <item>@string/loss_to_followup</item>
+        <item>@string/other</item>
+    </string-array>
+
+    <string name="reason_loss_to_followup">Reason for loss to follow-up</string>
+    <string name="reason_for_end_to_followup">Reason for end of follow-up</string>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="total_paediatric_contacts_screened">Number of Pediatric Contacts Screened</string>
+    <string name="total_paediatric_contacts_screened_hint">Enter count</string>
+    <string name="total_adult_contacts_screened">Number of Adult Contacts Screened</string>
+    <string name="total_adult_contacts_screened_hint">Enter count</string>
+
+</resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/tiny" >
+
+    <LinearLayout
+        android:id="@+main_id/locationLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+main_id/selectLocationsButton"
+            style="@style/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dot_dot_dot" />
+
+        <Spinner
+            android:id="@+main_id/locationSpinner"
+            style="@style/spinner"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:prompt="@string/option_hint"
+            android:tag="Location" />
+
+        <TextView
+            android:id="@+main_id/textView1"
+            style="@style/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+main_id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:id="@+main_id/screeningTableRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+main_id/screeningButton"
+                    style="@style/button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="@dimen/micro"
+                    android:drawableTop="@drawable/menu_screening"
+                    android:tag="@string/screening"
+                    android:text="@string/screening" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+main_id/paediatricTableRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/micro" >
+
+                <Button
+                    android:id="@+main_id/paediatricButton"
+                    style="@style/button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:drawableTop="@drawable/menu_paediatric"
+                    android:tag="@string/paediatric_screening"
+                    android:text="@string/paediatric_screening" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+main_id/nonPulmonaryTableRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/micro" >
+
+                <Button
+                    android:id="@+main_id/nonPulmonarySuspectButton"
+                    style="@style/button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:drawableTop="@drawable/menu_non_pulmonary_suspect"
+                    android:tag="@string/non_pulmonary_suspect"
+                    android:text="@string/non_pulmonary_suspect" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+main_id/customerInfoTableRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/micro" >
+
+                <Button
+                    android:id="@+main_id/customerInfoButton"
+                    style="@style/button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:drawableTop="@drawable/menu_customer_info"
+                    android:tag="@string/customer_info"
+                    android:text="@string/customer_info" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+main_id/testIndicationTableRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/micro" >
+
+                <Button
+                    android:id="@+main_id/testIndicationButton"
+                    style="@style/button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:drawableTop="@drawable/menu_test_indication"
+                    android:tag="@string/test_indication"
+                    android:text="@string/test_indication" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+main_id/feedbackTableRow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/micro" >
+
+                <Button
+                    android:id="@+main_id/feedbackButton"
+                    style="@style/button"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:drawableTop="@drawable/menu_feedback"
+                    android:tag="@string/customer_info"
+                    android:text="@string/feedback" />
+            </TableRow>
+        </LinearLayout>
+    </ScrollView>
+
+</TableLayout>

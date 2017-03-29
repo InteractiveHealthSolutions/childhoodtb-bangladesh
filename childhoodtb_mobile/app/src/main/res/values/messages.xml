@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+<resources>
+
+    <string name="access_granted">Access granted, you have successfully logged in.</string>
+    <string name="form_closing">Closing this form</string>
+    <string name="Please">please</string>
+    <string name="close_form">Close this form?</string>
+    <string name="confirm_close">Are you sure you want to close this form? All unsaved changes will be lost.</string>
+    <string name="confirm_operation">This operation is irreversable. Are you sure you want to proceed?</string>
+    <string name="connection_successful">Connected to the server successfully.</string>
+    <string name="deleted">Data deleted successfully.</string>
+    <string name="exit_application">Exit Application</string>
+    <string name="exit_operation">Please specify whether you want to Log out or exit without logging out.</string>
+    <string name="inserted">"Data inserted successfully."</string>
+    <string name="operation_successful">Request has been processed by the server successfully.</string>
+    <string name="patients_not_found">No Patients were found matching given parameters</string>
+    <string name="session_renewed">Session has been renewed.</string>
+    <string name="update_metadata">You are about to update the metadata. This operation may take a long time. Are you sure you want to continue?</string>
+    <string name="updated">Data updated successfully.</string>
+    <string name="offline_forms">Some saved forms are waiting your attention</string>
+    <string name="delete_forms">Are you sure you want to delete all forms saved on phone?</string>
+    
+</resources>

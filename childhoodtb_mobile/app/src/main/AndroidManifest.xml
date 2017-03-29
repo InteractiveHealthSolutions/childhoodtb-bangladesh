@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ihsinformatics.childhoodtb_mobile"
+    android:versionCode="23"
+    android:versionName="1.6.0">
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ihs_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppBaseTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.MainMenuActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".Preferences"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".PediatricScreeningActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".AdultScreeningActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".PatientRegistrationActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".ContactTracingActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".PaediatricContactTracingActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".AdultReverseContactTracingActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".ClinicalVisitBarriersActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".PrivatePatientActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".FeedbackActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".PatientSearchActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".SavedFormsActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".Barcode"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".NewActivity.PaediatricScreeningFormActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity
+            android:name=".NewActivity.PaedsPresumptiveConfirmationActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".NewActivity.PaediatricContactTracingAtHomeActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".NewActivity.PediatricContactInvestigationAtFacilityActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".NewActivity.EndFollowUpActivity"
+        android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".NewActivity.TestIndicationActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+    </application>
+
+</manifest>

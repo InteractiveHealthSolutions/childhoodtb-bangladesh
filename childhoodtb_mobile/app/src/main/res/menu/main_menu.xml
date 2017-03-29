@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+menu_id/updateMetadataService"
+        android:icon="@android:drawable/ic_media_play"
+        android:title="@string/refresh_database">
+    </item>
+    <item
+        android:id="@+menu_id/searchPatientActivity"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/search_patients">
+    </item>
+<!--     <item -->
+<!--         android:id="@+menu_id/reportsActivity" -->
+<!--         android:icon="@android:drawable/ic_menu_agenda" -->
+<!--         android:title="@string/reporting"> -->
+<!--     </item> -->
+    <item
+        android:id="@+menu_id/formsActivity"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="@string/saved_forms">
+    </item>
+
+</menu>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mother_name">Presumptive Mother Name</string>
+    <string name="mother_name_hint">Enter Mother Name</string>
+
+    <!---Weight Percentile-->
+    <string-array name="weight_percentile_list">
+        <item>@string/less_then_or_equal_5th_percentile</item>
+        <item>@string/six_less_then_or_equal_to_10th_percentile</item>
+        <item>@string/eleven_less_then_or_equal_to_25th_percentile</item>
+        <item>@string/twentySix_less_then_or_equal_to_50th_percentile</item>
+        <item>@string/greater_then_50th_percentile</item>
+    </string-array>
+
+    <!--cough-->
+    <string name="cough">Cough</string>
+    <string name="_cough_weeks">How many weeks of cough?</string>
+    <!--Fever-->
+    <!--weight-loss-->
+    <string name="_weight">Weight loss?</string>
+    <!--Poor Appetite-->
+    <string name="poor_appetite">Poor Appetite?</string>
+    <!--chest Examination-->
+    <string-array name="chest_examination_list">
+        <item>@string/suggestive_tb</item>
+        <item>@string/strongly_suggestive_tb</item>
+        <item>@string/not_suggestive_tb</item>
+    </string-array>
+    <!--lymphNodeExamination string-->
+    <string-array name="lymph_node_examination_list">
+        <item>@string/suggestive_tb</item>
+        <item>@string/strongly_suggestive_tb</item>
+        <item>@string/not_suggestive_tb</item>
+    </string-array>
+    <!--Abdominal examination-->
+    <string-array name="abdominal_exam_list">
+        <item>@string/suggestive_tb</item>
+        <item>@string/strongly_suggestive_tb</item>
+        <item>@string/not_suggestive_tb</item>
+    </string-array>
+    <!--bcg scar strings-->
+    <string-array name="bcg_scar_list">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <!--Tb in Family strings-->
+    <string-array name="adult_tb_in_family_list">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <!--Family Members strings-->
+    <string-array name="family_members">
+        <item>@string/mother</item>
+        <item>@string/father</item>
+        <item>@string/sister</item>
+        <item>@string/brother</item>
+        <item>@string/grandfather</item>
+        <item>@string/grandmother</item>
+        <item>@string/uncle</item>
+        <item>@string/aunt</item>
+        <item>@string/other</item>
+    </string-array>
+    <!--TB FORM strings-->
+    <string-array name="form_of_tb_list">
+        <item>@string/susceptible_tb</item>
+        <item>@string/mdr_tb</item>
+        <item>@string/pdr_tb</item>
+        <item>@string/mono_drug_resistant_tb</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <!--Type Of TB-->
+    <string-array name="type_of_tb_list">
+        <item>@string/pulmonary</item>
+        <item>@string/extra_pulmonary</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+
+    </string-array>
+    <!---->
+    <string-array name="test_advised_list">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <!---->
+    <string-array name="probable_diagnosis_list">
+        <item>@string/not_tb_presumptive</item>
+        <item>@string/bt_presumptive_confirmed</item>
+    </string-array>
+</resources>

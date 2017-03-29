@@ -1,0 +1,126 @@
+@CHARSET "ISO-8859-1";
+.centerDiv
+{
+	width: 40%; 
+	height:300px; 
+	margin: 0 auto; 
+	 
+	text-align: center;
+	
+}
+.inputDiv { 
+
+	background-color:#CAE1FF;  
+	margin: 0 auto;
+	border-radius: 25px;
+	border-width: 2px;
+	border:1px solid #2B4F81;
+} 
+
+.outputDiv {  
+	background-color:#CAE1FF;  
+	margin: 0 auto;
+	border-radius: 25px;
+	border-width: 2px;
+	border:1px solid #2B4F81;
+}
+
+.titleHeading
+{
+	font-size: 2em;
+  font-weight: bold;
+  color: #003F87;
+  margin: 40px 0px 70px;
+  text-align: center;
+}
+
+.criteriaLabel
+{
+	float: left;
+	width: 200px;
+	text-align: left;
+	color: #2B4F81;
+}
+
+.criteriaDropdown
+{
+	float: left;
+	width: 200px;
+	text-align: left;
+	color: #2B4F81;
+}
+
+.button
+{
+	border-radius: 3px;
+	border:1px solid #2B4F81;
+	color: #2B4F81;
+	height: 22px;
+	width: 120px;
+}
+
+.button:hover
+{
+	background-color: #9AC0CD;
+}
+
+.table {
+    margin: 0 auto; /* or margin: 0 auto 0 auto */
+  }
+
+.h1
+{
+	font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 70px;
+  text-align: center;
+  font-style: italic;
+}
+
+#menu, #menu ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	margin: 0 auto; 
+	
+	
+}
+#menu li {
+	float:left;
+	position:relative;
+	line-height: 2.5em;
+	width: 10em;
+	margin: 0 auto; 
+	
+}
+
+#menu a {
+	display:block;
+	border-right:1px solid #fff;
+	background:#E0F574;
+	color: #344152;
+	text-decoration:none;
+	padding:0 10px;
+	font-size: 20px;
+	
+}
+#menu a:hover {
+	background-color:#5798B4;
+	color:#fff;
+}
+#menu ul {
+	border-top:1px solid #fff;
+	
+}
+#menu ul a {
+	border-right:none;
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+	border-left:1px solid #fff;
+	background:#67C8FF;
+	
+}
+
+
+

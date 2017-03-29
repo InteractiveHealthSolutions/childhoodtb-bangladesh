@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+<resources>
+
+    <string name="loading_message">Saving trees..</string>
+  <!-- <string name="app_name">TBReach-4 Pakistan(1.7.1)</string>-->
+    <string name="app_name">ChildhoodTb</string>
+    <string name="menu_settings">Settings</string>
+    <string name="server">Server Address</string>
+    <string name="use_secure">Use SSL/TLS</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="login_name">User Name</string>
+    <string name="login_name_hint">Enter your user name</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">Login</string>
+    <string name="logout">Log out</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear">Clear</string>
+    <string name="exit">Exit</string>
+    <string name="passcode">Short Password</string>
+    <string name="passcode_hint">Enter first 4 characters of password</string>
+    <string name="option_hint">Select an option</string>
+    <string name="multi_select_hint">Choose one or more</string>
+    <string name="form_date">Form Date</string>
+    <string name="age_group">Age Group</string>
+    <string name="patient_id">Patient ID</string>
+    <string name="patient_id_hint">Enter ID (12 characters)</string>
+    <string name="refresh_database">Refresh Database</string>
+    <string name="search_patients">Search..</string>
+    <string name="scan_barcode">Scan Barcode</string>
+    <string name="text_copied">Patient ID copied..</string>
+    <string name="goto_first">&lt;&lt;</string>
+    <string name="goto_last">>></string>
+    <string name="empty_string"></string>
+    <string name="visit_type">Type of Visit?</string>
+    <string name="screened_before">Were screened in the last 2 weeks</string>
+    <string name="validateID">Validate Index Case ID</string>
+    <string name="screening_type">Screening Type</string>
+
+    <string name="first_name">First Name</string>
+    <string name="first_name_hint">Enter First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="last_name_hint">Enter Last Name</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="age">Age</string>
+    <string name="Age_modifier">Age Modifier</string>
+    <string name="age_hint">Enter Age</string>
+    <string name="dob">Date of Birth</string>
+
+    <string name="offline">Work Offline</string>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="options">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+    <string-array name="two_options">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+    <string-array name="three_options">
+        <item>No</item>
+        <item>Yes</item>
+        <item>Not Applicable</item>
+    </string-array>
+
+    <string-array name="four_options">
+        <item>No</item>
+        <item>Yes</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    <string-array name="frequency">
+        <item>Never</item>
+        <item>Hardly ever</item>
+        <item>A few times</item>
+        <item>Several times</item>
+        <item>Many times</item>
+        <item>A Great many times</item>
+        <item>Almost all the time</item>
+        <item>Refuse</item>
+    </string-array>
+    <string-array name="feedback_types">
+        <item>Complaint</item>
+        <item>Suggestion</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="visit_type_options">
+        <item>Clinical Visit</item>
+        <item>Home Visit</item>
+    </string-array>
+
+    <string-array name="screening_types">
+        <item>OPD Screening</item>
+        <item>Field Screening</item>
+    </string-array>
+
+
+
+</resources>

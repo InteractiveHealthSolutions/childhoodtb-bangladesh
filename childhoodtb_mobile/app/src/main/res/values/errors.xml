@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+<resources>
+
+    <string name="error_title">Error!</string>
+    <string name="authentication_error">Authentication failed! Please enter valid password/code</string>
+    <string name="data_access_error">Access to data failed! You may not have sufficient rights</string>
+    <string name="data_connection_error">Could not connect to Server! Please check your connection settings or contact Admin</string>
+    <string name="data_mismatch">Data or value(s) did not match!</string>
+    <string name="concept_not_found">Concept not found in local database. Make sure your metadata is up-to-date</string>
+    <string name="delete_error">Error in deleting data. Some other data may be dependent on the item you want to delete</string>
+    <string name="duplication">Duplication error! Another copy of the same data or ID already exists</string>
+    <string name="empty_data">Empty data! Please fill in the required field(s)</string>
+    <string name="empty_selection">At least one option must be selected form the list</string>
+    <string name="form_unavailable">This Form/Report is not available right now</string>
+    <string name="insert_error">Error in inserting data. Please make sure you are not violating validation rules</string>
+    <string name="incomplete_operation">Incomplete operation error! Patient created but encounter and observations were not saved</string>
+    <string name="item_not_found">No data was found matching the criteria</string>
+    <string name="invalid_data">Invalid value(s)! Please make sure your input is in correct format</string>
+    <string name="invalid_date_or_time">Date or Time is invalid. Make sure you have entered appropriate date/time</string>
+    <string name="non_suspect">This person was not marked as a Suspect. In order to save this form, you must mark the person as a suspect and assign a valid Patient ID</string>
+ 	<string name="operation_cancelled">Operation cancelled</string>
+    <string name="out_of_range">Value out of range!</string>
+    <string name="parameter_missing">One or more Parameters are invalid or missing. Please make sure you have defined valid parameters</string>
+    <string name="parsing_error">Data cannot be parsed. Please make sure data is in valid format</string>
+    <string name="patient_id_missing">Patient ID does not exist. Please make sure you have entered correct Patient ID</string>
+    <string name="session_expired">Session expired! Please re-login to continue operation</string>
+    <string name="similar_form_submitted">This form has already been submitted for same ID/code</string>
+    <string name="unknown_error">Unknown error! Please check error log for details</string>
+    <string name="update_error">Error in updating data. Please make sure you are not violating validation rules</string>
+    <string name="user_not_found">User not found! Please enter correct user name</string>
+    <string name="user_role_undefined">User role not found or undefined! Please contact Administrator or select a different Role</string>
+
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="server"
+        android:summary="Preferences used to connect to the Server"
+        android:title="Server Preferences" >
+        <EditTextPreference
+            android:defaultValue="@string/server_address"
+            android:key="server"
+            android:persistent="true"
+            android:summary="Fully-qualified address of Server"
+            android:title="Server" />
+        <EditTextPreference
+            android:key="support_contact"
+            android:persistent="true"
+            android:title="Support Contact" android:defaultValue="@string/support_contact"/>
+        <CheckBoxPreference android:title="@string/use_secure" android:key="use_ssl" android:defaultValue="true"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="application"
+        android:title="Application Configuration" >
+        <ListPreference
+            android:defaultValue="3000"
+            android:entries="@array/delay_summary"
+            android:entryValues="@array/delay"
+            android:key="delay"
+            android:persistent="true"
+            android:summary="Delay between data refresh"
+            android:title="Refresh Time" />
+        <ListPreference
+            android:defaultValue="English"
+            android:dialogTitle="Select preferred language"
+            android:entries="@array/language"
+            android:entryValues="@array/language"
+            android:key="language"
+            android:title="Langauge" />
+        <ListPreference
+            android:defaultValue="Pakistan"
+            android:dialogTitle="Select your country"
+            android:entries="@array/countries"
+            android:entryValues="@array/countries"
+            android:key="country"
+            android:title="Country" />
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="city"
+            android:title="City" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+saved_forms_id/showSavedFormsButton"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/show_saved_forms" />
+
+    <Button
+        android:id="@+saved_forms_id/submitSavedFormsButton"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/submit_saved_forms" />
+
+    <Button
+        android:id="@+saved_forms_id/discardFormsButton"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/discard_forms" />
+
+    <ScrollView
+        android:id="@+saved_forms_id/resultsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioGroup
+            android:id="@+saved_forms_id/formsRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </RadioGroup>
+    </ScrollView>
+
+    <ListView
+        android:id="@+saved_forms_id/savedFormsListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

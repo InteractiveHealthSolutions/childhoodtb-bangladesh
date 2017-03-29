@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="abdominal_exam_list">
+        <item>@string/suggestive_tb</item>
+        <item>@string/strongly_suggestive_tb</item>
+        <item>@string/not_suggestive_tb</item>
+    </string-array>
+    <string-array name="adult_cough_durations">
+        <item>Less than 2 Weeks</item>
+        <item>2 to 3 Weeks</item>
+        <item>More than 3 Weeks</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    <string-array name="adult_tb_in_family_list">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="age_gropus">
+        <item>0 - 15</item>
+        <item>16 - 20</item>
+        <item>21 - 25</item>
+        <item>26 - 40</item>
+        <item>41 - 50</item>
+        <item>50 - 100</item>
+    </string-array>
+    <string-array name="age_modifier_options">
+        <item>@string/day</item>
+        <item>@string/week</item>
+        <item>@string/month</item>
+        <item>@string/year</item>
+
+    </string-array>
+    <string-array name="appetite_decreased_options">
+        <item>@string/poor</item>
+        <item>@string/ok</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="bcg_scar_list">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="chest_exam_options">
+        <item>Suggestive of TB</item>
+        <item>Strongly Suggestive of TB</item>
+        <item>Not Suggestive of TB</item>
+    </string-array>
+    <string-array name="chest_examination_list">
+        <item>@string/suggestive_tb</item>
+        <item>@string/strongly_suggestive_tb</item>
+        <item>@string/not_suggestive_tb</item>
+    </string-array>
+    <string-array name="chest_x_ray_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="child_cough_durations">
+        <item>Less than 2 Weeks</item>
+        <item>2 to 3 Weeks</item>
+        <item>More than 3 Weeks</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    <string-array name="cnic_holder_options">
+        <item>Self</item>
+        <item>Mother</item>
+        <item>Father</item>
+        <item>Sister</item>
+        <item>Brother</item>
+        <item>Grandfather</item>
+        <item>Grandmother</item>
+        <item>Uncle</item>
+        <item>Aunt</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="conclusion_options">
+         <item>@string/yes</item>
+         <item>@string/no</item>
+         <item>@string/do_not_know</item>
+         <item>@string/refused</item>
+     </string-array>
+    <string-array name="contact_person_options">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="contact_tracing_category_options">
+        <item>@string/contact_tracing</item>
+        <item>@string/reverse_contact_tracing</item>
+    </string-array>
+    <string-array name="cough_durations">
+        <item>@string/less_then_two_Weeks</item>
+        <item>@string/two_to_three_Weeks</item>
+        <item>@string/more_then_three_weeks</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="cough_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="countries">
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+        <item>Antigua and Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Aruba</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Bahrain</item>
+        <item>Bangladesh</item>
+        <item>Barbados</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+        <item>Belize</item>
+        <item>Benin</item>
+        <item>Bermuda</item>
+        <item>Bhutan</item>
+        <item>Bolivia</item>
+        <item>Bosnia and Herzegovina</item>
+        <item>Botswana</item>
+        <item>Bouvet Island</item>
+        <item>Brazil</item>
+        <item>British Indian Ocean Territory</item>
+        <item>British Virgin Islands</item>
+        <item>Brunei</item>
+        <item>Bulgaria</item>
+        <item>Burkina Faso</item>
+        <item>Burundi</item>
+        <item>Cambodia</item>
+        <item>Cameroon</item>
+        <item>Canada</item>
+        <item>Cape Verde</item>
+        <item>Cayman Islands</item>
+        <item>Central African Republic</item>
+        <item>Chad</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Christmas Island</item>
+        <item>Cocos (Keeling) Islands</item>
+        <item>Colombia</item>
+        <item>Comoros</item>
+        <item>Congo</item>
+        <item>Cook Islands</item>
+        <item>Costa Rica</item>
+        <item>Cote d\'Ivoire</item>
+        <item>Croatia</item>
+        <item>Cuba</item>
+        <item>Cyprus</item>
+        <item>Czech Republic</item>
+        <item>Democratic Republic of the Congo</item>
+        <item>Denmark</item>
+        <item>Djibouti</item>
+        <item>Dominica</item>
+        <item>Dominican Republic</item>
+        <item>East Timor</item>
+        <item>Ecuador</item>
+        <item>Egypt</item>
+        <item>El Salvador</item>
+        <item>Equatorial Guinea</item>
+        <item>Eritrea</item>
+        <item>Estonia</item>
+        <item>Ethiopia</item>
+        <item>Faeroe Islands</item>
+        <item>Falkland Islands</item>
+        <item>Fiji</item>
+        <item>Finland</item>
+        <item>Former Yugoslav Republic of Macedonia</item>
+        <item>France</item>
+        <item>French Guiana</item>
+        <item>French Polynesia</item>
+        <item>French Southern Territories</item>
+        <item>Gabon</item>
+        <item>Georgia</item>
+        <item>Germany</item>
+        <item>Ghana</item>
+        <item>Gibraltar</item>
+        <item>Greece</item>
+        <item>Greenland</item>
+        <item>Grenada</item>
+        <item>Guadeloupe</item>
+        <item>Guam</item>
+        <item>Guatemala</item>
+        <item>Guinea</item>
+        <item>Guinea-Bissau</item>
+        <item>Guyana</item>
+        <item>Haiti</item>
+        <item>Heard Island and McDonald Islands</item>
+        <item>Honduras</item>
+        <item>Hong Kong</item>
+        <item>Hungary</item>
+        <item>Iceland</item>
+        <item>India</item>
+        <item>Indonesia</item>
+        <item>Iran</item>
+        <item>Iraq</item>
+        <item>Ireland</item>
+        <item>Israel</item>
+        <item>Italy</item>
+        <item>Jamaica</item>
+        <item>Japan</item>
+        <item>Jordan</item>
+        <item>Kazakhstan</item>
+        <item>Kenya</item>
+        <item>Kiribati</item>
+        <item>Kuwait</item>
+        <item>Kyrgyzstan</item>
+        <item>Laos</item>
+        <item>Latvia</item>
+        <item>Lebanon</item>
+        <item>Lesotho</item>
+        <item>Liberia</item>
+        <item>Libya</item>
+        <item>Liechtenstein</item>
+        <item>Lithuania</item>
+        <item>Luxembourg</item>
+        <item>Macau</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Malaysia</item>
+        <item>Maldives</item>
+        <item>Mali</item>
+        <item>Malta</item>
+        <item>Marshall Islands</item>
+        <item>Martinique</item>
+        <item>Mauritania</item>
+        <item>Mauritius</item>
+        <item>Mayotte</item>
+        <item>Mexico</item>
+        <item>Micronesia</item>
+        <item>Moldova</item>
+        <item>Monaco</item>
+        <item>Mongolia</item>
+        <item>Montserrat</item>
+        <item>Morocco</item>
+        <item>Mozambique</item>
+        <item>Myanmar</item>
+        <item>Namibia</item>
+        <item>Nauru</item>
+        <item>Nepal</item>
+        <item>Netherlands</item>
+        <item>Netherlands Antilles</item>
+        <item>New Caledonia</item>
+        <item>New Zealand</item>
+        <item>Nicaragua</item>
+        <item>Niger</item>
+        <item>Nigeria</item>
+        <item>Niue</item>
+        <item>Norfolk Island</item>
+        <item>North Korea</item>
+        <item>Northern Marianas</item>
+        <item>Norway</item>
+        <item>Oman</item>
+        <item>Pakistan</item>
+        <item>Palau</item>
+        <item>Panama</item>
+        <item>Papua New Guinea</item>
+        <item>Paraguay</item>
+        <item>Peru</item>
+        <item>Philippines</item>
+        <item>Pitcairn Islands</item>
+        <item>Poland</item>
+        <item>Portugal</item>
+        <item>Puerto Rico</item>
+        <item>Qatar</item>
+        <item>Reunion</item>
+        <item>Romania</item>
+        <item>Russia</item>
+        <item>Rwanda</item>
+        <item>Sqo Tome and Principe</item>
+        <item>Saint Helena</item>
+        <item>Saint Kitts and Nevis</item>
+        <item>Saint Lucia</item>
+        <item>Saint Pierre and Miquelon</item>
+        <item>Saint Vincent and the Grenadines</item>
+        <item>Samoa</item>
+        <item>San Marino</item>
+        <item>Saudi Arabia</item>
+        <item>Senegal</item>
+        <item>Seychelles</item>
+        <item>Sierra Leone</item>
+        <item>Singapore</item>
+        <item>Slovakia</item>
+        <item>Slovenia</item>
+        <item>Solomon Islands</item>
+        <item>Somalia</item>
+        <item>South Africa</item>
+        <item>South Georgia and the South Sandwich Islands</item>
+        <item>South Korea</item>
+        <item>Spain</item>
+        <item>Sri Lanka</item>
+        <item>Sudan</item>
+        <item>Suriname</item>
+        <item>Svalbard and Jan Mayen</item>
+        <item>Swaziland</item>
+        <item>Sweden</item>
+        <item>Switzerland</item>
+        <item>Syria</item>
+        <item>Taiwan</item>
+        <item>Tajikistan</item>
+        <item>Tanzania</item>
+        <item>Thailand</item>
+        <item>The Bahamas</item>
+        <item>The Gambia</item>
+        <item>Togo</item>
+        <item>Tokelau</item>
+        <item>Tonga</item>
+        <item>Trinidad and Tobago</item>
+        <item>Tunisia</item>
+        <item>Turkey</item>
+        <item>Turkmenistan</item>
+        <item>Turks and Caicos Islands</item>
+        <item>Tuvalu</item>
+        <item>Virgin Islands</item>
+        <item>Uganda</item>
+        <item>Ukraine</item>
+        <item>United Arab Emirates</item>
+        <item>United Kingdom</item>
+        <item>United States</item>
+        <item>United States Minor Outlying Islands</item>
+        <item>Uruguay</item>
+        <item>Uzbekistan</item>
+        <item>Vanuatu</item>
+        <item>Vatican City</item>
+        <item>Venezuela</item>
+        <item>Vietnam</item>
+        <item>Wallis and Futuna</item>
+        <item>Western Sahara</item>
+        <item>Yemen</item>
+        <item>Yugoslavia</item>
+        <item>Zambia</item>
+        <item>Zimbabwe</item>
+    </string-array>
+    <string-array name="ct_scan_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="delay">
+        <item>10000</item>
+        <item>30000</item>
+        <item>60000</item>
+    </string-array>
+    <string-array name="delay_summary">
+        <item>Short (10 sec)</item>
+        <item>Medium (30 sec)</item>
+        <item>Long (1 min)</item>
+    </string-array>
+    <string-array name="diagnosis_options">
+        <item>Pulmonary</item>
+        <item>Extra-Pulmonary</item>
+    </string-array>
+    <string-array name="duration_modifiers">
+        <item>Day(s)</item>
+        <item>Week(s)</item>
+        <item>Month(s)</item>
+        <item>Year(s)</item>
+    </string-array>
+    <string-array name="esr_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="ethnicity_options">
+        <item>Sindhi</item>
+        <item>Muhajir</item>
+        <item>Pakthoon</item>
+        <item>Punjabi</item>
+        <item>Balochi</item>
+        <item>Bengali</item>
+        <item>Bihari</item>
+        <item>Memon</item>
+        <item>Gujrati</item>
+        <item>Brohi</item>
+        <item>Hindko</item>
+        <item>Saraiki</item>
+        <item>Jadgal</item>
+        <item>Kathiawari</item>
+        <item>Other Ethnicity</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    <string-array name="facility">
+        <item>@string/dhaka_mc</item>
+        <item>@string/salimulla_mc</item>
+        <item>@string/shishu_mc</item>
+        <item>@string/ich_hospital</item>
+        <item>@string/ich_matuail</item>
+        <item>@string/mag_college</item>
+    </string-array>
+    <string-array name="family_members">
+        <item>@string/mother</item>
+        <item>@string/father</item>
+        <item>@string/sister</item>
+        <item>@string/brother</item>
+        <item>@string/grandfather</item>
+        <item>@string/grandmother</item>
+        <item>@string/uncle</item>
+        <item>@string/aunt</item>
+        <item>@string/other</item>
+    </string-array>
+    <string-array name="feedback_types">
+        <item>Complaint</item>
+        <item>Suggestion</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="fever_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+
+    </string-array>
+    <string-array name="form_of_tb_list">
+        <item>@string/susceptible_tb</item>
+        <item>@string/mdr_tb</item>
+        <item>@string/pdr_tb</item>
+        <item>@string/mono_drug_resistant_tb</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="four_options">
+        <item>No</item>
+        <item>Yes</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    <string-array name="four_options_with_poor">
+        <item>OK</item>
+        <item>Poor</item>
+        <item>Unknown</item>
+        <item>Refused</item>
+    </string-array>
+    <string-array name="frequency">
+        <item>Never</item>
+        <item>Hardly ever</item>
+        <item>A few times</item>
+        <item>Several times</item>
+        <item>Many times</item>
+        <item>A Great many times</item>
+        <item>Almost all the time</item>
+        <item>Refuse</item>
+    </string-array>
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="histopathology_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="indexCase_diagnosis_options">
+        <item>@string/ptb</item>
+        <item>@string/eptb</item>
+    </string-array>
+    <string-array name="index_patient_types">
+        <item>TBR4 Patient</item>
+        <item>Private Patient</item>
+    </string-array>
+    <string-array name="language">
+        <item>bn - Bengali</item>
+        <item>en - English</item>
+        <item>in - Bahasa</item>
+        <item>ur - Urdu</item>
+    </string-array>
+    <string-array name="lymph_node_examination_list">
+        <item>@string/suggestive_tb</item>
+        <item>@string/strongly_suggestive_tb</item>
+        <item>@string/not_suggestive_tb</item>
+    </string-array>
+    <string-array name="mantoux_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="marital_options">
+		<item>Single</item>
+		<item>Married</item>
+		<item>Divorced</item>
+		<item>Widow</item>
+		<item>Refused</item>
+		<item>Child</item>
+	</string-array>
+    <string-array name="night_sweats_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="options">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+    <string-array name="outcome_code_options">
+        <item>@string/ds_tb</item>
+        <item>@string/healthy</item>
+        <item>@string/other_disease</item>
+        <item>@string/eligible_for_ipt</item>
+        <item>@string/did_not_come</item>
+    </string-array>
+    <string-array name="playfulness_option">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/less_than_before</item>
+    </string-array>
+    <string-array name="presumptive_tb_case_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="probable_diagnosis_list">
+        <item>@string/not_tb_presumptive</item>
+        <item>@string/bt_presumptive_confirmed</item>
+    </string-array>
+    <string-array name="reason_for_followup_options">
+        <item>@string/referred_to_another_facility</item>
+        <item>@string/cured</item>
+        <item>@string/treatment_completed</item>
+        <item>@string/treatment_failure</item>
+        <item>@string/moved_out_of_area</item>
+        <item>@string/Died</item>
+        <item>@string/transfer_out</item>
+        <item>@string/loss_to_followup</item>
+        <item>@string/other</item>
+    </string-array>
+    <string-array name="screened_before_options">
+       <item>@string/yes</item>
+       <item>@string/no</item>
+       <item>@string/do_not_know</item>
+       <item>@string/refused</item>
+
+   </string-array>
+    <string-array name="screening_types">
+        <item>OPD Screening</item>
+        <item>Field Screening</item>
+    </string-array>
+    <string-array name="smear_microscopy_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="smoking_confirmation_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="symptoms_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="tables">
+        <item>CREATE TABLE IF NOT EXISTS identifiers (
+            id INT NOT NULL UNIQUE COLLATE NOCASE, 
+            type TEXT NOT NULL COLLATE NOCASE, 
+            name TEXT NOT NULL COLLATE NOCASE,
+            PRIMARY KEY (id, type))
+		</item>
+		<item>CREATE TABLE IF NOT EXISTS forms (
+            form_date DATETIME,
+            timestamp DATETIME NOT NULL,
+            form TEXT NOT NULL COLLATE NOCASE,
+            content TEXT NOT NULL COLLATE NOCASE,
+            obs TEXT NOT NULL COLLATE NOCASE)
+		</item>
+		<item>CREATE TABLE IF NOT EXISTS offline_forms (
+            timestamp DATETIME NOT NULL,
+		    username TEXT NOT NULL COLLATE NOCASE,
+            form TEXT NOT NULL COLLATE NOCASE,
+            json TEXT NOT NULL COLLATE NOCASE, 
+            PRIMARY KEY (timestamp))
+		</item>
+	</string-array>
+    <string-array name="tb_forms">
+        <item>Susceptible TB</item>
+        <item>DR-TB</item>
+        <item>Do not Know</item>
+        <item>Refused</item>
+    </string-array>
+    <string-array name="tb_treatment_options">
+        <item>Less than 1 month</item>
+        <item>More than 1 month</item>
+    </string-array>
+    <string-array name="tb_types">
+        <item>Pulmonary</item>
+        <item>Extra-Pulmonary</item>
+        <item>Do not Know</item>
+        <item>Refused</item>
+    </string-array>
+    <string-array name="test_advised_list">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="three_options">
+        <item>No</item>
+        <item>Yes</item>
+        <item>Not Applicable</item>
+    </string-array>
+    <string-array name="towns">
+        <item>Default Town</item>
+        <item>Baldia Town</item>
+        <item>Bin Qasim Town</item>
+        <item>Gadap Town</item>
+        <item>Gulberg Town</item>
+        <item>Gulshan-e-Iqbal Town</item>
+        <item>Jamshed Town</item>
+        <item>Kimari Town</item>
+        <item>Korangi Town</item>
+        <item>Landhi Town</item>
+        <item>Liaquatabad Town</item>
+        <item>Lyari Town</item>
+        <item>Malir Town</item>
+        <item>New Karachi Town</item>
+        <item>North Nazimabad Town</item>
+        <item>Orangi Town</item>
+        <item>Saddar Town</item>
+        <item>Shah Faisal Town</item>
+        <item>S.I.T.E Town</item>
+    </string-array>
+    <string-array name="tracing_strategies">
+        <item>Contact Tracing</item>
+        <item>Reverse Contact Tracing</item>
+    </string-array>
+    <string-array name="two_options">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+    <string-array name="type_of_tb_list">
+        <item>@string/pulmonary</item>
+        <item>@string/extra_pulmonary</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+
+    </string-array>
+    <string-array name="ultrasound_abdomen_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="unable_to_bring_family_options">
+        <item>Children Unavailable in Morning</item>
+        <item>Problems at Work</item>
+        <item>Busy with Household Work</item>
+        <item>Lack of Conveyance Charges</item>
+        <item>My Family is Well and Asymptomtic</item>
+        <item>Distant from Facility</item>
+        <item>Other Reason</item>
+    </string-array>
+    <string-array name="visit_type_options">
+        <item>Clinical Visit</item>
+        <item>Home Visit</item>
+    </string-array>
+    <string-array name="weight_loss_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="weight_percentile_list">
+        <item>@string/less_then_or_equal_5th_percentile</item>
+        <item>@string/six_less_then_or_equal_to_10th_percentile</item>
+        <item>@string/eleven_less_then_or_equal_to_25th_percentile</item>
+        <item>@string/twentySix_less_then_or_equal_to_50th_percentile</item>
+        <item>@string/greater_then_50th_percentile</item>
+    </string-array>
+    <string-array name="weight_percentile_options">
+        <item>&lt;=5th Percentile</item>
+		<item>6-&lt;=10th Percentile</item>
+		<item>11-&lt;=25th Percentile</item>
+        <item>26-&lt;=50th Percentile</item> 
+        <item>>50th Percentile</item>
+    </string-array>
+    <string-array name="xpert_mtb_rif_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <color name="Aqua">#00FFFF</color>
+    <color name="Aquamarine">#7FFFD4</color>
+    <color name="Azure">#F0FFFF</color>
+    <color name="Beige">#F5F5DC</color>
+    <color name="Black">#000000</color>
+    <color name="Blue">#0000FF</color>
+    <color name="Brown">#A52A2A</color>
+    <color name="Chocolate">#D2691E</color>
+    <color name="Coral">#FF7F50</color>
+    <color name="Crimson">#DC143C</color>
+    <color name="Cyan">#00FFFF</color>
+    <color name="DarkBlue">#00008B</color>
+    <color name="DarkCyan">#008B8B</color>
+    <color name="DarkGray">#A9A9A9</color>
+    <color name="DarkGreen">#006400</color>
+    <color name="DarkOrange">#FF8C00</color>
+    <color name="DarkRed">#8B0000</color>
+    <color name="Gold">#FFD700</color>
+    <color name="Green">#008000</color>
+    <color name="Grey">#808080</color>
+    <color name="HotPink">#FF69B4</color>
+    <color name="IRDBackground">#490A3D</color>
+    <color name="IRDHighlight">#A9A9A9</color>
+    <color name="IRDText">#9CA336</color>
+    <color name="IRDTitle">#F58220</color>
+    <color name="Indigo">#4B0082</color>
+    <color name="Ivory">#FFFFF0</color>
+    <color name="Khaki">#F0E68C</color>
+    <color name="LightBlue">#ADD8E6</color>
+    <color name="LightGreen">#90EE90</color>
+    <color name="LightGrey">#D3D3D3</color>
+    <color name="LightPink">#FFB6C1</color>
+    <color name="LightYellow">#FFFFE0</color>
+    <color name="Lime">#00FF00</color>
+    <color name="Magenta">#FF00FF</color>
+    <color name="Maroon">#800000</color>
+    <color name="MediumBlue">#0000CD</color>
+    <color name="Navy">#000080</color>
+    <color name="Olive">#808000</color>
+    <color name="Orange">#FFA500</color>
+    <color name="Pink">#FFC0CB</color>
+    <color name="Purple">#800080</color>
+    <color name="Red">#FF0000</color>
+    <color name="Salmon">#FA8072</color>
+    <color name="SeaGreen">#2E8B57</color>
+    <color name="Silver">#C0C0C0</color>
+    <color name="SkyBlue">#87CEEB</color>
+    <color name="Snow">#FFFAFA</color>
+    <color name="Tan">#D2B48C</color>
+    <color name="Teal">#008080</color>
+    <color name="Tomato">#FF6347</color>
+    <color name="Transparent">#00000000</color>
+    <color name="Violet">#EE82EE</color>
+    <color name="Wheat">#F5DEB3</color>
+    <color name="White">#FFFFFF</color>
+    <color name="WhiteSmoke">#F5F5F5</color>
+    <color name="Yellow">#FFFF00</color>
+    <dimen name="gigantic">52dp</dimen>
+    <dimen name="huge">40dp</dimen>
+    <dimen name="large">20dp</dimen>
+    <dimen name="medium">16dp</dimen>
+    <dimen name="micro">2dp</dimen>
+    <dimen name="small">12dp</dimen>
+    <dimen name="tiny">6dp</dimen>
+    <dimen name="xlarge">24dp</dimen>
+    <dimen name="xxlarge">32dp</dimen>
+    <string name="Age_modifier">Age Modifier</string>
+    <string name="Died">Died</string>
+    <string name="Please">please</string>
+    <string name="_child_cough">Does your child have Cough?</string>
+    <string name="_cough_weeks">How many weeks of cough?</string>
+    <string name="_fever">Fever </string>
+    <string name="_patient_id">ID assigned to the presumptive</string>
+    <string name="_weight">Weight loss?</string>
+    <string name="abdominal_exam">Abdominal Examination</string>
+    <string name="access_granted">Access granted, you have successfully logged in.</string>
+    <string name="addContact"><b> + </b></string>
+    <string name="address">Address</string>
+    <string name="address_hint">Complete Address</string>
+    <string name="adult_cough">Do you have Cough?</string>
+    <string name="adult_cough_duration">Duration of cough in Weeks	</string>
+    <string name="adult_family_member_tb">Currently does an adult family member have TB?</string>
+    <string name="adult_members_with_symptoms">Total Number of Adult Household Members with cough, fever, weight loss or night sweats</string>
+    <string name="adult_members_with_symptoms_hint">Enter total number</string>
+    <string name="adult_night_sweats">Have you had night sweats during the last 2 weeks?</string>
+    <string name="adult_reverse_contact_tracing">Adult Reverse Contact Tracing</string>
+    <string name="adult_screening">Adult Screening</string>
+    <string name="adult_weight_loss">Have you had unexplained weight loss during the last 2 weeks</string>
+    <string name="age">Age</string>
+    <string name="age_group">Age Group</string>
+    <string name="age_hint">Enter Age</string>
+    <string name="age_in_year">Age in years</string>
+    <string name="age_modifier">Age modifier</string>
+    <string name="app_name">ChildhoodTb</string>
+    <string name="appetite_decreased">Appetite</string>
+    <string name="aunt">Aunt</string>
+    <string name="authentication_error">Authentication failed! Please enter valid password/code</string>
+    <string name="blood_sugar_order">Blood Sugar Test Order</string>
+    <string name="blood_sugar_result">Blood Sugar Test Result</string>
+    <string name="brother">Brother</string>
+    <string name="bt_presumptive_confirmed">TB Presumptive confirmed</string>
+    <string name="cancel">Cancel</string>
+    <string name="chest_examination">Chest Examination</string>
+    <string name="chest_x_ray">Chest X-ray?</string>
+    <string name="child_appetite">Child\'s Appetite</string>
+    <string name="child_bcg_scar">Does the child have BCG scar?</string>
+    <string name="child_cough">Does your child have cough?</string>
+    <string name="child_cough_duration">What is the duration of cough?</string>
+    <string name="child_fever">Does your child have fever for more than 2 weeks?</string>
+    <string name="child_night_sweats">Does your child have night sweats?</string>
+    <string name="child_weight_loss">Does your child have unexplained weight loss?</string>
+    <string name="chw_hint">Enter CHW Id</string>
+    <string name="chw_id">CHW ID</string>
+    <string name="city">Address: City</string>
+    <string name="city_hint">Enter City</string>
+    <string name="clear">Clear</string>
+    <string name="client_suspect">TB Suspect</string>
+    <string name="clinical_evaluation">Clinical Evaluation</string>
+    <string name="clinical_visit_barriers">Clinical Visit Barriers</string>
+    <string name="close_form">Close this form?</string>
+    <string name="cnic">CNIC</string>
+    <string name="cnic_hint">Enter CNIC</string>
+    <string name="cnic_holder">Whose CNIC is this?</string>
+    <string name="colony">Colony</string>
+    <string name="colony_hint">Enter Name of Colony</string>
+    <string name="colony_name">Address: Colony Name</string>
+    <string name="colony_name_hint">Enter Colony Name</string>
+    <string name="concept_not_found">Concept not found in local database. Make sure your metadata is up-to-date</string>
+    <string name="conclusion">Does the child have history of contact with TB patient in the last two years?</string>
+    <string name="confirm_close">Are you sure you want to close this form? All unsaved changes will be lost.</string>
+    <string name="confirm_operation">This operation is irreversable. Are you sure you want to proceed?</string>
+    <string name="connection_successful">Connected to the server successfully.</string>
+    <string name="contact_appetite">Poor Appetite?</string>
+    <string name="contact_cough">Cough of cough of &lt; 2  weeks</string>
+    <string name="contact_cough_duration">How many weeks of cough?</string>
+    <string name="contact_fever">Fever?</string>
+    <string name="contact_history">Does the child has history of contact with TB patient over past 2 years?</string>
+    <string name="contact_history_adult">Do you have history of contact with TB patient over past 2 years?</string>
+    <string name="contact_investigator_name">Name of contact investigator</string>
+    <string name="contact_investigator_name_hint">Enter name of contact investigator</string>
+    <string name="contact_night_sweats">Night Sweats?</string>
+    <string name="contact_person_name">Contact Name</string>
+    <string name="contact_provided">Are you willing to provide your contact number?</string>
+    <string name="contact_tracing">Contact Tracing</string>
+    <string name="contact_tracing_category">Contact tracing category</string>
+    <string name="contact_tracing_strategy">Contact Tracing Strategy</string>
+    <string name="contact_weight_loss">Weight loss?</string>
+    <string name="cough">Cough</string>
+    <string name="cough_duration_options_hint">Select an option</string>
+    <string name="cough_productive">Do you have productive cough?</string>
+    <string name="cough_selection_hint">Select an option</string>
+    <string name="cough_weeks">Duration of cough in Weeks</string>
+    <string name="ct_scan">CT Scan</string>
+    <string name="ct_scan_area">CT Scan Area</string>
+    <string name="ct_scan_area_hint">Enter CT Scan Area</string>
+    <string name="cured">Cured</string>
+    <string name="customer_info">Client Information</string>
+    <string name="daily_report">Daily Summary</string>
+    <string name="data_access_error">Access to data failed! You may not have sufficient rights</string>
+    <string name="data_connection_error">Could not connect to Server! Please check your connection settings or contact Admin</string>
+    <string name="data_mismatch">Data or value(s) did not match!</string>
+    <string name="date_of_birth">Date of Birth:</string>
+    <string name="date_report">Forms by Date</string>
+    <string name="day">Day(s)</string>
+    <string name="delete_error">Error in deleting data. Some other data may be dependent on the item you want to delete</string>
+    <string name="delete_forms">Are you sure you want to delete all forms saved on phone?</string>
+    <string name="deleted">Data deleted successfully.</string>
+    <string name="designation_contact_investigator">Designation of contact investigator</string>
+    <string name="designation_contact_investigator_hint">Enter designation of contact investigator</string>
+    <string name="dhaka_mc">Dhaka Medical College</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="did_not_come">Did not come</string>
+    <string name="discard_forms">Discard Forms</string>
+    <string name="do_not_know">Do not know</string>
+    <string name="dob">Date of Birth</string>
+    <string name="dot_dot_dot">...</string>
+    <string name="dot_provider_designation">Designation of DOT provider</string>
+    <string name="dot_provider_designation_hint">Enter designation of DOT provider</string>
+    <string name="dot_provider_name">Name of DOT provider</string>
+    <string name="dot_provider_name_hint">Enter name of DOT provider</string>
+    <string name="dot_provider_phone_no">Phone no of DOT Provider</string>
+    <string name="dot_provider_phone_no_hint">Enter Phone no of DOT Provider</string>
+    <string name="dots_center_name">Name of DOTS center</string>
+    <string name="dots_center_name_hint">Enter DOTS center name</string>
+    <string name="drug_dispersal">Drug Dispersal</string>
+    <string name="ds_tb">DS TB</string>
+    <string name="ds_tb_reg_no">DS TB Reg No.</string>
+    <string name="ds_tb_reg_no_hint">Enter DS TB Reg No.</string>
+    <string name="duplication">Duplication error! Another copy of the same data or ID already exists</string>
+    <string name="eleven_less_then_or_equal_to_25th_percentile">11-&lt;=25th Percentile</string>
+    <string name="eligible_for_ipt">Eligible for IPT</string>
+    <string name="empty_data">Empty data! Please fill in the required field(s)</string>
+    <string name="empty_selection">At least one option must be selected form the list</string>
+    <string name="empty_string"/>
+    <string name="end_follow_up">End of Follow Up</string>
+    <string name="eptb">EPTB</string>
+    <string name="error_title">Error!</string>
+    <string name="esr">ESR</string>
+    <string name="ethnicity">Ethnicity</string>
+    <string name="exit">Exit</string>
+    <string name="exit_application">Exit Application</string>
+    <string name="exit_operation">Please specify whether you want to Log out or exit without logging out.</string>
+    <string name="exposure_score">Exposure Score</string>
+    <string name="exposure_score_hint">Enter Exposure Score</string>
+    <string name="exposure_value"/>
+    <string name="extra_pulmonary">Extra-Pulmonary</string>
+    <string name="family_screening">Were you asked by program team to bring family for screening?</string>
+    <string name="father">Father</string>
+    <string name="father_husband_name">Suspect\'s Father\'s Name/Husband\'s Name</string>
+    <string name="father_husband_name_hint">Enter Name</string>
+    <string name="father_in_law_name">Suspect\'s Grandfather\'s Name/Father-in-Law\'s Name</string>
+    <string name="father_in_law_name_hint">Enter Name</string>
+    <string name="feedback">Feedback</string>
+    <string name="feedback_hint">Enter details.\nPlease be short and precise</string>
+    <string name="feedback_type">Feedback Type</string>
+    <string name="female">Female</string>
+    <string name="fever_week">Fever more than two weeks?</string>
+    <string name="fever_weeks">Have you had fever in the last two weeks?</string>
+    <string name="first_name">First Name</string>
+    <string name="first_name_hint">Enter First Name</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="form_closing">Closing this form</string>
+    <string name="form_date">Form Date</string>
+    <string name="form_of_tb">What form of TB does this family member have?</string>
+    <string name="form_unavailable">This Form/Report is not available right now</string>
+    <string name="forms">Forms</string>
+    <string name="gender">Gender</string>
+    <string name="goto_first">&lt;&lt;</string>
+    <string name="goto_last">>></string>
+    <string name="grandfather">Grandfather</string>
+    <string name="grandmother">Grandmother</string>
+    <string name="greater_then_50th_percentile">>50th Percentile</string>
+    <string name="healthy">Healthy</string>
+    <string name="histopathology">Histopathology</string>
+    <string name="histopathology_sample">Site for histopathology sample</string>
+    <string name="histopathology_sample_hint">Enter Site for histopathology sample</string>
+    <string name="house_number">Address: House number</string>
+    <string name="house_number_hint">Enter House Number</string>
+    <string name="http_port">80</string>
+    <string name="https_port">443</string>
+    <string name="ich_hospital">Institute of Child Health and Shishu Shastho Foundation Hospital Mirpur</string>
+    <string name="ich_matuail">Institute of Child and Mother Health Matuail</string>
+    <string name="incomplete_operation">Incomplete operation error! Patient created but encounter and observations were not saved</string>
+    <string name="indexCase_diagnosis">Index Case Diagnosis</string>
+    <string name="index_case_id">Index Case ID</string>
+    <string name="index_case_id_hint">Enter Index Case ID</string>
+    <string name="index_district_number">Index case District TB Number</string>
+    <string name="index_district_number_hint">Enter Index District TB Number</string>
+    <string name="index_patient_type">Index Patient Type</string>
+    <string name="indexcase_tb_registration_number">Index Case TB Registration number</string>
+    <string name="indexcase_tb_registration_number_hint">Enter index Case TB Registration number</string>
+    <string name="insert_error">Error in inserting data. Please make sure you are not violating validation rules</string>
+    <string name="inserted">"Data inserted successfully."</string>
+    <string name="invalid_data">Invalid value(s)! Please make sure your input is in correct format</string>
+    <string name="invalid_date_or_time">Date or Time is invalid. Make sure you have entered appropriate date/time</string>
+    <string name="invalid_future_date">Invalid Date,Future date are not Allowed</string>
+    <string name="item_not_found">No data was found matching the criteria</string>
+    <string name="joint_spine_swelling">Joint/Spine swelling of greater than 2 weeks?</string>
+    <string name="landmark">Address: Landmark</string>
+    <string name="landmark_hint">Enter Landmark</string>
+    <string name="last_name">Last Name</string>
+    <string name="last_name_hint">Enter Last Name</string>
+    <string name="less_than_before">Less than before</string>
+    <string name="less_then_or_equal_5th_percentile">&lt;=5th Percentile</string>
+    <string name="less_then_two_Weeks">Less than 2 Weeks</string>
+    <string name="loading_message">Saving trees..</string>
+    <string name="location">Site</string>
+    <string name="location_hint">Enter 2 digit ID</string>
+    <string name="login">Login</string>
+    <string name="login_name">User Name</string>
+    <string name="login_name_hint">Enter your user name</string>
+    <string name="logout">Log out</string>
+    <string name="loss_to_followup">Loss to Follow-up</string>
+    <string name="lymph_node_exam">Lymph Node Examination</string>
+    <string name="lymph_node_swelling">Lymph node swelling of greater than 2 weeks?</string>
+    <string name="mag_college">MAG Osmani Medical College Sylhet</string>
+    <string name="male">Male</string>
+    <string name="mantoux">Mantoux (TST, PPD, TB Skin test)?</string>
+    <string name="marital_status">Marital Status</string>
+    <string name="mdr_tb">MDR-TB</string>
+    <string name="member_family_tb">Which member of the family has TB?</string>
+    <string name="member_tb_form">What form of TB does this family member have?</string>
+    <string name="member_tb_type">What type of TB does this family member have?</string>
+    <string name="menu_settings">Settings</string>
+    <string name="mono_drug_resistant_tb">Mono-Drug Resistant TB</string>
+    <string name="month">Month(s)</string>
+    <string name="more_than_one_source_case">Is there more than one source case in child\'s household?</string>
+    <string name="more_than_three_weeks">More than 3 Weeks</string>
+    <string name="more_then_three_weeks">More than 3 Weeks</string>
+    <string name="mother">Mother</string>
+    <string name="mother_name">Presumptive Mother Name</string>
+    <string name="mother_name_hint">Enter Mother Name</string>
+    <string name="moved_out_of_area">Moved out of area</string>
+    <string name="multi_select_hint">Choose one or more</string>
+    <string name="name_hint">Enter Name</string>
+    <string name="names_adult_symptomatic_members">Names of Adult Symptomatic household members</string>
+    <string name="names_adult_symptomatic_members_hint">Enter names separately</string>
+    <string name="names_paediatric_symptomatic_members">Names of Paediatric Symptomatic household members</string>
+    <string name="names_paediatric_symptomatic_members_hint">Enter names separately</string>
+    <string name="night_sweats">Night Sweats?</string>
+    <string name="no">No</string>
+    <string name="non_pulmonary_suspect">Non-Pulmonary Suspect</string>
+    <string name="non_suspect">This person was not marked as a Suspect. In order to save this form, you must mark the person as a suspect and assign a valid Patient ID</string>
+    <string name="not_suggestive_tb">Not Suggestive of TB</string>
+    <string name="not_tb_presumptive">Not a TB Presumptive</string>
+    <string name="number_of_contact_person">Please Select the Number of Contact person</string>
+    <string name="offline">Work Offline</string>
+    <string name="offline_forms">Some saved forms are waiting your attention</string>
+    <string name="ok">Ok</string>
+    <string name="operation_cancelled">Operation cancelled</string>
+    <string name="operation_successful">Request has been processed by the server successfully.</string>
+    <string name="option_hint">Select an option</string>
+    <string name="other">Other</string>
+    <string name="other_disease">Other Disease</string>
+    <string name="other_exam">Other examination</string>
+    <string name="other_exam_hint">Enter other examination, if any</string>
+    <string name="other_facility_hint">Enter other facility name</string>
+    <string name="other_facility_name">Other facility name</string>
+    <string name="other_hint">Enter other reason</string>
+    <string name="others">Others</string>
+    <string name="others_hint">Others hint</string>
+    <string name="out_of_range">Value out of range!</string>
+    <string name="outcome_code">Outcome Code</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="owner_name_hint">Enter Owner\'s Name</string>
+    <string name="paediatric_contact_investigation_facility">Paediatric Contact investigation</string>
+    <string name="paediatric_contact_tracing">Paediatric Contact Tracing</string>
+    <string name="paediatric_home_contact_tracing">Paediatric Home Contact Tracing</string>
+    <string name="paediatric_members_with_symptoms">Total Number of Paediatric Household Members with cough, fever, weight loss or night sweats</string>
+    <string name="paediatric_members_with_symptoms_hint">Enter total numbers</string>
+    <string name="paediatric_presumptive_form">Paediatric Presumptive</string>
+    <string name="paediatric_screening">Pediatrics Screening</string>
+    <string name="paediatric_screening_form">Paediatric Screening</string>
+    <string name="parameter_missing">One or more Parameters are invalid or missing. Please make sure you have defined valid parameters</string>
+    <string name="parsing_error">Data cannot be parsed. Please make sure data is in valid format</string>
+    <string name="passcode">Short Password</string>
+    <string name="passcode_hint">Enter first 4 characters of password</string>
+    <string name="password">Password</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="patient_id">Patient ID</string>
+    <string name="patient_id_hint">Enter ID (12 characters)</string>
+    <string name="patient_id_missing">Patient ID does not exist. Please make sure you have entered correct Patient ID</string>
+    <string name="patient_registration">Patient Registration</string>
+    <string name="patients">Patients</string>
+    <string name="patients_not_found">No Patients were found matching given parameters</string>
+    <string name="pdr_tb">PDR-TB</string>
+    <string name="performance">Performance</string>
+    <string name="phone1">Phone Number 1</string>
+    <string name="phone1_hint">Enter Phone Number 1</string>
+    <string name="phone2">Phone Number 2</string>
+    <string name="phone2_hint">Enter Phone Number 2</string>
+    <string name="phone_No">Phone No</string>
+    <string name="phone_hint">Enter Phone Number</string>
+    <string name="playfulness">playfulness?</string>
+    <string name="poor">Poor</string>
+    <string name="poor_appetite">Poor Appetite?</string>
+    <string name="positive_report">In possession of a previous positive report?</string>
+    <string name="ppa_score">PPA Score</string>
+    <string name="ppa_score_hint">Enter PPA score</string>
+    <string name="presumptive_first_name">Presumptive First Name</string>
+    <string name="presumptive_tb_case">Is the child a presumptive TB case?</string>
+    <string name="primary_phone">Phone 1</string>
+    <string name="primary_phone_hint">Enter Phone Number</string>
+    <string name="private_patient">Private Patient</string>
+    <string name="probable_diagnosis">Probable diagnosis</string>
+    <string name="ptb">PTB</string>
+    <string name="pulmonary">Pulmonary</string>
+    <string name="reason_for_end_to_followup">Reason for end of follow-up</string>
+    <string name="reason_loss_followup_hint">Enter reason for loss to Follow-up</string>
+    <string name="reason_loss_to_followup">Reason for loss to follow-up</string>
+    <string name="refer">Refer</string>
+    <string name="refer_hint">Enter Refer</string>
+    <string name="referred_to_another_facility"> Referred to another facility before enrollment</string>
+    <string name="refresh_database">Refresh Database</string>
+    <string name="refused">Refused</string>
+    <string name="remarks">Remarks</string>
+    <string name="remarks_hint">Enter Remarks</string>
+    <string name="reporting">Reports</string>
+    <string name="reverse_contact_tracing">Reverse Contact Tracing</string>
+    <string name="salimulla_mc">Salimulla Medical College</string>
+    <string name="save">Save</string>
+    <string name="saved_forms">Saved Forms</string>
+    <string name="scan_barcode">Scan Barcode</string>
+    <string name="screened_before">Were screened in the last 2 weeks</string>
+    <string name="screening">Lung Health Screen</string>
+    <string name="screening_facility">Screening Facility</string>
+    <string name="screening_report">Screening Report</string>
+    <string name="screening_type">Screening Type</string>
+    <string name="search_again">Search Again</string>
+    <string name="search_patients">Search..</string>
+    <string name="secondary_phone">Phone 2</string>
+    <string name="secondary_phone_hint">Enter Secondary Phone Number</string>
+    <string name="self_owned">Is this phone self-owned?</string>
+    <string name="server">Server Address</string>
+    <string name="server_address">202.141.249.106:6811</string>
+    <string name="session_expired">Session expired! Please re-login to continue operation</string>
+    <string name="session_renewed">Session has been renewed.</string>
+    <string name="shishu_mc">Shishu Hospital</string>
+    <string name="show_saved_forms">Show Forms</string>
+    <string name="similar_form_submitted">This form has already been submitted for same ID/code</string>
+    <string name="sister">Sister</string>
+    <string name="six_less_then_or_equal_to_10th_percentile">6-&lt;=10th Percentile</string>
+    <string name="smear_microscopy">Smear Microscopy?</string>
+    <string name="smoking_confirmation_at_home">Does anybody at home smoke cigarette?</string>
+    <string name="source_case_coughing">Is the source case coughing?</string>
+    <string name="source_case_live_same_household">Does the source case live in the same household?</string>
+    <string name="source_case_mother">Is the source case child\'s mother?</string>
+    <string name="source_case_positive_sputum_smear">Does the source case have positive sputum smear?</string>
+    <string name="source_case_primary_care_giver">Is the source case child\'s primary care giver?</string>
+    <string name="source_case_pulmonary_tb">Does the source case have pulmonary TB?</string>
+    <string name="source_case_see_child_everyday">Does the source case see the child everyday?</string>
+    <string name="source_case_sleep_same_bed">Does the source case sleep in the same bed as the child?</string>
+    <string name="source_case_sleep_same_room">Does the source case sleep in the same room as the child?</string>
+    <string name="specify_owner">Specify Owner</string>
+    <string name="sputum_smear_positive_tb">Do they have sputum smear positive TB?</string>
+    <string name="street_name">Address: Street Name/Number</string>
+    <string name="street_name_hint">Enter Street Name/Number</string>
+    <string name="strongly_suggestive_tb">Strongly Suggestive of TB </string>
+    <string name="submit_forms">Check the saved forms you want to submit.</string>
+    <string name="submit_saved_forms">Submit Saved Forms</string>
+    <string name="suggestive_tb">Suggestive of TB</string>
+    <string name="support_contact">03453174270</string>
+    <string name="support_email">irddmu2013@gmail.com</string>
+    <string name="susceptible_tb">Susceptible TB</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="tb_before">Have you ever had TB before?</string>
+    <string name="tb_in_family">Currently does an adult family member have TB?</string>
+    <string name="tb_medication">Have you ever taken medication for TB that lasted or was supposed to last for 6/8 months?</string>
+    <string name="tb_screening">TB Screening</string>
+    <string name="tbr4pk_patient">TBR4 Patient</string>
+    <string name="test_advised">Test advised</string>
+    <string name="test_indication">Test Indication</string>
+    <string name="test_indication_button">Test Indication</string>
+    <string name="text_copied">Patient ID copied..</string>
+    <string name="total_adult_contacts_screened">Number of Adult Contacts Screened</string>
+    <string name="total_adult_contacts_screened_hint">Enter count</string>
+    <string name="total_adult_household_members">Total Number of Adult Household Members</string>
+    <string name="total_adult_household_members_hint">Enter total number of adult household members</string>
+    <string name="total_household_members">Total Number of Household Members</string>
+    <string name="total_household_members_hint">Enter total number of household members</string>
+    <string name="total_household_members_with_symptoms">Total Number of Household Members with cough, fever, weigh loss or night sweats</string>
+    <string name="total_household_members_with_symptoms_hint">Enter total number</string>
+    <string name="total_members_count"/>
+    <string name="total_paediatric_contacts_screened">Number of Pediatric Contacts Screened</string>
+    <string name="total_paediatric_contacts_screened_hint">Enter count</string>
+    <string name="total_paediatric_household_members">Total Number of Paediatric Household Members</string>
+    <string name="total_paediatric_household_members_hint">Enter total number of Paediatric Household Members</string>
+    <string name="town">Address: Town</string>
+    <string name="town_hint">Enter Town</string>
+    <string name="transfer_out">Transfer out</string>
+    <string name="treatment_completed">Treatment completed</string>
+    <string name="treatment_failure">Treatment failure</string>
+    <string name="treatment_initiation_center">Treatment Initiation Center</string>
+    <string name="treatment_initiation_center_hint">Enter initial treatment center</string>
+    <string name="trust_store_password">jingle94</string>
+    <string name="twentySix_less_then_or_equal_to_50th_percentile">26-&lt;=50th Percentile</string>
+    <string name="two_to_three_Weeks">2 to 3 Weeks</string>
+    <string name="two_to_three_weeks">2 to 3 Weeks</string>
+    <string name="type_of_tb">What type of TB does this family member have?</string>
+    <string name="ultrasound_abdomen">Ultrasound Abdomen</string>
+    <string name="unable_to_bring_family">Why were you unable to bring family for screening?</string>
+    <string name="uncle">Uncle</string>
+    <string name="unknown">Unknown</string>
+    <string name="unknown_error">Unknown error! Please check error log for details</string>
+    <string name="update_error">Error in updating data. Please make sure you are not violating validation rules</string>
+    <string name="update_metadata">You are about to update the metadata. This operation may take a long time. Are you sure you want to continue?</string>
+    <string name="updated">Data updated successfully.</string>
+    <string name="use_secure">Use SSL/TLS</string>
+    <string name="user_not_found">User not found! Please enter correct user name</string>
+    <string name="user_role_undefined">User role not found or undefined! Please contact Administrator or select a different Role</string>
+    <string name="validateID">Validate Index Case ID</string>
+    <string name="visit_type">Type of Visit?</string>
+    <string name="week">Week(s)</string>
+    <string name="weight">Weight (Kg)</string>
+    <string name="weight_hint">Enter Weight (Kg)</string>
+    <string name="weight_loss">Unexplained weight loss?</string>
+    <string name="weight_percentile">Weight Percentile</string>
+    <string name="weight_percentile_options"/>
+    <string name="xpert_mtb_rif">Xpert MTB/RIF?</string>
+    <string name="year">Year(s)</string>
+    <string name="yes">Yes</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light"/>
+    <style name="BeigeTheme" parent="@style/DayTheme">
+        <item name="android:textColor">@color/Chocolate</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_beige</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+    <style name="CyanTheme" parent="@style/NightTheme">
+        <item name="android:textColor">@color/WhiteSmoke</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_cyan</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+    <style name="DayTheme" parent="@android:style/Theme.Light"/>
+    <style name="LemonTheme" parent="@style/DayTheme">
+        <item name="android:textColor">@color/Green</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_lemon</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+    <style name="NightTheme" parent="@android:style/Theme.Black"/>
+    <style name="OrangeTheme" parent="@style/DayTheme">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_orange</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+    <style name="WoodTheme" parent="@style/DayTheme">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:background">@drawable/custom_button_wood</item>
+        <item name="android:padding">@dimen/tiny</item>
+    </style>
+    <style name="button" parent="@style/global">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/xlarge</item>
+    </style>
+    <style name="edit" parent="@style/global">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/medium</item>
+    </style>
+    <style name="global" parent="@style/BeigeTheme">
+        <item name="android:textColorHint">@color/DarkGray</item>
+        <item name="android:textColorHighlight">@color/DarkGreen</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:textSize">@dimen/medium</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+    <style name="plain" parent="@style/DayTheme">
+        <item name="android:textColor">@color/Chocolate</item>
+        <item name="android:textColorHint">@color/DarkGray</item>
+        <item name="android:textColorHighlight">@color/DarkGreen</item>
+        <item name="android:checkboxStyle">@color/Chocolate</item>
+        <item name="android:textSize">@dimen/medium</item>
+    </style>
+    <style name="radio" parent="@style/plain">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="spinner" parent="@style/global">
+        <item name="android:background">@drawable/custom_spinner_beige</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/xlarge</item>
+    </style>
+    <style name="text" parent="@style/global">
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:background">@color/Transparent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/medium</item>
+    </style>
+</resources>

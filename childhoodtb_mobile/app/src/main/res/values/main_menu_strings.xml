@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi
+-->
+
+<resources>
+
+    <string name="submit_forms">Check the saved forms you want to submit.</string>
+    <string name="location">Site</string>
+    <string name="location_hint">Enter 2 digit ID</string>
+    <string name="tb_screening">TB Screening</string>
+    <string name="screening">Lung Health Screen</string>
+    <string name="paediatric_screening">Pediatrics Screening</string>
+    <string name="adult_screening">Adult Screening</string>
+    <string name="contact_tracing">Contact Tracing</string>
+    <string name="paediatric_contact_tracing">Paediatric Contact Tracing</string>
+    <string name="adult_reverse_contact_tracing">Adult Reverse Contact Tracing</string>
+    <string name="non_pulmonary_suspect">Non-Pulmonary Suspect</string>
+    <string name="customer_info">Client Information</string>
+    <string name="test_indication">Test Indication</string>
+    <string name="blood_sugar_order">Blood Sugar Test Order</string>
+    <string name="blood_sugar_result">Blood Sugar Test Result</string>
+    <string name="clinical_evaluation">Clinical Evaluation</string>
+    <string name="drug_dispersal">Drug Dispersal</string>
+    <string name="clinical_visit_barriers">Clinical Visit Barriers</string>
+    <string name="private_patient">Private Patient</string>
+    <string name="feedback">Feedback</string>
+    <string name="patient_registration">Patient Registration</string>
+    <string name="dot_dot_dot">...</string>
+
+    <!--new modification-->
+    <string name="paediatric_screening_form">Paediatric Screening</string>
+    <string name="paediatric_presumptive_form">Paediatric Presumptive</string>
+    <string name="paediatric_home_contact_tracing">Paediatric Home Contact Tracing</string>
+    <string name="paediatric_contact_investigation_facility">Paediatric Contact investigation</string>
+    <string name="end_follow_up">End of Follow Up</string>
+    <string name="test_indication_button">Test Indication</string>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+login_id/mainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/tiny" >
+
+    <TableRow
+        android:id="@+login_id/usernameTableRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/tiny" >
+
+        <TextView
+            android:id="@+login_id/textView1"
+            style="@style/text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_name"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+login_id/usernameEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:hint="@string/login_name_hint"
+            android:tag="@string/login_name"
+            android:textColor="@color/Chocolate"
+            android:textSize="@dimen/large"
+            android:typeface="monospace" >
+
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:id="@+login_id/passwordTableRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/tiny" >
+
+        <TextView
+            android:id="@+login_id/textView2"
+            style="@style/text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+login_id/passwordEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:tag="@string/password"
+            android:textColor="@color/Chocolate"
+            android:textSize="@dimen/large"
+            android:typeface="sans" />
+
+    </TableRow>
+
+    <Button
+        android:id="@+login_id/loginButton"
+        style="@style/button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login" />
+
+    <CheckBox
+        android:id="@+login_id/offlineCheckBox"
+        style="@style/plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/offline"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom" >
+
+        <FrameLayout
+            android:id="@+login_id/ihsLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="0.33"
+            android:background="@drawable/ihs_logo"
+            android:clickable="true" >
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+login_id/irdLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="0.33"
+            android:background="@drawable/ird_logo"
+            android:clickable="true" >
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+login_id/openmrsLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="0.33"
+            android:background="@drawable/openmrs_logo"
+            android:clickable="true" >
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</TableLayout>

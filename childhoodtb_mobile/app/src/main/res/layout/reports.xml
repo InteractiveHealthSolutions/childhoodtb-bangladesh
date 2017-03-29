@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+reports_id/screeningReportButton"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/screening_report" />
+
+    <Button
+        android:id="@+reports_id/dailyReportButton"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/daily_report" />
+
+    <Button
+        android:id="@+reports_id/formsByDateButton"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/date_report" />
+    
+    <Button
+        android:id="@+reports_id/performanceGraphButton"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/performance"
+        android:visibility="gone" />
+    
+    <Button
+        android:id="@+reports_id/savedFormsButton"
+        style="@style/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/saved_forms" />
+
+    <ScrollView
+        android:id="@+reports_id/resultsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioGroup
+            android:id="@+reports_id/reportsRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </RadioGroup>
+    </ScrollView>
+
+    <ListView
+        android:id="@+reports_id/savedFormsListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

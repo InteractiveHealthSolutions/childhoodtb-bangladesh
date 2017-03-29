@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="dots_center_name">Name of DOTS center</string>
+    <string name="dots_center_name_hint">Enter DOTS center name</string>
+    <string name="treatment_initiation_center">Treatment Initiation Center</string>
+    <string name="treatment_initiation_center_hint">Enter initial treatment center</string>
+    <string name="ds_tb_reg_no">DS TB Reg No.</string>
+    <string name="ds_tb_reg_no_hint">Enter DS TB Reg No.</string>
+    <string name="contact_investigator_name">Name of contact investigator</string>
+    <string name="contact_investigator_name_hint">Enter name of contact investigator</string>
+    <string name="designation_contact_investigator">Designation of contact investigator</string>
+    <string name="designation_contact_investigator_hint">Enter designation of contact investigator</string>
+    <string name="dot_provider_name">Name of DOT provider</string>
+    <string name="dot_provider_name_hint">Enter name of DOT provider</string>
+    <string name="dot_provider_designation">Designation of DOT provider</string>
+    <string name="dot_provider_designation_hint">Enter designation of DOT provider</string>
+    <string name="dot_provider_phone_no">Phone no of DOT Provider</string>
+    <string name="dot_provider_phone_no_hint">Enter Phone no of DOT Provider</string>
+    <string name="contact_person_name">Contact Name</string>
+    <!--Symptoms-->
+    <string-array name="symptoms_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <!--Outcome Code-->
+    <string-array name="outcome_code_options">
+        <item>@string/ds_tb</item>
+        <item>@string/healthy</item>
+        <item>@string/other_disease</item>
+        <item>@string/eligible_for_ipt</item>
+        <item>@string/did_not_come</item>
+    </string-array>
+
+    <string-array name="contact_person_options">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+</resources>

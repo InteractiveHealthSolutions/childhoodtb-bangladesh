@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program; if not, write to the Interactive Health Solutions, info@ihsinformatics.com
+You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html
+
+Interactive Health Solutions, hereby disclaims all copyright interest in this program written by the contributors.
+
+Contributors: Tahira Niazi -->
+
+<resources>
+    <string name="weight_percentile_options"></string>
+    <string name="contact_cough_duration">How many weeks of cough?</string>
+    <string name="contact_fever">Fever?</string>
+    <string name="contact_night_sweats">Night Sweats?</string>
+    <string name="contact_weight_loss">Weight loss?</string>
+    <string name="contact_appetite">Poor Appetite?</string>
+    <string name="other_exam_hint">Enter other examination, if any</string>
+    <string name="member_tb_form">What form of TB does this family member have?</string>
+    <string name="member_tb_type">What type of TB does this family member have?</string>
+    <string name="sputum_smear_positive_tb">Do they have sputum smear positive TB?</string>
+    <string name="exposure_score">Exposure Score</string>
+    <string name="exposure_value"></string>
+    <string name="ppa_score">PPA Score</string>
+    <string name="ppa_score_hint">Enter PPA score</string>
+    <string name="exposure_score_hint">Enter Exposure Score</string>
+    <string name="source_case_mother">Is the source case child\'s mother?</string>
+    <string name="source_case_primary_care_giver">Is the source case child\'s primary care giver?</string>
+    <string name="source_case_sleep_same_bed">Does the source case sleep in the same bed as the child?</string>
+    <string name="source_case_sleep_same_room">Does the source case sleep in the same room as the child?</string>
+    <string name="source_case_live_same_household">Does the source case live in the same household?</string>
+    <string name="source_case_see_child_everyday">Does the source case see the child everyday?</string>
+    <string name="source_case_coughing">Is the source case coughing?</string>
+    <string name="source_case_pulmonary_tb">Does the source case have pulmonary TB?</string>
+    <string name="source_case_positive_sputum_smear">Does the source case have positive sputum smear?</string>
+    <string name="more_than_one_source_case">Is there more than one source case in child\'s household?</string>
+    
+    
+    <string-array name="weight_percentile_options">
+        <item>&lt;=5th Percentile</item>
+		<item>6-&lt;=10th Percentile</item>
+		<item>11-&lt;=25th Percentile</item>
+        <item>26-&lt;=50th Percentile</item> 
+        <item>&gt;50th Percentile</item>
+    </string-array>
+    
+    <string-array name="chest_exam_options">
+        <item>Suggestive of TB</item>
+        <item>Strongly Suggestive of TB</item>
+        <item>Not Suggestive of TB</item>
+    </string-array>
+    
+
+    
+    <string-array name="tb_forms">
+        <item>Susceptible TB</item>
+        <item>DR-TB</item>
+        <item>Do not Know</item>
+        <item>Refused</item>
+    </string-array>
+    
+    <string-array name="tb_types">
+        <item>Pulmonary</item>
+        <item>Extra-Pulmonary</item>
+        <item>Do not Know</item>
+        <item>Refused</item>
+    </string-array>
+    
+    
+    
+    
+    
+</resources>

@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 10
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId 'com.ihsinformatics.childhoodtb_mobile'
+        minSdkVersion 10
+        targetSdkVersion 10
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    //compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.android.support:support-v4:23.0.1'
+    compile files('libs/bcprov-jdk15on-146.jar')
+    compile files('libs/graphview-3.1.jar')
+    compile files('libs/ZXing-2.1.jar')
+}
