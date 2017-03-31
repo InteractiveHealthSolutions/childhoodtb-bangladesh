@@ -598,6 +598,7 @@ public class MobileService {
 			JSONObject patientObj = new JSONObject();
 			patientObj.put("id", patient.getPatientId());
 			patientObj.put("name", patient.getPersonName().getFullName());
+			
 			json = patientObj.toString();
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -2557,7 +2558,7 @@ public class MobileService {
 			String encounterType = values.getString("encounter_type");
 			String formDate = values.getString("form_date");
 			Date encounterDatetime = DateTimeUtil.getDateFromString(formDate,
-					DateTimeUtil.SQL_DATE);
+					DateTimeUtil.DOB_FROMAT_DATE);
 			String encounterLocation = values.getString("encounter_location");
 			String provider = values.getString("provider");
 			JSONArray obs = new JSONArray(values.getString("obs"));

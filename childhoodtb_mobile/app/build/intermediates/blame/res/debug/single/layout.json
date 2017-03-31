@@ -1,30 +1,30 @@
 [
     {
-        "merged": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\graph_layout.xml",
-        "source": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\graph_layout.xml"
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\reports.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\reports.xml"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\reports.xml",
-        "source": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\reports.xml"
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\saved_forms.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\saved_forms.xml"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
-        "source": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\login.xml"
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main_menu.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\main_menu.xml"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main_menu.xml",
-        "source": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\main_menu.xml"
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\template.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\template.xml"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\patient_search.xml",
-        "source": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\patient_search.xml"
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\patient_search.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\patient_search.xml"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\template.xml",
-        "source": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\template.xml"
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\login.xml"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\saved_forms.xml",
-        "source": "C:\\Users\\Shujaat\\Documents\\WorkingData\\Projects\\ChildhoodTbMobileProject\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\saved_forms.xml"
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\graph_layout.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\graph_layout.xml"
     }
 ]

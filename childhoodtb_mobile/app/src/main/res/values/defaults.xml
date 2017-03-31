@@ -13,8 +13,8 @@ Interactive Health Solutions, hereby disclaims all copyright interest in this pr
 Contributors: Tahira Niazi -->
 
 <resources>
-    <string name="trust_store_password">jingle94</string>
-    <string name="server_address">202.141.249.106:6811</string>
+    <string name="trust_store_password">4845e7412f</string>
+    <string name="server_address">61.247.187.250:8443</string>
 <!-- 	<string name="server_address">"10.0.2.2:8080"</string> -->
     <string name="http_port">80</string>
     <string name="https_port">443</string>

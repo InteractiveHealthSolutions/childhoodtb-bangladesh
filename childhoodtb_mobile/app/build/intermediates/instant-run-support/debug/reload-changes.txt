@@ -1,3 +1,0 @@
-CHANGED,C:\Users\Shujaat\Documents\WorkingData\Projects\ChildhoodTbMobileProject\childhoodtb_mobile\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,C:\Users\Shujaat\Documents\WorkingData\Projects\ChildhoodTbMobileProject\childhoodtb_mobile\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ihsinformatics\childhoodtb_mobile\R$main_id$override.class
-CHANGED,C:\Users\Shujaat\Documents\WorkingData\Projects\ChildhoodTbMobileProject\childhoodtb_mobile\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\ihsinformatics\childhoodtb_mobile\MainMenuActivity$override.class

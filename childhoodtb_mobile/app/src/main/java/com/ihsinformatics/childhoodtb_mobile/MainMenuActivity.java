@@ -43,12 +43,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ihsinformatics.childhoodtb_mobile.NewActivity.EndFollowUpActivity;
-import com.ihsinformatics.childhoodtb_mobile.NewActivity.PaediatricContactTracingAtHomeActivity;
-import com.ihsinformatics.childhoodtb_mobile.NewActivity.PaediatricScreeningFormActivity;
-import com.ihsinformatics.childhoodtb_mobile.NewActivity.PaedsPresumptiveConfirmationActivity;
-import com.ihsinformatics.childhoodtb_mobile.NewActivity.PediatricContactInvestigationAtFacilityActivity;
-import com.ihsinformatics.childhoodtb_mobile.NewActivity.TestIndicationActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.EndFollowUpActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricContactTracingAtHomeActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningFormActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PediatricContactInvestigationAtFacilityActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TestIndicationActivity;
 import com.ihsinformatics.childhoodtb_mobile.model.OpenMrsObject;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.util.DatabaseUtil;
@@ -162,6 +162,8 @@ public class MainMenuActivity extends Activity implements IActivity,
             // drugDispersal.setEnabled (false);
             // patientGps.setEnabled (false);
             patientRegistration.setEnabled(false);
+            paedsPresumptiveConfirmationButton.setEnabled(false);
+
         }
         views = new View[]{locationTextView, selectLocations,
                 paediatricScreening, btnPaediatricScreenForm,paedsPresumptiveConfirmationButton,

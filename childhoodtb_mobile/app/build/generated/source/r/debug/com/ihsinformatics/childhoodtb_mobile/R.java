@@ -716,16 +716,17 @@ public final class R {
         public static final int user_not_found=0x7f0a0192;
         public static final int user_role_undefined=0x7f0a0193;
         public static final int validateID=0x7f0a0194;
-        public static final int visit_type=0x7f0a0195;
-        public static final int week=0x7f0a0196;
-        public static final int weight=0x7f0a0197;
-        public static final int weight_hint=0x7f0a0198;
-        public static final int weight_loss=0x7f0a0199;
-        public static final int weight_percentile=0x7f0a019a;
-        public static final int weight_percentile_options=0x7f0a019b;
-        public static final int xpert_mtb_rif=0x7f0a019c;
-        public static final int year=0x7f0a019d;
-        public static final int yes=0x7f0a019e;
+        public static final int validate_patient_id=0x7f0a0195;
+        public static final int visit_type=0x7f0a0196;
+        public static final int week=0x7f0a0197;
+        public static final int weight=0x7f0a0198;
+        public static final int weight_hint=0x7f0a0199;
+        public static final int weight_loss=0x7f0a019a;
+        public static final int weight_percentile=0x7f0a019b;
+        public static final int weight_percentile_options=0x7f0a019c;
+        public static final int xpert_mtb_rif=0x7f0a019d;
+        public static final int year=0x7f0a019e;
+        public static final int yes=0x7f0a019f;
     }
     public static final class style {
         public static final int AppBaseTheme=0x7f0b0000;

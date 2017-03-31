@@ -151,7 +151,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_paediatric"
+                android:drawableTop="@drawable/menu_screening"
                 android:tag="@string/paediatric_presumptive_form"
                 android:text="@string/paediatric_presumptive_form" />
 
@@ -160,7 +160,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_paediatric"
+                android:drawableTop="@drawable/menu_test_indication"
                 android:tag="@string/test_indication_button"
                 android:text="@string/test_indication_button"
 
@@ -184,7 +184,7 @@
                 android:drawableTop="@drawable/menu_paediatric"
                 android:tag="@string/paediatric_contact_investigation_facility"
                 android:text="@string/paediatric_contact_investigation_facility"
-
+                android:visibility="gone"
                 />
 
             <Button
@@ -195,7 +195,7 @@
                 android:drawableTop="@drawable/menu_paediatric"
                 android:tag="@string/end_follow_up"
                 android:text="@string/end_follow_up"
-
+                android:visibility="gone"
                 />
 
 
@@ -237,6 +237,7 @@
                 android:drawableTop="@drawable/menu_clinical_evaluation"
                 android:tag="@string/contact_tracing"
                 android:text="@string/contact_tracing"
+                android:visibility="gone"
                  />
 
             <Button
@@ -247,6 +248,7 @@
                 android:drawableTop="@drawable/menu_paediatric"
                 android:tag="@string/paediatric_contact_tracing"
                 android:text="@string/paediatric_contact_tracing"
+                android:visibility="gone"
                  />
 
             <Button
@@ -287,7 +289,7 @@
                 android:drawableTop="@drawable/menu_feedback"
                 android:tag="@string/customer_info"
                 android:text="@string/feedback"
-                android:visibility="gone" />
+                 />
         </LinearLayout>
     </ScrollView>
 

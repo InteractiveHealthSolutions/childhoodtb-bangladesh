@@ -26,6 +26,7 @@ import android.util.Log;
 
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.model.OpenMrsObject;
+import com.ihsinformatics.childhoodtb_mobile.model.PatientInformation;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.shared.Metadata;
 import com.ihsinformatics.childhoodtb_mobile.R;
@@ -201,11 +202,13 @@ public class ServerService {
             json.put("app_ver", App.getVersion());
             json.put("form_name", FormType.GET_USER);
             json.put("username", name);
+
+            Log.i("LogingData", "" + App.getVersion());
             String response = get("?content=" + JsonUtil.getEncodedJson(json));
 
             if (response != null) {
                 JSONObject userObj = JsonUtil.getJSONObject(response);
-                Log.i("LogingData", "" + userObj.toString());
+
                 ContentValues values = new ContentValues();
                 String userName = userObj.getString("name");
                 // If user is found, then save it into local DB
@@ -451,6 +454,7 @@ public class ServerService {
                     String name = jsonResponse.get("name").toString();
                     int age = jsonResponse.getInt("age");
                     String gen = jsonResponse.get("gender").toString();
+
                     JSONArray encounters = new JSONArray(jsonResponse.get(
                             "encounters").toString());
                     details = new String[encounters.length() + 3][];
@@ -475,6 +479,50 @@ public class ServerService {
         }
         return details;
     }
+
+    public ArrayList<PatientInformation> getPatientInformation(String patientId) {
+
+        String response = "";
+        ArrayList<PatientInformation> patientInfo;
+        String[][] details = null;
+
+        patientInfo  = new ArrayList<PatientInformation>();
+
+        JSONObject json = new JSONObject();
+        try {
+            json.put("app_ver", App.getVersion());
+            json.put("form_name", FormType.GET_PATIENT_DETAIL);
+            json.put("patient_id", patientId);
+            response = get("?content=" + JsonUtil.getEncodedJson(json));
+            if (response == null) {
+                return null;
+            }
+            JSONObject jsonResponse = JsonUtil.getJSONObject(response);
+            {
+                try {
+                    String name = jsonResponse.get("name").toString();
+                    int age = jsonResponse.getInt("age");
+                    String gen = jsonResponse.get("gender").toString();
+
+                    PatientInformation  patientInformation= new PatientInformation();
+                    patientInformation.setName(name);
+                    patientInformation.setAge(age);
+                    patientInformation.setGender(gen);
+
+                    patientInfo.add(patientInformation);
+
+                } catch (JSONException e) {
+                    Log.e(TAG, e.getMessage());
+                }
+            }
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage());
+        } catch (UnsupportedEncodingException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return patientInfo;
+    }
+
 
     // person detail for HCT Record Card auto-populate fields
     public String[][] getPersonDetail(String patientId) {
@@ -530,7 +578,7 @@ public class ServerService {
      * @param conceptName
      * @return
      */
-    public String[] getPatientObs(String patientId, String conceptName) {
+    public String[] getPatientObs(String patientId , String conceptName) {
         try {
             JSONObject json = new JSONObject();
             json.put("app_ver", App.getVersion());
@@ -605,8 +653,6 @@ public class ServerService {
             json.put("patient_id", patientId);
 
             JSONArray concepts = new JSONArray();
-            // JSONObject allConceptsJson = new JSONObject();
-            // allConceptsJson.put("conceptNames", conceptNames);
             for (int countConcepts = 0; countConcepts < conceptNames.length; countConcepts++) {
                 concepts.put(conceptNames[countConcepts]);
             }
@@ -1714,10 +1760,14 @@ public class ServerService {
         String location = values.getAsString("location");
         String formDate = values.getAsString("formDate");
         try {
-            String id = getPatientId(patientId);
-            if (id == null)
-                return context.getResources().getString(
-                        R.string.patient_id_missing);
+
+            if(!App.isOfflineMode()) {
+
+                String id = getPatientId(patientId);
+                if (id == null)
+                    return context.getResources().getString(
+                            R.string.patient_id_missing);
+            }
             // Save Patient
             JSONObject json = new JSONObject();
             json.put("app_ver", App.getVersion());
@@ -1740,6 +1790,14 @@ public class ServerService {
             json.put("encounter_location", location);
             json.put("provider", App.getUsername());
             json.put("obs", obs.toString());
+
+            // Save form locally if in offline mode
+            if (App.isOfflineMode()) {
+
+                saveOfflineForm(encounterType, json.toString());
+                return "SUCCESS";
+            }
+
             response = post("?content=" + JsonUtil.getEncodedJson(json));
             JSONObject jsonResponse = JsonUtil.getJSONObject(response);
             if (jsonResponse == null) {
@@ -2389,4 +2447,5 @@ public class ServerService {
 
    }
 
+    /* Get patient */
 }

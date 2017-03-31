@@ -1083,7 +1083,7 @@
     <string name="secondary_phone_hint">Enter Secondary Phone Number</string>
     <string name="self_owned">Is this phone self-owned?</string>
     <string name="server">Server Address</string>
-    <string name="server_address">202.141.249.106:6811</string>
+    <string name="server_address">61.247.187.250:8443</string>
     <string name="session_expired">Session expired! Please re-login to continue operation</string>
     <string name="session_renewed">Session has been renewed.</string>
     <string name="shishu_mc">Shishu Hospital</string>
@@ -1143,7 +1143,7 @@
     <string name="treatment_failure">Treatment failure</string>
     <string name="treatment_initiation_center">Treatment Initiation Center</string>
     <string name="treatment_initiation_center_hint">Enter initial treatment center</string>
-    <string name="trust_store_password">jingle94</string>
+    <string name="trust_store_password">4845e7412f</string>
     <string name="twentySix_less_then_or_equal_to_50th_percentile">26-&lt;=50th Percentile</string>
     <string name="two_to_three_Weeks">2 to 3 Weeks</string>
     <string name="two_to_three_weeks">2 to 3 Weeks</string>
@@ -1160,6 +1160,7 @@
     <string name="user_not_found">User not found! Please enter correct user name</string>
     <string name="user_role_undefined">User role not found or undefined! Please contact Administrator or select a different Role</string>
     <string name="validateID">Validate Index Case ID</string>
+    <string name="validate_patient_id">Validate Patient ID</string>
     <string name="visit_type">Type of Visit?</string>
     <string name="week">Week(s)</string>
     <string name="weight">Weight (Kg)</string>
