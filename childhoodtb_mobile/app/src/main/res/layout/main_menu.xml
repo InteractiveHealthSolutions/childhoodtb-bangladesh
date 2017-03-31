@@ -181,10 +181,9 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_paediatric"
+                android:drawableTop="@drawable/menu_form"
                 android:tag="@string/paediatric_contact_investigation_facility"
                 android:text="@string/paediatric_contact_investigation_facility"
-                android:visibility="gone"
                 />
 
             <Button

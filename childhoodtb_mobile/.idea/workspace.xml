@@ -18,648 +18,10 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0276edf-b452-4d3e-b935-f5a24d5fb6f0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/ZXing_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_android_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/annotations_android_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/bcprov_jdk15on_146.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/graphview_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/bundles/debug/instant-run/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/Adapter/FragmentingPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$5$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$AdultReverseContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$AdultReverseContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$AdultScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$AdultScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/App$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/App$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/App.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/Barcode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$ClinicalVisitBarriersFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$ClinicalVisitBarriersFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$6$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$ReverseContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$ReverseContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$CustomerInfoFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$CustomerInfoFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$FeedbackFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$FeedbackFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/GraphActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/IActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/LoginActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/LoginActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/LoginActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/LoginActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$PediatricScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$PediatricScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$5$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$PaediatricContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$PaediatricContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$AdultScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$AdultScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$PediatricScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$PediatricScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/Preferences.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$PrivatePatientFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$PrivatePatientFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$anim.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$array.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$graph_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$login_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$main_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$menu_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$raw.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$reports_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$saved_forms_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$search_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$template_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R$xml.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyCheckBox.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyEditText.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyRadioButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyRadioGroup.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/custom/MySpinner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyTextView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/model/ContactPerson.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/model/OpenMrsObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/shared/AlertType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/shared/FormType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/shared/Metadata.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/DatabaseUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/DateTimeUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/FileUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/GraphUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/HttpRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/HttpsClient.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/JsonUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/RegexUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/SecurityUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/ServerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/ihsinformatics/childhoodtb_mobile/util/TextUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-safeguard/debug/tag.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/Adapter/FragmentingPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$5$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$AdultReverseContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$AdultReverseContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$AdultScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$AdultScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/App$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/App$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/App.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/Barcode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$ClinicalVisitBarriersFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$ClinicalVisitBarriersFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$6$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$ReverseContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$ReverseContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$CustomerInfoFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$CustomerInfoFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$FeedbackFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$FeedbackFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/GraphActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/IActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/LoginActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/LoginActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/LoginActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/LoginActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$PediatricScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$PediatricScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$5$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$PaediatricContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$PaediatricContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$AdultScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$AdultScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$PediatricScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$PediatricScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/Preferences.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$PrivatePatientFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$PrivatePatientFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$anim.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$array.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$graph_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$login_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$main_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$menu_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$raw.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$reports_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$saved_forms_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$search_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$template_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R$xml.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyCheckBox.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyEditText.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyRadioButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyRadioGroup.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/custom/MySpinner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/custom/MyTextView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/model/ContactPerson.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/model/OpenMrsObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/shared/AlertType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/shared/FormType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/shared/Metadata.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/DatabaseUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/DateTimeUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/FileUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/GraphUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/HttpRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/HttpsClient.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/JsonUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/RegexUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/SecurityUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/ServerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/ihsinformatics/childhoodtb_mobile/util/TextUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/manifest.crc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/package.marker" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/reload-changes.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/ZXing-2.1_0cb5ea10be53ad4dd76c923a33fe18be8afe36ee.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/bcprov-jdk15on-146_0ccf3feea458a17f1bcd2222dbddfc067017556f.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_091d66ab54cb7f0d16b7465aaba8b9dd38d0df79.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/graphview-3.1_a6e0b738708217c0ed6405b2dfc893599b3c9207.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_ea606e4513aec3c38189d184ee05d7497972d5a2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/instant-run_1e8fbb9b052a6e1bdd8357ac8439fa61ff0804d9.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_fcf7837aa9905a0fe6f30171d66de5546cb233bc.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/main_7e89c537d693927ad6dfc85262785d66df10558b.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_20a445aef8d7d796efb4acfd3deee6dd12ef7714.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/Adapter/FragmentingPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$5$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$AdultReverseContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity$AdultReverseContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultReverseContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$AdultScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity$AdultScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/AdultScreeningActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/App$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/App$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/App.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/Barcode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$ClinicalVisitBarriersFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity$ClinicalVisitBarriersFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ClinicalVisitBarriersActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$6$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$ReverseContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity$ReverseContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$CustomerInfoFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity$CustomerInfoFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/CustomerInfoActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$FeedbackFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity$FeedbackFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/FeedbackActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/GraphActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/IActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/LoginActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/LoginActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/LoginActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/LoginActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity$PediatricScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$PediatricPresumptiveFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$PediatricPresumptveFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$3$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$5$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$PaediatricContactTracingFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity$PaediatricContactTracingFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$AdultScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity$AdultScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientRegistrationActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PatientSearchActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$PediatricScreeningSuspectFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity$PediatricScreeningSuspectFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/Preferences.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$4$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$PrivatePatientFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity$PrivatePatientFragmentPagerAdapter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/PrivatePatientActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$anim.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$array.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$color.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$graph_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$login_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$main_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$menu_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$raw.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$reports_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$saved_forms_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$search_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$template_id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R$xml.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$1$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/SavedFormsActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/custom/MyButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/custom/MyCheckBox.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/custom/MyEditText.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/custom/MyRadioButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/custom/MyRadioGroup.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/custom/MySpinner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/custom/MyTextView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/model/ContactPerson.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/model/OpenMrsObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/shared/AlertType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/shared/FormType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/shared/Metadata.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentIntegrator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/BarcodeIntentResult.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/DatabaseUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/DateTimeUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/FileUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/GraphUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/HttpRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/HttpsClient.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/JsonUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/RegexUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/SecurityUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/ServerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/ihsinformatics/childhoodtb_mobile/util/TextUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity$override.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$1$1$override.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$1$override.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$PediatricPresumptiveFragment$override.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity$override.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/ihsinformatics/childhoodtb_mobile/R$main_id$override.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/EndFollowUpActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricContactTracingAtHomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaediatricContactTracingAtHomeActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaediatricScreeningFormActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaedsPresumptiveConfirmationActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/PediatricContactInvestigationAtFacilityActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PediatricContactInvestigationAtFacilityActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TestIndicationActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
@@ -667,59 +29,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/raw/ihskeystore.ks" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/raw/ihskeystore.ks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/raw/ihskeystore.ks" afterPath="$PROJECT_DIR$/app/src/main/res/raw/ihskeystore.ks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/server/MobileService.class" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/server/MobileService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/shared/App.class" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/shared/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/shared/CustomMessage.class" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/shared/CustomMessage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/ihsinformatics/childhoodtb_mobile/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/ihsinformatics/childhoodtb_mobile/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/anim.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/anim.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-ldpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-ldpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout-ur.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout-ur.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/menu.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/menu.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/raw.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/raw.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/xml.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/xml.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestAssets/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestAssets/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestShaders/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestShaders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-ur/login.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout-ur/login.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/main_menu.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/main_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/util/ServerService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/util/ServerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-ur/login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-ur/login.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PediatricContactInvestigationAtFacilityActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PediatricContactInvestigationAtFacilityActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/defaults.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/defaults.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/openmrs-runtime.properties" afterPath="$PROJECT_DIR$/../childhoodtbweb/openmrs-runtime.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/childhoodweb.properties" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/childhoodweb.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/server/MobileService.java" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/server/MobileService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/shared/App.java" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/shared/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/hibernate.default.properties" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/hibernate.default.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/childhoodweb.properties" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/childhoodweb.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/hibernate.default.properties" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/hibernate.default.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/web.xml" />
     </list>
     <ignored path="childhoodtb_mobile.iws" />
@@ -807,8 +129,201 @@
       <file leaf-file-name="PediatricContactInvestigationAtFacilityActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PediatricContactInvestigationAtFacilityActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3620071">
-              <caret line="261" column="20" selection-start-line="261" selection-start-column="19" selection-end-line="261" selection-end-column="20" />
+            <state vertical-scroll-proportion="1.7009804">
+              <caret line="422" column="0" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="0" />
+              <folding>
+                <element signature="e#4223#4241#0" expanded="true" />
+                <element signature="e#4355#4373#0" expanded="true" />
+                <element signature="e#4391#4409#0" expanded="true" />
+                <element signature="e#4494#4525#0" expanded="true" />
+                <element signature="e#4599#4618#0" expanded="true" />
+                <element signature="e#4620#4644#0" expanded="true" />
+                <element signature="e#4814#4834#0" expanded="true" />
+                <element signature="e#4909#4929#0" expanded="true" />
+                <element signature="e#4931#4956#0" expanded="true" />
+                <element signature="e#5107#5122#0" expanded="true" />
+                <element signature="e#5167#5180#0" expanded="true" />
+                <element signature="e#5213#5226#0" expanded="true" />
+                <element signature="e#5273#5288#0" expanded="true" />
+                <element signature="e#5321#5336#0" expanded="true" />
+                <element signature="e#5433#5448#0" expanded="true" />
+                <element signature="e#5563#5583#0" expanded="true" />
+                <element signature="e#5624#5644#0" expanded="true" />
+                <element signature="e#5662#5679#0" expanded="true" />
+                <element signature="e#5831#5846#0" expanded="true" />
+                <element signature="e#5890#5905#0" expanded="true" />
+                <element signature="e#5923#5943#0" expanded="true" />
+                <element signature="e#6104#6130#0" expanded="true" />
+                <element signature="e#6279#6305#0" expanded="true" />
+                <element signature="e#6307#6327#0" expanded="true" />
+                <element signature="e#6408#6422#0" expanded="true" />
+                <element signature="e#6551#6577#0" expanded="true" />
+                <element signature="e#6579#6599#0" expanded="true" />
+                <element signature="e#6688#6709#0" expanded="true" />
+                <element signature="e#6848#6869#0" expanded="true" />
+                <element signature="e#6871#6891#0" expanded="true" />
+                <element signature="e#6972#6987#0" expanded="true" />
+                <element signature="e#7116#7131#0" expanded="true" />
+                <element signature="e#7133#7153#0" expanded="true" />
+                <element signature="e#7240#7261#0" expanded="true" />
+                <element signature="e#7403#7424#0" expanded="true" />
+                <element signature="e#7426#7446#0" expanded="true" />
+                <element signature="e#7541#7557#0" expanded="true" />
+                <element signature="e#7696#7716#0" expanded="true" />
+                <element signature="e#7718#7738#0" expanded="true" />
+                <element signature="e#7826#7848#0" expanded="true" />
+                <element signature="e#7996#8018#0" expanded="true" />
+                <element signature="e#8020#8040#0" expanded="true" />
+                <element signature="e#8131#8157#0" expanded="true" />
+                <element signature="e#8305#8331#0" expanded="true" />
+                <element signature="e#8333#8353#0" expanded="true" />
+                <element signature="e#8449#8473#0" expanded="true" />
+                <element signature="e#8630#8654#0" expanded="true" />
+                <element signature="e#8656#8676#0" expanded="true" />
+                <element signature="e#8772#8795#0" expanded="true" />
+                <element signature="e#8944#8967#0" expanded="true" />
+                <element signature="e#8969#8989#0" expanded="true" />
+                <element signature="e#9081#9100#0" expanded="true" />
+                <element signature="e#9154#9173#0" expanded="true" />
+                <element signature="e#9191#9215#0" expanded="true" />
+                <element signature="e#9366#9389#0" expanded="true" />
+                <element signature="e#9520#9543#0" expanded="true" />
+                <element signature="e#9545#9565#0" expanded="true" />
+                <element signature="e#9655#9680#0" expanded="true" />
+                <element signature="e#9818#9843#0" expanded="true" />
+                <element signature="e#9845#9865#0" expanded="true" />
+                <element signature="e#9961#9992#0" expanded="true" />
+                <element signature="e#10144#10175#0" expanded="true" />
+                <element signature="e#10177#10197#0" expanded="true" />
+                <element signature="e#10287#10312#0" expanded="true" />
+                <element signature="e#10450#10475#0" expanded="true" />
+                <element signature="e#10477#10497#0" expanded="true" />
+                <element signature="e#10581#10600#0" expanded="true" />
+                <element signature="e#10733#10752#0" expanded="true" />
+                <element signature="e#10754#10774#0" expanded="true" />
+                <element signature="e#10858#10877#0" expanded="true" />
+                <element signature="e#11010#11029#0" expanded="true" />
+                <element signature="e#11031#11051#0" expanded="true" />
+                <element signature="e#11138#11159#0" expanded="true" />
+                <element signature="e#11297#11318#0" expanded="true" />
+                <element signature="e#11320#11340#0" expanded="true" />
+                <element signature="e#11433#11460#0" expanded="true" />
+                <element signature="e#11610#11637#0" expanded="true" />
+                <element signature="e#11639#11659#0" expanded="true" />
+                <element signature="e#11782#11815#0" expanded="true" />
+                <element signature="e#11979#12012#0" expanded="true" />
+                <element signature="e#12014#12034#0" expanded="true" />
+                <element signature="e#12121#12143#0" expanded="true" />
+                <element signature="e#12208#12230#0" expanded="true" />
+                <element signature="e#12232#12259#0" expanded="true" />
+                <element signature="e#12431#12472#0" expanded="true" />
+                <element signature="e#12555#12596#0" expanded="true" />
+                <element signature="e#12598#12644#0" expanded="true" />
+                <element signature="e#12808#12836#0" expanded="true" />
+                <element signature="e#12991#13019#0" expanded="true" />
+                <element signature="e#13021#13041#0" expanded="true" />
+                <element signature="e#13128#13148#0" expanded="true" />
+                <element signature="e#13287#13307#0" expanded="true" />
+                <element signature="e#13309#13329#0" expanded="true" />
+                <element signature="e#13415#13435#0" expanded="true" />
+                <element signature="e#13483#13503#0" expanded="true" />
+                <element signature="e#13521#13545#0" expanded="true" />
+                <element signature="e#13741#13762#0" expanded="true" />
+                <element signature="e#13780#13801#0" expanded="true" />
+                <element signature="e#13920#13941#0" expanded="true" />
+                <element signature="e#13959#13980#0" expanded="true" />
+                <element signature="e#14098#14117#0" expanded="true" />
+                <element signature="e#14135#14154#0" expanded="true" />
+                <element signature="method#validate#0;class#PediatricContactInvestigationAtFacilityActivity#0" expanded="false" />
+                <element signature="e#21677#21722#0" expanded="true" />
+                <element signature="e#21967#22014#0" expanded="true" />
+                <element signature="e#22357#22404#0" expanded="true" />
+                <element signature="e#22774#22821#0" expanded="true" />
+                <element signature="e#23312#23384#0" expanded="true" />
+                <element signature="e#23642#23689#0" expanded="true" />
+                <element signature="e#24122#24201#0" expanded="true" />
+                <element signature="method#submit#0;class#PediatricContactInvestigationAtFacilityActivity#0" expanded="false" />
+                <element signature="e#25379#25425#0" expanded="true" />
+                <element signature="e#25457#25499#0" expanded="true" />
+                <element signature="e#25626#25672#0" expanded="true" />
+                <element signature="e#25704#25746#0" expanded="true" />
+                <element signature="e#25866#25912#0" expanded="true" />
+                <element signature="e#25944#25986#0" expanded="true" />
+                <element signature="e#26086#26124#0" expanded="true" />
+                <element signature="e#26247#26293#0" expanded="true" />
+                <element signature="e#26329#26371#0" expanded="true" />
+                <element signature="e#26518#26564#0" expanded="true" />
+                <element signature="e#26596#26638#0" expanded="true" />
+                <element signature="e#26772#26818#0" expanded="true" />
+                <element signature="e#26850#26892#0" expanded="true" />
+                <element signature="e#27483#27529#0" expanded="true" />
+                <element signature="e#27561#27603#0" expanded="true" />
+                <element signature="e#27750#27796#0" expanded="true" />
+                <element signature="e#27828#27870#0" expanded="true" />
+                <element signature="e#28546#28584#0" expanded="true" />
+                <element signature="e#28616#28660#0" expanded="true" />
+                <element signature="e#28691#28741#0" expanded="true" />
+                <element signature="e#29641#29728#0" expanded="true" />
+                <element signature="e#30756#30799#0" expanded="true" />
+                <element signature="e#32080#32156#0" expanded="true" />
+                <element signature="e#32355#32409#0" expanded="true" />
+                <element signature="e#33525#33609#0" expanded="true" />
+                <element signature="e#33808#33862#0" expanded="true" />
+                <element signature="class#PediatricPresumptiveFragment#0;class#PediatricContactInvestigationAtFacilityActivity#0" expanded="false" />
+                <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#PediatricContactInvestigationAtFacilityActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.3818183">
+              <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaediatricContactTracingActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.034483">
+              <caret line="842" column="57" selection-start-line="842" selection-start-column="57" selection-end-line="842" selection-end-column="57" />
+              <folding>
+                <element signature="e#23738#23759#0" expanded="true" />
+                <element signature="e#23765#23786#0" expanded="true" />
+                <element signature="class#31799:33486" expanded="false" />
+                <element signature="method#validate#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+                <element signature="method#submit#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+                <element signature="e#48807#48866#0" expanded="true" />
+                <element signature="method#onEditorAction#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+                <element signature="method#clearMetaKeyState#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+                <element signature="method#getInputType#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenuActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="164" column="63" selection-start-line="164" selection-start-column="63" selection-end-line="164" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_menu.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.5964913">
+              <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2390,13 +1905,14 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/util/ServerService.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/defaults.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/graph_layout.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-ur/login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PediatricContactInvestigationAtFacilityActivity.java" />
       </list>
     </option>
   </component>
@@ -2502,6 +2018,10 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2541,6 +2061,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="ChildhoodTbNewActivities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="childhoodtb_mobile" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2859,7 +2389,7 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37030718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5546075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5546075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18088737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2872,7 +2402,7 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21396054" sideWeight="0.4795222" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15402125" sideWeight="0.4795222" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -2997,13 +2527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3327032">
-          <caret line="862" column="60" selection-start-line="862" selection-start-column="55" selection-end-line="862" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-10/android.jar!/android/os/AsyncTask.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3054,13 +2577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7586207">
-          <caret line="164" column="63" selection-start-line="164" selection-start-column="63" selection-end-line="164" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3073,17 +2589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.267465">
-          <caret line="295" column="14" selection-start-line="295" selection-start-column="14" selection-end-line="295" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -3132,14 +2637,6 @@
           <folding>
             <element signature="e#1033#1051#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5272727">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3323,11 +2820,204 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="164" column="63" selection-start-line="164" selection-start-column="63" selection-end-line="164" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5964913">
+          <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.0.1/support-v4-23.0.1-sources.jar!/android/support/v4/app/FragmentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="743" column="23" selection-start-line="743" selection-start-column="23" selection-end-line="743" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3818183">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.034483">
+          <caret line="842" column="57" selection-start-line="842" selection-start-column="57" selection-end-line="842" selection-end-column="57" />
+          <folding>
+            <element signature="e#23738#23759#0" expanded="true" />
+            <element signature="e#23765#23786#0" expanded="true" />
+            <element signature="class#31799:33486" expanded="false" />
+            <element signature="method#validate#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+            <element signature="e#48807#48866#0" expanded="true" />
+            <element signature="method#onEditorAction#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+            <element signature="method#clearMetaKeyState#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+            <element signature="method#getInputType#0;class#PaediatricContactTracingActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PediatricContactInvestigationAtFacilityActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3620071">
-          <caret line="261" column="20" selection-start-line="261" selection-start-column="19" selection-end-line="261" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="1.7009804">
+          <caret line="422" column="0" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="0" />
+          <folding>
+            <element signature="e#4223#4241#0" expanded="true" />
+            <element signature="e#4355#4373#0" expanded="true" />
+            <element signature="e#4391#4409#0" expanded="true" />
+            <element signature="e#4494#4525#0" expanded="true" />
+            <element signature="e#4599#4618#0" expanded="true" />
+            <element signature="e#4620#4644#0" expanded="true" />
+            <element signature="e#4814#4834#0" expanded="true" />
+            <element signature="e#4909#4929#0" expanded="true" />
+            <element signature="e#4931#4956#0" expanded="true" />
+            <element signature="e#5107#5122#0" expanded="true" />
+            <element signature="e#5167#5180#0" expanded="true" />
+            <element signature="e#5213#5226#0" expanded="true" />
+            <element signature="e#5273#5288#0" expanded="true" />
+            <element signature="e#5321#5336#0" expanded="true" />
+            <element signature="e#5433#5448#0" expanded="true" />
+            <element signature="e#5563#5583#0" expanded="true" />
+            <element signature="e#5624#5644#0" expanded="true" />
+            <element signature="e#5662#5679#0" expanded="true" />
+            <element signature="e#5831#5846#0" expanded="true" />
+            <element signature="e#5890#5905#0" expanded="true" />
+            <element signature="e#5923#5943#0" expanded="true" />
+            <element signature="e#6104#6130#0" expanded="true" />
+            <element signature="e#6279#6305#0" expanded="true" />
+            <element signature="e#6307#6327#0" expanded="true" />
+            <element signature="e#6408#6422#0" expanded="true" />
+            <element signature="e#6551#6577#0" expanded="true" />
+            <element signature="e#6579#6599#0" expanded="true" />
+            <element signature="e#6688#6709#0" expanded="true" />
+            <element signature="e#6848#6869#0" expanded="true" />
+            <element signature="e#6871#6891#0" expanded="true" />
+            <element signature="e#6972#6987#0" expanded="true" />
+            <element signature="e#7116#7131#0" expanded="true" />
+            <element signature="e#7133#7153#0" expanded="true" />
+            <element signature="e#7240#7261#0" expanded="true" />
+            <element signature="e#7403#7424#0" expanded="true" />
+            <element signature="e#7426#7446#0" expanded="true" />
+            <element signature="e#7541#7557#0" expanded="true" />
+            <element signature="e#7696#7716#0" expanded="true" />
+            <element signature="e#7718#7738#0" expanded="true" />
+            <element signature="e#7826#7848#0" expanded="true" />
+            <element signature="e#7996#8018#0" expanded="true" />
+            <element signature="e#8020#8040#0" expanded="true" />
+            <element signature="e#8131#8157#0" expanded="true" />
+            <element signature="e#8305#8331#0" expanded="true" />
+            <element signature="e#8333#8353#0" expanded="true" />
+            <element signature="e#8449#8473#0" expanded="true" />
+            <element signature="e#8630#8654#0" expanded="true" />
+            <element signature="e#8656#8676#0" expanded="true" />
+            <element signature="e#8772#8795#0" expanded="true" />
+            <element signature="e#8944#8967#0" expanded="true" />
+            <element signature="e#8969#8989#0" expanded="true" />
+            <element signature="e#9081#9100#0" expanded="true" />
+            <element signature="e#9154#9173#0" expanded="true" />
+            <element signature="e#9191#9215#0" expanded="true" />
+            <element signature="e#9366#9389#0" expanded="true" />
+            <element signature="e#9520#9543#0" expanded="true" />
+            <element signature="e#9545#9565#0" expanded="true" />
+            <element signature="e#9655#9680#0" expanded="true" />
+            <element signature="e#9818#9843#0" expanded="true" />
+            <element signature="e#9845#9865#0" expanded="true" />
+            <element signature="e#9961#9992#0" expanded="true" />
+            <element signature="e#10144#10175#0" expanded="true" />
+            <element signature="e#10177#10197#0" expanded="true" />
+            <element signature="e#10287#10312#0" expanded="true" />
+            <element signature="e#10450#10475#0" expanded="true" />
+            <element signature="e#10477#10497#0" expanded="true" />
+            <element signature="e#10581#10600#0" expanded="true" />
+            <element signature="e#10733#10752#0" expanded="true" />
+            <element signature="e#10754#10774#0" expanded="true" />
+            <element signature="e#10858#10877#0" expanded="true" />
+            <element signature="e#11010#11029#0" expanded="true" />
+            <element signature="e#11031#11051#0" expanded="true" />
+            <element signature="e#11138#11159#0" expanded="true" />
+            <element signature="e#11297#11318#0" expanded="true" />
+            <element signature="e#11320#11340#0" expanded="true" />
+            <element signature="e#11433#11460#0" expanded="true" />
+            <element signature="e#11610#11637#0" expanded="true" />
+            <element signature="e#11639#11659#0" expanded="true" />
+            <element signature="e#11782#11815#0" expanded="true" />
+            <element signature="e#11979#12012#0" expanded="true" />
+            <element signature="e#12014#12034#0" expanded="true" />
+            <element signature="e#12121#12143#0" expanded="true" />
+            <element signature="e#12208#12230#0" expanded="true" />
+            <element signature="e#12232#12259#0" expanded="true" />
+            <element signature="e#12431#12472#0" expanded="true" />
+            <element signature="e#12555#12596#0" expanded="true" />
+            <element signature="e#12598#12644#0" expanded="true" />
+            <element signature="e#12808#12836#0" expanded="true" />
+            <element signature="e#12991#13019#0" expanded="true" />
+            <element signature="e#13021#13041#0" expanded="true" />
+            <element signature="e#13128#13148#0" expanded="true" />
+            <element signature="e#13287#13307#0" expanded="true" />
+            <element signature="e#13309#13329#0" expanded="true" />
+            <element signature="e#13415#13435#0" expanded="true" />
+            <element signature="e#13483#13503#0" expanded="true" />
+            <element signature="e#13521#13545#0" expanded="true" />
+            <element signature="e#13741#13762#0" expanded="true" />
+            <element signature="e#13780#13801#0" expanded="true" />
+            <element signature="e#13920#13941#0" expanded="true" />
+            <element signature="e#13959#13980#0" expanded="true" />
+            <element signature="e#14098#14117#0" expanded="true" />
+            <element signature="e#14135#14154#0" expanded="true" />
+            <element signature="method#validate#0;class#PediatricContactInvestigationAtFacilityActivity#0" expanded="false" />
+            <element signature="e#21677#21722#0" expanded="true" />
+            <element signature="e#21967#22014#0" expanded="true" />
+            <element signature="e#22357#22404#0" expanded="true" />
+            <element signature="e#22774#22821#0" expanded="true" />
+            <element signature="e#23312#23384#0" expanded="true" />
+            <element signature="e#23642#23689#0" expanded="true" />
+            <element signature="e#24122#24201#0" expanded="true" />
+            <element signature="method#submit#0;class#PediatricContactInvestigationAtFacilityActivity#0" expanded="false" />
+            <element signature="e#25379#25425#0" expanded="true" />
+            <element signature="e#25457#25499#0" expanded="true" />
+            <element signature="e#25626#25672#0" expanded="true" />
+            <element signature="e#25704#25746#0" expanded="true" />
+            <element signature="e#25866#25912#0" expanded="true" />
+            <element signature="e#25944#25986#0" expanded="true" />
+            <element signature="e#26086#26124#0" expanded="true" />
+            <element signature="e#26247#26293#0" expanded="true" />
+            <element signature="e#26329#26371#0" expanded="true" />
+            <element signature="e#26518#26564#0" expanded="true" />
+            <element signature="e#26596#26638#0" expanded="true" />
+            <element signature="e#26772#26818#0" expanded="true" />
+            <element signature="e#26850#26892#0" expanded="true" />
+            <element signature="e#27483#27529#0" expanded="true" />
+            <element signature="e#27561#27603#0" expanded="true" />
+            <element signature="e#27750#27796#0" expanded="true" />
+            <element signature="e#27828#27870#0" expanded="true" />
+            <element signature="e#28546#28584#0" expanded="true" />
+            <element signature="e#28616#28660#0" expanded="true" />
+            <element signature="e#28691#28741#0" expanded="true" />
+            <element signature="e#29641#29728#0" expanded="true" />
+            <element signature="e#30756#30799#0" expanded="true" />
+            <element signature="e#32080#32156#0" expanded="true" />
+            <element signature="e#32355#32409#0" expanded="true" />
+            <element signature="e#33525#33609#0" expanded="true" />
+            <element signature="e#33808#33862#0" expanded="true" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#PediatricContactInvestigationAtFacilityActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#PediatricContactInvestigationAtFacilityActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

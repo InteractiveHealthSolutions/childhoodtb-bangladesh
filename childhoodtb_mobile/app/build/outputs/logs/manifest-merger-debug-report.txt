@@ -167,39 +167,39 @@ ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\sr
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:76:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:75:13-36
-activity#com.ihsinformatics.childhoodtb_mobile.NewActivity.PaediatricScreeningFormActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningFormActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:77:9-79:75
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:79:13-63
 	android:name
-		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:78:13-72
-activity#com.ihsinformatics.childhoodtb_mobile.NewActivity.PaedsPresumptiveConfirmationActivity
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:78:13-85
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:80:9-82:75
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:82:13-63
 	android:name
-		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:81:13-77
-activity#com.ihsinformatics.childhoodtb_mobile.NewActivity.PaediatricContactTracingAtHomeActivity
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:81:13-90
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricContactTracingAtHomeActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:83:9-84:75
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:84:13-63
 	android:name
-		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:83:19-85
-activity#com.ihsinformatics.childhoodtb_mobile.NewActivity.PediatricContactInvestigationAtFacilityActivity
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:83:19-98
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PediatricContactInvestigationAtFacilityActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:85:9-86:75
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:86:13-63
 	android:name
-		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:85:19-94
-activity#com.ihsinformatics.childhoodtb_mobile.NewActivity.EndFollowUpActivity
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:85:19-107
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.EndFollowUpActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:87:9-88:71
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:88:9-59
 	android:name
-		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:87:19-66
-activity#com.ihsinformatics.childhoodtb_mobile.NewActivity.TestIndicationActivity
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:87:19-79
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TestIndicationActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:89:9-90:75
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:90:13-63
 	android:name
-		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:89:19-69
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:89:19-82

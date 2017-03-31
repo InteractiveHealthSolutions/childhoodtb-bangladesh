@@ -82,6 +82,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     MyRadioGroup gender;
     MyRadioButton male, female;
     MyButton scanBarcode;
+    MyButton scanBarcodeIndexId;
     String result = "";
 
     @Override
@@ -259,29 +260,33 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
+
+        scanBarcodeIndexId = new MyButton(context, R.style.button,
+                R.drawable.custom_button_beige, R.string.scan_barcode,
+                R.string.scan_barcode);
+
         validatePatientId = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.validateID,
                 R.string.validateID);
 
 
         View[][] viewGroups = {
-                {formDateTextView, formDateButton,patientIdTextView, patientId, scanBarcode,
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         contactTracingCategoryTextView, contactTracingCategory,
                         firstNameTextView, presumptiveFirstName, motherNameTextView,
                         presumptiveMotherName,
                 },
-                { genderTextView, gender,ageTextView, age,indexCaseIDTextView,indexCaseID,validatePatientId, indexCaseTBRegistrationNumberTextView,
-                        indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView, indexCaseDiagnosis,
-                        weightTextView, weight
+                {genderTextView, gender, ageTextView, age, indexCaseIDTextView, indexCaseID, scanBarcodeIndexId, validatePatientId, indexCaseTBRegistrationNumberTextView,
+                        indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView, indexCaseDiagnosis
 
                 },
-                {  weightPercentileTextView, weightPercentile,coughTextView, cough, coughDurationTextView, coughDuration,feverTextView, fever, nightSweatsTextView, nightSweats, lymphNodeExaminationTextView, lymphNodeExamination,
-                        abdominalExaminationTextView, abdominalExamination, otherExaminationTextView, otherExamination
-        },
-                {adultFamilyMemberTBTextView, adultFamilyMemberTB,tbRootInFamilyTextView, tbRootInFamily, formOfTbTextView, formOfTb, typeOfTbTextView, typeOfTb,
-                        testAdvisedTextView, testAdvised
+                {weightTextView, weight, weightPercentileTextView, weightPercentile, coughTextView, cough, coughDurationTextView, coughDuration, feverTextView,
+                        fever, nightSweatsTextView, nightSweats, lymphNodeExaminationTextView, lymphNodeExamination
                 },
-                { probableDiagnosisTextView, probableDiagnosis,
+                {abdominalExaminationTextView, abdominalExamination, otherExaminationTextView, otherExamination, adultFamilyMemberTBTextView, adultFamilyMemberTB,
+                        tbRootInFamilyTextView, tbRootInFamily, formOfTbTextView, formOfTb, typeOfTbTextView, typeOfTb
+                },
+                {testAdvisedTextView, testAdvised, probableDiagnosisTextView, probableDiagnosis,
                         familyMemberTBTextView, familyMemberTB, weightLossTextView, weightLoss,
                         bcgScarTextView, bcgScar, playfulnessTextView, playfulness
                 }
@@ -320,7 +325,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{
-                 presumptiveMotherName,
+                presumptiveMotherName,
                 presumptiveFirstName, age, weight, weightPercentile,
                 cough, coughDuration, fever, patientId, nightSweats,
                 weightLoss, abdominalExamination, bcgScar, adultFamilyMemberTB,
@@ -366,6 +371,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
+        scanBarcodeIndexId.setOnClickListener(this);
         validatePatientId.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
@@ -403,9 +409,15 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         } else if (view == saveButton) {
             submit();
         } else if (view == scanBarcode) {
+
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
+        } else if (view == scanBarcodeIndexId) {
+
+            Intent intent = new Intent(Barcode.BARCODE_INTENT);
+            intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
+            startActivityForResult(intent, Barcode.BARCODE_RESULT_INDEX_ID);
         }
 
 
@@ -672,6 +684,35 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                             + ": "
                             + getResources().getString(
                             R.string.invalid_data)).show();
+                }
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+                App.getAlertDialog(this, AlertType.ERROR,
+                        getResources().getString(R.string.operation_cancelled))
+                        .show();
+            }
+            // Set the locale again, since the Barcode app restores system's
+            // locale because of orientation
+            Locale.setDefault(App.getCurrentLocale());
+            Configuration config = new Configuration();
+            config.locale = App.getCurrentLocale();
+            getApplicationContext().getResources().updateConfiguration(config,
+                    null);
+        } else if (requestCode == Barcode.BARCODE_RESULT_INDEX_ID) {
+            if (resultCode == RESULT_OK) {
+                String str = data.getStringExtra(Barcode.SCAN_RESULT);
+                // Check for valid Id
+                if (RegexUtil.isValidId(str)
+                        && !RegexUtil.isNumeric(str, false)) {
+                    indexCaseIDTextView.setText(str);
+                } else {
+                    App.getAlertDialog(
+                            this,
+                            AlertType.ERROR,
+                            indexCaseIDTextView.getTag().toString()
+                                    + ": "
+                                    + getResources().getString(
+                                    R.string.invalid_data)).show();
                 }
             } else if (resultCode == RESULT_CANCELED) {
                 // Handle cancel

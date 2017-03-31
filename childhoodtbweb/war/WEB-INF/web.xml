@@ -48,7 +48,8 @@
     <url-pattern>/ScreeningDashboardServlet</url-pattern>
   </servlet-mapping>
   
-  <!-- 	This block makes sure that all the resources are accessed via HTTPS -->
+<!-- 
+  	This block makes sure that all the resources are accessed via HTTPS
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>HTTPSOnly</web-resource-name>
@@ -58,8 +59,8 @@
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
 		</user-data-constraint>
 	</security-constraint>
-<!-- 	This block overrides the previous for certain resources and enables -->
-<!-- 	them on both HTTP and HTTPS -->
+	This block overrides the previous for certain resources and enables
+	them on both HTTP and HTTPS
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>HTTPSOrHTTP</web-resource-name>
@@ -71,5 +72,6 @@
 			<transport-guarantee>NONE</transport-guarantee>
 		</user-data-constraint>
 	</security-constraint>
+ -->
   
 </web-app>

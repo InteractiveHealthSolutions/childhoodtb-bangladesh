@@ -75,22 +75,22 @@
             android:name="com.ihsinformatics.childhoodtb_mobile.Barcode"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.PaediatricScreeningFormActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningFormActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.PaedsPresumptiveConfirmationActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.PaediatricContactTracingAtHomeActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricContactTracingAtHomeActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.PediatricContactInvestigationAtFacilityActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PediatricContactInvestigationAtFacilityActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.EndFollowUpActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.EndFollowUpActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.NewActivity.TestIndicationActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TestIndicationActivity"
             android:configChanges="keyboardHidden|orientation" />
     </application>
 
