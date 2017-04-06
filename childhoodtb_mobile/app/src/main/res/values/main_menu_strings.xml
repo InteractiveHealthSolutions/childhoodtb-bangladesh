@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
@@ -43,7 +42,17 @@ Contributors: Tahira Niazi
     <string name="paediatric_screening_form">Paediatric Screening</string>
     <string name="paediatric_presumptive_form">Paediatric Presumptive</string>
     <string name="paediatric_home_contact_tracing">Paediatric Home Contact Tracing</string>
-    <string name="paediatric_contact_investigation_facility">Paediatric Contact investigation</string>
+    <string name="paediatric_contact_investigation_facility">Paediatric Contact investigation Facility</string>
     <string name="end_follow_up">End of Follow Up</string>
     <string name="test_indication_button">Test Indication</string>
+    <string name="afb_test_order_button">AFB Test Order</string>
+    <string name="afb_test_result_button">AFB Test Result</string>
+    <string name="cxr_test_result_button">CXR Test Result</string>
+    <string name="cxr_test_order_button">CXR Test Order</string>
+    <string name="histopathology_test_result_button">Histopathology Test Result</string>
+    <string name="histopathology_test_order_button">Histopathology Test Order</string>
+    <string name="esr_test_result_button">ESR Test Result</string>
+    <string name="esr_test_order_button">ESR Test Order</string>
+    <string name="gxp_test_order_button">GXP Test Order</string>
+    <string name="gxp_test_result_button">GXP Test Result</string>
 </resources>

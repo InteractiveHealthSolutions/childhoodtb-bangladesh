@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>per
+    <string name="dmc">Dhaka Medical College</string>
+    <string name="smc">Salimulla Medical College</string>
+    <string name="sh">Shishu Hospital</string>
+    <string name="ich_mirpur">Institute of Child Health and Shishu Shastho Foundation Hospital Mirpur</string>
+    <string name="ic_matuail">Institute of Child and Mother Health Matuail</string>
+    <string name="mag_sylhet">MAG Osmani Medical College Sylhet</string>
 
-    <string name="dhaka_mc">Dhaka Medical College</string>
-    <string name="salimulla_mc">Salimulla Medical College</string>
-    <string name="shishu_mc">Shishu Hospital</string>
-    <string name="ich_hospital">Institute of Child Health and Shishu Shastho Foundation Hospital Mirpur</string>
-    <string name="ich_matuail">Institute of Child and Mother Health Matuail</string>
-    <string name="mag_college">MAG Osmani Medical College Sylhet</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="unknown">Unknown</string>
@@ -97,9 +97,36 @@
     <string name="loss_to_followup">Loss to Follow-up</string>
     <string name="other_facility_name">Other facility name</string>
     <string name="other_hint">Enter other reason</string>
+    <string name="other__location_hint">Enter other location</string>
     <string name="other_facility_hint">Enter other facility name</string>
     <string name="reason_loss_followup_hint">Enter reason for loss to Follow-up</string>
 
+    <string name="sputum">Sputum</string>
+    <string name="saliva">Saliva</string>
+    <string name="mucoid">Mucoid</string>
+    <string name="Purulent">Purulent</string>
+    <string name="lymph">Lymph</string>
+    <string name="pleuralFluid">Pleural Fluid</string>
+    <string name="pus">Pus</string>
+    <string name="negative">Negative</string>
+    <string name="oneToNineAFB">1-9 AFB</string>
+    <string name="normal">Normal</string>
+    <string name="adenopathy">Adenopathy</string>
+    <string name="infiltration">Infiltration</string>
+    <string name="consolidation">Consolidation</string>
+    <string name="effusion">Effusion</string>
+    <string name="high">High</string>
+    <string name="test_id">Test Id</string>
 
-
+    <string name="mtb_positive">MTB Positive</string>
+    <string name="mtb_negative">MTB Negative</string>
+    <string name="error">Error</string>
+    <string name="invalid">Invalid</string>
+    <string name="no_result">No Result</string>
+    <string name="not_detected">Not Detected</string>
+    <string name="detected">Detected</string>
+    <string name="indeterminate">Indeterminate</string>
+    <string name="very_low">Very Low</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
 </resources>

@@ -167,14 +167,113 @@
                 />
 
             <Button
+                android:id="@+main_id/afbSmearTestOrderButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/afb_test_order_button"
+                android:text="@string/afb_test_order_button"
+
+                />
+
+            <Button
+                android:id="@+main_id/afbSmearTestResultButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/afb_test_result_button"
+                android:text="@string/afb_test_result_button"
+
+                />
+
+            <Button
+                android:id="@+main_id/cxrTestOrderButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/cxr_test_order_button"
+                android:text="@string/cxr_test_order_button" />
+
+            <Button
+                android:id="@+main_id/cxrTestResultButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/cxr_test_result_button"
+                android:text="@string/cxr_test_result_button"
+
+                />
+
+            <Button
+                android:id="@+main_id/histopathologyTestOrderButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/histopathology_test_order_button"
+                android:text="@string/histopathology_test_order_button" />
+
+            <Button
+                android:id="@+main_id/histopathologyTestResultButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/histopathology_test_result_button"
+                android:text="@string/histopathology_test_result_button" />
+            <Button
+                android:id="@+main_id/esrTestOrderButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/esr_test_order_button"
+                android:text="@string/esr_test_order_button"
+
+                />
+            <Button
+                android:id="@+main_id/esrTestResultButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/esr_test_result_button"
+                android:text="@string/esr_test_result_button"
+
+                />
+            <Button
+                android:id="@+main_id/gxpTestOrderButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/gxp_test_order_button"
+                android:text="@string/gxp_test_order_button"
+
+                />
+            <Button
+                android:id="@+main_id/gxpTestResultButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/gxp_test_result_button"
+                android:text="@string/gxp_test_result_button"
+
+                />
+
+            <Button
                 android:id="@+main_id/paedsContactTracingAtHomeButton"
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:drawableTop="@drawable/menu_paediatric"
                 android:tag="@string/paediatric_home_contact_tracing"
-                android:text="@string/paediatric_home_contact_tracing"
-                android:visibility="gone" />
+                android:text="@string/paediatric_home_contact_tracing" />
 
             <Button
                 android:id="@+main_id/paediatricContactAtFacilityButton"
@@ -183,8 +282,7 @@
                 android:layout_height="fill_parent"
                 android:drawableTop="@drawable/menu_form"
                 android:tag="@string/paediatric_contact_investigation_facility"
-                android:text="@string/paediatric_contact_investigation_facility"
-                />
+                android:text="@string/paediatric_contact_investigation_facility" />
 
             <Button
                 android:id="@+main_id/endFollowUpButton"
@@ -194,8 +292,7 @@
                 android:drawableTop="@drawable/menu_paediatric"
                 android:tag="@string/end_follow_up"
                 android:text="@string/end_follow_up"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
 
 
             <Button
@@ -236,8 +333,7 @@
                 android:drawableTop="@drawable/menu_clinical_evaluation"
                 android:tag="@string/contact_tracing"
                 android:text="@string/contact_tracing"
-                android:visibility="gone"
-                 />
+                android:visibility="gone" />
 
             <Button
                 android:id="@+main_id/paediatricContactTracingButton"
@@ -247,8 +343,7 @@
                 android:drawableTop="@drawable/menu_paediatric"
                 android:tag="@string/paediatric_contact_tracing"
                 android:text="@string/paediatric_contact_tracing"
-                android:visibility="gone"
-                 />
+                android:visibility="gone" />
 
             <Button
                 android:id="@+main_id/adultReverseContactTracingButton"
@@ -287,8 +382,7 @@
                 android:layout_height="fill_parent"
                 android:drawableTop="@drawable/menu_feedback"
                 android:tag="@string/customer_info"
-                android:text="@string/feedback"
-                 />
+                android:text="@string/feedback" />
         </LinearLayout>
     </ScrollView>
 

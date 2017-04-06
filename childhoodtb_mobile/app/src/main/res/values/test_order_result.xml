@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="test_order_date">Test Order Date</string>
+    <string name="month_of_treatment">Month of Treatment</string>
+    <string-array name="monthOfTreatment_option">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string name="specimen_type">Specimen Type?</string>
+
+    <string-array name="specimenType_option">
+        <item>@string/sputum</item>
+        <item>@string/extra_pulmonary</item>
+    </string-array>
+    <string name="specimen_quality">Specimen quality</string>
+    <string-array name="specimenQuality_option">
+        <item>@string/saliva</item>
+        <item>@string/mucoid</item>
+        <item>@string/Purulent</item>
+        <item>@string/do_not_know</item>
+    </string-array>
+    <string name="specimen_location">Where did the specimen come from?</string>
+    <string-array name="specimen_location_options">
+        <item>@string/lymph</item>
+        <item>@string/pleuralFluid</item>
+        <item>@string/pus</item>
+        <item>@string/other</item>
+
+    </string-array>
+    <string name="test_result_date">Test Result Date</string>
+    <string name="smear_result">Smear Result</string>
+    <string-array name="smearResult_options">
+        <item>@string/negative</item>
+        <item>@string/oneToNineAFB</item>
+        <item>1+</item>
+        <item>2+</item>
+        <item>3+</item>
+    </string-array>
+
+    <string name="test_order"><b>A -- Test Order</b></string>
+    <string name="test_result"><b>B -- Test Result</b></string>
+    <string name="other_location">From where?</string>
+
+    <!--CXR TEST ORDER RESULT ACTIVITY STRINGS-->
+
+    <string name="cxr">CXR</string>
+    <string-array name="cxr_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string name="cxr_result">CXR Result</string>
+    <string-array name="cxr_result_option">
+        <item>@string/normal</item>
+        <item>@string/suggestive_tb</item>
+    </string-array>
+   <string name="radiological_finding">Radiological finding</string>
+    <string-array name="radiological_finding_options">
+        <item>@string/adenopathy</item>
+        <item>@string/infiltration</item>
+        <item>@string/consolidation</item>
+        <item>@string/effusion</item>
+        <item>@string/normal</item>
+        <item>@string/other</item>
+    </string-array>
+  <string name="other_specify">Other specify</string>
+  <string name="other_specify_hint">Enter specify radiological finding</string>
+
+    <!--TEST ORDER RESULT HISTOPATHOLOGY STRING-->
+    <string name="histopathology_result">Histopathology Result</string>
+    <string-array name="histopathology_result_option">
+        <item>@string/suggestive_tb</item>s
+        <item>@string/not_suggestive_tb</item>
+    </string-array>
+    <!--TEST  ORDER RESULT ESR STRINGS -->
+  <string name="esr_result">ESR Result</string>
+  <string-array name="esr_result_option">
+      <item>@string/high</item>
+      <item>@string/normal</item>
+  </string-array>
+
+    <!--HISTOPATHOLOGY STRING ORDER/RESULT-->
+    <string name="histopathology_site">Histopathology site</string>
+    <string-array name="histopathology_site_options">
+        <item>@string/dmc</item>
+        <item>@string/smc</item>
+        <item>@string/sh</item>
+        <item>@string/ich_mirpur</item>
+        <item>@string/ic_matuail</item>
+        <item>@string/mag_sylhet</item>
+    </string-array>
+    
+    <!--GXP TEST ORDER/RESULT STRINGS-->
+    <string name="gxp_result">GeneXpert Result</string>
+    <string-array name="gxp_result_options">
+        <item>@string/mtb_negative</item>
+        <item>@string/mtb_positive</item>
+        <item>@string/error</item>
+        <item>@string/invalid</item>
+        <item>@string/no_result</item>
+    </string-array>
+   <string name="rif_resistance">RIF Resistance</string>
+   <string-array name="rif_resistance_options">
+       <item>@string/not_detected</item>
+       <item>@string/detected</item>
+       <item>@string/indeterminate</item>
+   </string-array>
+    <string name="mtb_burden">MTB Burden</string>
+    <string-array name="mtb_burden_option">
+    <item>@string/very_low</item>
+    <item>@string/low</item>
+    <item>@string/medium</item>
+    <item>@string/high</item>
+    </string-array>
+    <string name="error_code">Error Code</string>
+    <string name="error_code_hint">Enter Error Code</string>
+
+
+
+</resources>

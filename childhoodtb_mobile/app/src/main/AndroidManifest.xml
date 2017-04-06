@@ -88,6 +88,26 @@
         android:configChanges="keyboardHidden|orientation"></activity>
         <activity android:name=".ChildhoodTbNewActivities.TestIndicationActivity"
             android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.AFBTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.CXRTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.HistopathologTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.ESRTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.AFBTestResultActivity"
+        android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.CXRTestResultActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.HistopathologTestResultActivity"
+        android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.ESRTestResultActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.GXPTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.GXPTestResultActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
     </application>
 
 </manifest>

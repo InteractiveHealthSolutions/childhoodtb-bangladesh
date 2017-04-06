@@ -92,6 +92,36 @@
         <activity
             android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TestIndicationActivity"
             android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestResultActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestResultActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestResultActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestResultActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestResultActivity"
+            android:configChanges="keyboardHidden|orientation" />
     </application>
 
 </manifest>

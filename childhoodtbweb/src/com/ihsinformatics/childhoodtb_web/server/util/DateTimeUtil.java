@@ -25,6 +25,7 @@ public class DateTimeUtil
 	public static final String	DOB_FORMAT		= "dd/MM/yyyy";
 	public static final String  DOB_FROMAT_DATE = "dd-MMM-yyyy";
 	public static final String	SQL_DATE		= "yyyy-MM-dd";
+	public static final String  SQL_DATE_FORMAT= "dd-MM-yyyy";
 
 	public static Date getDateFromString (String string, String format) throws ParseException
 	{

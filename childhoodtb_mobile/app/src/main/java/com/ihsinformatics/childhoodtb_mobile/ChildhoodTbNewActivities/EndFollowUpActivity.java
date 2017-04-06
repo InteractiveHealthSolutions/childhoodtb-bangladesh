@@ -89,11 +89,6 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-        screeningFacilityTextView = new MyTextView(context,
-                R.style.text, R.string.screening_facility);
-        screeningFacilityOptions = new MySpinner(context,
-                getResources().getStringArray(R.array.facility), R.string.screening_facility,
-                R.string.option_hint);
         reasonForEndOfFollowUpTextView = new MyTextView(context,
                 R.style.text, R.string.reason_for_end_to_followup);
         reasonForEndOfFollowUp = new MySpinner(context,
@@ -395,6 +390,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+       //Todo:need correct the below logic...
         if (adapterView.getSelectedItem().toString().equals(getString(R.string.referred_to_another_facility))) {
             Log.i("test", "other facility");
 

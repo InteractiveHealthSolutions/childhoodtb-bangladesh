@@ -48,5 +48,15 @@ public class FormType
 	public static final String 	PRIVATE_PATIENT 				= "Private Patient";
 	public static final String  PAEDS_PRESUMPTIVE_CONFIRMATION = "Paediatric presumptive confirmation";
     public static final String PAEDIATRIC_CONTACT_INVESTIGATION_FACILITY = "Paediatric Contact Investigation Facility";
+    public static final String AFB_SMEAR_ORDER = "AFB Smear Order";
+    public static final String AFB_SMEAR_RESULT= "AFB Smear Result";
+    public static final String CXR_ORDER= "CXR Order";
+    public static final String CXR_RESULT= "CXR Result";
+    public static final String HISTOPATHOLOGY_ORDER= "Histopathology Order";
+    public static final String HISTOPATHOLOGY_RESULT= "Histopathology Result";
+    public static final String ESR_ORDER="ESR Order";
+    public static final String ESR_RESULT="ESR Result";
+    public static final String GXP_ORDER="GXP Order";
+    public static final String GXP_RESULT="GXP Result";
 
 }

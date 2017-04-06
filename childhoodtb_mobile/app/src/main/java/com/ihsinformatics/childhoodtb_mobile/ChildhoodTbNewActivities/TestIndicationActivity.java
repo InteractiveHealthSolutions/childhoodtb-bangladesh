@@ -105,11 +105,6 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-        screeningFacilityTextView = new MyTextView(context,
-                R.style.text, R.string.screening_facility);
-        screeningFacilityOptions = new MySpinner(context,
-                getResources().getStringArray(R.array.facility),
-                R.string.screening_facility, R.string.option_hint);
         chestXrayTextView = new MyTextView(context,
                 R.style.text, R.string.chest_x_ray);
         chestXraySpinner = new MySpinner(context,
@@ -170,9 +165,9 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
                 R.style.edit, RegexUtil.idLength, false);
 
         patientIdTextView = new MyTextView(context, R.style.text,
-                R.string._patient_id);
+                R.string.patient_id);
 
-        patientId = new MyEditText(context, R.string._patient_id,
+        patientId = new MyEditText(context, R.string.patient_id,
                 R.string.patient_id_hint, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, RegexUtil.idLength, false);
 
@@ -185,9 +180,10 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        chestXrayTextView, chestXraySpinner, ctScanTextView, ctScanSpinner, ctScanAreaTextView, ctScanAreaEditText,
+                        chestXrayTextView, chestXraySpinner, ctScanTextView, ctScanSpinner,
+                        ctScanAreaTextView, ctScanAreaEditText,ultrasoundAbdomenTextView, ultrasoundAbdomenSpinner
                 },
-                {ultrasoundAbdomenTextView, ultrasoundAbdomenSpinner, mantouxTextView, mantouxSpinner, smearMicroscopyTextView,
+                { mantouxTextView, mantouxSpinner, smearMicroscopyTextView,
                         smearMicroscopySpinner, xpertMTBRIFTextView, xpertMtbRifSpinner, histopathologyTextView, histopathologySpinner, histopathologySampleTextView,
                         histopathologySampleSiteEditText, esrTextView, esrSpinner,
                 }

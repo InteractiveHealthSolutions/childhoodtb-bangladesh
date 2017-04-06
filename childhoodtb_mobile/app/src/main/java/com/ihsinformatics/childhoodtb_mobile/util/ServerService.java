@@ -26,7 +26,7 @@ import android.util.Log;
 
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.model.OpenMrsObject;
-import com.ihsinformatics.childhoodtb_mobile.model.PatientInformation;
+import com.ihsinformatics.childhoodtb_mobile.model.Patient;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.shared.Metadata;
 import com.ihsinformatics.childhoodtb_mobile.R;
@@ -480,13 +480,13 @@ public class ServerService {
         return details;
     }
 
-    public ArrayList<PatientInformation> getPatientInformation(String patientId) {
+    public ArrayList<Patient> getPatientInformation(String patientId) {
 
         String response = "";
-        ArrayList<PatientInformation> patientInfo;
+        ArrayList<Patient> patientInfo;
         String[][] details = null;
 
-        patientInfo  = new ArrayList<PatientInformation>();
+        patientInfo  = new ArrayList<Patient>();
 
         JSONObject json = new JSONObject();
         try {
@@ -503,12 +503,14 @@ public class ServerService {
                     String name = jsonResponse.get("name").toString();
                     int age = jsonResponse.getInt("age");
                     String gen = jsonResponse.get("gender").toString();
+                    String motherName= jsonResponse.getString("motherName").equals(null)?"Not Given":jsonResponse.getString("motherName");
 
-                    PatientInformation  patientInformation= new PatientInformation();
+
+                    Patient patientInformation= new Patient();
                     patientInformation.setName(name);
                     patientInformation.setAge(age);
                     patientInformation.setGender(gen);
-
+                    patientInformation.setMotherName(motherName);
                     patientInfo.add(patientInformation);
 
                 } catch (JSONException e) {
@@ -2345,6 +2347,7 @@ public class ServerService {
            json.put("age",age);
            json.put("location", location);
 
+           Log.i("observation",""+observations.length);
            JSONArray listOfObservations = new JSONArray();
 
            for (int i = 0; i < observations.length; i++) {
@@ -2447,5 +2450,73 @@ public class ServerService {
 
    }
 
-    /* Get patient */
+    /* Save AFB TEST ORDER FORM DATA */
+    public  String insertTestOrderForm(String encounterType, ContentValues values,
+                                       String[][] observations){
+
+        String response = "";
+        String patientId = values.getAsString("patientId");
+        String location = values.getAsString("location");
+        String formDate = values.getAsString("formDate");
+
+        try {
+
+            if(!App.isOfflineMode()) {
+
+                String id = getPatientId(patientId);
+                if (id == null)
+                    return context.getResources().getString(
+                            R.string.patient_id_missing);
+            }
+
+            // Save Patient
+            JSONObject json = new JSONObject();
+
+            json.put("app_ver", App.getVersion());
+            json.put("form_name", encounterType);
+            json.put("username", App.getUsername());
+            json.put("patient_id", patientId);
+            json.put("location", location);
+
+            JSONArray listOfObservations = new JSONArray();
+
+            for (int i = 0; i < observations.length; i++) {
+                if ("".equals(observations[i][0])
+                        || "".equals(observations[i][1]))
+                    continue;
+                JSONObject obsJson = new JSONObject();
+                obsJson.put("concept", observations[i][0]);
+                obsJson.put("value", observations[i][1]);
+                listOfObservations.put(obsJson);
+            }
+            json.put("encounter_type", encounterType);
+            json.put("form_date", formDate);
+            json.put("encounter_location", location);
+            json.put("provider", App.getUsername());
+            json.put("obs", listOfObservations.toString());
+            // Save form locally if in offline mode
+            if (App.isOfflineMode()) {
+                saveOfflineForm(encounterType, json.toString());
+                return "SUCCESS";
+            }
+            response = post("?content=" + JsonUtil.getEncodedJson(json));
+            JSONObject jsonResponse = JsonUtil.getJSONObject(response);
+            if (jsonResponse == null) {
+                return response;
+            }
+            if (jsonResponse.has("result")) {
+                String result = jsonResponse.getString("result");
+                return result;
+            }
+            return response;
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage());
+            response = context.getResources().getString(R.string.invalid_data);
+        } catch (UnsupportedEncodingException e) {
+            Log.e(TAG, e.getMessage());
+            response = context.getResources().getString(R.string.unknown_error);
+        }
+        return response;
+
+    }
 }

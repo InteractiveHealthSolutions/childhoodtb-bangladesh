@@ -226,10 +226,6 @@ public class PediatricScreeningActivity extends AbstractFragmentActivity
         formDateTextView = new MyTextView(context, R.style.text,
                 R.string.form_date);
 
-        //Todo:add one field in form ...
-        screenFacilityText = new MyTextView(context, R.style.text, R.string.screening_facility);
-        screenFacilityOptions = new MySpinner(context, getResources().getStringArray(R.array.facility), R.string.screening_facility, R.string.option_hint);
-
         formDateButton = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.form_date,
                 R.string.form_date);

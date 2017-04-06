@@ -43,12 +43,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.EndFollowUpActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricContactTracingAtHomeActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningFormActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PediatricContactInvestigationAtFacilityActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TestIndicationActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestOrderActivity;
 import com.ihsinformatics.childhoodtb_mobile.model.OpenMrsObject;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.util.DatabaseUtil;
@@ -93,8 +103,11 @@ public class MainMenuActivity extends Activity implements IActivity,
     Animation alphaAnimation;
     /*Button should be define once*/
     Button btnPaediatricScreenForm;
-    Button paedsPresumptiveConfirmationButton,paedsContactTracingAtHomeButton,
-            paediatricContactAtFacilityButton,endFollowUpButton,testIndicationButton;
+    Button paedsPresumptiveConfirmationButton, paedsContactTracingAtHomeButton,
+            paediatricContactAtFacilityButton, endFollowUpButton, testIndicationButton,
+            afbSmearTestOrderButton,afbSmearTestResultButton, cxrTestResultButton,cxrTestOrderButton,
+            histopathologyTestResultButton,histopathologyTestOrderButton,
+            esrTestOrderButton, esrTestResultButton,gxpTestResultButton,gxpTestOrderButton;
 
 
     OpenMrsObject[] locations;
@@ -126,11 +139,20 @@ public class MainMenuActivity extends Activity implements IActivity,
         adultReverseContactTracing = (Button) findViewById(R.main_id.adultReverseContactTracingButton);
         btnPaediatricScreenForm = (Button) findViewById(R.main_id.btnPaediatricForm);
         paedsPresumptiveConfirmationButton = (Button) findViewById(R.main_id.paedsPresumptiveButton);
-        paedsContactTracingAtHomeButton= (Button) findViewById(R.main_id.paedsContactTracingAtHomeButton);
+        paedsContactTracingAtHomeButton = (Button) findViewById(R.main_id.paedsContactTracingAtHomeButton);
         paediatricContactAtFacilityButton = (Button) findViewById(R.main_id.paediatricContactAtFacilityButton);
-        endFollowUpButton= (Button) findViewById(R.main_id.endFollowUpButton);
-        testIndicationButton= (Button) findViewById(R.main_id.testIndicationButton);
-
+        endFollowUpButton = (Button) findViewById(R.main_id.endFollowUpButton);
+        testIndicationButton = (Button) findViewById(R.main_id.testIndicationButton);
+        afbSmearTestOrderButton = (Button) findViewById(R.main_id.afbSmearTestOrderButton);
+        cxrTestResultButton = (Button) findViewById(R.main_id.cxrTestResultButton);
+        histopathologyTestResultButton = (Button) findViewById(R.main_id.histopathologyTestResultButton);
+        histopathologyTestOrderButton= (Button) findViewById(R.main_id.histopathologyTestOrderButton);
+        esrTestOrderButton = (Button) findViewById(R.main_id.esrTestOrderButton);
+        esrTestResultButton = (Button) findViewById(R.main_id.esrTestResultButton);
+        afbSmearTestResultButton= (Button) findViewById(R.main_id.afbSmearTestResultButton);
+        cxrTestOrderButton= (Button) findViewById(R.main_id.cxrTestOrderButton);
+        gxpTestResultButton= (Button) findViewById(R.main_id.gxpTestResultButton);
+        gxpTestOrderButton= (Button) findViewById(R.main_id.gxpTestOrderButton);
         // nonPulmonarySuspect = (Button) findViewById;
         // (R.main_id.nonPulmonarySuspectButton);
         // customerInfoButton = (Button) findViewById
@@ -166,12 +188,15 @@ public class MainMenuActivity extends Activity implements IActivity,
 
         }
         views = new View[]{locationTextView, selectLocations,
-                paediatricScreening, btnPaediatricScreenForm,paedsPresumptiveConfirmationButton,
+                paediatricScreening, btnPaediatricScreenForm, paedsPresumptiveConfirmationButton,
                 paedsContactTracingAtHomeButton, adultScreening, patientRegistration,
                 reverseContactTracing, paediatricContactTracing,
                 adultReverseContactTracing, clinicalVisitBarriers,
-                privatePatient, feedback,paediatricContactAtFacilityButton ,
-                endFollowUpButton,testIndicationButton/*
+                privatePatient, feedback, paediatricContactAtFacilityButton,
+                endFollowUpButton, testIndicationButton, afbSmearTestOrderButton,
+                cxrTestResultButton, histopathologyTestResultButton, esrTestOrderButton,
+                afbSmearTestResultButton,cxrTestOrderButton,histopathologyTestOrderButton,
+                esrTestResultButton,gxpTestResultButton,gxpTestOrderButton/*
                                          * tbScreening , screening ,
 										 * nonPulmonarySuspect ,
 										 * customerInfoButton , testIndication ,
@@ -636,6 +661,46 @@ public class MainMenuActivity extends Activity implements IActivity,
             case R.main_id.testIndicationButton:
                 Intent testIndication = new Intent(this, TestIndicationActivity.class);
                 startActivity(testIndication);
+                break;
+            case R.main_id.afbSmearTestOrderButton:
+                Intent afbtestResult = new Intent(this, AFBTestOrderActivity.class);
+                startActivity(afbtestResult);
+                break;
+            case R.main_id.afbSmearTestResultButton:
+                Intent aftbtestOrder = new Intent(this, AFBTestResultActivity.class);
+                startActivity(aftbtestOrder);
+                break;
+            case R.main_id.cxrTestResultButton:
+                Intent cxrtestResult = new Intent(this, CXRTestResultActivity.class);
+                startActivity(cxrtestResult);
+                break;
+            case R.main_id.cxrTestOrderButton:
+                Intent cxrtestOrder = new Intent(this, CXRTestOrderActivity.class);
+                startActivity(cxrtestOrder);
+                break;
+            case R.main_id.histopathologyTestOrderButton:
+                Intent histopathologyTestOrder = new Intent(this, HistopathologTestOrderActivity.class);
+                startActivity(histopathologyTestOrder);
+                break;
+            case R.main_id.histopathologyTestResultButton:
+                Intent histopathologyTestResult = new Intent(this, HistopathologTestResultActivity.class);
+                startActivity(histopathologyTestResult);
+                break;
+            case R.main_id.esrTestOrderButton:
+                Intent esrTestOrder = new Intent(this, ESRTestOrderActivity.class);
+                startActivity(esrTestOrder);
+                break;
+            case R.main_id.esrTestResultButton:
+                Intent esrTestResult = new Intent(this, ESRTestResultActivity.class);
+                startActivity(esrTestResult);
+                break;
+            case R.main_id.gxpTestOrderButton:
+                Intent gxpTestOrder = new Intent(this, GXPTestOrderActivity.class);
+                startActivity(gxpTestOrder);
+                break;
+            case R.main_id.gxpTestResultButton:
+                Intent gxpTestResult = new Intent(this, GXPTestResultActivity.class);
+                startActivity(gxpTestResult);
                 break;
             default:
                 toast.setText(getResources().getString(R.string.form_unavailable));

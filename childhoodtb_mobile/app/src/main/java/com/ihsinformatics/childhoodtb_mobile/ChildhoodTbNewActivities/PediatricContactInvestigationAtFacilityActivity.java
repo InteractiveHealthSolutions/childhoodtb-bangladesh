@@ -39,6 +39,7 @@ import com.ihsinformatics.childhoodtb_mobile.custom.MyRadioButton;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyRadioGroup;
 import com.ihsinformatics.childhoodtb_mobile.custom.MySpinner;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
+import com.ihsinformatics.childhoodtb_mobile.model.Patient;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
@@ -66,7 +67,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
 
 
     EditText presumptiveFirstName, presumptiveMotherName, age,
-            weight, patientId, otherExamination, indexCaseID, indexCaseTBRegistrationNumber;
+            weight, patientId, otherExamination, indexCaseId, indexCaseTBRegistrationNumber;
 
     MySpinner weightPercentile,
             cough, coughDuration, fever, nightSweats, weightLoss,
@@ -231,9 +232,9 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 R.string.contact_tracing_category, R.string.option_hint);
         indexCaseIDTextView = new MyTextView(context,
                 R.style.text, R.string.index_case_id);
-        indexCaseID = new MyEditText(context,
+        indexCaseId = new MyEditText(context,
                 R.string.index_case_id, R.string.index_case_id_hint,
-                InputType.TYPE_CLASS_TEXT, R.style.edit, 7, false);
+                InputType.TYPE_CLASS_TEXT, R.style.edit, 13, false);
         indexCaseTBRegistrationNumberTextView = new MyTextView(context,
                 R.style.text, R.string.indexcase_tb_registration_number);
         indexCaseTBRegistrationNumber = new MyEditText(context,
@@ -251,9 +252,9 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 R.string.playfulness, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
-                R.string._patient_id);
+                R.string.patient_id);
 
-        patientId = new MyEditText(context, R.string._patient_id,
+        patientId = new MyEditText(context, R.string.patient_id,
                 R.string.patient_id_hint, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, RegexUtil.idLength, false);
 
@@ -276,7 +277,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                         firstNameTextView, presumptiveFirstName, motherNameTextView,
                         presumptiveMotherName,
                 },
-                {genderTextView, gender, ageTextView, age, indexCaseIDTextView, indexCaseID, scanBarcodeIndexId, validatePatientId, indexCaseTBRegistrationNumberTextView,
+                {genderTextView, gender, ageTextView, age, indexCaseIDTextView, indexCaseId, scanBarcodeIndexId, validatePatientId, indexCaseTBRegistrationNumberTextView,
                         indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView, indexCaseDiagnosis
 
                 },
@@ -330,7 +331,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 cough, coughDuration, fever, patientId, nightSweats,
                 weightLoss, abdominalExamination, bcgScar, adultFamilyMemberTB,
                 formOfTb, typeOfTb, testAdvised, familyMemberTB, probableDiagnosis,
-                otherExamination, playfulness, indexCaseTBRegistrationNumber, indexCaseDiagnosis
+                otherExamination, playfulness, indexCaseTBRegistrationNumber, indexCaseDiagnosis,
+                indexCaseId
         };
 
 
@@ -418,7 +420,79 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT_INDEX_ID);
-        }
+        } else if (view == validatePatientId) {
+
+            final String indexPatientId = App.get(indexCaseId);
+            if (!indexPatientId.equals("")) {
+
+                AsyncTask<String, String, Object> getTask = new AsyncTask<String, String, Object>() {
+                    @Override
+                    protected Object doInBackground(String... params) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                loading.setIndeterminate(true);
+                                loading.setCancelable(false);
+                                loading.setMessage(getResources().getString(
+                                        R.string.loading_message));
+                                loading.show();
+                            }
+                        });
+
+                        ArrayList<Patient> response = serverService.getPatientInformation(indexPatientId);
+                        return response;
+                    }
+
+                    @Override
+                    protected void onProgressUpdate(String... values) {
+                    };
+
+                    @Override
+                    protected void onPostExecute(Object result) {
+                        super.onPostExecute(result);
+                        loading.dismiss();
+                        ArrayList<Patient> patients= (ArrayList<Patient>) result;
+                        StringBuilder errorMessage = new StringBuilder();
+
+                                if(result ==null){
+                                        errorMessage.append(
+                                                getResources().getString(R.string.patient_id_missing)
+                                        );
+                                        App.getAlertDialog(PediatricContactInvestigationAtFacilityActivity.this,
+                                                AlertType.ERROR, errorMessage.toString()).show();
+                                        saveButton.setEnabled(false);
+                                }
+                                else {
+                                              presumptiveFirstName.setText(patients.get(0).getName());
+                                              presumptiveFirstName.setFocusable(false);
+                                                  if(patients.get(0).getMotherName().isEmpty()){
+                                                      presumptiveMotherName.setText(patients.get(0).getMotherName());
+                                                      presumptiveMotherName.setFocusable(true);
+                                                  }
+                                                  else {
+                                                      presumptiveMotherName.setText(patients.get(0).getMotherName());
+                                                      presumptiveMotherName.setFocusable(false);}
+
+                                              age.setText(Integer.toString(patients.get(0).getAge()));
+                                              age.setFocusable(false);
+
+                                            if (patients.get(0).getGender().equals("M")) {
+
+                                                 male.setChecked(true);
+                                                female.setEnabled(false);
+
+
+                                            } else if (patients.get(0).getGender().equals("F")) {
+
+                                                female.setChecked(true);
+                                                male.setEnabled(false);
+                                            }
+                                 }
+                    }
+                };
+                getTask.execute("");
+            }
+        }//end else if condition...
 
 
     }
@@ -602,6 +676,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                     App.get(testAdvised)});
             observations.add(new String[]{"Probable diagnosis",
                     App.get(probableDiagnosis)});
+            observations.add(new String[] { "Index Case ID",
+                    App.get(indexCaseId) });
             observations.add(new String[]{"Index Case Diagnosis",
                     App.get(indexCaseDiagnosis).equals(getResources().getString(R.string.ptb)) ?
                             getResources().getString(R.string.pulmonary) :
@@ -704,12 +780,12 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 // Check for valid Id
                 if (RegexUtil.isValidId(str)
                         && !RegexUtil.isNumeric(str, false)) {
-                    indexCaseIDTextView.setText(str);
+                    indexCaseId.setText(str);
                 } else {
                     App.getAlertDialog(
                             this,
                             AlertType.ERROR,
-                            indexCaseIDTextView.getTag().toString()
+                            indexCaseId.getTag().toString()
                                     + ": "
                                     + getResources().getString(
                                     R.string.invalid_data)).show();
@@ -731,7 +807,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     }
 
     @SuppressLint("ValidFragment")
-    class PediatricPresumptiveFragment extends Fragment {
+    public class PediatricPresumptiveFragment extends Fragment {
         int currentPage;
 
         @Override

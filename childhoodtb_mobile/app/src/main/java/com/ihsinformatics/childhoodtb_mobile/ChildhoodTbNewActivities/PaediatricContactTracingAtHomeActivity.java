@@ -54,7 +54,7 @@ import java.util.Locale;
 public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActivity implements TextView.OnEditorActionListener {
 
     MyTextView
-            formDateTextView, screeningFacilityTextView, patientIdTextView,
+            formDateTextView, patientIdTextView,
             addressTextView, phoneNoTextView, dotsCenterNameTextView,
             treatmentInitiationCenterTextView, dsTBRegNoTextView, contactInvestigatorNameTextView,
             contactInvestigatorDesignationTextView, nameOfDotProviderTextView, designationOfDotProviderTextView,
@@ -71,7 +71,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
             phoneNoDotProvider, contactOneName, refer, remarks;
 
     MySpinner
-            screeningFacilityOptions, contactOneSymptoms, contactWeightLoss,
+            contactOneSymptoms, contactWeightLoss,
             contactOneCough, contactOneFever, contactOneNightSweats, poorAppetite,
             numberOfContactPerson, outcomeCode;
 
@@ -82,8 +82,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
     MyRadioButton male, female;
     MyButton scanBarcode;
     String result = "";
-    View[][] viewGroups;
-    View[][] viewGroupsContact;
+
 
     @Override
     public void createViews(Context context) {
@@ -97,11 +96,6 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         formDateButton = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.form_date,
                 R.string.form_date);
-        screeningFacilityTextView = new MyTextView(context,
-                R.style.text, R.string.screening_facility);
-        screeningFacilityOptions = new MySpinner(context,
-                getResources().getStringArray(R.array.facility),
-                R.string.screening_facility, R.string.option_hint);
         addressTextView = new MyTextView(context,
                 R.style.text, R.string.address);
         address = new MyEditText(context,
@@ -240,51 +234,33 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
-        viewGroups = new View[][]{
+       View[][] viewGroups = {
 
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        screeningFacilityTextView, screeningFacilityOptions, phoneNoTextView, phoneNo,
-                        addressTextView, address, dotsCenterNameTextView, dotsCenterName
+                         phoneNoTextView, phoneNo, addressTextView, address, dotsCenterNameTextView, dotsCenterName
                 },
                 {treatmentInitiationCenterTextView, treatmentInitiationCenter, dsTBRegNoTextView, dsTBRegNo,
                         contactInvestigatorNameTextView, contactInvestigatorName, contactInvestigatorDesignationTextView,
                         contactInvestigatorDesignation, nameOfDotProviderTextView, nameOfDotProvider, designationOfDotProviderTextView,
                         designationOfDotProvider},
-                {phoneNoDotProviderTextView, phoneNoDotProvider, numberOfContactPersonTextView, numberOfContactPerson},
-
-                {contactOneAgeTextView, age, contactOneGenderTextView, gender, contactOneSymptomsTextView,
-                        contactOneSymptoms, contactOneCoughTextView, contactOneCough,
-                        contactOneFeverTextView, contactOneFever
-                },
-                {referTextView, refer, outcomeCodeTextView, outcomeCode, remarksTextView, remarks,
-                        contactOneWeightTextView, contactWeightLoss, contactOnePoorAppetiteTextView,
-                        poorAppetite, contactOneNightSweatsTextView, contactOneNightSweats
-                }
-
+                {phoneNoDotProviderTextView, phoneNoDotProvider, numberOfContactPersonTextView, numberOfContactPerson}
 
         };
-        //  viewDisplay(context);
         // Create layouts and store in ArrayList
         groups = new ArrayList<ViewGroup>();
-
         Log.i("viewGroupLength", "" + viewGroups.length);
-        Log.i("afterViewGrouplength", "" + (viewGroups.length - 2));
-
         for (int i = 0; i < viewGroups.length; i++) {
-
             LinearLayout layout = new LinearLayout(context);
             layout.setOrientation(LinearLayout.VERTICAL);
             for (int j = 0; j < viewGroups[i].length; j++) {
                 layout.addView(viewGroups[i][j]);
             }
-
             ScrollView scrollView = new ScrollView(context);
             scrollView.setLayoutParams(new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             scrollView.addView(layout);
             groups.add(scrollView);
         }
-
 
         navigationSeekbar.setMax(groups.size() - 1);
         navigatorLayout = (LinearLayout) findViewById(R.template_id.navigatorLayout);
@@ -302,7 +278,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
 
         views = new View[]{
 
-                screeningFacilityOptions, age, contactWeightLoss, numberOfContactPerson,
+                age, contactWeightLoss, numberOfContactPerson,
                 contactOneCough, contactOneFever, patientId, contactOneNightSweats,
                 phoneNo, address, dotsCenterName, treatmentInitiationCenter, dsTBRegNo, contactInvestigatorName,
                 contactInvestigatorDesignation, designationOfDotProvider, nameOfDotProvider, phoneNoDotProvider,
@@ -394,11 +370,38 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
 
         MySpinner spinner = (MySpinner) adapterView;
         boolean visible = spinner.getSelectedItemPosition() == 0;
-        Log.i("logTest", "" + spinner.getSelectedItem().toString());
-        if (spinner.getSelectedItem().toString().equals("1")) {
 
-            updateDisplay();
+        if(adapterView==numberOfContactPerson)
+        {
+           View[][] viewGroups = {
+                    {contactOneAgeTextView, age, contactOneGenderTextView, gender, contactOneSymptomsTextView,
+                            contactOneSymptoms, contactOneCoughTextView, contactOneCough,
+                            contactOneFeverTextView, contactOneFever
+                    },
+                    {referTextView, refer, outcomeCodeTextView, outcomeCode, remarksTextView, remarks,
+                            contactOneWeightTextView, contactWeightLoss, contactOnePoorAppetiteTextView,
+                            poorAppetite, contactOneNightSweatsTextView, contactOneNightSweats
+                    }
+            };
+
+            for (int k = 0; k < viewGroups.length; k++) {
+
+                LinearLayout layout = new LinearLayout(this);
+                layout.setOrientation(LinearLayout.VERTICAL);
+                for (int j = 0; j < viewGroups[k].length; j++) {
+                    layout.addView(viewGroups[k][j]);
+                }
+
+                ScrollView scrollView = new ScrollView(this);
+                scrollView.setLayoutParams(new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                scrollView.addView(layout);
+                groups.add(scrollView);
+            }
+
+            Log.i("logTest", "" + spinner.getSelectedItem().toString());
         }
+
     }
 
     @Override
@@ -686,52 +689,5 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         public int getCount() {
             return pageCount;
         }
-    }
-
-
-    public void viewDisplay(Context context) {
-        LinearLayout layout = new LinearLayout(context);
-        // Create layouts and store in ArrayList
-        groups = new ArrayList<ViewGroup>();
-        for (int i = 0; i < viewGroups.length; i++) {
-
-
-            layout.setOrientation(LinearLayout.VERTICAL);
-
-            for (int j = 0; j < viewGroups[i].length; j++) {
-                layout.addView(viewGroups[i][j]);
-            }
-
-
-        }
-        viewGroupsContact = new View[][]{{phoneNoDotProviderTextView, phoneNoDotProvider, numberOfContactPersonTextView, numberOfContactPerson}};
-        for (int i = 0; i < viewGroupsContact.length; i++) {
-
-            layout = new LinearLayout(context);
-            layout.setOrientation(LinearLayout.VERTICAL);
-            for (int j = 0; j < viewGroupsContact[i].length; j++) {
-                layout.addView(viewGroupsContact[i][j]);
-            }
-        }
-        scrollView = new ScrollView(context);
-        scrollView.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        scrollView.addView(layout);
-        groups.add(scrollView);
-
-        navigationSeekbar.setMax(groups.size() - 1);
-        navigatorLayout = (LinearLayout) findViewById(R.template_id.navigatorLayout);
-        // If the form consists only of single page, then hide the navigatorLayout
-        if (groups.size() < 2) {
-            navigatorLayout.setVisibility(View.GONE);
-        }
-
-        Log.i("groupSize", "" + groups.size());
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        PediatricPresumptveFragmentPagerAdapter pagerAdapter = new PediatricPresumptveFragmentPagerAdapter(
-                fragmentManager, groups.size());
-        pager.setAdapter(pagerAdapter);
-        pager.setOffscreenPageLimit(groups.size());
-
     }
 }

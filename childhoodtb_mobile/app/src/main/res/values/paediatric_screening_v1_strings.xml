@@ -2,16 +2,6 @@
 <resources>
 
 
-    <!--PaediatricScreening Form strings-->
-    <string name="screening_facility">Screening Facility</string>
-    <string-array name="facility">
-        <item>@string/dhaka_mc</item>
-        <item>@string/salimulla_mc</item>
-        <item>@string/shishu_mc</item>
-        <item>@string/ich_hospital</item>
-        <item>@string/ich_matuail</item>
-        <item>@string/mag_college</item>
-    </string-array>
     <!---->
     <string name="chw_id">CHW ID</string>
     <string name="chw_hint">Enter CHW Id</string>

@@ -39,7 +39,7 @@ import com.ihsinformatics.childhoodtb_mobile.custom.MyRadioButton;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyRadioGroup;
 import com.ihsinformatics.childhoodtb_mobile.custom.MySpinner;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
-import com.ihsinformatics.childhoodtb_mobile.model.PatientInformation;
+import com.ihsinformatics.childhoodtb_mobile.model.Patient;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
@@ -396,7 +396,7 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
                             }
                         });
 
-                        ArrayList<PatientInformation> response = serverService.getPatientInformation(indexPatientId);
+                        ArrayList<Patient> response = serverService.getPatientInformation(indexPatientId);
                         return response;
                     }
 
@@ -411,7 +411,7 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
                         super.onPostExecute(result);
                         loading.dismiss();
 
-                        ArrayList<PatientInformation> patientDetails = (ArrayList<PatientInformation>) result;
+                        ArrayList<Patient> patientDetails = (ArrayList<Patient>) result;
 
                         StringBuilder errorMessage = new StringBuilder();
 

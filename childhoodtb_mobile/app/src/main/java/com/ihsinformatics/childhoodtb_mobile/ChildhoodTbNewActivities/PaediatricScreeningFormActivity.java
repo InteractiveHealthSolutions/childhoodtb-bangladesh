@@ -329,6 +329,7 @@ public class PaediatricScreeningFormActivity extends AbstractFragmentActivity im
 
         //define the navigation Fragments
         View[][] viewGroups = {
+
                 {formDateTextView, formDateButton, screenedBeforeTextView, screenedBefore, firstNameTextView, firstName, lastNameTextView, lastName,
                         genderTextView, gender,
                 },
@@ -340,6 +341,7 @@ public class PaediatricScreeningFormActivity extends AbstractFragmentActivity im
                 },
 
                 {childAppetiteTextView, childAppetite, patientIdTextView, patientId, scanBarcode}
+
         };
 
         // Create layouts and store in ArrayList
@@ -463,6 +465,7 @@ public class PaediatricScreeningFormActivity extends AbstractFragmentActivity im
                 updateDob();
             }
         }
+
 
         updateDisplay();
     }
