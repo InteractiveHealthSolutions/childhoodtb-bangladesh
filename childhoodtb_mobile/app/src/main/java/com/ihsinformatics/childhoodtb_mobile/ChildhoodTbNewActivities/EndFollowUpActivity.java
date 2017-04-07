@@ -64,9 +64,6 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
     MyTextView otherFacilityNameTextView;
     MyEditText otherFacilityName;
 
-    MyTextView screeningFacilityTextView;
-    MySpinner screeningFacilityOptions;
-
     MyTextView patientIdTextView;
     MyEditText patientId;
     MyButton scanBarcode;
@@ -123,9 +120,10 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 R.string.scan_barcode);
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, screeningFacilityTextView, screeningFacilityOptions,
-                        reasonForEndOfFollowUpTextView, reasonForEndOfFollowUp, reasonForlossFollowUpTextView, reasonForlossFollowUp,
-                        otherTextView, other, otherFacilityNameTextView, otherFacilityName, patientIdTextView, patientId, scanBarcode
+                {formDateTextView, formDateButton, patientIdTextView, patientId,
+                        scanBarcode, reasonForEndOfFollowUpTextView, reasonForEndOfFollowUp,
+                        reasonForlossFollowUpTextView, reasonForlossFollowUp, otherTextView, other,
+                        otherFacilityNameTextView, otherFacilityName,
                 }
         };
 
@@ -157,7 +155,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{screeningFacilityOptions, other, otherFacilityName, patientId,
+        views = new View[]{other, otherFacilityName, patientId,
                 reasonForEndOfFollowUp};
 
 
@@ -292,17 +290,18 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
 
             observations.add(new String[]{"Reason End Follow-up",
                     App.get(reasonForEndOfFollowUp)});
+
             if (reasonForEndOfFollowUp.getSelectedItem().toString()
                     .equals(getResources().getString(R.string.referred_to_another_facility))) {
                 observations.add(new String[]{"Referred to another Facility",
                         App.get(otherFacilityName)});
-            };
-            if (reasonForEndOfFollowUp.getSelectedItem().toString()
+            }
+            else if (reasonForEndOfFollowUp.getSelectedItem().toString()
                     .equals(getResources().getString(R.string.other))) {
-                observations.add(new String[]{"Other",
+                observations.add(new String[]{"Other Reason",
                         App.get(other)});
-            };
-            if (reasonForEndOfFollowUp.getSelectedItem().toString()
+            }
+            else if (reasonForEndOfFollowUp.getSelectedItem().toString()
                     .equals(getResources().getString(R.string.loss_to_followup))) {
                 observations.add(new String[]{"Follow-up Lost",
                         App.get(reasonForlossFollowUp)});
@@ -324,7 +323,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertEndFollowUpForm(
-                            FormType.PAEDIATRIC_CONTACT_INVESTIGATION_FACILITY, values,
+                            FormType.END_FOLLOW_UP, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -390,43 +389,44 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-       //Todo:need correct the below logic...
-        if (adapterView.getSelectedItem().toString().equals(getString(R.string.referred_to_another_facility))) {
-            Log.i("test", "other facility");
 
-            otherFacilityNameTextView.setVisibility(View.VISIBLE);
-            otherFacilityName.setVisibility(View.VISIBLE);
-            otherTextView.setVisibility(View.GONE);
-            other.setVisibility(View.GONE);
-            reasonForlossFollowUpTextView.setVisibility(View.GONE);
-            reasonForlossFollowUp.setVisibility(View.GONE);
+        if(adapterView == reasonForEndOfFollowUp) {
 
-        } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.other))) {
-            Log.i("test", "other");
+            if (adapterView.getSelectedItem().toString().equals(getString(R.string.referred_to_another_facility))) {
+                otherFacilityNameTextView.setVisibility(View.VISIBLE);
+                otherFacilityName.setVisibility(View.VISIBLE);
+                otherTextView.setVisibility(View.GONE);
+                other.setVisibility(View.GONE);
+                reasonForlossFollowUpTextView.setVisibility(View.GONE);
+                reasonForlossFollowUp.setVisibility(View.GONE);
 
-            otherTextView.setVisibility(View.VISIBLE);
-            other.setVisibility(View.VISIBLE);
-            otherFacilityNameTextView.setVisibility(View.GONE);
-            otherFacilityName.setVisibility(View.GONE);
-            reasonForlossFollowUpTextView.setVisibility(View.GONE);
-            reasonForlossFollowUp.setVisibility(View.GONE);
+            } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.other))) {
+                Log.i("test", "other");
 
-        } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.loss_to_followup))) {
+                otherTextView.setVisibility(View.VISIBLE);
+                other.setVisibility(View.VISIBLE);
+                otherFacilityNameTextView.setVisibility(View.GONE);
+                otherFacilityName.setVisibility(View.GONE);
+                reasonForlossFollowUpTextView.setVisibility(View.GONE);
+                reasonForlossFollowUp.setVisibility(View.GONE);
 
-            otherTextView.setVisibility(View.GONE);
-            other.setVisibility(View.GONE);
-            otherFacilityNameTextView.setVisibility(View.GONE);
-            otherFacilityName.setVisibility(View.GONE);
-            reasonForlossFollowUpTextView.setVisibility(View.VISIBLE);
-            reasonForlossFollowUp.setVisibility(View.VISIBLE);
-        } else {
-            otherTextView.setVisibility(View.GONE);
-            other.setVisibility(View.GONE);
-            otherFacilityNameTextView.setVisibility(View.GONE);
-            otherFacilityName.setVisibility(View.GONE);
-            reasonForlossFollowUpTextView.setVisibility(View.GONE);
-            reasonForlossFollowUp.setVisibility(View.GONE);
+            } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.loss_to_followup))) {
 
+                otherTextView.setVisibility(View.GONE);
+                other.setVisibility(View.GONE);
+                otherFacilityNameTextView.setVisibility(View.GONE);
+                otherFacilityName.setVisibility(View.GONE);
+                reasonForlossFollowUpTextView.setVisibility(View.VISIBLE);
+                reasonForlossFollowUp.setVisibility(View.VISIBLE);
+            } else {
+                otherTextView.setVisibility(View.GONE);
+                other.setVisibility(View.GONE);
+                otherFacilityNameTextView.setVisibility(View.GONE);
+                otherFacilityName.setVisibility(View.GONE);
+                reasonForlossFollowUpTextView.setVisibility(View.GONE);
+                reasonForlossFollowUp.setVisibility(View.GONE);
+
+            }
         }
 
     }

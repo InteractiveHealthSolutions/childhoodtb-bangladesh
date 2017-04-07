@@ -122,6 +122,24 @@
         <activity
             android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestResultActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestResultActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestResultActivity"
+            android:configChanges="keyboardHidden|orientation" />
     </application>
 
 </manifest>

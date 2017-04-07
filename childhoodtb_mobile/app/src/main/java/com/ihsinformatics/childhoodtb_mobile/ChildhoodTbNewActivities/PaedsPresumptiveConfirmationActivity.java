@@ -486,10 +486,10 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
                     }
                 };
                 getTask.execute("");
-            }
-        }
 
-    }
+
+            }  }
+        }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

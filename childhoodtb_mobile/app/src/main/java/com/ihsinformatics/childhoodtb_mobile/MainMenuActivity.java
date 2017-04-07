@@ -44,6 +44,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestOrderActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestOrderActivity;
@@ -57,8 +59,12 @@ import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.Paediatric
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningFormActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PediatricContactInvestigationAtFacilityActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TestIndicationActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.model.OpenMrsObject;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.util.DatabaseUtil;
@@ -105,9 +111,11 @@ public class MainMenuActivity extends Activity implements IActivity,
     Button btnPaediatricScreenForm;
     Button paedsPresumptiveConfirmationButton, paedsContactTracingAtHomeButton,
             paediatricContactAtFacilityButton, endFollowUpButton, testIndicationButton,
-            afbSmearTestOrderButton,afbSmearTestResultButton, cxrTestResultButton,cxrTestOrderButton,
-            histopathologyTestResultButton,histopathologyTestOrderButton,
-            esrTestOrderButton, esrTestResultButton,gxpTestResultButton,gxpTestOrderButton;
+            afbSmearTestOrderButton, afbSmearTestResultButton, cxrTestResultButton, cxrTestOrderButton,
+            histopathologyTestResultButton, histopathologyTestOrderButton,
+            esrTestOrderButton, esrTestResultButton, gxpTestResultButton, gxpTestOrderButton,
+            tstTestOrderButton, tstTestResultButton, ctScanTestOrderButton, ctScanTestResultButton,
+            ultrasoundTestOrderButton, ultrasoundTestResultButton;
 
 
     OpenMrsObject[] locations;
@@ -146,13 +154,19 @@ public class MainMenuActivity extends Activity implements IActivity,
         afbSmearTestOrderButton = (Button) findViewById(R.main_id.afbSmearTestOrderButton);
         cxrTestResultButton = (Button) findViewById(R.main_id.cxrTestResultButton);
         histopathologyTestResultButton = (Button) findViewById(R.main_id.histopathologyTestResultButton);
-        histopathologyTestOrderButton= (Button) findViewById(R.main_id.histopathologyTestOrderButton);
+        histopathologyTestOrderButton = (Button) findViewById(R.main_id.histopathologyTestOrderButton);
         esrTestOrderButton = (Button) findViewById(R.main_id.esrTestOrderButton);
         esrTestResultButton = (Button) findViewById(R.main_id.esrTestResultButton);
-        afbSmearTestResultButton= (Button) findViewById(R.main_id.afbSmearTestResultButton);
-        cxrTestOrderButton= (Button) findViewById(R.main_id.cxrTestOrderButton);
-        gxpTestResultButton= (Button) findViewById(R.main_id.gxpTestResultButton);
-        gxpTestOrderButton= (Button) findViewById(R.main_id.gxpTestOrderButton);
+        afbSmearTestResultButton = (Button) findViewById(R.main_id.afbSmearTestResultButton);
+        cxrTestOrderButton = (Button) findViewById(R.main_id.cxrTestOrderButton);
+        gxpTestResultButton = (Button) findViewById(R.main_id.gxpTestResultButton);
+        gxpTestOrderButton = (Button) findViewById(R.main_id.gxpTestOrderButton);
+        tstTestOrderButton = (Button) findViewById(R.main_id.tstTestOrderButton);
+        tstTestResultButton = (Button) findViewById(R.main_id.tstTestResultButton);
+        ctScanTestOrderButton = (Button) findViewById(R.main_id.ctScanTestOrderButton);
+        ctScanTestResultButton = (Button) findViewById(R.main_id.ctScanTestResultButton);
+        ultrasoundTestOrderButton = (Button) findViewById(R.main_id.ultrasoundTestOrderButton);
+        ultrasoundTestResultButton = (Button) findViewById(R.main_id.ultrasoundTestResultButton);
         // nonPulmonarySuspect = (Button) findViewById;
         // (R.main_id.nonPulmonarySuspectButton);
         // customerInfoButton = (Button) findViewById
@@ -195,8 +209,10 @@ public class MainMenuActivity extends Activity implements IActivity,
                 privatePatient, feedback, paediatricContactAtFacilityButton,
                 endFollowUpButton, testIndicationButton, afbSmearTestOrderButton,
                 cxrTestResultButton, histopathologyTestResultButton, esrTestOrderButton,
-                afbSmearTestResultButton,cxrTestOrderButton,histopathologyTestOrderButton,
-                esrTestResultButton,gxpTestResultButton,gxpTestOrderButton/*
+                afbSmearTestResultButton, cxrTestOrderButton, histopathologyTestOrderButton,
+                esrTestResultButton, gxpTestResultButton, gxpTestOrderButton, tstTestOrderButton,
+                tstTestResultButton, ctScanTestOrderButton, ctScanTestResultButton,
+                ultrasoundTestResultButton,ultrasoundTestOrderButton/*
                                          * tbScreening , screening ,
 										 * nonPulmonarySuspect ,
 										 * customerInfoButton , testIndication ,
@@ -701,6 +717,30 @@ public class MainMenuActivity extends Activity implements IActivity,
             case R.main_id.gxpTestResultButton:
                 Intent gxpTestResult = new Intent(this, GXPTestResultActivity.class);
                 startActivity(gxpTestResult);
+                break;
+            case R.main_id.tstTestOrderButton:
+                Intent tstTestOrder = new Intent(this, TSTTestOrderActivity.class);
+                startActivity(tstTestOrder);
+                break;
+            case R.main_id.tstTestResultButton:
+                Intent tstTestResult = new Intent(this, TSTTestResultActivity.class);
+                startActivity(tstTestResult);
+                break;
+            case R.main_id.ctScanTestOrderButton:
+                Intent ctScanTestOrder = new Intent(this, CTScanTestOrderActivity.class);
+                startActivity(ctScanTestOrder);
+                break;
+            case R.main_id.ctScanTestResultButton:
+                Intent ctScanTestResult = new Intent(this, CTScanTestResultActivity.class);
+                startActivity(ctScanTestResult);
+                break;
+            case R.main_id.ultrasoundTestOrderButton:
+                Intent ultrasoundTestOrder = new Intent(this, UltraSoundTestOrderActivity.class);
+                startActivity(ultrasoundTestOrder);
+                break;
+            case R.main_id.ultrasoundTestResultButton:
+                Intent ultrasoundTestResult = new Intent(this, UltraSoundTestResultActivity.class);
+                startActivity(ultrasoundTestResult);
                 break;
             default:
                 toast.setText(getResources().getString(R.string.form_unavailable));

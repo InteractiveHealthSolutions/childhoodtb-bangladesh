@@ -278,7 +278,14 @@ public class MobileService {
 					||formType.equals(FormType.ESR_ORDER)
 					||formType.equals(FormType.ESR_RESULT)
 					||formType.equals(FormType.GXP_ORDER)
-					||formType.equals(FormType.GXP_RESULT))
+					||formType.equals(FormType.GXP_RESULT)
+					||formType.equals(FormType.TST_ORDER)
+					||formType.equals(FormType.TST_RESULT)
+					||formType.equals(FormType.CT_SCAN_ORDER)
+					||formType.equals(FormType.CT_SCAN_RESULT)
+					||formType.equals(FormType.ULTRASOUND_ORDER)
+					||formType.equals(FormType.ULTRASOUND_RESULT)
+					||formType.equals(FormType.END_FOLLOW_UP))
 				response= insertTestOrderResultForm(formType, jsonObject);
 			else
 				throw new Exception();
@@ -655,6 +662,7 @@ public class MobileService {
 						jsonObj.put("encounter", e.getEncounterType().getName());
 						jsonObj.put("date", DateTimeUtil.getSQLDate(e
 								.getEncounterDatetime()));
+					
 						encountersArray.put(jsonObj);
 					}
 					if (encountersArray.length() != 0) {

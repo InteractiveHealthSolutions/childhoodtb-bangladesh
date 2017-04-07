@@ -59,7 +59,7 @@
         <item>@string/normal</item>
         <item>@string/suggestive_tb</item>
     </string-array>
-   <string name="radiological_finding">Radiological finding</string>
+    <string name="radiological_finding">Radiological finding</string>
     <string-array name="radiological_finding_options">
         <item>@string/adenopathy</item>
         <item>@string/infiltration</item>
@@ -68,8 +68,8 @@
         <item>@string/normal</item>
         <item>@string/other</item>
     </string-array>
-  <string name="other_specify">Other specify</string>
-  <string name="other_specify_hint">Enter specify radiological finding</string>
+    <string name="other_specify">Other specify</string>
+    <string name="other_specify_hint">Enter specify radiological finding</string>
 
     <!--TEST ORDER RESULT HISTOPATHOLOGY STRING-->
     <string name="histopathology_result">Histopathology Result</string>
@@ -78,11 +78,11 @@
         <item>@string/not_suggestive_tb</item>
     </string-array>
     <!--TEST  ORDER RESULT ESR STRINGS -->
-  <string name="esr_result">ESR Result</string>
-  <string-array name="esr_result_option">
-      <item>@string/high</item>
-      <item>@string/normal</item>
-  </string-array>
+    <string name="esr_result">ESR Result</string>
+    <string-array name="esr_result_option">
+        <item>@string/high</item>
+        <item>@string/normal</item>
+    </string-array>
 
     <!--HISTOPATHOLOGY STRING ORDER/RESULT-->
     <string name="histopathology_site">Histopathology site</string>
@@ -94,7 +94,7 @@
         <item>@string/ic_matuail</item>
         <item>@string/mag_sylhet</item>
     </string-array>
-    
+
     <!--GXP TEST ORDER/RESULT STRINGS-->
     <string name="gxp_result">GeneXpert Result</string>
     <string-array name="gxp_result_options">
@@ -104,22 +104,64 @@
         <item>@string/invalid</item>
         <item>@string/no_result</item>
     </string-array>
-   <string name="rif_resistance">RIF Resistance</string>
-   <string-array name="rif_resistance_options">
-       <item>@string/not_detected</item>
-       <item>@string/detected</item>
-       <item>@string/indeterminate</item>
-   </string-array>
+    <string name="rif_resistance">RIF Resistance</string>
+    <string-array name="rif_resistance_options">
+        <item>@string/not_detected</item>
+        <item>@string/detected</item>
+        <item>@string/indeterminate</item>
+    </string-array>
     <string name="mtb_burden">MTB Burden</string>
     <string-array name="mtb_burden_option">
-    <item>@string/very_low</item>
-    <item>@string/low</item>
-    <item>@string/medium</item>
-    <item>@string/high</item>
+        <item>@string/very_low</item>
+        <item>@string/low</item>
+        <item>@string/medium</item>
+        <item>@string/high</item>
     </string-array>
     <string name="error_code">Error Code</string>
     <string name="error_code_hint">Enter Error Code</string>
 
+    <!--TST ORDER/RESULT STRINGS-->
+    <string name="tst">tuberculin Skin Test</string>
+    <string-array name="tst_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
 
+    <string name="tst_result">Tuberculin Skin Test Result</string>
+    <string-array name="tst_result_option">
+        <item>@string/five_to_nine_mm</item>
+        <item>@string/ten_mm</item>
+        <item>@string/greater_then_ten_mm</item>
+    </string-array>
+    <string name="interpretation_tst">Interpretation of TST</string>
+    <string-array name="interpretation_tst_option">
+    <item>@string/positive</item>
+    <item>@string/negative</item>
+    </string-array>
+
+    <!--CT SCAN ORDER/RESULT STRINGS-->
+    <string name="ct_scan_sit">CT Scan Site</string>
+    <string-array name="ct_scan_sit_option">
+        <item>@string/chest</item>
+        <item>@string/abdomen</item>
+        <item>@string/whole_body</item>
+        <item>@string/head</item>
+        <item>@string/other</item>
+    </string-array>
+    <string name="ct_scan_result">CT Scan Result</string>
+    <string-array name="ct_scan_result_option">
+        <item>@string/suggestive_tb</item>
+        <item>@string/normal</item>
+    </string-array>
+    <!--ULTRASOUND ORDER/RESULT STRINGS-->
+    <string-array name="ultra_abdomen_option">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+<string name="ultrasound_result">U/S Result</string>
+    <string-array name="ultrasound_result_option">
+        <item>@string/suggestive_tb</item>
+        <item>@string/normal</item>
+    </string-array>
 
 </resources>

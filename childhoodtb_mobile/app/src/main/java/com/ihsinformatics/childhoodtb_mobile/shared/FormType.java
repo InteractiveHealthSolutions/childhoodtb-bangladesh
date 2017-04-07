@@ -61,15 +61,22 @@ public class FormType {
     public static final String PRIVATE_PATIENT = "Private Patient";
     public static final String PAEDIATRIC_CONTACT_INVESTIGATION_FACILITY = "Paediatric Contact Investigation Facility";
     public static final String AFB_SMEAR_ORDER = "AFB Smear Order";
-    public static final String AFB_SMEAR_RESULT= "AFB Smear Result";
-    public static final String CXR_ORDER= "CXR Order";
-    public static final String CXR_RESULT= "CXR Result";
+    public static final String AFB_SMEAR_RESULT = "AFB Smear Result";
+    public static final String CXR_ORDER = "CXR Order";
+    public static final String CXR_RESULT = "CXR Result";
     public static final String HISTOPATHOLOGY_ORDER = "Histopathology Order";
-    public static final String HISTOPATHOLOGY_RESULT= "Histopathology Result";
-    public static final String ESR_ORDER="ESR Order";
-    public static final String ESR_RESULT="ESR Result";
-    public static final String GXP_ORDER="GXP Order";
-    public static final String GXP_RESULT="GXP Result";
+    public static final String HISTOPATHOLOGY_RESULT = "Histopathology Result";
+    public static final String ESR_ORDER = "ESR Order";
+    public static final String ESR_RESULT = "ESR Result";
+    public static final String GXP_ORDER = "GXP Order";
+    public static final String GXP_RESULT = "GXP Result";
+    public static final String TST_ORDER = "TST Order";
+    public static final String TST_RESULT = "TST Result";
+    public static final String CT_SCAN_ORDER = "CT Scan Order";
+    public static final String CT_SCAN_RESULT = "CT Scan Result";
+    public static final String ULTRASOUND_ORDER = "Ultrasound Order";
+    public static final String ULTRASOUND_RESULT = "Ultrasound Result";
+    public static final String END_FOLLOW_UP = "End Follow-Up";
 
 
 }

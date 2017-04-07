@@ -108,6 +108,18 @@
             android:configChanges="keyboardHidden|orientation"></activity>
         <activity android:name=".ChildhoodTbNewActivities.GXPTestResultActivity"
             android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.TSTTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.TSTTestResultActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.CTScanTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.CTScanTestResultActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.UltraSoundTestOrderActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.UltraSoundTestResultActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
     </application>
 
 </manifest>

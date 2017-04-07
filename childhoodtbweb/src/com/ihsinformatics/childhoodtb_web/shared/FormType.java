@@ -58,5 +58,12 @@ public class FormType
     public static final String ESR_RESULT="ESR Result";
     public static final String GXP_ORDER="GXP Order";
     public static final String GXP_RESULT="GXP Result";
+    public static final String TST_ORDER= "TST Order";
+    public static final String TST_RESULT= "TST Result";
+    public static final String CT_SCAN_ORDER= "CT Scan Order";
+    public static final String CT_SCAN_RESULT= "CT Scan Result";
+    public static final String ULTRASOUND_ORDER = "Ultrasound Order";
+    public static final String ULTRASOUND_RESULT = "Ultrasound Result";
+    public static final String END_FOLLOW_UP = "End Follow-Up";
 
 }

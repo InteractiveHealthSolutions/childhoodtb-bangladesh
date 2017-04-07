@@ -18,11 +18,52 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="te" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0276edf-b452-4d3e-b935-f5a24d5fb6f0" name="Default" comment="" />
+    <list default="true" id="c0276edf-b452-4d3e-b935-f5a24d5fb6f0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CTScanTestOrderActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CTScanTestResultActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TSTTestOrderActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TSTTestResultActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/UltraSoundTestOrderActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/UltraSoundTestResultActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/server/MobileService.class" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/server/MobileService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/shared/FormType.class" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/shared/FormType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Shujaat.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Shujaat.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/main_menu.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/main_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaedsPresumptiveConfirmationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaedsPresumptiveConfirmationActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/shared/FormType.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/shared/FormType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/main_menu_strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/main_menu_strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/reusable_strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/reusable_strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/test_order_result.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/test_order_result.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/server/MobileService.java" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/server/MobileService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/shared/FormType.java" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/shared/FormType.java" />
+    </list>
     <ignored path="childhoodtb_mobile.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,111 +145,7 @@
     <favorites_list name="childhoodtb_mobile" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GXPTestResultActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestResultActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4010554">
-              <caret line="241" column="3" selection-start-line="241" selection-start-column="3" selection-end-line="241" selection-end-column="3" />
-              <folding>
-                <element signature="e#2943#2961#0" expanded="true" />
-                <element signature="e#3091#3109#0" expanded="true" />
-                <element signature="e#3111#3129#0" expanded="true" />
-                <element signature="e#3221#3246#0" expanded="true" />
-                <element signature="e#3306#3331#0" expanded="true" />
-                <element signature="e#3349#3374#0" expanded="true" />
-                <element signature="e#3528#3547#0" expanded="true" />
-                <element signature="e#3691#3710#0" expanded="true" />
-                <element signature="e#3712#3732#0" expanded="true" />
-                <element signature="e#3821#3844#0" expanded="true" />
-                <element signature="e#3996#4019#0" expanded="true" />
-                <element signature="e#4021#4041#0" expanded="true" />
-                <element signature="e#4126#4145#0" expanded="true" />
-                <element signature="e#4288#4307#0" expanded="true" />
-                <element signature="e#4309#4329#0" expanded="true" />
-                <element signature="e#4414#4433#0" expanded="true" />
-                <element signature="e#4488#4507#0" expanded="true" />
-                <element signature="e#4525#4549#0" expanded="true" />
-                <element signature="e#4704#4723#0" expanded="true" />
-                <element signature="e#4771#4790#0" expanded="true" />
-                <element signature="e#4808#4832#0" expanded="true" />
-                <element signature="e#5028#5049#0" expanded="true" />
-                <element signature="e#5067#5088#0" expanded="true" />
-                <element signature="method#onStart#0;class#GXPTestResultActivity#0" expanded="false" />
-                <element signature="e#10432#10504#0" expanded="true" />
-                <element signature="e#10762#10809#0" expanded="true" />
-                <element signature="e#11242#11321#0" expanded="true" />
-                <element signature="e#11584#11663#0" expanded="true" />
-                <element signature="e#12608#12655#0" expanded="true" />
-                <element signature="e#12987#13027#0" expanded="true" />
-                <element signature="e#13690#13777#0" expanded="true" />
-                <element signature="e#14729#14772#0" expanded="true" />
-                <element signature="method#onClick#0;class#GXPTestResultActivity#0" expanded="false" />
-                <element signature="method#onItemSelected#0;class#GXPTestResultActivity#0" expanded="false" />
-                <element signature="e#16473#16513#0" expanded="true" />
-                <element signature="e#16897#16944#0" expanded="true" />
-                <element signature="e#17744#17745#0" expanded="true" />
-                <element signature="e#17772#17773#0" expanded="true" />
-                <element signature="e#17827#18250#0" expanded="true" />
-                <element signature="e#18249#18250#0" expanded="true" />
-                <element signature="e#19006#19082#0" expanded="true" />
-                <element signature="e#19281#19335#0" expanded="true" />
-                <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#GXPTestResultActivity#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenuActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="152" column="55" selection-start-line="152" selection-start-column="55" selection-end-line="152" selection-end-column="56" />
-              <folding>
-                <element signature="e#9539#9580#0" expanded="false" />
-                <element signature="method#initView#0;class#MainMenuActivity#0" expanded="false" />
-                <element signature="method#validate#0;class#MainMenuActivity#0" expanded="false" />
-                <element signature="method#onOptionsItemSelected#0;class#MainMenuActivity#0" expanded="false" />
-                <element signature="class#14447:19892" expanded="false" />
-                <element signature="method#onCreateDialog#0;class#MainMenuActivity#0" expanded="false" />
-                <element signature="method#onBackPressed#0;class#MainMenuActivity#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/LoginActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GXPTestOrderActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestOrderActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
-              <folding>
-                <element signature="method#onStart#0;class#GXPTestOrderActivity#0" expanded="false" />
-                <element signature="method#initView#0;class#GXPTestOrderActivity#0" expanded="false" />
-                <element signature="method#validate#0;class#GXPTestOrderActivity#0" expanded="false" />
-                <element signature="e#12123#12133#0" expanded="true" />
-                <element signature="method#onCheckedChanged#0;class#GXPTestOrderActivity#0" expanded="false" />
-                <element signature="method#onClick#0;class#GXPTestOrderActivity#0" expanded="false" />
-                <element signature="method#onItemSelected#0;class#GXPTestOrderActivity#0" expanded="false" />
-                <element signature="method#onActivityResult#0;class#GXPTestOrderActivity#0" expanded="false" />
-                <element signature="class#PediatricPresumptiveFragment#0;class#GXPTestOrderActivity#0" expanded="false" />
-                <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#GXPTestOrderActivity#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1775,13 +1712,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaediatricScreeningFormActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/PaedsPresumptiveConfirmationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/NewActivity/TestIndicationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/defaults.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/graph_layout.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-ur/login.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/AbstractFragmentActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/Adapter/FragmentingPagerAdapter.java" />
@@ -1793,7 +1723,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TestIndicationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaediatricContactTracingAtHomeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CXRTestOrderResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TestOrderResultsAFBSmear.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/AFBTestOrderResults.java" />
@@ -1814,18 +1743,26 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/ESRTestResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/ESRTestOrderActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/ESRTestResultActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/shared/FormType.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/test_order_result.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/reusable_strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/main_menu_strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" />
-        <option value="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestOrder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestResult.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestOrderActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestResultActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TSTTestOrderActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaedsPresumptiveConfirmationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CTScanTestResultActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/reusable_strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CTScanTestOrderActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/test_order_result.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/UltraSoundTestOrderActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TSTTestResultActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/UltraSoundTestResultActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/main_menu_strings.xml" />
+        <option value="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/shared/FormType.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" />
       </list>
     </option>
   </component>
@@ -1888,16 +1825,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="childhoodtb_mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -1913,6 +1840,16 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="childhoodtb_mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -1930,28 +1867,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="childhoodtb_mobile" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1992,16 +1907,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="ChildhoodTbNewActivities" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="childhoodtb_mobile" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2319,8 +2224,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37030718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5477816" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5477816" sideWeight="0.4939302" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30546075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -2329,16 +2233,17 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27010623" sideWeight="0.52047783" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5477816" sideWeight="0.5030349" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5477816" sideWeight="0.5060698" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24734446" sideWeight="0.4795222" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24734446" sideWeight="0.4795222" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37030718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993174" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2347,14 +2252,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55972695" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27010623" sideWeight="0.52047783" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24734446" sideWeight="0.4795222" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2386,70 +2291,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="40" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.0.1/support-v4-23.0.1-sources.jar!/android/support/v4/app/FragmentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="743" column="23" selection-start-line="743" selection-start-column="23" selection-end-line="743" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/Adapter/FragmentingPagerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23835126">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/patient_search_strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5735849">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36978132">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-10/android.jar!/android/os/Handler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0185184">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-10/android.jar!/android/os/Looper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.2777777">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/PaediatricContactTracingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5625">
-          <caret line="1304" column="70" selection-start-line="1304" selection-start-column="70" selection-end-line="1304" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/model/Patient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8685714">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ContactTracingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2521,57 +2367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0763209">
-          <caret line="365" column="0" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
-          <folding>
-            <element signature="e#2887#2905#0" expanded="false" />
-            <element signature="e#3035#3053#0" expanded="false" />
-            <element signature="e#3055#3073#0" expanded="false" />
-            <element signature="e#3172#3207#0" expanded="false" />
-            <element signature="e#3366#3401#0" expanded="false" />
-            <element signature="e#3403#3423#0" expanded="false" />
-            <element signature="e#3504#3518#0" expanded="false" />
-            <element signature="e#3561#3575#0" expanded="false" />
-            <element signature="e#3593#3612#0" expanded="false" />
-            <element signature="e#3773#3801#0" expanded="false" />
-            <element signature="e#3856#3884#0" expanded="false" />
-            <element signature="e#3902#3930#0" expanded="false" />
-            <element signature="e#4095#4127#0" expanded="false" />
-            <element signature="e#4187#4219#0" expanded="false" />
-            <element signature="e#4237#4271#0" expanded="false" />
-            <element signature="e#4425#4445#0" expanded="false" />
-            <element signature="e#4493#4513#0" expanded="false" />
-            <element signature="e#4531#4555#0" expanded="false" />
-            <element signature="e#4751#4772#0" expanded="false" />
-            <element signature="e#4790#4811#0" expanded="false" />
-            <element signature="method#validate#0;class#EndFollowUpActivity#0" expanded="false" />
-            <element signature="e#9706#9778#0" expanded="false" />
-            <element signature="e#10036#10083#0" expanded="false" />
-            <element signature="e#10516#10595#0" expanded="false" />
-            <element signature="method#submit#0;class#EndFollowUpActivity#0" expanded="false" />
-            <element signature="e#11214#11224#0" expanded="false" />
-            <element signature="e#11446#11509#0" expanded="false" />
-            <element signature="e#11757#11797#0" expanded="false" />
-            <element signature="e#12010#12061#0" expanded="false" />
-            <element signature="e#12472#12913#0" expanded="false" />
-            <element signature="e#12732#12819#0" expanded="false" />
-            <element signature="e#12912#12913#0" expanded="false" />
-            <element signature="e#13802#13845#0" expanded="false" />
-            <element signature="method#onItemSelected#0;class#EndFollowUpActivity#0" expanded="false" />
-            <element signature="e#15194#15242#0" expanded="false" />
-            <element signature="e#15711#15736#0" expanded="false" />
-            <element signature="e#16196#16232#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#EndFollowUpActivity#0" expanded="false" />
-            <element signature="e#17807#17883#0" expanded="false" />
-            <element signature="e#18082#18136#0" expanded="false" />
-            <element signature="e#20211#20212#0" expanded="false" />
-            <element signature="e#20251#20252#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/db_schema.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6132075">
@@ -2631,20 +2426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaedsPresumptiveConfirmationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3327032">
-          <caret line="149" column="33" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="33" />
-          <folding>
-            <element signature="e#6955#6970#0" expanded="true" />
-            <element signature="method#onItemSelected#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
-            <element signature="method#updateDisplay#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
-            <element signature="class#PediatricPresumptiveFragment#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
-            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-10/android.jar!/android/app/DatePickerDialog.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.17966904">
@@ -2665,16 +2446,16 @@
             <element signature="docComment;method#getItem#0;class#PediatricScreeningSuspectFragmentPagerAdapter#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
             <element signature="method#getItem#0;class#PediatricScreeningSuspectFragmentPagerAdapter#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
             <element signature="docComment;method#getCount#0;class#PediatricScreeningSuspectFragmentPagerAdapter#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
-            <element signature="e#8670#8682#0" expanded="true" />
+            <element signature="e#8670#8682#0" expanded="false" />
             <element signature="method#initView#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
             <element signature="method#onClick#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
             <element signature="method#updateDisplay#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
             <element signature="method#validate#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
-            <element signature="e#23047#23093#0" expanded="true" />
-            <element signature="e#23125#23167#0" expanded="true" />
-            <element signature="e#23267#23305#0" expanded="true" />
-            <element signature="e#23428#23474#0" expanded="true" />
-            <element signature="e#23510#23552#0" expanded="true" />
+            <element signature="e#23047#23093#0" expanded="false" />
+            <element signature="e#23125#23167#0" expanded="false" />
+            <element signature="e#23267#23305#0" expanded="false" />
+            <element signature="e#23428#23474#0" expanded="false" />
+            <element signature="e#23510#23552#0" expanded="false" />
             <element signature="method#onActivityResult#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
             <element signature="method#onEditorAction#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
             <element signature="method#updateDob#0;class#PaediatricScreeningFormActivity#0" expanded="false" />
@@ -2682,19 +2463,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/test_indication_strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65849054">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-10/android.jar!/java/lang/Override.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3015873">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2702,42 +2474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3876923">
           <caret line="161" column="19" selection-start-line="161" selection-start-column="19" selection-end-line="161" selection-end-column="19" />
-          <folding>
-            <element signature="e#6918#6919#0" expanded="true" />
-            <element signature="e#6969#6970#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/AFBTestResultActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26702508">
-          <caret line="266" column="37" selection-start-line="266" selection-start-column="37" selection-end-line="266" selection-end-column="37" />
-          <folding>
-            <element signature="method#onStart#0;class#AFBTestResultActivity#0" expanded="false" />
-            <element signature="method#updateDisplay#0;class#AFBTestResultActivity#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#10426:12242" expanded="false" />
-            <element signature="method#onProgressUpdate#0;class#10426:12242" expanded="false" />
-            <element signature="method#onPostExecute#0;class#10426:12242" expanded="false" />
-            <element signature="method#onCheckedChanged#0;class#AFBTestResultActivity#0" expanded="false" />
-            <element signature="method#onClick#0;class#AFBTestResultActivity#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#AFBTestResultActivity#0" expanded="false" />
-            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#AFBTestResultActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CXRTestOrderActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="282" column="48" selection-start-line="282" selection-start-column="48" selection-end-line="282" selection-end-column="48" />
-          <folding>
-            <element signature="e#10364#10374#0" expanded="true" />
-            <element signature="method#onClick#0;class#CXRTestOrderActivity#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#CXRTestOrderActivity#0" expanded="false" />
-            <element signature="class#PediatricPresumptiveFragment#0;class#CXRTestOrderActivity#0" expanded="false" />
-            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#CXRTestOrderActivity#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2746,32 +2482,10 @@
         <state vertical-scroll-proportion="0.39426523">
           <caret line="305" column="50" selection-start-line="305" selection-start-column="50" selection-end-line="305" selection-end-column="50" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#onItemSelected#0;class#CXRTestResultActivity#0" expanded="false" />
             <element signature="method#onActivityResult#0;class#CXRTestResultActivity#0" expanded="false" />
             <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#CXRTestResultActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/util/ServerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72759855">
-          <caret line="2454" column="63" selection-start-line="2454" selection-start-column="63" selection-end-line="2454" selection-end-column="63" />
-          <folding>
-            <element signature="method#saveBloodSugarTest#0;class#ServerService#0" expanded="false" />
-            <element signature="method#saveBloodSugarResults#0;class#ServerService#0" expanded="false" />
-            <element signature="method#saveClinicalEvaluation#0;class#ServerService#0" expanded="false" />
-            <element signature="method#saveDrugDispersal#0;class#ServerService#0" expanded="false" />
-            <element signature="method#savePatientGps#0;class#ServerService#0" expanded="false" />
-            <element signature="method#saveFeedback#0;class#ServerService#0" expanded="false" />
-            <element signature="docComment;method#saveNonSuspect#0;class#ServerService#0" expanded="false" />
-            <element signature="method#saveNonSuspect#0;class#ServerService#0" expanded="false" />
-            <element signature="method#insertPaediatricScreenForm#0;class#ServerService#0" expanded="false" />
-            <element signature="method#insertPaedsPresumptiveConfirmationForm#0;class#ServerService#0" expanded="false" />
-            <element signature="method#paediatricContactInvestigationFacility#0;class#ServerService#0" expanded="false" />
-            <element signature="method#insertEndFollowUpForm#0;class#ServerService#0" expanded="false" />
-            <element signature="e#102843#102933#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2781,7 +2495,7 @@
         <state vertical-scroll-proportion="0.78673834">
           <caret line="297" column="45" selection-start-line="297" selection-start-column="45" selection-end-line="297" selection-end-column="45" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#createViews#0;class#HistopathologTestResultActivity#0" expanded="false" />
             <element signature="method#onStart#0;class#HistopathologTestResultActivity#0" expanded="false" />
             <element signature="method#initView#0;class#HistopathologTestResultActivity#0" expanded="false" />
@@ -2805,54 +2519,40 @@
         <state vertical-scroll-proportion="0.5878136">
           <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
           <folding>
-            <element signature="e#2851#2869#0" expanded="true" />
-            <element signature="e#2999#3017#0" expanded="true" />
-            <element signature="e#3019#3037#0" expanded="true" />
-            <element signature="e#3127#3151#0" expanded="true" />
-            <element signature="e#3210#3234#0" expanded="true" />
-            <element signature="e#3252#3276#0" expanded="true" />
-            <element signature="e#3434#3457#0" expanded="true" />
-            <element signature="e#3610#3633#0" expanded="true" />
-            <element signature="e#3635#3655#0" expanded="true" />
-            <element signature="e#3749#3777#0" expanded="true" />
-            <element signature="e#3939#3967#0" expanded="true" />
-            <element signature="e#3969#3989#0" expanded="true" />
-            <element signature="e#4075#4094#0" expanded="true" />
-            <element signature="e#4142#4161#0" expanded="true" />
-            <element signature="e#4179#4203#0" expanded="true" />
-            <element signature="e#4399#4420#0" expanded="true" />
-            <element signature="e#4438#4459#0" expanded="true" />
-            <element signature="e#9144#9216#0" expanded="true" />
-            <element signature="e#9474#9521#0" expanded="true" />
-            <element signature="e#9954#10033#0" expanded="true" />
-            <element signature="e#10294#10373#0" expanded="true" />
-            <element signature="e#10990#11000#0" expanded="true" />
-            <element signature="e#11883#11970#0" expanded="true" />
-            <element signature="e#12942#12985#0" expanded="true" />
+            <element signature="e#2851#2869#0" expanded="false" />
+            <element signature="e#2999#3017#0" expanded="false" />
+            <element signature="e#3019#3037#0" expanded="false" />
+            <element signature="e#3127#3151#0" expanded="false" />
+            <element signature="e#3210#3234#0" expanded="false" />
+            <element signature="e#3252#3276#0" expanded="false" />
+            <element signature="e#3434#3457#0" expanded="false" />
+            <element signature="e#3610#3633#0" expanded="false" />
+            <element signature="e#3635#3655#0" expanded="false" />
+            <element signature="e#3749#3777#0" expanded="false" />
+            <element signature="e#3939#3967#0" expanded="false" />
+            <element signature="e#3969#3989#0" expanded="false" />
+            <element signature="e#4075#4094#0" expanded="false" />
+            <element signature="e#4142#4161#0" expanded="false" />
+            <element signature="e#4179#4203#0" expanded="false" />
+            <element signature="e#4399#4420#0" expanded="false" />
+            <element signature="e#4438#4459#0" expanded="false" />
+            <element signature="e#9144#9216#0" expanded="false" />
+            <element signature="e#9474#9521#0" expanded="false" />
+            <element signature="e#9954#10033#0" expanded="false" />
+            <element signature="e#10294#10373#0" expanded="false" />
+            <element signature="e#10990#11000#0" expanded="false" />
+            <element signature="e#11883#11970#0" expanded="false" />
+            <element signature="e#12942#12985#0" expanded="false" />
             <element signature="method#onClick#0;class#HistopathologTestOrderActivity#0" expanded="false" />
-            <element signature="e#14599#14600#0" expanded="true" />
-            <element signature="e#14627#14628#0" expanded="true" />
+            <element signature="e#14599#14600#0" expanded="false" />
+            <element signature="e#14627#14628#0" expanded="false" />
             <element signature="method#onActivityResult#0;class#HistopathologTestOrderActivity#0" expanded="false" />
-            <element signature="e#15851#15927#0" expanded="true" />
-            <element signature="e#16126#16180#0" expanded="true" />
+            <element signature="e#15851#15927#0" expanded="false" />
+            <element signature="e#16126#16180#0" expanded="false" />
             <element signature="class#PediatricPresumptiveFragment#0;class#HistopathologTestOrderActivity#0" expanded="false" />
             <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#HistopathologTestOrderActivity#0" expanded="false" />
-            <element signature="e#18255#18256#0" expanded="true" />
-            <element signature="e#18295#18296#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/ESRTestOrderActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19727892">
-          <caret line="340" column="10" selection-start-line="340" selection-start-column="10" selection-end-line="340" selection-end-column="10" />
-          <folding>
-            <element signature="method#validate#0;class#ESRTestOrderActivity#0" expanded="false" />
-            <element signature="method#onItemSelected#0;class#ESRTestOrderActivity#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#ESRTestOrderActivity#0" expanded="false" />
-            <element signature="class#PediatricPresumptiveFragment#0;class#ESRTestOrderActivity#0" expanded="false" />
-            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#ESRTestOrderActivity#0" expanded="false" />
+            <element signature="e#18255#18256#0" expanded="false" />
+            <element signature="e#18295#18296#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2873,22 +2573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/reusable_strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1792452">
-          <caret line="130" column="41" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/test_order_result.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6415094">
-          <caret line="120" column="33" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/util/RegexUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27060932">
@@ -2897,25 +2581,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/shared/FormType.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6594982">
-          <caret line="71" column="55" selection-start-line="71" selection-start-column="55" selection-end-line="71" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#4435#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.034050178">
+          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/AFBTestOrderActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79569894">
-          <caret line="579" column="0" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.23835126">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
           <folding>
             <element signature="method#onStart#0;class#AFBTestOrderActivity#0" expanded="false" />
             <element signature="method#initView#0;class#AFBTestOrderActivity#0" expanded="false" />
             <element signature="method#validate#0;class#AFBTestOrderActivity#0" expanded="false" />
-            <element signature="e#12628#12638#0" expanded="true" />
+            <element signature="e#12628#12638#0" expanded="false" />
             <element signature="method#onCheckedChanged#0;class#AFBTestOrderActivity#0" expanded="false" />
             <element signature="method#onClick#0;class#AFBTestOrderActivity#0" expanded="false" />
             <element signature="method#onItemSelected#0;class#AFBTestOrderActivity#0" expanded="false" />
@@ -2925,107 +2607,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8792453">
-          <caret line="108" column="71" selection-start-line="108" selection-start-column="71" selection-end-line="108" selection-end-column="71" />
-          <folding>
-            <element signature="e#884#902#0" expanded="true" />
-            <element signature="e#1033#1051#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24151696">
-          <caret line="248" column="56" selection-start-line="248" selection-start-column="38" selection-end-line="248" selection-end-column="56" />
-          <folding>
-            <element signature="e#210#223#0" expanded="true" />
-            <element signature="e#598#616#0" expanded="true" />
-            <element signature="e#1033#1054#0" expanded="true" />
-            <element signature="e#5869#5904#0" expanded="true" />
-            <element signature="e#5934#5969#0" expanded="true" />
-            <element signature="e#6289#6326#0" expanded="true" />
-            <element signature="e#6356#6393#0" expanded="true" />
-            <element signature="e#6716#6748#0" expanded="true" />
-            <element signature="e#6778#6810#0" expanded="true" />
-            <element signature="e#7153#7184#0" expanded="true" />
-            <element signature="e#7214#7245#0" expanded="true" />
-            <element signature="e#7589#7621#0" expanded="true" />
-            <element signature="e#7651#7683#0" expanded="true" />
-            <element signature="e#8021#8052#0" expanded="true" />
-            <element signature="e#8082#8113#0" expanded="true" />
-            <element signature="e#8435#8467#0" expanded="true" />
-            <element signature="e#8497#8529#0" expanded="true" />
-            <element signature="e#8878#8920#0" expanded="true" />
-            <element signature="e#8950#8992#0" expanded="true" />
-            <element signature="e#9325#9368#0" expanded="true" />
-            <element signature="e#9398#9441#0" expanded="true" />
-            <element signature="e#9761#9792#0" expanded="true" />
-            <element signature="e#9822#9853#0" expanded="true" />
-            <element signature="e#10191#10223#0" expanded="true" />
-            <element signature="e#10253#10285#0" expanded="true" />
-            <element signature="e#10622#10653#0" expanded="true" />
-            <element signature="e#10683#10714#0" expanded="true" />
-            <element signature="e#11052#11084#0" expanded="true" />
-            <element signature="e#11114#11146#0" expanded="true" />
-            <element signature="e#11492#11533#0" expanded="true" />
-            <element signature="e#11563#11604#0" expanded="true" />
-            <element signature="e#11929#11980#0" expanded="true" />
-            <element signature="e#12010#12061#0" expanded="true" />
-            <element signature="e#12376#12399#0" expanded="true" />
-            <element signature="e#12429#12452#0" expanded="true" />
-            <element signature="e#12809#12839#0" expanded="true" />
-            <element signature="e#12869#12899#0" expanded="true" />
-            <element signature="e#13258#13280#0" expanded="true" />
-            <element signature="e#13310#13335#0" expanded="true" />
-            <element signature="e#13698#13728#0" expanded="true" />
-            <element signature="e#13758#13788#0" expanded="true" />
-            <element signature="e#14164#14189#0" expanded="true" />
-            <element signature="e#14219#14244#0" expanded="true" />
-            <element signature="e#14614#14650#0" expanded="true" />
-            <element signature="e#14680#14716#0" expanded="true" />
-            <element signature="e#15087#15126#0" expanded="true" />
-            <element signature="e#15156#15195#0" expanded="true" />
-            <element signature="e#15573#15606#0" expanded="true" />
-            <element signature="e#15636#15669#0" expanded="true" />
-            <element signature="e#16032#16057#0" expanded="true" />
-            <element signature="e#16087#16112#0" expanded="true" />
-            <element signature="e#16464#16487#0" expanded="true" />
-            <element signature="e#16517#16535#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/main_menu_strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83773583">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81544256">
-          <caret line="275" column="44" selection-start-line="275" selection-start-column="44" selection-end-line="275" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestOrderActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.89784944">
+          <caret line="567" column="0" selection-start-line="567" selection-start-column="0" selection-end-line="567" selection-end-column="0" />
           <folding>
             <element signature="method#onStart#0;class#GXPTestOrderActivity#0" expanded="false" />
             <element signature="method#initView#0;class#GXPTestOrderActivity#0" expanded="false" />
             <element signature="method#validate#0;class#GXPTestOrderActivity#0" expanded="false" />
-            <element signature="e#12123#12133#0" expanded="true" />
             <element signature="method#onCheckedChanged#0;class#GXPTestOrderActivity#0" expanded="false" />
             <element signature="method#onClick#0;class#GXPTestOrderActivity#0" expanded="false" />
             <element signature="method#onItemSelected#0;class#GXPTestOrderActivity#0" expanded="false" />
@@ -3036,78 +2625,376 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.0985665">
+          <caret line="558" column="0" selection-start-line="558" selection-start-column="0" selection-end-line="558" selection-end-column="0" />
+          <folding>
+            <element signature="method#onStart#0;class#GXPTestResultActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#GXPTestResultActivity#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#GXPTestResultActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#GXPTestResultActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/paediatric_screening_strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3509434">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TSTTestOrderActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2240143">
+          <caret line="195" column="32" selection-start-line="195" selection-start-column="32" selection-end-line="195" selection-end-column="32" />
+          <folding>
+            <element signature="method#createViews#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="method#initView#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="method#updateDisplay#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="method#validate#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="method#onCheckedChanged#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="e#14842#14918#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#TSTTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#TSTTestOrderActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="204" column="25" selection-start-line="204" selection-start-column="25" selection-end-line="204" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/util/ServerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="582" column="20" selection-start-line="582" selection-start-column="20" selection-end-line="582" selection-end-column="20" />
+          <folding>
+            <element signature="method#saveBloodSugarTest#0;class#ServerService#0" expanded="false" />
+            <element signature="method#saveBloodSugarResults#0;class#ServerService#0" expanded="false" />
+            <element signature="method#saveClinicalEvaluation#0;class#ServerService#0" expanded="false" />
+            <element signature="method#saveDrugDispersal#0;class#ServerService#0" expanded="false" />
+            <element signature="method#savePatientGps#0;class#ServerService#0" expanded="false" />
+            <element signature="method#saveFeedback#0;class#ServerService#0" expanded="false" />
+            <element signature="docComment;method#saveNonSuspect#0;class#ServerService#0" expanded="false" />
+            <element signature="method#saveNonSuspect#0;class#ServerService#0" expanded="false" />
+            <element signature="method#insertPaediatricScreenForm#0;class#ServerService#0" expanded="false" />
+            <element signature="method#insertPaedsPresumptiveConfirmationForm#0;class#ServerService#0" expanded="false" />
+            <element signature="method#paediatricContactInvestigationFacility#0;class#ServerService#0" expanded="false" />
+            <element signature="method#insertEndFollowUpForm#0;class#ServerService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CXRTestOrderActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93189967">
+          <caret line="481" column="0" selection-start-line="51" selection-start-column="34" selection-end-line="481" selection-end-column="0" />
+          <folding>
+            <element signature="method#createViews#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#initView#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#updateDisplay#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#validate#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#onCheckedChanged#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#CXRTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#CXRTestOrderActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/AFBTestResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.034050178">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+          <folding>
+            <element signature="method#createViews#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#initView#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#updateDisplay#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#validate#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#10426:12242" expanded="false" />
+            <element signature="method#onProgressUpdate#0;class#10426:12242" expanded="false" />
+            <element signature="method#onPostExecute#0;class#10426:12242" expanded="false" />
+            <element signature="method#onCheckedChanged#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#AFBTestResultActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#AFBTestResultActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/reusable_strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7490566">
+          <caret line="139" column="28" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/ESRTestOrderActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.797491">
+          <caret line="340" column="10" selection-start-line="340" selection-start-column="10" selection-end-line="340" selection-end-column="10" />
+          <folding>
+            <element signature="method#validate#0;class#ESRTestOrderActivity#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#ESRTestOrderActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#ESRTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#ESRTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#ESRTestOrderActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaedsPresumptiveConfirmationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61290324">
+          <caret line="502" column="0" selection-start-line="502" selection-start-column="0" selection-end-line="502" selection-end-column="0" />
+          <folding>
+            <element signature="method#updateDisplay#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
+            <element signature="method#validate#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#PaedsPresumptiveConfirmationActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CTScanTestOrderActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93189967">
+          <caret line="518" column="0" selection-start-line="518" selection-start-column="0" selection-end-line="518" selection-end-column="0" />
+          <folding>
+            <element signature="method#onStart#0;class#CTScanTestOrderActivity#0" expanded="false" />
+            <element signature="method#updateDisplay#0;class#CTScanTestOrderActivity#0" expanded="false" />
+            <element signature="method#validate#0;class#CTScanTestOrderActivity#0" expanded="false" />
+            <element signature="class#12050:13868" expanded="false" />
+            <element signature="method#onCheckedChanged#0;class#CTScanTestOrderActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#CTScanTestOrderActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#CTScanTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#CTScanTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#CTScanTestOrderActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/test_indication_strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2509434">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CTScanTestResultActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="152" column="55" selection-start-line="152" selection-start-column="55" selection-end-line="152" selection-end-column="56" />
+          <caret line="465" column="0" selection-start-line="465" selection-start-column="0" selection-end-line="465" selection-end-column="0" />
           <folding>
-            <element signature="e#9539#9580#0" expanded="false" />
+            <element signature="method#createViews#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#initView#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#updateDisplay#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#validate#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#onProgressUpdate#0;class#10468:12288" expanded="false" />
+            <element signature="method#onPostExecute#0;class#10468:12288" expanded="false" />
+            <element signature="method#onCheckedChanged#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="method#onCreateView#0;class#PediatricPresumptiveFragment#0;class#CTScanTestResultActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#CTScanTestResultActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TSTTestResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2258065">
+          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+          <folding>
+            <element signature="method#validate#0;class#TSTTestResultActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#TSTTestResultActivity#0" expanded="false" />
+            <element signature="e#11597#11607#0" expanded="true" />
+            <element signature="method#doInBackground#0;class#12135:13944" expanded="false" />
+            <element signature="method#onProgressUpdate#0;class#12135:13944" expanded="false" />
+            <element signature="method#onPostExecute#0;class#12135:13944" expanded="false" />
+            <element signature="method#onCheckedChanged#0;class#TSTTestResultActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#TSTTestResultActivity#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#TSTTestResultActivity#0" expanded="false" />
+            <element signature="e#17522#17572#0" expanded="true" />
+            <element signature="method#onActivityResult#0;class#TSTTestResultActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#TSTTestResultActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#TSTTestResultActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/test_order_result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6773585">
+          <caret line="163" column="35" selection-start-line="163" selection-start-column="35" selection-end-line="163" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3584906">
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding>
+            <element signature="e#884#902#0" expanded="true" />
+            <element signature="e#1033#1051#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49340865">
+          <caret line="270" column="59" selection-start-line="270" selection-start-column="59" selection-end-line="270" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/main_menu_strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83773583">
+          <caret line="61" column="47" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/UltraSoundTestResultActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37275985">
+          <caret line="335" column="75" selection-start-line="335" selection-start-column="75" selection-end-line="335" selection-end-column="75" />
+          <folding>
+            <element signature="e#2791#2809#0" expanded="true" />
+            <element signature="e#2939#2957#0" expanded="true" />
+            <element signature="e#2959#2977#0" expanded="true" />
+            <element signature="e#3069#3094#0" expanded="true" />
+            <element signature="e#3154#3179#0" expanded="true" />
+            <element signature="e#3197#3222#0" expanded="true" />
+            <element signature="e#3383#3409#0" expanded="true" />
+            <element signature="e#3566#3592#0" expanded="true" />
+            <element signature="e#3594#3614#0" expanded="true" />
+            <element signature="e#3700#3719#0" expanded="true" />
+            <element signature="e#3767#3786#0" expanded="true" />
+            <element signature="e#3804#3828#0" expanded="true" />
+            <element signature="e#4024#4045#0" expanded="true" />
+            <element signature="e#4063#4084#0" expanded="true" />
+            <element signature="e#8951#9023#0" expanded="true" />
+            <element signature="e#9281#9328#0" expanded="true" />
+            <element signature="e#9761#9840#0" expanded="true" />
+            <element signature="e#10103#10182#0" expanded="true" />
+            <element signature="e#10800#10810#0" expanded="true" />
+            <element signature="e#11580#11667#0" expanded="true" />
+            <element signature="method#onProgressUpdate#0;class#11154:12984" expanded="false" />
+            <element signature="e#12632#12675#0" expanded="true" />
+            <element signature="method#onCheckedChanged#0;class#UltraSoundTestResultActivity#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#UltraSoundTestResultActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#UltraSoundTestResultActivity#0" expanded="false" />
+            <element signature="e#15552#15628#0" expanded="true" />
+            <element signature="e#15827#15881#0" expanded="true" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#UltraSoundTestResultActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#UltraSoundTestResultActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7903226">
+          <caret line="741" column="91" selection-start-line="741" selection-start-column="91" selection-end-line="741" selection-end-column="91" />
+          <folding>
+            <element signature="e#10829#10870#0" expanded="false" />
             <element signature="method#initView#0;class#MainMenuActivity#0" expanded="false" />
             <element signature="method#validate#0;class#MainMenuActivity#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#MainMenuActivity#0" expanded="false" />
-            <element signature="class#14447:19892" expanded="false" />
+            <element signature="class#15915:21360" expanded="false" />
             <element signature="method#onCreateDialog#0;class#MainMenuActivity#0" expanded="false" />
             <element signature="method#onBackPressed#0;class#MainMenuActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/LoginActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/UltraSoundTestOrderActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.93189967">
+          <caret line="266" column="28" selection-start-line="266" selection-start-column="28" selection-end-line="266" selection-end-column="28" />
+          <folding>
+            <element signature="method#createViews#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="method#updateDisplay#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="method#validate#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="method#submit#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="method#onCheckedChanged#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="method#onClick#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#UltraSoundTestOrderActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/shared/FormType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6594982">
+          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestResultActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4010554">
-          <caret line="241" column="3" selection-start-line="241" selection-start-column="3" selection-end-line="241" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.16566867">
+          <caret line="336" column="18" selection-start-line="336" selection-start-column="18" selection-end-line="336" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4014337">
+          <caret line="310" column="0" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
           <folding>
-            <element signature="e#2943#2961#0" expanded="true" />
-            <element signature="e#3091#3109#0" expanded="true" />
-            <element signature="e#3111#3129#0" expanded="true" />
-            <element signature="e#3221#3246#0" expanded="true" />
-            <element signature="e#3306#3331#0" expanded="true" />
-            <element signature="e#3349#3374#0" expanded="true" />
-            <element signature="e#3528#3547#0" expanded="true" />
-            <element signature="e#3691#3710#0" expanded="true" />
-            <element signature="e#3712#3732#0" expanded="true" />
-            <element signature="e#3821#3844#0" expanded="true" />
-            <element signature="e#3996#4019#0" expanded="true" />
-            <element signature="e#4021#4041#0" expanded="true" />
-            <element signature="e#4126#4145#0" expanded="true" />
-            <element signature="e#4288#4307#0" expanded="true" />
-            <element signature="e#4309#4329#0" expanded="true" />
-            <element signature="e#4414#4433#0" expanded="true" />
-            <element signature="e#4488#4507#0" expanded="true" />
-            <element signature="e#4525#4549#0" expanded="true" />
-            <element signature="e#4704#4723#0" expanded="true" />
-            <element signature="e#4771#4790#0" expanded="true" />
-            <element signature="e#4808#4832#0" expanded="true" />
-            <element signature="e#5028#5049#0" expanded="true" />
-            <element signature="e#5067#5088#0" expanded="true" />
-            <element signature="method#onStart#0;class#GXPTestResultActivity#0" expanded="false" />
-            <element signature="e#10432#10504#0" expanded="true" />
-            <element signature="e#10762#10809#0" expanded="true" />
-            <element signature="e#11242#11321#0" expanded="true" />
-            <element signature="e#11584#11663#0" expanded="true" />
-            <element signature="e#12608#12655#0" expanded="true" />
-            <element signature="e#12987#13027#0" expanded="true" />
-            <element signature="e#13690#13777#0" expanded="true" />
-            <element signature="e#14729#14772#0" expanded="true" />
-            <element signature="method#onClick#0;class#GXPTestResultActivity#0" expanded="false" />
-            <element signature="method#onItemSelected#0;class#GXPTestResultActivity#0" expanded="false" />
-            <element signature="e#16473#16513#0" expanded="true" />
-            <element signature="e#16897#16944#0" expanded="true" />
-            <element signature="e#17744#17745#0" expanded="true" />
-            <element signature="e#17772#17773#0" expanded="true" />
-            <element signature="e#17827#18250#0" expanded="true" />
-            <element signature="e#18249#18250#0" expanded="true" />
-            <element signature="e#19006#19082#0" expanded="true" />
-            <element signature="e#19281#19335#0" expanded="true" />
-            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#GXPTestResultActivity#0" expanded="false" />
+            <element signature="method#validate#0;class#EndFollowUpActivity#0" expanded="false" />
+            <element signature="e#11310#11373#0" expanded="true" />
+            <element signature="e#11625#11665#0" expanded="true" />
+            <element signature="e#11889#11940#0" expanded="true" />
+            <element signature="class#12185:13996" expanded="false" />
+            <element signature="e#12351#12792#0" expanded="true" />
+            <element signature="e#12611#12698#0" expanded="true" />
+            <element signature="e#12791#12792#0" expanded="true" />
+            <element signature="method#onClick#0;class#EndFollowUpActivity#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#EndFollowUpActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#EndFollowUpActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptiveFragment#0;class#EndFollowUpActivity#0" expanded="false" />
+            <element signature="class#PediatricPresumptveFragmentPagerAdapter#0;class#EndFollowUpActivity#0" expanded="false" />
+            <element signature="method#getItem#0;class#PediatricPresumptveFragmentPagerAdapter#0;class#EndFollowUpActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>

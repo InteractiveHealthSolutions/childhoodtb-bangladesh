@@ -55,4 +55,10 @@ Contributors: Tahira Niazi
     <string name="esr_test_order_button">ESR Test Order</string>
     <string name="gxp_test_order_button">GXP Test Order</string>
     <string name="gxp_test_result_button">GXP Test Result</string>
+    <string name="tst_test_order_button">TST Test Order</string>
+    <string name="tst_test_result_button">TST Test Result</string>
+    <string name="ct_scan_test_Order_button">CT Scan Test Order</string>
+    <string name="ct_scan_test_result_button">CT Scan Test Result</string>
+    <string name="ultrasound_test_result_button">Ultrasound Test Result</string>
+    <string name="ultrasound_test_Order_button">Ultrasound Test Order</string>
 </resources>

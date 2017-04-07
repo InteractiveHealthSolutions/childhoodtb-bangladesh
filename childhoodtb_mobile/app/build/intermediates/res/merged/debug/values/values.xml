@@ -357,6 +357,17 @@
         <item>@string/yes</item>
         <item>@string/no</item>
     </string-array>
+    <string-array name="ct_scan_result_option">
+        <item>@string/suggestive_tb</item>
+        <item>@string/normal</item>
+    </string-array>
+    <string-array name="ct_scan_sit_option">
+        <item>@string/chest</item>
+        <item>@string/abdomen</item>
+        <item>@string/whole_body</item>
+        <item>@string/head</item>
+        <item>@string/other</item>
+    </string-array>
     <string-array name="cxr_options">
         <item>@string/yes</item>
         <item>@string/no</item>
@@ -390,9 +401,9 @@
         <item>@string/no</item>
     </string-array>
     <string-array name="esr_result_option">
-      <item>@string/high</item>
-      <item>@string/normal</item>
-  </string-array>
+        <item>@string/high</item>
+        <item>@string/normal</item>
+    </string-array>
     <string-array name="ethnicity_options">
         <item>Sindhi</item>
         <item>Muhajir</item>
@@ -500,6 +511,10 @@
         <item>TBR4 Patient</item>
         <item>Private Patient</item>
     </string-array>
+    <string-array name="interpretation_tst_option">
+    <item>@string/positive</item>
+    <item>@string/negative</item>
+    </string-array>
     <string-array name="language">
         <item>bn - Bengali</item>
         <item>en - English</item>
@@ -534,10 +549,10 @@
         <item>8</item>
     </string-array>
     <string-array name="mtb_burden_option">
-    <item>@string/very_low</item>
-    <item>@string/low</item>
-    <item>@string/medium</item>
-    <item>@string/high</item>
+        <item>@string/very_low</item>
+        <item>@string/low</item>
+        <item>@string/medium</item>
+        <item>@string/high</item>
     </string-array>
     <string-array name="night_sweats_options">
         <item>@string/yes</item>
@@ -590,10 +605,10 @@
         <item>@string/other</item>
     </string-array>
     <string-array name="rif_resistance_options">
-       <item>@string/not_detected</item>
-       <item>@string/detected</item>
-       <item>@string/indeterminate</item>
-   </string-array>
+        <item>@string/not_detected</item>
+        <item>@string/detected</item>
+        <item>@string/indeterminate</item>
+    </string-array>
     <string-array name="screened_before_options">
        <item>@string/yes</item>
        <item>@string/no</item>
@@ -713,6 +728,15 @@
         <item>Contact Tracing</item>
         <item>Reverse Contact Tracing</item>
     </string-array>
+    <string-array name="tst_options">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
+    <string-array name="tst_result_option">
+        <item>@string/five_to_nine_mm</item>
+        <item>@string/ten_mm</item>
+        <item>@string/greater_then_ten_mm</item>
+    </string-array>
     <string-array name="two_options">
         <item>No</item>
         <item>Yes</item>
@@ -724,9 +748,17 @@
         <item>@string/refused</item>
 
     </string-array>
+    <string-array name="ultra_abdomen_option">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+    </string-array>
     <string-array name="ultrasound_abdomen_options">
         <item>@string/yes</item>
         <item>@string/no</item>
+    </string-array>
+    <string-array name="ultrasound_result_option">
+        <item>@string/suggestive_tb</item>
+        <item>@string/normal</item>
     </string-array>
     <string-array name="unable_to_bring_family_options">
         <item>Children Unavailable in Morning</item>
@@ -840,6 +872,7 @@
     <string name="_fever">Fever </string>
     <string name="_patient_id">ID assigned to the presumptive</string>
     <string name="_weight">Weight loss?</string>
+    <string name="abdomen">Abdomen</string>
     <string name="abdominal_exam">Abdominal Examination</string>
     <string name="access_granted">Access granted, you have successfully logged in.</string>
     <string name="addContact"><b> + </b></string>
@@ -871,6 +904,7 @@
     <string name="brother">Brother</string>
     <string name="bt_presumptive_confirmed">TB Presumptive confirmed</string>
     <string name="cancel">Cancel</string>
+    <string name="chest">Chest</string>
     <string name="chest_examination">Chest Examination</string>
     <string name="chest_x_ray">Chest X-ray?</string>
     <string name="child_appetite">Child\'s Appetite</string>
@@ -925,6 +959,10 @@
     <string name="ct_scan">CT Scan</string>
     <string name="ct_scan_area">CT Scan Area</string>
     <string name="ct_scan_area_hint">Enter CT Scan Area</string>
+    <string name="ct_scan_result">CT Scan Result</string>
+    <string name="ct_scan_sit">CT Scan Site</string>
+    <string name="ct_scan_test_Order_button">CT Scan Test Order</string>
+    <string name="ct_scan_test_result_button">CT Scan Test Result</string>
     <string name="cured">Cured</string>
     <string name="customer_info">Client Information</string>
     <string name="cxr">CXR</string>
@@ -1002,6 +1040,7 @@
     <string name="fever_weeks">Have you had fever in the last two weeks?</string>
     <string name="first_name">First Name</string>
     <string name="first_name_hint">Enter First Name</string>
+    <string name="five_to_nine_mm">5-9 mm</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="form_closing">Closing this form</string>
     <string name="form_date">Form Date</string>
@@ -1014,9 +1053,11 @@
     <string name="grandfather">Grandfather</string>
     <string name="grandmother">Grandmother</string>
     <string name="greater_then_50th_percentile">>50th Percentile</string>
+    <string name="greater_then_ten_mm">>10mm</string>
     <string name="gxp_result">GeneXpert Result</string>
     <string name="gxp_test_order_button">GXP Test Order</string>
     <string name="gxp_test_result_button">GXP Test Result</string>
+    <string name="head">Head</string>
     <string name="healthy">Healthy</string>
     <string name="high">High</string>
     <string name="histopathology">Histopathology</string>
@@ -1045,6 +1086,7 @@
     <string name="infiltration">Infiltration</string>
     <string name="insert_error">Error in inserting data. Please make sure you are not violating validation rules</string>
     <string name="inserted">"Data inserted successfully."</string>
+    <string name="interpretation_tst">Interpretation of TST</string>
     <string name="invalid">Invalid</string>
     <string name="invalid_data">Invalid value(s)! Please make sure your input is in correct format</string>
     <string name="invalid_date_or_time">Date or Time is invalid. Make sure you have entered appropriate date/time</string>
@@ -1127,6 +1169,7 @@
     <string name="other_facility_name">Other facility name</string>
     <string name="other_hint">Enter other reason</string>
     <string name="other_location">From where?</string>
+    <string name="other_site">Enter other site</string>
     <string name="other_specify">Other specify</string>
     <string name="other_specify_hint">Enter specify radiological finding</string>
     <string name="others">Others</string>
@@ -1167,6 +1210,7 @@
     <string name="pleuralFluid">Pleural Fluid</string>
     <string name="poor">Poor</string>
     <string name="poor_appetite">Poor Appetite?</string>
+    <string name="positive">Positive</string>
     <string name="positive_report">In possession of a previous positive report?</string>
     <string name="ppa_score">PPA Score</string>
     <string name="ppa_score_hint">Enter PPA score</string>
@@ -1249,6 +1293,7 @@
     <string name="tb_medication">Have you ever taken medication for TB that lasted or was supposed to last for 6/8 months?</string>
     <string name="tb_screening">TB Screening</string>
     <string name="tbr4pk_patient">TBR4 Patient</string>
+    <string name="ten_mm">10mm</string>
     <string name="test_advised">Test advised</string>
     <string name="test_id">Test Id</string>
     <string name="test_indication">Test Indication</string>
@@ -1279,11 +1324,18 @@
     <string name="treatment_initiation_center">Treatment Initiation Center</string>
     <string name="treatment_initiation_center_hint">Enter initial treatment center</string>
     <string name="trust_store_password">4845e7412f</string>
+    <string name="tst">tuberculin Skin Test</string>
+    <string name="tst_result">Tuberculin Skin Test Result</string>
+    <string name="tst_test_order_button">TST Test Order</string>
+    <string name="tst_test_result_button">TST Test Result</string>
     <string name="twentySix_less_then_or_equal_to_50th_percentile">26-&lt;=50th Percentile</string>
     <string name="two_to_three_Weeks">2 to 3 Weeks</string>
     <string name="two_to_three_weeks">2 to 3 Weeks</string>
     <string name="type_of_tb">What type of TB does this family member have?</string>
     <string name="ultrasound_abdomen">Ultrasound Abdomen</string>
+    <string name="ultrasound_result">U/S Result</string>
+    <string name="ultrasound_test_Order_button">Ultrasound Test Order</string>
+    <string name="ultrasound_test_result_button">Ultrasound Test Result</string>
     <string name="unable_to_bring_family">Why were you unable to bring family for screening?</string>
     <string name="uncle">Uncle</string>
     <string name="unknown">Unknown</string>
@@ -1304,6 +1356,7 @@
     <string name="weight_loss">Unexplained weight loss?</string>
     <string name="weight_percentile">Weight Percentile</string>
     <string name="weight_percentile_options"/>
+    <string name="whole_body">Whole body</string>
     <string name="xpert_mtb_rif">Xpert MTB/RIF?</string>
     <string name="year">Year(s)</string>
     <string name="yes">Yes</string>

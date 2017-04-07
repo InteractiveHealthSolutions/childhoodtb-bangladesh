@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:2:1-113:12
+ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:2:1-125:12
 	xmlns:android
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -51,7 +51,7 @@ ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\sr
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:16:22-78
 application
-ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:18:5-111:19
+ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:18:5-123:19
 MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:21:9-41
@@ -263,3 +263,39 @@ ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\sr
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:110:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:109:19-81
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestOrderActivity
+ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:111:9-112:75
+	android:configChanges
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:112:13-63
+	android:name
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:111:19-80
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestResultActivity
+ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:113:9-114:75
+	android:configChanges
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:114:13-63
+	android:name
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:113:19-81
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestOrderActivity
+ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:115:9-116:75
+	android:configChanges
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:116:13-63
+	android:name
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:115:19-83
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestResultActivity
+ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:117:9-118:75
+	android:configChanges
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:118:13-63
+	android:name
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:117:19-84
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestOrderActivity
+ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:119:9-120:75
+	android:configChanges
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:120:13-63
+	android:name
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:119:19-87
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestResultActivity
+ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:121:9-122:75
+	android:configChanges
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:122:13-63
+	android:name
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:121:19-88

@@ -129,4 +129,14 @@
     <string name="very_low">Very Low</string>
     <string name="low">Low</string>
     <string name="medium">Medium</string>
+    <string name="five_to_nine_mm">5-9 mm</string>
+    <string name="ten_mm">10mm</string>
+    <string name="greater_then_ten_mm">>10mm</string>
+    <string name="positive">Positive</string>
+    <string name="chest">Chest</string>
+    <string name="abdomen">Abdomen</string>
+    <string name="whole_body">Whole body</string>
+    <string name="head">Head</string>
+    <string name="other_site">Enter other site</string>
+
 </resources>
