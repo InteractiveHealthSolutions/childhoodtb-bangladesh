@@ -22,63 +22,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0276edf-b452-4d3e-b935-f5a24d5fb6f0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Shujaat.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/AFBTestOrderActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/AFBTestResultActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CXRTestOrderActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/CXRTestResultActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/ESRTestOrderActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/ESRTestResultActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestOrderActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/GXPTestResultActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/HistopathologTestOrderActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/HistopathologTestResultActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/test_order_result.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/server/MobileService.class" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/server/MobileService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/server/util/DateTimeUtil.class" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/server/util/DateTimeUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/shared/FormType.class" afterPath="$PROJECT_DIR$/../childhoodtbweb/war/WEB-INF/classes/com/ihsinformatics/childhoodtb_web/shared/FormType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/ihsinformatics/childhoodtb_mobile/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/main_menu.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/main_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/Adapter/FragmentingPagerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/Adapter/FragmentingPagerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/EndFollowUpActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaediatricContactTracingAtHomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaediatricContactTracingAtHomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaediatricScreeningFormActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaediatricScreeningFormActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaedsPresumptiveConfirmationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PaedsPresumptiveConfirmationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PediatricContactInvestigationAtFacilityActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/PediatricContactInvestigationAtFacilityActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TestIndicationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/ChildhoodTbNewActivities/TestIndicationActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/MainMenuActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/PediatricScreeningActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/shared/FormType.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/shared/FormType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/util/ServerService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ihsinformatics/childhoodtb_mobile/util/ServerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/main_menu_strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/main_menu_strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/paediatric_screening_v1_strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/paediatric_screening_v1_strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/reusable_strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/reusable_strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/server/MobileService.java" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/server/MobileService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/server/util/DateTimeUtil.java" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/server/util/DateTimeUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/shared/FormType.java" afterPath="$PROJECT_DIR$/../childhoodtbweb/src/com/ihsinformatics/childhoodtb_web/shared/FormType.java" />
-    </list>
+    <list default="true" id="c0276edf-b452-4d3e-b935-f5a24d5fb6f0" name="Default" comment="" />
     <ignored path="childhoodtb_mobile.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -2367,7 +2311,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2378,7 +2322,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37030718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5477816" sideWeight="0.4969651" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30546075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30546075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
