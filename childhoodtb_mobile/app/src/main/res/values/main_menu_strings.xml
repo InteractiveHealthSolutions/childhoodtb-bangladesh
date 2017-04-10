@@ -61,4 +61,5 @@ Contributors: Tahira Niazi
     <string name="ct_scan_test_result_button">CT Scan Test Result</string>
     <string name="ultrasound_test_result_button">Ultrasound Test Result</string>
     <string name="ultrasound_test_Order_button">Ultrasound Test Order</string>
+    <string name="treatment_initiation_button">Treatment Initiation</string>
 </resources>

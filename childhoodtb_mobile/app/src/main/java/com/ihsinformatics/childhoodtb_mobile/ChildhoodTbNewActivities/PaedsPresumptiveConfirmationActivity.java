@@ -604,10 +604,7 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
 
                final ContentValues values = new ContentValues();
                values.put("formDate", App.getSqlDate(formDate));
-               values.put("gender", male.isChecked() ? "M" : "F");
-               values.put("age", App.get(age));
                values.put("location", App.getLocation());
-               values.put("firstName", App.get(presumptiveFirstName));
                values.put("motherName", App.get(presumptiveMotherName));
                values.put("patientId", App.get(patientId));
 

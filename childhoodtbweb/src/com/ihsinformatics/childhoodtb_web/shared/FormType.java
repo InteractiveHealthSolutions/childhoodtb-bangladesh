@@ -65,5 +65,6 @@ public class FormType
     public static final String ULTRASOUND_ORDER = "Ultrasound Order";
     public static final String ULTRASOUND_RESULT = "Ultrasound Result";
     public static final String END_FOLLOW_UP = "End Follow-Up";
+    public static final String TREATMENT_INITIATION = "Treatment Initiation";
 
 }

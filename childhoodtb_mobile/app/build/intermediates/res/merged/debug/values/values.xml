@@ -554,6 +554,17 @@
         <item>@string/medium</item>
         <item>@string/high</item>
     </string-array>
+    <string-array name="nid_belongs_options">
+        <item>@string/mother</item>
+        <item>@string/father</item>
+        <item>@string/sister</item>
+        <item>@string/brother</item>
+        <item>@string/grandfather</item>
+        <item>@string/grandmother</item>
+        <item>@string/uncle</item>
+        <item>@string/aunt</item>
+        <item>@string/other</item>
+    </string-array>
     <string-array name="night_sweats_options">
         <item>@string/yes</item>
         <item>@string/no</item>
@@ -570,6 +581,22 @@
         <item>@string/other_disease</item>
         <item>@string/eligible_for_ipt</item>
         <item>@string/did_not_come</item>
+    </string-array>
+    <string-array name="patient_category_options">
+        <item>@string/category_one</item>
+        <item>@string/category_two</item>
+    </string-array>
+    <string-array name="patient_referred_without_Registration_option">
+    <item>@string/yes</item>
+    <item>@string/no</item>
+    </string-array>
+    <string-array name="patient_type_options">
+        <item>@string/new_patient</item>
+        <item>@string/relapse</item>
+        <item>@string/transfer_in</item>
+        <item>@string/treatment_after_default</item>
+        <item>@string/treatment_after_failure</item>
+        <item>@string/other</item>
     </string-array>
     <string-array name="playfulness_option">
         <item>@string/yes</item>
@@ -728,6 +755,17 @@
         <item>Contact Tracing</item>
         <item>Reverse Contact Tracing</item>
     </string-array>
+    <string-array name="treatment_supporter_relationships_options">
+       <item>@string/mother</item>
+       <item>@string/father</item>
+       <item>@string/sister</item>
+       <item>@string/brother</item>
+       <item>@string/grandfather</item>
+       <item>@string/grandmother</item>
+       <item>@string/uncle</item>
+       <item>@string/aunt</item>
+       <item>@string/other</item>
+   </string-array>
     <string-array name="tst_options">
         <item>@string/yes</item>
         <item>@string/no</item>
@@ -904,6 +942,8 @@
     <string name="brother">Brother</string>
     <string name="bt_presumptive_confirmed">TB Presumptive confirmed</string>
     <string name="cancel">Cancel</string>
+    <string name="category_one">Category 1</string>
+    <string name="category_two">Category 2</string>
     <string name="chest">Chest</string>
     <string name="chest_examination">Chest Examination</string>
     <string name="chest_x_ray">Chest X-ray?</string>
@@ -1138,11 +1178,17 @@
     <string name="mucoid">Mucoid</string>
     <string name="multi_select_hint">Choose one or more</string>
     <string name="name_hint">Enter Name</string>
+    <string name="name_treatment_supporter">Name of Treatment Supporter</string>
+    <string name="name_treatment_supporter_hint"> Enter Supporter Name</string>
     <string name="names_adult_symptomatic_members">Names of Adult Symptomatic household members</string>
     <string name="names_adult_symptomatic_members_hint">Enter names separately</string>
     <string name="names_paediatric_symptomatic_members">Names of Paediatric Symptomatic household members</string>
     <string name="names_paediatric_symptomatic_members_hint">Enter names separately</string>
     <string name="negative">Negative</string>
+    <string name="new_patient">New</string>
+    <string name="nid">NID</string>
+    <string name="nid_belongs">Whose NID is this?</string>
+    <string name="nid_hint">Enter National ID</string>
     <string name="night_sweats">Night Sweats?</string>
     <string name="no">No</string>
     <string name="no_result">No Result</string>
@@ -1162,6 +1208,8 @@
     <string name="option_hint">Select an option</string>
     <string name="other">Other</string>
     <string name="other__location_hint">Enter other location</string>
+    <string name="other_belongs">Other(specify)</string>
+    <string name="other_belongs_hint">Enter other name</string>
     <string name="other_disease">Other Disease</string>
     <string name="other_exam">Other examination</string>
     <string name="other_exam_hint">Enter other examination, if any</string>
@@ -1192,10 +1240,13 @@
     <string name="passcode_hint">Enter first 4 characters of password</string>
     <string name="password">Password</string>
     <string name="password_hint">Enter your password</string>
+    <string name="patient_category">Patient Category</string>
     <string name="patient_id">Patient ID</string>
     <string name="patient_id_hint">Enter ID (12 characters)</string>
     <string name="patient_id_missing">Patient ID does not exist. Please make sure you have entered correct Patient ID</string>
+    <string name="patient_referred_without_Registration">Patient referred out to another facility without registration</string>
     <string name="patient_registration">Patient Registration</string>
+    <string name="patient_type">patient Type</string>
     <string name="patients">Patients</string>
     <string name="patients_not_found">No Patients were found matching given parameters</string>
     <string name="pdr_tb">PDR-TB</string>
@@ -1232,6 +1283,9 @@
     <string name="referred_to_another_facility"> Referred to another facility before enrollment</string>
     <string name="refresh_database">Refresh Database</string>
     <string name="refused">Refused</string>
+    <string name="registration_date">Registration Date</string>
+    <string name="registration_date_hint">Enter registration Date</string>
+    <string name="relapse">Relapse</string>
     <string name="remarks">Remarks</string>
     <string name="remarks_hint">Enter Remarks</string>
     <string name="reporting">Reports</string>
@@ -1286,11 +1340,14 @@
     <string name="suggestive_tb">Suggestive of TB</string>
     <string name="support_contact">03453174270</string>
     <string name="support_email">irddmu2013@gmail.com</string>
+    <string name="supporter_other_hint">Enter other specify name</string>
     <string name="susceptible_tb">Susceptible TB</string>
     <string name="symptoms">Symptoms</string>
     <string name="tb_before">Have you ever had TB before?</string>
     <string name="tb_in_family">Currently does an adult family member have TB?</string>
     <string name="tb_medication">Have you ever taken medication for TB that lasted or was supposed to last for 6/8 months?</string>
+    <string name="tb_reg_number">TB Registration Number</string>
+    <string name="tb_reg_number_hint">Enter registration number</string>
     <string name="tb_screening">TB Screening</string>
     <string name="tbr4pk_patient">TBR4 Patient</string>
     <string name="ten_mm">10mm</string>
@@ -1318,11 +1375,19 @@
     <string name="total_paediatric_household_members_hint">Enter total number of Paediatric Household Members</string>
     <string name="town">Address: Town</string>
     <string name="town_hint">Enter Town</string>
+    <string name="transfer_in">Transfer in</string>
     <string name="transfer_out">Transfer out</string>
+    <string name="treatment_after_default">Treatment after default</string>
+    <string name="treatment_after_failure">Treatment after failure</string>
     <string name="treatment_completed">Treatment completed</string>
     <string name="treatment_failure">Treatment failure</string>
+    <string name="treatment_initiation_button">Treatment Initiation</string>
     <string name="treatment_initiation_center">Treatment Initiation Center</string>
     <string name="treatment_initiation_center_hint">Enter initial treatment center</string>
+    <string name="treatment_initiation_date">Treatment Initiation Date</string>
+    <string name="treatment_supporter_phone_Number">Treatment Supporter Phone Number</string>
+    <string name="treatment_supporter_phone_hint">Enter Phone Number</string>
+    <string name="treatment_supporter_relationship">Relationship of treatment supporter with the patient</string>
     <string name="trust_store_password">4845e7412f</string>
     <string name="tst">tuberculin Skin Test</string>
     <string name="tst_result">Tuberculin Skin Test Result</string>

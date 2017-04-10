@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="registration_date_hint">Enter registration Date</string>
+    <string name="nid">NID</string>
+    <string name="nid_hint">Enter National ID</string>
+    <string name="nid_belongs">Whose NID is this?</string>
+    <string-array name="nid_belongs_options">
+        <item>@string/mother</item>
+        <item>@string/father</item>
+        <item>@string/sister</item>
+        <item>@string/brother</item>
+        <item>@string/grandfather</item>
+        <item>@string/grandmother</item>
+        <item>@string/uncle</item>
+        <item>@string/aunt</item>
+        <item>@string/other</item>
+    </string-array>
+    <string name="other_belongs">Other(specify)</string>
+    <string name="other_belongs_hint">Enter other name</string>
+
+    <string name="patient_type">patient Type</string>
+    <string-array name="patient_type_options">
+        <item>@string/new_patient</item>
+        <item>@string/relapse</item>
+        <item>@string/transfer_in</item>
+        <item>@string/treatment_after_default</item>
+        <item>@string/treatment_after_failure</item>
+        <item>@string/other</item>
+    </string-array>
+
+    <string name="patient_category">Patient Category</string>
+    <string-array name="patient_category_options">
+        <item>@string/category_one</item>
+        <item>@string/category_two</item>
+    </string-array>
+    <string name="patient_referred_without_Registration">Patient referred out to another facility without registration</string>
+    <string-array name="patient_referred_without_Registration_option">
+    <item>@string/yes</item>
+    <item>@string/no</item>
+    </string-array>
+ ] <string name="tb_reg_number">TB Registration Number</string>
+ ] <string name="tb_reg_number_hint">Enter registration number</string>
+
+    <string name="treatment_initiation_date">Treatment Initiation Date</string>
+   <string name="name_treatment_supporter">Name of Treatment Supporter</string>
+   <string name="name_treatment_supporter_hint"> Enter Supporter Name</string>
+   <string name="treatment_supporter_phone_Number">Treatment Supporter Phone Number</string>
+   <string name="treatment_supporter_phone_hint">Enter Phone Number</string>
+   <string name="treatment_supporter_relationship">Relationship of treatment supporter with the patient</string>
+   <string-array name="treatment_supporter_relationships_options">
+       <item>@string/mother</item>
+       <item>@string/father</item>
+       <item>@string/sister</item>
+       <item>@string/brother</item>
+       <item>@string/grandfather</item>
+       <item>@string/grandmother</item>
+       <item>@string/uncle</item>
+       <item>@string/aunt</item>
+       <item>@string/other</item>
+   </string-array>
+    <string name="supporter_other_hint">Enter other specify name</string>
+</resources>

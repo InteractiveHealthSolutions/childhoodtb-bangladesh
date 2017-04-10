@@ -287,6 +287,8 @@ public class MobileService {
 					||formType.equals(FormType.ULTRASOUND_RESULT)
 					||formType.equals(FormType.END_FOLLOW_UP))
 				response= insertTestOrderResultForm(formType, jsonObject);
+			else if(formType.equals(FormType.TREATMENT_INITIATION))
+				response=insertTreatmentInitiationForm(formType, jsonObject);
 			else
 				throw new Exception();
 		} catch (NullPointerException e) {
@@ -641,8 +643,10 @@ public class MobileService {
 				patients = Context.getPatientService().getPatients(patientId);
 				if (patients != null) {
 					Patient p = patients.get(0);
-					json.put("name", p.getPersonName().getGivenName() + " "
+				   json.put("name", p.getPersonName().getGivenName() + " "
 							+ p.getPersonName().getFamilyName());
+					json.put("firstName",p.getPersonName().getGivenName());
+					json.put("familyName",p.getPersonName().getGivenName());
 					json.put("gender", p.getGender());
 					json.put("age", p.getAge());
 					
@@ -3264,12 +3268,9 @@ public class MobileService {
 		JSONObject json = new JSONObject();
 		
 		try {
-
-			String gender = values.getString("gender").toString();
 			String location = values.getString("location").toString();
 			String username = values.getString("username").toString();
 			String patientId = values.getString("patient_id");
-			String givenName = values.getString("given_name");
 			String motherName = values.getString("mother_name");
 			String encounterType = values.getString("encounter_type");
 			String formDate = values.getString("form_date");
@@ -3282,10 +3283,6 @@ public class MobileService {
 			// Get Creator
 			User creatorObj = Context.getUserService().getUserByUsername(
 					username);
-			// Get Identifier type
-			List<PatientIdentifierType> allIdTypes = Context
-					.getPatientService().getAllPatientIdentifierTypes();
-			PatientIdentifierType patientIdTypeObj = allIdTypes.get(0);
 			// Get Location
 			Location locationObj = Context.getLocationService().getLocation(
 					location);
@@ -3295,43 +3292,16 @@ public class MobileService {
 
 			List<Patient> patients = Context.getPatientService().getPatients(
 					patientId);
-			Patient patientidentifer;
+			Patient patientidentifer=null;
 		  //check Patient Id is exist or not ... 
 			 if(patients != null && patients.size() > 0) {
 				//throw new Exception();
 				 patientidentifer = patients.get(0);
 			  }
-			else {
-		
-				// first create person & patient then do what is needed
-				// Create person & patient object
-				// Create Person object	
-				Person person = new Person();
-				Date dob = new Date();
-				int age = Integer.parseInt(values.get("age").toString());
-				dob.setYear(dob.getYear() - age);
-				
-				
-				person.setBirthdate(dob);
-				//person.setBirthdateEstimated(true);
-				person.setGender(gender);
-				person.setCreator(creatorObj);
-				person.setDateCreated(new Date());
-				
-				
-				// Create names set
-				{
-					SortedSet<PersonName> names = new TreeSet<PersonName>();
-					PersonName name = new PersonName(givenName, null, motherName);
-					name.setCreator(creatorObj);
-					name.setDateCreated(new Date());
-					name.setPreferred(true);
-					names.add(name);
-					person.setNames(names);
-				}
-				
-				//create Person Attribute
-				PersonAttributeType personAttributeType;
+			else {	
+				throw new Exception();
+			    }
+			 PersonAttributeType personAttributeType;
 				try {
 					personAttributeType = Context.getPersonService().getPersonAttributeTypeByName("Mother's Name");
 					personAttributeType.getName();
@@ -3341,37 +3311,10 @@ public class MobileService {
 					attribute.setValue(motherName);
 					attribute.setCreator(creatorObj);
 					attribute.setDateCreated(new Date());
-					person.addAttribute(attribute);
+					patientidentifer.addAttribute(attribute);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				// Create Patient object
-				
-				patientidentifer = new Patient(person);
-				// Create Patient identifier
-				{
-					SortedSet<PatientIdentifier> identifiers = new TreeSet<PatientIdentifier>();
-					PatientIdentifier identifier = new PatientIdentifier();
-					identifier.setIdentifier(patientId);
-					identifier.setIdentifierType(patientIdTypeObj);
-					identifier.setLocation(locationObj);
-					identifier.setCreator(creatorObj);
-					identifier.setDateCreated(new Date());
-					identifier.setPreferred(true);
-					identifiers.add(identifier);
-					patientidentifer.setIdentifiers(identifiers);
-				}
-				patientidentifer.setCreator(creatorObj);
-				patientidentifer.setDateCreated(new Date());
-				patientidentifer = Context.getPatientService().savePatient(patientidentifer);
-				error = "Patient was created with Error. ";
-				
-				
-				/*///call the Person and Patient Factory...
-				personAndPatientFactory(dob,patient,creatorObj,patientId,givenName,familyName,gender,patientIdTypeObj,locationObj);	
-		*/	
-				
-			}
 
 			Encounter encounter = new Encounter();
 			encounter.setEncounterType(encounterTypeObj);
@@ -3452,6 +3395,11 @@ public class MobileService {
 			e.printStackTrace();
 			error += CustomMessage.getErrorMessage(ErrorType.PARSING_ERROR);
 		}
+		catch (Exception e) {
+			e.printStackTrace();
+			error = "PatientID: "
+					+ CustomMessage.getErrorMessage(ErrorType.DUPLICATION_ERROR);
+		}
 		finally {
 			try {
 				if (!json.has("result")) {
@@ -3483,7 +3431,7 @@ public class MobileService {
 			String username = values.getString("username").toString();
 			String patientId = values.getString("patient_id");
 			String givenName = values.getString("given_name");
-			String motherName = values.getString("mother_name");
+			String familyName = values.getString("family_name");
 			String encounterType = values.getString("encounter_type");
 			String formDate = values.getString("form_date");
             //get the system time ...
@@ -3515,11 +3463,8 @@ public class MobileService {
 				 patietnIndetifier = patients.get(0);
 			  }
 			else {
+	
 		
-
-				// first create person & patient then do what is needed
-				//	
-				// Create person & patient object
 				// Create Person object
 				Person person = new Person();
 				Date dob = new Date();
@@ -3531,21 +3476,20 @@ public class MobileService {
 				person.setGender(gender);
 				person.setCreator(creatorObj);
 				person.setDateCreated(new Date());
-				
-	
+			
 				
 				// Create names set
 				{
 					SortedSet<PersonName> names = new TreeSet<PersonName>();
-					PersonName name = new PersonName(givenName, null, motherName);
+					PersonName name = new PersonName(givenName, null, familyName);
 					name.setCreator(creatorObj);
 					name.setDateCreated(new Date());
 					name.setPreferred(true);
 					names.add(name);
 					person.setNames(names);
-					
 				}
-				//create Person Attribute
+				
+				/*//create Person Attribute
 				PersonAttributeType personAttributeType;
 				try {
 					personAttributeType = Context.getPersonService().getPersonAttributeTypeByName("Mother's Name");
@@ -3558,7 +3502,7 @@ public class MobileService {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
+				*/
 				// Create Patient object
 				patietnIndetifier = new Patient(person);
 				// Create Patient identifier
@@ -3807,10 +3751,176 @@ public class MobileService {
 			}
 		}
 		return json.toString();
-		
-		
 	
 	}
+	
+	//insert the Treatment Initiation Form Data
+	public String insertTreatmentInitiationForm(String formType,JSONObject values){
+		
+		JSONObject json = new JSONObject();
+		try {
+
+			String location = values.getString("location").toString();
+			String username = values.getString("username").toString();
+			String patientId = values.getString("patient_id");
+			String encounterType = values.getString("encounter_type");
+			String formDate = values.getString("form_date");
+			String treatmentSupporterName= values.getString("supporter_name");
+			int treatmentSupporterPhoneNumber= values.getInt("supporter_phone");
+		
+            //get the system time ...
+			Date encounterDatetime = DateTimeUtil.getDateFromString(formDate,
+					DateTimeUtil.DOB_FROMAT_DATE);
+			String encounterLocation = values.getString("encounter_location");
+			String provider = values.getString("provider");
+			JSONArray obs = new JSONArray(values.getString("obs"));
+			// Get Creator
+			User creatorObj = Context.getUserService().getUserByUsername(
+					username);
+			// Get Identifier type
+			List<PatientIdentifierType> allIdTypes = Context
+					.getPatientService().getAllPatientIdentifierTypes();
+			PatientIdentifierType patientIdTypeObj = allIdTypes.get(0);
+			// Get Location
+			Location locationObj = Context.getLocationService().getLocation(
+					location);
+			// Get Encounter type
+			EncounterType encounterTypeObj = Context.getEncounterService()
+					.getEncounterType(encounterType);
+
+			List<Patient> patients = Context.getPatientService().getPatients(
+					patientId);
+	
+		  Patient patietnIndetifier = null;
+		  //check Patient Id is exist or not ... 
+			 if(patients != null && patients.size() > 0) {
+				//throw new Exception();
+				 patietnIndetifier = patients.get(0);
+			  }
+			else {
+				try {
+					throw new Exception();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		  	   }
+			 
+			//create Person Attribute
+				PersonAttributeType treatmentSupporterNameAt,treatmentSupporterPhoneNumberAt;
+				
+				try {
+					treatmentSupporterNameAt = Context.getPersonService().getPersonAttributeTypeByName("Treatment Supporter Name");
+					treatmentSupporterPhoneNumberAt=Context.getPersonService().getPersonAttributeTypeByName("Treatment Supporter Phone Number");
+				
+					PersonAttribute attribute = new PersonAttribute();
+					attribute.setAttributeType(treatmentSupporterNameAt);
+					attribute.setValue(treatmentSupporterName);
+					attribute.setCreator(creatorObj);
+					attribute.setDateCreated(new Date());
+					patietnIndetifier.addAttribute(attribute);
+					PersonAttribute attributePhone = new PersonAttribute();
+					attributePhone.setAttributeType(treatmentSupporterPhoneNumberAt);
+					attributePhone.setValue(Integer.toString(treatmentSupporterPhoneNumber));
+					attributePhone.setCreator(creatorObj);
+					attributePhone.setDateCreated(new Date());
+					patietnIndetifier.addAttribute(attributePhone);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			 
+
+			Encounter encounter = new Encounter();
+			encounter.setEncounterType(encounterTypeObj);
+			encounter.setPatient(patietnIndetifier);
+			// In case of Encounter location different than login location
+			if (!encounterLocation.equalsIgnoreCase(location)) {
+				locationObj = Context.getLocationService().getLocation(
+						encounterLocation);
+			}
+			encounter.setLocation(locationObj);
+			encounter.setEncounterDatetime(encounterDatetime);
+			encounter.setCreator(creatorObj);
+			encounter.setDateCreated(new Date());
+			// Create Observations set
+			{
+				for (int i = 0; i < obs.length(); i++) {
+					Obs ob = new Obs();
+					// Create Person object
+					{
+						Person personObj = Context.getPersonService()
+								.getPerson(patietnIndetifier.getPatientId());
+						ob.setPerson(personObj);
+					}
+					// Create question/answer Concept object
+					{
+						JSONObject pair = obs.getJSONObject(i);
+						Concept concept = Context.getConceptService()
+								.getConcept(pair.getString("concept"));
+						ob.setConcept(concept);
+						String hl7Abbreviation = concept.getDatatype()
+								.getHl7Abbreviation();
+						if (hl7Abbreviation.equals("NM")) {
+							ob.setValueNumeric(Double.parseDouble(pair
+									.getString("value")));
+						} else if (hl7Abbreviation.equals("CWE")) {
+							Concept valueObj = Context.getConceptService()
+									.getConcept(pair.getString("value"));
+							ob.setValueCoded(valueObj);
+						} else if (hl7Abbreviation.equals("ST")) {
+							ob.setValueText(pair.getString("value"));
+						} else if (hl7Abbreviation.equals("DT")) {
+							ob.setValueDate(DateTimeUtil.getDateFromString(
+									pair.getString("value"),
+									DateTimeUtil.SQL_DATE));
+						}
+					}
+					ob.setObsDatetime(encounterDatetime);
+					ob.setLocation(locationObj);
+					ob.setCreator(creatorObj);
+					ob.setDateCreated(new Date());
+					encounter.addObs(ob);
+				}
+			 	
+				if (creatorObj.getUsername().equals(provider))
+					encounter.setProvider(creatorObj);
+					}
+			Context.getEncounterService().saveEncounter(encounter);
+			json.put("result", "SUCCESS");
+		} catch (NonUniqueObjectException e) {
+			e.printStackTrace();
+			error = CustomMessage.getErrorMessage(ErrorType.DUPLICATION_ERROR);
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+			error += CustomMessage
+					.getErrorMessage(ErrorType.INVALID_DATA_ERROR);
+		} catch (IllegalArgumentException e) {
+			error+= e.getMessage();
+			e.printStackTrace();
+			error += CustomMessage
+					.getErrorMessage(ErrorType.INVALID_DATA_ERROR);
+		} catch (JSONException e) {
+			e.printStackTrace();
+			error += CustomMessage
+					.getErrorMessage(ErrorType.INVALID_DATA_ERROR);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			error += CustomMessage.getErrorMessage(ErrorType.PARSING_ERROR);
+		}
+		finally {
+			try {
+				if (!json.has("result")) {
+					json.put("result", "FAIL. " + error);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return json.toString();
+	
+		
+	}
+	
 	
 	///Person and Patient Factory...
 	public void personAndPatientFactory(Date dob,Patient patient,User creatorObj,String patientId,String givenName,String familyName,String gender,

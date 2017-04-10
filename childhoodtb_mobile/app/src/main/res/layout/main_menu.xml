@@ -335,6 +335,15 @@
                 android:text="@string/ultrasound_test_result_button"
 
                 />
+            <Button
+                android:id="@+main_id/treatmentInitiationButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_test_indication"
+                android:tag="@string/treatment_initiation_button"
+                android:text="@string/treatment_initiation_button"
+                />
 
 
             <Button

@@ -140,6 +140,9 @@
         <activity
             android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TreatmentInitiationActivity"
+            android:configChanges="keyboardHidden|orientation" />
     </application>
 
 </manifest>

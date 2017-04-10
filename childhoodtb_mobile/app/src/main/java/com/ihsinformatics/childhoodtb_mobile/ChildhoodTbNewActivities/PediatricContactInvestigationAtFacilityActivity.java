@@ -85,6 +85,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     MyButton scanBarcode;
     MyButton scanBarcodeIndexId;
     String result = "";
+    String familyName, firstName = "";
 
     @Override
     public void createViews(Context context) {
@@ -445,49 +446,54 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
 
                     @Override
                     protected void onProgressUpdate(String... values) {
-                    };
+                    }
+
+                    ;
 
                     @Override
                     protected void onPostExecute(Object result) {
                         super.onPostExecute(result);
                         loading.dismiss();
-                        ArrayList<Patient> patients= (ArrayList<Patient>) result;
+                        ArrayList<Patient> patients = (ArrayList<Patient>) result;
+                        Log.i("arrayVal",""+patients.toString());
                         StringBuilder errorMessage = new StringBuilder();
 
-                                if(result ==null){
-                                        errorMessage.append(
-                                                getResources().getString(R.string.patient_id_missing)
-                                        );
-                                        App.getAlertDialog(PediatricContactInvestigationAtFacilityActivity.this,
-                                                AlertType.ERROR, errorMessage.toString()).show();
-                                        saveButton.setEnabled(false);
-                                }
-                                else {
-                                              presumptiveFirstName.setText(patients.get(0).getName());
-                                              presumptiveFirstName.setFocusable(false);
-                                                  if(patients.get(0).getMotherName().isEmpty()){
-                                                      presumptiveMotherName.setText(patients.get(0).getMotherName());
-                                                      presumptiveMotherName.setFocusable(true);
-                                                  }
-                                                  else {
-                                                      presumptiveMotherName.setText(patients.get(0).getMotherName());
-                                                      presumptiveMotherName.setFocusable(false);}
+                        if (result == null) {
+                            errorMessage.append(
+                                    getResources().getString(R.string.patient_id_missing)
+                            );
+                            App.getAlertDialog(PediatricContactInvestigationAtFacilityActivity.this,
+                                    AlertType.ERROR, errorMessage.toString()).show();
+                            saveButton.setEnabled(false);
+                        } else {
+                            familyName = patients.get(0).getFamilyName();
+                            firstName =  patients.get(0).getFirstName();
+                            Log.i("name",""+familyName);
+                            presumptiveFirstName.setText(patients.get(0).getName());
+                            presumptiveFirstName.setFocusable(false);
+                            if (patients.get(0).getMotherName().isEmpty()) {
+                                presumptiveMotherName.setText(patients.get(0).getMotherName());
+                                presumptiveMotherName.setFocusable(true);
+                            } else {
+                                presumptiveMotherName.setText(patients.get(0).getMotherName());
+                                presumptiveMotherName.setFocusable(false);
+                            }
 
-                                              age.setText(Integer.toString(patients.get(0).getAge()));
-                                              age.setFocusable(false);
+                            age.setText(Integer.toString(patients.get(0).getAge()));
+                            age.setFocusable(false);
 
-                                            if (patients.get(0).getGender().equals("M")) {
+                            if (patients.get(0).getGender().equals("M")) {
 
-                                                 male.setChecked(true);
-                                                female.setEnabled(false);
+                                male.setChecked(true);
+                                female.setEnabled(false);
 
 
-                                            } else if (patients.get(0).getGender().equals("F")) {
+                            } else if (patients.get(0).getGender().equals("F")) {
 
-                                                female.setChecked(true);
-                                                male.setEnabled(false);
-                                            }
-                                 }
+                                female.setChecked(true);
+                                male.setEnabled(false);
+                            }
+                        }
                     }
                 };
                 getTask.execute("");
@@ -620,8 +626,13 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             values.put("gender", male.isChecked() ? "M" : "F");
             values.put("age", App.get(age));
             values.put("location", App.getLocation());
-            values.put("firstName", App.get(presumptiveFirstName));
-            values.put("motherName", App.get(presumptiveMotherName));
+           /* values.put("firstName", App.get(presumptiveFirstName));
+            values.put("familyName", App.get(presumptiveMotherName));*/
+
+            Log.i("firstName", firstName);
+            Log.i("family", familyName);
+            values.put("firstName", firstName);
+            values.put("familyName", familyName);
             values.put("patientId", App.get(patientId));
 
 
@@ -676,8 +687,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                     App.get(testAdvised)});
             observations.add(new String[]{"Probable diagnosis",
                     App.get(probableDiagnosis)});
-            observations.add(new String[] { "Index Case ID",
-                    App.get(indexCaseId) });
+            observations.add(new String[]{"Index Case ID",
+                    App.get(indexCaseId)});
             observations.add(new String[]{"Index Case Diagnosis",
                     App.get(indexCaseDiagnosis).equals(getResources().getString(R.string.ptb)) ?
                             getResources().getString(R.string.pulmonary) :

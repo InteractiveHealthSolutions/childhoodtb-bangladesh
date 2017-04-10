@@ -138,5 +138,14 @@
     <string name="whole_body">Whole body</string>
     <string name="head">Head</string>
     <string name="other_site">Enter other site</string>
+    <string name="registration_date">Registration Date</string>
+    <string name="category_one">Category 1</string>
+    <string name="category_two">Category 2</string>
+
+    <string name="new_patient">New</string>
+    <string name="relapse">Relapse</string>
+    <string name="transfer_in">Transfer in</string>
+    <string name="treatment_after_default">Treatment after default</string>
+    <string name="treatment_after_failure">Treatment after failure</string>
 
 </resources>

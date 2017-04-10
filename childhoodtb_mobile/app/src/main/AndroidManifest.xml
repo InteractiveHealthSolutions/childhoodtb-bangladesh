@@ -120,6 +120,8 @@
             android:configChanges="keyboardHidden|orientation"></activity>
         <activity android:name=".ChildhoodTbNewActivities.UltraSoundTestResultActivity"
             android:configChanges="keyboardHidden|orientation"></activity>
+        <activity android:name=".ChildhoodTbNewActivities.TreatmentInitiationActivity"
+            android:configChanges="keyboardHidden|orientation"></activity>
     </application>
 
 </manifest>

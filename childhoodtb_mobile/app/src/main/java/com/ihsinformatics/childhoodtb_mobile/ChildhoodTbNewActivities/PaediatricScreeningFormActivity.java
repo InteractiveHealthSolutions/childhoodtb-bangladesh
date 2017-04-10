@@ -645,7 +645,7 @@ public class PaediatricScreeningFormActivity extends AbstractFragmentActivity im
                     App.get(presumptiveTbCase)});
             observations.add(new String[]{"Family Smoking",
                     App.get(smokingConfirmation)});
-            observations.add(new String[]{"Child Appetite",
+            observations.add(new String[]{"Appetite",
                     App.get(childAppetite).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(childAppetite)});
 
