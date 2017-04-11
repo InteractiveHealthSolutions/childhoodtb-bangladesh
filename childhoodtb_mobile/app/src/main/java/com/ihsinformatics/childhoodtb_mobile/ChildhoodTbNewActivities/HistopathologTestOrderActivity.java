@@ -66,6 +66,9 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testOrderCalender;
 
@@ -111,11 +114,19 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
+
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testOrderDateTextView, testOrderDateEditText, histopathologyTextView,
-                        histopathologySpinner, histopathologysiteTextView, histopathologysiteSpinner}
+                        histopathologySpinner, histopathologysiteTextView, histopathologysiteSpinner,
+                        testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -145,7 +156,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, histopathologysiteSpinner, testOrderDateEditText, histopathologySpinner};
+        views = new View[]{patientId, testOrderDateEditText, testId, histopathologysiteSpinner, testOrderDateEditText, histopathologySpinner};
 
 
         for (View v : views) {
@@ -278,7 +289,8 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Test ID",
+                    App.get(testOrderDateEditText)});
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateEditText)});
             observations.add(new String[]{"Histopathology",
@@ -302,7 +314,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                     result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderForm(
                             FormType.HISTOPATHOLOGY_ORDER, values,
                             observations.toArray(new String[][]{}));
 

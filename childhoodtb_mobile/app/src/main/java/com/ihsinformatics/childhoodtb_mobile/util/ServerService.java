@@ -2265,12 +2265,12 @@ public class ServerService {
         try {
             // Save Patient
             JSONObject json = new JSONObject();
-
             json.put("app_ver", App.getVersion());
             json.put("form_name", encounterType);
             json.put("username", App.getUsername());
             json.put("patient_id", patientId);
             json.put("location", location);
+            json.put("mother_name",motherName);
 
             JSONArray listOfObservations = new JSONArray();
 
@@ -2460,9 +2460,10 @@ public class ServerService {
             if (!App.isOfflineMode()) {
 
                 String id = getPatientId(patientId);
-                if (id == null)
+                if (id == null) {
                     return context.getResources().getString(
                             R.string.patient_id_missing);
+                }
             }
 
             // Save Patient

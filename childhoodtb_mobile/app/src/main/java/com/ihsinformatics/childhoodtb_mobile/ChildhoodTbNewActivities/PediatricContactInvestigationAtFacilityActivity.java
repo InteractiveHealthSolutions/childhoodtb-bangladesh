@@ -273,24 +273,26 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
 
 
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        contactTracingCategoryTextView, contactTracingCategory,
-                        firstNameTextView, presumptiveFirstName, motherNameTextView,
-                        presumptiveMotherName,
+                {formDateTextView, formDateButton,
+                        contactTracingCategoryTextView, contactTracingCategory, indexCaseIDTextView, indexCaseId,
+                        scanBarcodeIndexId, validatePatientId, firstNameTextView, presumptiveFirstName, motherNameTextView,
+                        presumptiveMotherName
                 },
-                {genderTextView, gender, ageTextView, age, indexCaseIDTextView, indexCaseId, scanBarcodeIndexId, validatePatientId, indexCaseTBRegistrationNumberTextView,
-                        indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView, indexCaseDiagnosis
+                {genderTextView, gender, ageTextView, age,indexCaseTBRegistrationNumberTextView, indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView,
+                        indexCaseDiagnosis,weightTextView, weight, weightPercentileTextView, weightPercentile
 
                 },
-                {weightTextView, weight, weightPercentileTextView, weightPercentile, coughTextView, cough, coughDurationTextView, coughDuration, feverTextView,
-                        fever, nightSweatsTextView, nightSweats, lymphNodeExaminationTextView, lymphNodeExamination
+                { coughTextView, cough, coughDurationTextView, coughDuration, feverTextView, fever, nightSweatsTextView,
+                        nightSweats, lymphNodeExaminationTextView, lymphNodeExamination,abdominalExaminationTextView, abdominalExamination,
+                        otherExaminationTextView, otherExamination
                 },
-                {abdominalExaminationTextView, abdominalExamination, otherExaminationTextView, otherExamination, adultFamilyMemberTBTextView, adultFamilyMemberTB,
-                        tbRootInFamilyTextView, tbRootInFamily, formOfTbTextView, formOfTb, typeOfTbTextView, typeOfTb
+                { adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily,
+                        formOfTbTextView, formOfTb, typeOfTbTextView, typeOfTb ,testAdvisedTextView, testAdvised,
+                        probableDiagnosisTextView, probableDiagnosis,
                 },
-                {testAdvisedTextView, testAdvised, probableDiagnosisTextView, probableDiagnosis,
-                        familyMemberTBTextView, familyMemberTB, weightLossTextView, weightLoss,
-                        bcgScarTextView, bcgScar, playfulnessTextView, playfulness
+                {familyMemberTBTextView, familyMemberTB, weightLossTextView, weightLoss,
+                        bcgScarTextView, bcgScar, playfulnessTextView, playfulness, patientIdTextView,
+                        patientId, scanBarcode,
                 }
 
         };
@@ -455,7 +457,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                         super.onPostExecute(result);
                         loading.dismiss();
                         ArrayList<Patient> patients = (ArrayList<Patient>) result;
-                        Log.i("arrayVal",""+patients.toString());
                         StringBuilder errorMessage = new StringBuilder();
 
                         if (result == null) {
@@ -466,9 +467,9 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                                     AlertType.ERROR, errorMessage.toString()).show();
                             saveButton.setEnabled(false);
                         } else {
+
                             familyName = patients.get(0).getFamilyName();
-                            firstName =  patients.get(0).getFirstName();
-                            Log.i("name",""+familyName);
+                            firstName = patients.get(0).getFirstName();
                             presumptiveFirstName.setText(patients.get(0).getName());
                             presumptiveFirstName.setFocusable(false);
                             if (patients.get(0).getMotherName().isEmpty()) {
@@ -628,9 +629,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             values.put("location", App.getLocation());
            /* values.put("firstName", App.get(presumptiveFirstName));
             values.put("familyName", App.get(presumptiveMotherName));*/
-
-            Log.i("firstName", firstName);
-            Log.i("family", familyName);
             values.put("firstName", firstName);
             values.put("familyName", familyName);
             values.put("patientId", App.get(patientId));

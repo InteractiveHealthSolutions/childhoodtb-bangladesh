@@ -75,7 +75,7 @@
             android:name=".Barcode"
             android:configChanges="keyboardHidden|orientation"></activity>
         <activity
-            android:name=".ChildhoodTbNewActivities.PaediatricScreeningFormActivity"
+            android:name=".ChildhoodTbNewActivities.PaediatricScreeningActivity"
             android:configChanges="keyboardHidden|orientation"></activity>
         <activity
             android:name=".ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity"

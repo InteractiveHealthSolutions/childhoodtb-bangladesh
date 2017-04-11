@@ -72,6 +72,9 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testResultCalender;
 
@@ -129,12 +132,19 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testResultDateTextView, testResultDateEditText, gxpResultTextView, gxpResultSpinner,
                         rifResistanceTextView, rifResistanceSpinner},
-                {mtbBurdenTextView, mtbBurdenSpinner, errorCodeTextView, errorCodeEditText}
+                {mtbBurdenTextView, mtbBurdenSpinner, errorCodeTextView, errorCodeEditText,
+                        testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -165,7 +175,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{patientId, testResultDateEditText, gxpResultSpinner, rifResistanceSpinner,
-                errorCodeEditText, mtbBurdenSpinner};
+                errorCodeEditText, mtbBurdenSpinner,testId};
 
 
         for (View v : views) {
@@ -311,7 +321,8 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Test ID",
+                    App.get(testResultDateEditText)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"GXP Result",
@@ -418,33 +429,32 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-         if(adapterView ==gxpResultSpinner){
-             String gxpValue = gxpResultSpinner.getSelectedItem().toString();
-             if(gxpValue.equals(getResources().getString(R.string.error))){
-                 mtbBurdenTextView.setEnabled(false);
-                 mtbBurdenSpinner.setEnabled(false);
-                 rifResistanceTextView.setEnabled(false);
-                 rifResistanceSpinner.setEnabled(false);
-                 errorCodeTextView.setEnabled(true);
-                 errorCodeEditText.setEnabled(true);
-             }
-             else if(gxpValue.equals(getResources().getString(R.string.mtb_positive))){
-                 mtbBurdenTextView.setEnabled(true);
-                 mtbBurdenSpinner.setEnabled(true);
-                 rifResistanceTextView.setEnabled(true);
-                 rifResistanceSpinner.setEnabled(true);
-                 errorCodeTextView.setEnabled(false);
-                 errorCodeEditText.setEnabled(false);
-             }else{
-                 mtbBurdenTextView.setEnabled(false);
-                 mtbBurdenSpinner.setEnabled(false);
-                 rifResistanceTextView.setEnabled(false);
-                 rifResistanceSpinner.setEnabled(false);
-                 errorCodeTextView.setEnabled(false);
-                 errorCodeEditText.setEnabled(false);
-             }
+        if (adapterView == gxpResultSpinner) {
+            String gxpValue = gxpResultSpinner.getSelectedItem().toString();
+            if (gxpValue.equals(getResources().getString(R.string.error))) {
+                mtbBurdenTextView.setEnabled(false);
+                mtbBurdenSpinner.setEnabled(false);
+                rifResistanceTextView.setEnabled(false);
+                rifResistanceSpinner.setEnabled(false);
+                errorCodeTextView.setEnabled(true);
+                errorCodeEditText.setEnabled(true);
+            } else if (gxpValue.equals(getResources().getString(R.string.mtb_positive))) {
+                mtbBurdenTextView.setEnabled(true);
+                mtbBurdenSpinner.setEnabled(true);
+                rifResistanceTextView.setEnabled(true);
+                rifResistanceSpinner.setEnabled(true);
+                errorCodeTextView.setEnabled(false);
+                errorCodeEditText.setEnabled(false);
+            } else {
+                mtbBurdenTextView.setEnabled(false);
+                mtbBurdenSpinner.setEnabled(false);
+                rifResistanceTextView.setEnabled(false);
+                rifResistanceSpinner.setEnabled(false);
+                errorCodeTextView.setEnabled(false);
+                errorCodeEditText.setEnabled(false);
+            }
 
-             }
+        }
 
         updateDisplay();
     }

@@ -370,36 +370,30 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
 
             if (ctScanSpinner.getSelectedItem().toString()
                     .equals(getResources().getString(R.string.yes))) {
-                observations.add(new String[]{"CT Scan Area",
+                observations.add(new String[]{"CT Scan Site",
                         App.get(ctScanAreaEditText)});
             }
 
             observations.add(new String[]{"GXP",
                     App.get(xpertMtbRifSpinner)});
 
-            observations.add(new String[]{
-                    "Mantoux",
+            observations.add(new String[]{"Mantoux",
                     App.get(mantouxSpinner)});
 
-            observations.add(new String[]{
-                    "Smear Microscopy",
+            observations.add(new String[]{"Smear Microscopy",
                     App.get(smearMicroscopySpinner)});
 
-            observations.add(new String[]{
-                    "Histopathology",
+            observations.add(new String[]{"Histopathology",
                     App.get(histopathologySpinner)});
 
             if (histopathologySpinner.getSelectedItem().toString()
                     .equals(getResources().getString(R.string.yes))) {
-                observations.add(new String[]{
-                        "Histopathology Site",
+                observations.add(new String[]{"Histopathology Site",
                         App.get(histopathologySampleSiteEditText)});
             }
 
-            observations.add(new String[]{
-                    "CBC/ESR",
+            observations.add(new String[]{"ESR",
                     App.get(esrSpinner)});
-
 
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
                 @Override

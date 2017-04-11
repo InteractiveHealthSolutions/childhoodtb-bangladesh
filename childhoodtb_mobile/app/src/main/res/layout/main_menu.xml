@@ -297,7 +297,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_test_indication"
+                android:drawableTop="@drawable/ct_scan_50"
                 android:tag="@string/ct_scan_test_Order_button"
                 android:text="@string/ct_scan_test_Order_button"
 
@@ -308,7 +308,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_test_indication"
+                android:drawableTop="@drawable/ct_scan_50"
                 android:tag="@string/ct_scan_test_result_button"
                 android:text="@string/ct_scan_test_result_button"
 

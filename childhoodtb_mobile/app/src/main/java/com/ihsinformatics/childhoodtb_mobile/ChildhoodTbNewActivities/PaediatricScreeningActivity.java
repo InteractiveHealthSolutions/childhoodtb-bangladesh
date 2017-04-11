@@ -52,7 +52,7 @@ import java.util.Locale;
 /**
  * Created by Shujaat on 3/14/2017.
  */
-public class PaediatricScreeningFormActivity extends AbstractFragmentActivity implements TextView.OnEditorActionListener {
+public class PaediatricScreeningActivity extends AbstractFragmentActivity implements TextView.OnEditorActionListener {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
@@ -184,7 +184,7 @@ public class PaediatricScreeningFormActivity extends AbstractFragmentActivity im
         //this  piece of code is used for  hide the softKey from the screen initially ...
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        TAG = "PaediatricScreeningFormActivity";
+        TAG = "PaediatricScreeningActivity";
         PAGE_COUNT = 4;
         pager = (ViewPager) findViewById(R.template_id.pager);
 
@@ -682,13 +682,13 @@ public class PaediatricScreeningFormActivity extends AbstractFragmentActivity im
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(PaediatricScreeningFormActivity.this,
+                        App.getAlertDialog(PaediatricScreeningActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(PaediatricScreeningFormActivity.this,
+                        App.getAlertDialog(PaediatricScreeningActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }

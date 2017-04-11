@@ -64,6 +64,9 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testResultCalender;
 
@@ -105,14 +108,20 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testResultDateTextView, testResultDateEditText, ultrasoundResultTextView,
-                        ultrasoundResultSpinner,}
+                        ultrasoundResultSpinner, testIdTextView, testId}
         };
 
-        // Create layouts and store in ArrayList
+        // Create layouts and store in ArrayList.
         groups = new ArrayList<ViewGroup>();
         for (int i = 0; i < viewGroups.length; i++) {
             LinearLayout layout = new LinearLayout(context);
@@ -139,7 +148,7 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText, ultrasoundResultSpinner};
+        views = new View[]{patientId, testResultDateEditText, testId, ultrasoundResultSpinner};
 
 
         for (View v : views) {
@@ -278,7 +287,8 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Test ID",
+                    App.get(testResultDateEditText)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"Ultrasound Result",

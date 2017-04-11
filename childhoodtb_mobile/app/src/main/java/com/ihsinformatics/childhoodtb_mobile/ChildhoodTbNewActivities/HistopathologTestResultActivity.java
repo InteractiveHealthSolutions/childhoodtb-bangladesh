@@ -63,6 +63,9 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testResultCalender;
 
@@ -104,11 +107,17 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testResultDateTextView, testResultDateEditText, histopathologyResultTextView,
-                        histopathologResultSpinner}
+                        histopathologResultSpinner, testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList

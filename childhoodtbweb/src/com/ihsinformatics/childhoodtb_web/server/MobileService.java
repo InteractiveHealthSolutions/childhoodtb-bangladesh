@@ -646,7 +646,7 @@ public class MobileService {
 				   json.put("name", p.getPersonName().getGivenName() + " "
 							+ p.getPersonName().getFamilyName());
 					json.put("firstName",p.getPersonName().getGivenName());
-					json.put("familyName",p.getPersonName().getGivenName());
+					json.put("familyName",p.getPersonName().getFamilyName());
 					json.put("gender", p.getGender());
 					json.put("age", p.getAge());
 					
@@ -3921,8 +3921,7 @@ public class MobileService {
 		
 	}
 	
-	
-	///Person and Patient Factory...
+	//Person and Patient Factory...not in use
 	public void personAndPatientFactory(Date dob,Patient patient,User creatorObj,String patientId,String givenName,String familyName,String gender,
 			PatientIdentifierType patientIdTypeObj,Location locationObj){
 		
@@ -3981,6 +3980,7 @@ public class MobileService {
 		
 	}
 	
+	//not in use yet....
 	//Encounter Factory ...
 	public Encounter observationFactory(JSONArray obs,Location locationObj,User creatorObj,Date encounterDatetime,Encounter encounter,String provider)
 		

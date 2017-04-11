@@ -36,6 +36,7 @@ Contributors: Tahira Niazi -->
     <string name="parameter_missing">One or more Parameters are invalid or missing. Please make sure you have defined valid parameters</string>
     <string name="parsing_error">Data cannot be parsed. Please make sure data is in valid format</string>
     <string name="patient_id_missing">Patient ID does not exist. Please make sure you have entered correct Patient ID</string>
+    <string name="test_id_missing">Test ID does not exist. Please make sure you have entered correct Test ID</string>
     <string name="session_expired">Session expired! Please re-login to continue operation</string>
     <string name="similar_form_submitted">This form has already been submitted for same ID/code</string>
     <string name="unknown_error">Unknown error! Please check error log for details</string>

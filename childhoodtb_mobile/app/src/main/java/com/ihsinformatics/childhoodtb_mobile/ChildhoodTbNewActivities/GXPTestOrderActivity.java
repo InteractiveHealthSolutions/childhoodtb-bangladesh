@@ -77,7 +77,7 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
 
     String result = "";
     Calendar testOrderCalender;
-
+    boolean isOtherRequired = false;
 
     @Override
     public void createViews(Context context) {
@@ -101,13 +101,13 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
         specimenTypeTextView = new MyTextView(context,
                 R.style.text, R.string.specimen_type);
         specimenTypeSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.specimenType_option),
+                getResources().getStringArray(R.array.specimen_type_option),
                 R.string.specimen_type, R.string.option_hint);
 
         specimenQualityTextView = new MyTextView(context,
                 R.style.text, R.string.specimen_quality);
         specimenQualitySpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.specimenQuality_option),
+                getResources().getStringArray(R.array.specimen_quality_option),
                 R.string.specimen_quality, R.string.option_hint);
 
         specimenLocationTextView = new MyTextView(context,
@@ -132,6 +132,12 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
 
         //define the navigation Fragments
         View[][] viewGroups = {
@@ -139,7 +145,8 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
                         testOrderDateTextView, testOrderDateEditText, specimenTypeTextView,
                         specimenTypeSpinner, specimenQualityTextView, specimenQualitySpinner
                 },
-                {specimenLocationTextView, specimenLocationSpinner, otherTextView, other}
+                {specimenLocationTextView, specimenLocationSpinner, otherTextView, other,
+                        testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -170,7 +177,7 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{other, patientId, testOrderDateEditText, specimenLocationSpinner,
-                specimenQualitySpinner, specimenTypeSpinner, testOrderDateEditText};
+                specimenQualitySpinner, specimenTypeSpinner, testId, testOrderDateEditText};
 
 
         for (View v : views) {
@@ -252,13 +259,21 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
             message.append(patientId.getTag().toString() + ". ");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
-        if (RegexUtil.isWord(App.get(other))) {
-            valid = false;
-            message.append(other.getTag().toString() + ". "
-                    + getResources().getString(R.string.invalid_data)
-                    + "\n");
-            other.setHintTextColor(getResources().getColor(R.color.Red));
+        if (isOtherRequired) {
+            if (App.get(other).equals("")) {
+                valid = false;
+                message.append(other.getTag().toString() + ":\n" +
+                        getResources().getString(R.string.empty_data));
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isWord(App.get(other))) {
+                valid = false;
+                message.append(other.getTag().toString() + ". "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            }
         }
+
         ///here not check whether the Child is tb Suspected or not ....
         if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
@@ -310,6 +325,8 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
+            observations.add(new String[]{"Test ID",
+                    App.get(testId)});
             observations.add(new String[]{"Specimen Type",
                     App.get(specimenTypeSpinner)});
             if (specimenTypeSpinner.getSelectedItem().toString().equals(
@@ -433,6 +450,7 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
                 specimenLocationSpinner.setEnabled(false);
                 otherTextView.setEnabled(false);
                 other.setEnabled(false);
+                isOtherRequired = false;
             }
             if (specimenType.equals(getResources().getString(R.string.extra_pulmonary))) {
 
@@ -443,20 +461,21 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
             }
         }
         if (adapterView == specimenLocationSpinner) {
+            if (specimenLocationSpinner.isEnabled()) {
+                if (specimenLocationSpinner.getSelectedItem().toString().equals(
+                        getResources().getString(R.string.other))) {
 
-            if (specimenLocationSpinner.getSelectedItem().toString().equals(
-                    getResources().getString(R.string.other))) {
-
-                otherTextView.setEnabled(true);
-                other.setEnabled(true);
-            } else {
-                otherTextView.setEnabled(false);
-                other.setEnabled(false);
+                    otherTextView.setEnabled(true);
+                    other.setEnabled(true);
+                    isOtherRequired = true;
+                } else {
+                    otherTextView.setEnabled(false);
+                    other.setEnabled(false);
+                    isOtherRequired = false;
+                }
             }
-            updateDisplay();
         }
-
-
+        updateDisplay();
     }
 
     @Override

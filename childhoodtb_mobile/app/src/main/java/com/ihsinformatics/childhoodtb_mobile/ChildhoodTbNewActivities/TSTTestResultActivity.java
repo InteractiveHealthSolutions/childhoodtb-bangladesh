@@ -68,10 +68,13 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testResultCalender;
     MyButton validatePatientId;
-   String weightPercentile="";
+    String weightPercentile = "";
 
     @Override
     public void createViews(Context context) {
@@ -119,12 +122,17 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,validatePatientId,
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, validatePatientId,
                         testResultDateTextView, testResultDateEditText, tstResultTextView, tstResultSpinner,
-                        interpretationOfTSTTextView, interpretationOfTSTSpinner}
+                        interpretationOfTSTTextView, interpretationOfTSTSpinner, testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -294,12 +302,13 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Test ID",
+                    App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"TST Result",
                     App.get(tstResultSpinner)});
-            Log.i("spinnerVal",""+App.get(interpretationOfTSTSpinner));
+            Log.i("spinnerVal", "" + App.get(interpretationOfTSTSpinner));
             observations.add(new String[]{"Interpretation of TST",
                     App.get(interpretationOfTSTSpinner)});
 
@@ -403,24 +412,26 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
                             }
                         });
 
-                        String[] response = serverService.getPatientObs(indexPatientId,"Weight Percentile");
+                        String[] response = serverService.getPatientObs(indexPatientId, "Weight Percentile");
                         return response;
                     }
 
                     @Override
                     protected void onProgressUpdate(String... values) {
-                    };
+                    }
+
+                    ;
 
                     @Override
                     protected void onPostExecute(Object result) {
                         super.onPostExecute(result);
                         loading.dismiss();
                         String[] res = (String[]) result;
-                        if(res != null && res.length>0) {
+                        if (res != null && res.length > 0) {
                             Log.i("responseString", "" + res[0].toString());
-                            weightPercentile= res[0].toString();
+                            weightPercentile = res[0].toString();
                         }
-                        }
+                    }
                 };
                 getTask.execute("");
             }//end if condition
@@ -430,7 +441,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Log.i("weightPer",""+weightPercentile);
+        Log.i("weightPer", "" + weightPercentile);
 
         if (adapterView == tstResultSpinner) {
             String selectedResult = tstResultSpinner.getSelectedItem().toString();
@@ -438,14 +449,12 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
                     (selectedResult.equals(getResources().getString(R.string.ten_mm))))) {
                 interpretationOfTSTSpinner.setSelection(0);
                 interpretationOfTSTSpinner.setEnabled(false);
-            }
-            else if(selectedResult.equals(getResources().getString(R.string.five_to_nine_mm)) &&
-                    weightPercentile.equals("5th Percentile or Less") ){
+            } else if (selectedResult.equals(getResources().getString(R.string.five_to_nine_mm)) &&
+                    weightPercentile.equals("5th Percentile or Less")) {
 
                 interpretationOfTSTSpinner.setSelection(0);
                 interpretationOfTSTSpinner.setEnabled(false);
-            }
-            else {
+            } else {
                 interpretationOfTSTSpinner.setSelection(1);
                 interpretationOfTSTSpinner.setEnabled(false);
             }

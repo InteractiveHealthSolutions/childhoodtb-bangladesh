@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,6 +64,9 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testResultCalender;
 
@@ -87,7 +91,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
         smearResultTextView = new MyTextView(context,
                 R.style.text, R.string.smear_result);
         smearResultSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.smearResult_options),
+                getResources().getStringArray(R.array.smear_result_options),
                 R.string.smear_result, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
@@ -101,10 +105,16 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testResultDateTextView, testResultDateEditText,
+                        testIdTextView, testId, testResultDateTextView, testResultDateEditText,
                         smearResultTextView, smearResultSpinner
                 }
         };
@@ -136,7 +146,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText};
+        views = new View[]{patientId, testResultDateEditText,testId};
 
 
         for (View v : views) {
@@ -263,10 +273,48 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
+            observations.add(new String[]{"Test ID",
+                    App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"Smear Result",
                     App.get(smearResultSpinner)});
+
+            //check whether the test id is exist or not ...
+            AsyncTask<String, String, Object> taskTest = new AsyncTask<String, String, Object>() {
+                @Override
+                protected Object doInBackground(String... params) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            loading.setIndeterminate(true);
+                            loading.setCancelable(false);
+                            loading.setMessage(getResources().getString(
+                                    R.string.loading_message));
+                            loading.show();
+                        }
+                    });
+                    String[] testId = serverService.getPatientObs(App.get(patientId), "Test ID");
+                    return testId;
+                }
+
+                @Override
+                protected void onProgressUpdate(String... values) {
+                }
+
+
+                @Override
+                protected void onPostExecute(Object result) {
+                    super.onPostExecute(result);
+                    loading.dismiss();
+                    String[] testID = (String[]) result;
+                    if (testID != null && testID.length > 0) {
+                        if (testID[0].toString().equals(App.get(testId)))
+                            Log.i("testID", "" + testID[0].toString());
+                    }
+                }
+            };
+            taskTest.execute("");
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -355,7 +403,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            updateDisplay();
+        updateDisplay();
     }
 
     @Override

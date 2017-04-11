@@ -512,8 +512,8 @@
         <item>Private Patient</item>
     </string-array>
     <string-array name="interpretation_tst_option">
-    <item>@string/positive</item>
-    <item>@string/negative</item>
+        <item>@string/positive</item>
+        <item>@string/negative</item>
     </string-array>
     <string-array name="language">
         <item>bn - Bengali</item>
@@ -538,7 +538,7 @@
 		<item>Refused</item>
 		<item>Child</item>
 	</string-array>
-    <string-array name="monthOfTreatment_option">
+    <string-array name="month_of_treatment_option">
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -587,8 +587,8 @@
         <item>@string/category_two</item>
     </string-array>
     <string-array name="patient_referred_without_Registration_option">
-    <item>@string/yes</item>
-    <item>@string/no</item>
+        <item>@string/yes</item>
+        <item>@string/no</item>
     </string-array>
     <string-array name="patient_type_options">
         <item>@string/new_patient</item>
@@ -647,30 +647,20 @@
         <item>OPD Screening</item>
         <item>Field Screening</item>
     </string-array>
-    <string-array name="smearResult_options">
-        <item>@string/negative</item>
-        <item>@string/oneToNineAFB</item>
-        <item>1+</item>
-        <item>2+</item>
-        <item>3+</item>
-    </string-array>
     <string-array name="smear_microscopy_options">
         <item>@string/yes</item>
         <item>@string/no</item>
     </string-array>
+    <string-array name="smear_result_options">
+        <item>@string/negative</item>
+        <item>@string/one_to_nine_afb</item>
+        <item>1+</item>
+        <item>2+</item>
+        <item>3+</item>
+    </string-array>
     <string-array name="smoking_confirmation_options">
         <item>@string/yes</item>
         <item>@string/no</item>
-    </string-array>
-    <string-array name="specimenQuality_option">
-        <item>@string/saliva</item>
-        <item>@string/mucoid</item>
-        <item>@string/Purulent</item>
-        <item>@string/do_not_know</item>
-    </string-array>
-    <string-array name="specimenType_option">
-        <item>@string/sputum</item>
-        <item>@string/extra_pulmonary</item>
     </string-array>
     <string-array name="specimen_location_options">
         <item>@string/lymph</item>
@@ -678,6 +668,16 @@
         <item>@string/pus</item>
         <item>@string/other</item>
 
+    </string-array>
+    <string-array name="specimen_quality_option">
+        <item>@string/saliva</item>
+        <item>@string/mucoid</item>
+        <item>@string/Purulent</item>
+        <item>@string/do_not_know</item>
+    </string-array>
+    <string-array name="specimen_type_option">
+        <item>@string/sputum</item>
+        <item>@string/extra_pulmonary</item>
     </string-array>
     <string-array name="symptoms_options">
         <item>@string/yes</item>
@@ -756,16 +756,16 @@
         <item>Reverse Contact Tracing</item>
     </string-array>
     <string-array name="treatment_supporter_relationships_options">
-       <item>@string/mother</item>
-       <item>@string/father</item>
-       <item>@string/sister</item>
-       <item>@string/brother</item>
-       <item>@string/grandfather</item>
-       <item>@string/grandmother</item>
-       <item>@string/uncle</item>
-       <item>@string/aunt</item>
-       <item>@string/other</item>
-   </string-array>
+        <item>@string/mother</item>
+        <item>@string/father</item>
+        <item>@string/sister</item>
+        <item>@string/brother</item>
+        <item>@string/grandfather</item>
+        <item>@string/grandmother</item>
+        <item>@string/uncle</item>
+        <item>@string/aunt</item>
+        <item>@string/other</item>
+    </string-array>
     <string-array name="tst_options">
         <item>@string/yes</item>
         <item>@string/no</item>
@@ -1202,7 +1202,7 @@
     <string name="offline">Work Offline</string>
     <string name="offline_forms">Some saved forms are waiting your attention</string>
     <string name="ok">Ok</string>
-    <string name="oneToNineAFB">1-9 AFB</string>
+    <string name="one_to_nine_afb">1-9 AFB</string>
     <string name="operation_cancelled">Operation cancelled</string>
     <string name="operation_successful">Request has been processed by the server successfully.</string>
     <string name="option_hint">Select an option</string>
@@ -1352,7 +1352,9 @@
     <string name="tbr4pk_patient">TBR4 Patient</string>
     <string name="ten_mm">10mm</string>
     <string name="test_advised">Test advised</string>
-    <string name="test_id">Test Id</string>
+    <string name="test_id">Test ID</string>
+    <string name="test_id_hint">Enter test Id</string>
+    <string name="test_id_missing">Test ID does not exist. Please make sure you have entered correct Test ID</string>
     <string name="test_indication">Test Indication</string>
     <string name="test_indication_button">Test Indication</string>
     <string name="test_order"><b>A -- Test Order</b></string>

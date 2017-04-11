@@ -63,6 +63,9 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testOrderCalender;
 
@@ -103,12 +106,18 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
 
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testOrderDateTextView, testOrderDateEditText, esrTextView,
-                        esrSpinner}
+                        esrSpinner, testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -138,7 +147,8 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testOrderDateEditText,esrSpinner};
+        views = new View[]{patientId, testOrderDateEditText, testId,
+                testOrderDateEditText, esrSpinner};
 
 
         for (View v : views) {
@@ -193,7 +203,7 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
         testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
-          }
+    }
 
     @Override
     public boolean validate() {

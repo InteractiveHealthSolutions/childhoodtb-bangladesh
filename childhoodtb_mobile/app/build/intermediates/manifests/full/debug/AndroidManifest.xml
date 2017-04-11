@@ -75,7 +75,7 @@
             android:name="com.ihsinformatics.childhoodtb_mobile.Barcode"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningFormActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
             android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity"

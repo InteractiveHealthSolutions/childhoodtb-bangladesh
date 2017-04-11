@@ -2,7 +2,6 @@ package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.appwidget.AppWidgetProvider;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -100,7 +99,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     String result = "";
     Calendar registrationDate;
     Calendar treatmentInitDate;
-
+    boolean isOtherRequired, isNIDOtherRequired = false;
 
     @Override
     public void createViews(Context context) {
@@ -248,7 +247,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
         views = new View[]{other, patientId, registrationDateEditText, patientCategorySpinner,
                 patientAndSupporterRelationSpinner, phoneNumberOfSupporterEditText,
-                nameOfSupporterSpinner, nidEditText, nidBelongsSpinner, registrationDateEditText, tbRegisterNumberEditText, treatmentInitiationDate
+                nameOfSupporterSpinner, otherSpecifyNIDEditText, other, nidEditText, nidBelongsSpinner, registrationDateEditText, tbRegisterNumberEditText, treatmentInitiationDate
         };
 
 
@@ -358,14 +357,35 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                     + "\n");
             nameOfSupporterSpinner.setHintTextColor(getResources().getColor(R.color.Red));
         }
+        if (isOtherRequired) {
+            if (App.get(other).equals("")) {
+                valid = false;
+                message.append(other.getTag().toString() + ": \n" +
+                        getResources().getString(R.string.empty_data));
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isWord(App.get(other))) {
+                valid = false;
+                message.append(other.getTag().toString() + ". "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            }
+        }
+        if (isNIDOtherRequired) {
+            if (App.get(otherSpecifyNIDEditText).equals("")) {
+                valid = false;
+                message.append(otherSpecifyNIDEditText.getTag().toString() + ": \n" +
+                        getResources().getString(R.string.empty_data));
+                otherSpecifyNIDEditText.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isWord(App.get(otherSpecifyNIDEditText))) {
+                valid = false;
+                message.append(otherSpecifyNIDEditText.getTag().toString() + ". "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                otherSpecifyNIDEditText.setHintTextColor(getResources().getColor(R.color.Red));
+            }
+        }
 
-        /*if (!RegexUtil.isWord(App.get(other))) {
-            valid = false;
-            message.append(other.getTag().toString() + ". "
-                    + getResources().getString(R.string.invalid_data)
-                    + "\n");
-            other.setHintTextColor(getResources().getColor(R.color.Red));
-        }*/
         ///here not check whether the Child is tb Suspected or not ....
         if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
@@ -509,9 +529,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     }
 
     @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
-    }
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {}
 
     @Override
     public void onClick(View view) {
@@ -521,7 +539,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
         } else if (view == registrationDateEditText) {
 
-            new DatePickerDialog(this, date, registrationDate
+           new DatePickerDialog(this, date, registrationDate
                     .get(Calendar.YEAR), registrationDate.get(Calendar.MONTH),
                     registrationDate.get(Calendar.DAY_OF_MONTH)).show();
 
@@ -558,12 +576,13 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
             if (nidBelongsSpinner.getSelectedItem().toString().equals(
                     getResources().getString(R.string.other))) {
-
                 otherSpecifyNIDEditText.setEnabled(true);
                 otherSpecifyNIDTextView.setEnabled(true);
+                isNIDOtherRequired = true;
             } else {
                 otherSpecifyNIDEditText.setEnabled(false);
                 otherSpecifyNIDTextView.setEnabled(false);
+                isNIDOtherRequired = false;
             }
         }
         if (adapterView == patientAndSupporterRelationSpinner) {
@@ -573,9 +592,11 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
                 otherTextView.setEnabled(true);
                 other.setEnabled(true);
+                isOtherRequired = true;
             } else {
                 otherTextView.setEnabled(false);
                 other.setEnabled(false);
+                isOtherRequired = false;
             }
 
         }
@@ -588,7 +609,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
         return false;
     }
 
-    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+   public DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -601,12 +622,11 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
         }
 
     };
-    DatePickerDialog.OnDateSetListener treatmentDate = new DatePickerDialog.OnDateSetListener() {
+    public DatePickerDialog.OnDateSetListener treatmentDate = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
-
             treatmentInitDate.set(Calendar.YEAR, year);
             treatmentInitDate.set(Calendar.MONTH, monthOfYear);
             treatmentInitDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);

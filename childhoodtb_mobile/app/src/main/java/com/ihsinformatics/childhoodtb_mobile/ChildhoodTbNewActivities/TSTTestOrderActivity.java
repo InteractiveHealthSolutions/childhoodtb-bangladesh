@@ -107,11 +107,18 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
 
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testOrderDateTextView, testOrderDateEditText, tuberculinSkinTestTextView, tuberculinSkinTestSpinner}
+                        testOrderDateTextView, testOrderDateEditText, tuberculinSkinTestTextView,
+                        tuberculinSkinTestSpinner, testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -141,7 +148,8 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testOrderDateEditText, tuberculinSkinTestSpinner};
+        views = new View[]{patientId, testOrderDateEditText, testId, testOrderDateEditText,
+                tuberculinSkinTestSpinner};
 
 
         for (View v : views) {
@@ -269,6 +277,8 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
+            observations.add(new String[]{"Test Order Date",
+                    App.get(testOrderDateEditText)});
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateEditText)});
             observations.add(new String[]{"Tuberculin Skin Test",

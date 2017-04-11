@@ -67,7 +67,8 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
     MyTextView patientIdTextView;
     MyEditText patientId;
     MyButton scanBarcode;
-
+    boolean isOtherFieldIsRequired, isOtherFacilityNameIsRequired,
+            isReasonLosFollowUpIsRequired = false;
 
     String result = "";
 
@@ -235,6 +236,58 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
             message.append(patientId.getTag().toString() + ". ");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
+        if (isOtherFieldIsRequired) {
+            if (App.get(other).equals("")) {
+                valid = false;
+                message.append(other.getTag().toString() + ":\n" +
+                        getResources().getString(R.string.empty_data));
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isWord(App.get(other))) {
+
+                valid = false;
+                message.append(other.getTag().toString()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_data) + "\n");
+                other.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+        }
+        if (isReasonLosFollowUpIsRequired) {
+            if (App.get(reasonForlossFollowUp).equals("")) {
+                valid = false;
+                message.append(reasonForlossFollowUp.getTag().toString() + ":\n" +
+                        getResources().getString(R.string.empty_data));
+                reasonForlossFollowUp.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isWord(App.get(reasonForlossFollowUp))) {
+
+                valid = false;
+                message.append(reasonForlossFollowUp.getTag().toString()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_data) + "\n");
+                reasonForlossFollowUp.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+        }
+        if (isOtherFacilityNameIsRequired) {
+            if (App.get(otherFacilityName).equals("")) {
+                valid = false;
+                message.append(otherFacilityName.getTag().toString() + ":\n" +
+                        getResources().getString(R.string.empty_data));
+                otherFacilityName.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isWord(App.get(otherFacilityName))) {
+
+                valid = false;
+                message.append(otherFacilityName.getTag().toString()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_data) + "\n");
+                otherFacilityName.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+        }
+
         ///here not check whether the Child is tb Suspected or not ....
         if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
@@ -295,17 +348,16 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                     .equals(getResources().getString(R.string.referred_to_another_facility))) {
                 observations.add(new String[]{"Referred to another Facility",
                         App.get(otherFacilityName)});
-            }
-            else if (reasonForEndOfFollowUp.getSelectedItem().toString()
+            } else if (reasonForEndOfFollowUp.getSelectedItem().toString()
                     .equals(getResources().getString(R.string.other))) {
                 observations.add(new String[]{"Other Reason",
                         App.get(other)});
-            }
-            else if (reasonForEndOfFollowUp.getSelectedItem().toString()
+            } else if (reasonForEndOfFollowUp.getSelectedItem().toString()
                     .equals(getResources().getString(R.string.loss_to_followup))) {
                 observations.add(new String[]{"Follow-up Lost",
                         App.get(reasonForlossFollowUp)});
-            };
+            }
+            ;
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -390,7 +442,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        if(adapterView == reasonForEndOfFollowUp) {
+        if (adapterView == reasonForEndOfFollowUp) {
 
             if (adapterView.getSelectedItem().toString().equals(getString(R.string.referred_to_another_facility))) {
                 otherFacilityNameTextView.setVisibility(View.VISIBLE);
@@ -399,16 +451,22 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 other.setVisibility(View.GONE);
                 reasonForlossFollowUpTextView.setVisibility(View.GONE);
                 reasonForlossFollowUp.setVisibility(View.GONE);
+                isOtherFieldIsRequired = false;
+                isOtherFacilityNameIsRequired = true;
+                isReasonLosFollowUpIsRequired = false;
 
             } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.other))) {
                 Log.i("test", "other");
 
                 otherTextView.setVisibility(View.VISIBLE);
                 other.setVisibility(View.VISIBLE);
+                isOtherFieldIsRequired = true;
                 otherFacilityNameTextView.setVisibility(View.GONE);
                 otherFacilityName.setVisibility(View.GONE);
                 reasonForlossFollowUpTextView.setVisibility(View.GONE);
                 reasonForlossFollowUp.setVisibility(View.GONE);
+                isOtherFacilityNameIsRequired = false;
+                isReasonLosFollowUpIsRequired = false;
 
             } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.loss_to_followup))) {
 
@@ -418,6 +476,9 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 otherFacilityName.setVisibility(View.GONE);
                 reasonForlossFollowUpTextView.setVisibility(View.VISIBLE);
                 reasonForlossFollowUp.setVisibility(View.VISIBLE);
+                isOtherFieldIsRequired = false;
+                isOtherFacilityNameIsRequired = false;
+                isReasonLosFollowUpIsRequired = true;
             } else {
                 otherTextView.setVisibility(View.GONE);
                 other.setVisibility(View.GONE);
@@ -425,7 +486,9 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 otherFacilityName.setVisibility(View.GONE);
                 reasonForlossFollowUpTextView.setVisibility(View.GONE);
                 reasonForlossFollowUp.setVisibility(View.GONE);
-
+                isOtherFieldIsRequired = false;
+                isOtherFacilityNameIsRequired = false;
+                isReasonLosFollowUpIsRequired = false;
             }
         }
 

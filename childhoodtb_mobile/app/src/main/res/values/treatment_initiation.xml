@@ -35,28 +35,30 @@
     </string-array>
     <string name="patient_referred_without_Registration">Patient referred out to another facility without registration</string>
     <string-array name="patient_referred_without_Registration_option">
-    <item>@string/yes</item>
-    <item>@string/no</item>
+        <item>@string/yes</item>
+        <item>@string/no</item>
     </string-array>
- ] <string name="tb_reg_number">TB Registration Number</string>
- ] <string name="tb_reg_number_hint">Enter registration number</string>
+    ]
+    <string name="tb_reg_number">TB Registration Number</string>
+    ]
+    <string name="tb_reg_number_hint">Enter registration number</string>
 
     <string name="treatment_initiation_date">Treatment Initiation Date</string>
-   <string name="name_treatment_supporter">Name of Treatment Supporter</string>
-   <string name="name_treatment_supporter_hint"> Enter Supporter Name</string>
-   <string name="treatment_supporter_phone_Number">Treatment Supporter Phone Number</string>
-   <string name="treatment_supporter_phone_hint">Enter Phone Number</string>
-   <string name="treatment_supporter_relationship">Relationship of treatment supporter with the patient</string>
-   <string-array name="treatment_supporter_relationships_options">
-       <item>@string/mother</item>
-       <item>@string/father</item>
-       <item>@string/sister</item>
-       <item>@string/brother</item>
-       <item>@string/grandfather</item>
-       <item>@string/grandmother</item>
-       <item>@string/uncle</item>
-       <item>@string/aunt</item>
-       <item>@string/other</item>
-   </string-array>
+    <string name="name_treatment_supporter">Name of Treatment Supporter</string>
+    <string name="name_treatment_supporter_hint"> Enter Supporter Name</string>
+    <string name="treatment_supporter_phone_Number">Treatment Supporter Phone Number</string>
+    <string name="treatment_supporter_phone_hint">Enter Phone Number</string>
+    <string name="treatment_supporter_relationship">Relationship of treatment supporter with the patient</string>
+    <string-array name="treatment_supporter_relationships_options">
+        <item>@string/mother</item>
+        <item>@string/father</item>
+        <item>@string/sister</item>
+        <item>@string/brother</item>
+        <item>@string/grandfather</item>
+        <item>@string/grandmother</item>
+        <item>@string/uncle</item>
+        <item>@string/aunt</item>
+        <item>@string/other</item>
+    </string-array>
     <string name="supporter_other_hint">Enter other specify name</string>
 </resources>

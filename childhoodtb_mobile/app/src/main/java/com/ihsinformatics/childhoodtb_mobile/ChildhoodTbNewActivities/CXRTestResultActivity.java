@@ -69,6 +69,9 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testResultCalender;
 
@@ -121,13 +124,18 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
 
 
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,testResultDateTextView, testResultDateEditText,
                         cxrResultTextView, cxrResultSpinner, radiologicalFindingTextView, radiologicalFindingSpinner,
-                        otherTextView, other
+                        otherTextView, other,testIdTextView,testId
                 }
         };
 
@@ -158,7 +166,8 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{other, patientId,testResultDateEditText, radiologicalFindingSpinner,};
+        views = new View[]{other, patientId,testResultDateEditText,testId,
+                radiologicalFindingSpinner};
 
 
         for (View v : views) {
@@ -301,7 +310,8 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Test ID",
+                    App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"CXR Result",

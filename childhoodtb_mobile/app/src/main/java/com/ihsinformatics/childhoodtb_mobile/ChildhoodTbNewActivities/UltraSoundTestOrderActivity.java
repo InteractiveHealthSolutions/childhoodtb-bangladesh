@@ -27,6 +27,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.Barcode;
@@ -38,6 +39,7 @@ import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -60,6 +62,9 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
     MyTextView patientIdTextView;
     MyEditText patientId;
     MyButton scanBarcode;
+
+    MyTextView testIdTextView;
+    MyEditText testId;
 
     String result = "";
     Calendar testOrderCalender;
@@ -85,11 +90,11 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
                 R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
 
-        ultrasoundAbdomenTextView =new MyTextView(context,
+        ultrasoundAbdomenTextView = new MyTextView(context,
                 R.style.text, R.string.ultrasound_abdomen);
         ultrasoundAbdomensSpinner = new MySpinner(context,
                 getResources().getStringArray(R.array.ultra_abdomen_option),
-                R.string.ultrasound_abdomen,R.string.ultrasound_abdomen);
+                R.string.ultrasound_abdomen, R.string.ultrasound_abdomen);
 
 
         patientIdTextView = new MyTextView(context, R.style.text,
@@ -104,10 +109,18 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
                 R.string.scan_barcode);
 
 
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
+
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
-                        testOrderDateEditText,ultrasoundAbdomenTextView,ultrasoundAbdomensSpinner
+                        testOrderDateEditText, ultrasoundAbdomenTextView, ultrasoundAbdomensSpinner, testIdTextView,
+                        testId
                 }
 
         };
@@ -139,7 +152,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testOrderDateEditText,ultrasoundAbdomensSpinner};
+        views = new View[]{patientId, testId, testOrderDateEditText, testOrderDateEditText, ultrasoundAbdomensSpinner};
 
 
         for (View v : views) {
@@ -273,7 +286,8 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Test ID",
+                    App.get(testId)});
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateEditText)});
             observations.add(new String[]{"Ultrasound Abdomen",

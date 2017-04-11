@@ -56,7 +56,7 @@ import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestRes
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestOrderActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricContactTracingAtHomeActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningFormActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PediatricContactInvestigationAtFacilityActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestOrderActivity;
@@ -201,6 +201,7 @@ public class MainMenuActivity extends Activity implements IActivity,
             // patientGps.setEnabled (false);
             patientRegistration.setEnabled(false);
             paedsPresumptiveConfirmationButton.setEnabled(false);
+            paediatricContactAtFacilityButton.setEnabled(false);
 
         }
         views = new View[]{locationTextView, selectLocations,
@@ -656,7 +657,7 @@ public class MainMenuActivity extends Activity implements IActivity,
                 startActivity(adultReverseContactTracingIntent);
                 break;
             case R.main_id.btnPaediatricForm:
-                Intent paediatricScreeningFormIntent = new Intent(this, PaediatricScreeningFormActivity.class);
+                Intent paediatricScreeningFormIntent = new Intent(this, PaediatricScreeningActivity.class);
                 startActivity(paediatricScreeningFormIntent);
                 break;
             case R.main_id.paedsPresumptiveButton:

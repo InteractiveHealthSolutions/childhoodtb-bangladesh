@@ -70,6 +70,9 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
     MyEditText patientId;
     MyButton scanBarcode;
 
+    MyTextView testIdTextView;
+    MyEditText testId;
+
     String result = "";
     Calendar testOrderCalender;
 
@@ -121,13 +124,18 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
 
 
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
                         testOrderDateEditText,ctScanTextView,ctScanSpinner,ctScanSiteTextView,ctScanSiteSpinner,
-                        otherSiteTextView,otherSiteEditText
+                        otherSiteTextView,otherSiteEditText,testIdTextView,testId
                 }
 
         };
@@ -160,7 +168,7 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{patientId, testOrderDateEditText, testOrderDateEditText,ctScanSpinner,
-                ctScanSiteSpinner};
+                ctScanSiteSpinner,testId};
 
 
         for (View v : views) {
@@ -296,7 +304,8 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Test ID",
+                    App.get(testId)});
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateEditText)});
             observations.add(new String[]{"CT Scan",
