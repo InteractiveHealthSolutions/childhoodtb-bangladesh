@@ -80,6 +80,7 @@
     </string-array>
     <!--TEST  ORDER RESULT ESR STRINGS -->
     <string name="esr_result">ESR Result</string>
+    <string name="esr_result_hint">Enter ESR Result</string>
     <string-array name="esr_result_option">
         <item>@string/high</item>
         <item>@string/normal</item>

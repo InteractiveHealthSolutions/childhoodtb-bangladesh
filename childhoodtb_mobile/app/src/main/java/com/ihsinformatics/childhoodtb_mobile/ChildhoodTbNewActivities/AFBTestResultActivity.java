@@ -14,7 +14,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +27,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
-
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.Barcode;
@@ -40,7 +38,6 @@ import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -146,7 +143,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText,testId};
+        views = new View[]{patientId, testResultDateEditText, testId};
 
 
         for (View v : views) {
@@ -252,6 +249,13 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
+            if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
+                valid = false;
+                message.append(testResultDateEditText.getTag()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_future_date) + "\n");
+            }
 
         } catch (NumberFormatException e) {
         }
@@ -271,50 +275,16 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId",App.get(testId));
+            values.put("conceptName","Smear Test Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Test ID",
+            observations.add(new String[]{"Smear Test Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"Smear Result",
                     App.get(smearResultSpinner)});
-
-            //check whether the test id is exist or not ...
-            AsyncTask<String, String, Object> taskTest = new AsyncTask<String, String, Object>() {
-                @Override
-                protected Object doInBackground(String... params) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            loading.setIndeterminate(true);
-                            loading.setCancelable(false);
-                            loading.setMessage(getResources().getString(
-                                    R.string.loading_message));
-                            loading.show();
-                        }
-                    });
-                    String[] testId = serverService.getPatientObs(App.get(patientId), "Test ID");
-                    return testId;
-                }
-
-                @Override
-                protected void onProgressUpdate(String... values) {
-                }
-
-
-                @Override
-                protected void onPostExecute(Object result) {
-                    super.onPostExecute(result);
-                    loading.dismiss();
-                    String[] testID = (String[]) result;
-                    if (testID != null && testID.length > 0) {
-                        if (testID[0].toString().equals(App.get(testId)))
-                            Log.i("testID", "" + testID[0].toString());
-                    }
-                }
-            };
-            taskTest.execute("");
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -331,7 +301,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.AFB_SMEAR_RESULT, values,
                             observations.toArray(new String[][]{}));
 

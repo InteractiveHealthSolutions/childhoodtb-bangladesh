@@ -48,7 +48,7 @@ import java.util.Locale;
 /**
  * Created by Shujaat on 4/6/2017.
  */
-public class CXRTestResultActivity  extends AbstractFragmentActivity {
+public class CXRTestResultActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
@@ -74,6 +74,7 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
 
     String result = "";
     Calendar testResultCalender;
+    boolean isTrue = false;
 
     @Override
     public void createViews(Context context) {
@@ -133,9 +134,9 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,testResultDateTextView, testResultDateEditText,
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testResultDateTextView, testResultDateEditText,
                         cxrResultTextView, cxrResultSpinner, radiologicalFindingTextView, radiologicalFindingSpinner,
-                        otherTextView, other,testIdTextView,testId
+                        otherTextView, other, testIdTextView, testId
                 }
         };
 
@@ -166,7 +167,7 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{other, patientId,testResultDateEditText,testId,
+        views = new View[]{other, patientId, testResultDateEditText, testId,
                 radiologicalFindingSpinner};
 
 
@@ -230,7 +231,7 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {other};
+        View[] mandatory = {};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
@@ -245,12 +246,20 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
             message.append(patientId.getTag().toString() + ". ");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
-        if (RegexUtil.isWord(App.get(other))) {
-            valid = false;
-            message.append(other.getTag().toString() + ". "
-                    + getResources().getString(R.string.invalid_data)
-                    + "\n");
-            other.setHintTextColor(getResources().getColor(R.color.Red));
+        if (isTrue) {
+            if(App.get(other).equals(""))
+            {
+                message.append(other.getTag().toString() + ". ");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            }
+
+           else if (RegexUtil.isWord(App.get(other))) {
+                valid = false;
+                message.append(other.getTag().toString() + ". "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            }
         }
         ///here not check whether the Child is tb Suspected or not ....
         if (RegexUtil.matchId(App.get(patientId))) {
@@ -308,9 +317,11 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "Chest X-Ray Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Test ID",
+            observations.add(new String[]{"Chest X-Ray Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
@@ -339,7 +350,7 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.CXR_RESULT, values,
                             observations.toArray(new String[][]{}));
 
@@ -390,7 +401,7 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
                     resultDate, testResultCalender
                     .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
                     testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
-        }  else if (view == firstButton) {
+        } else if (view == firstButton) {
 
             gotoFirstPage();
 
@@ -418,10 +429,12 @@ public class CXRTestResultActivity  extends AbstractFragmentActivity {
             if (specimenType.equals(getResources().getString(R.string.other))) {
                 otherTextView.setEnabled(true);
                 other.setEnabled(true);
+                isTrue=true;
 
             } else {
                 otherTextView.setEnabled(false);
                 other.setEnabled(false);
+                isTrue=false;
             }
         }
         updateDisplay();

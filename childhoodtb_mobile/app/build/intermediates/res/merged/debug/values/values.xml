@@ -1056,6 +1056,7 @@
     <string name="error_title">Error!</string>
     <string name="esr">ESR</string>
     <string name="esr_result">ESR Result</string>
+    <string name="esr_result_hint">Enter ESR Result</string>
     <string name="esr_test_order_button">ESR Test Order</string>
     <string name="esr_test_result_button">ESR Test Result</string>
     <string name="ethnicity">Ethnicity</string>

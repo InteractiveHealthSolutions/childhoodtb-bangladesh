@@ -14,7 +14,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -285,10 +284,12 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "Ultrasound Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Test ID",
-                    App.get(testResultDateEditText)});
+            observations.add(new String[]{"Ultrasound Barcode",
+                    App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"Ultrasound Result",
@@ -309,7 +310,7 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.ULTRASOUND_RESULT, values,
                             observations.toArray(new String[][]{}));
 

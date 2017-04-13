@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ import android.widget.Spinner;
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.Barcode;
+import com.ihsinformatics.childhoodtb_mobile.MainActivity;
 import com.ihsinformatics.childhoodtb_mobile.R;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyButton;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyEditText;
@@ -43,6 +45,7 @@ import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -529,7 +532,8 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     }
 
     @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {}
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+    }
 
     @Override
     public void onClick(View view) {
@@ -539,30 +543,42 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
         } else if (view == registrationDateEditText) {
 
-           new DatePickerDialog(this, date, registrationDate
+            new DatePickerDialog(this, date, registrationDate
                     .get(Calendar.YEAR), registrationDate.get(Calendar.MONTH),
                     registrationDate.get(Calendar.DAY_OF_MONTH)).show();
 
-        } else if (view == treatmentInitiationDate) {
+        } else if (view == treatmentInitiationDate)
+
+        {
 
             new DatePickerDialog(this, treatmentDate, treatmentInitDate
                     .get(Calendar.YEAR), treatmentInitDate.get(Calendar.MONTH),
                     treatmentInitDate.get(Calendar.DAY_OF_MONTH)).show();
 
-        } else if (view == firstButton) {
+        } else if (view == firstButton)
+
+        {
 
             gotoFirstPage();
 
-        } else if (view == lastButton) {
+        } else if (view == lastButton)
+
+        {
 
             gotoLastPage();
 
-        } else if (view == clearButton) {
+        } else if (view == clearButton)
+
+        {
             initView(views);
 
-        } else if (view == saveButton) {
+        } else if (view == saveButton)
+
+        {
             submit();
-        } else if (view == scanBarcode) {
+        } else if (view == scanBarcode)
+
+        {
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
@@ -609,7 +625,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
         return false;
     }
 
-   public DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+    public DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -618,6 +634,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
             registrationDate.set(Calendar.YEAR, year);
             registrationDate.set(Calendar.MONTH, monthOfYear);
             registrationDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
             updateDisplay();
         }
 

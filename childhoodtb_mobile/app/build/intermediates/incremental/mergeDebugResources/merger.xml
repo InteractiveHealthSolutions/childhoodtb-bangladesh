@@ -720,13 +720,13 @@
     </string-array><string-array name="cxr_options">
         <item>@string/yes</item>
         <item>@string/no</item>
-    </string-array><string name="test_order_date">Test Order Date</string><string name="other_specify_hint">Enter specify radiological finding</string><string name="rif_resistance">RIF Resistance</string><string name="specimen_type">Specimen Type?</string><string name="histopathology_site">Histopathology site</string><string-array name="cxr_result_option">
+    </string-array><string name="test_order_date">Test Order Date</string><string name="other_specify_hint">Enter specify radiological finding</string><string name="esr_result_hint">Enter ESR Result</string><string name="rif_resistance">RIF Resistance</string><string name="specimen_type">Specimen Type?</string><string name="histopathology_site">Histopathology site</string><string-array name="cxr_result_option">
         <item>@string/normal</item>
         <item>@string/suggestive_tb</item>
-    </string-array><string name="cxr">CXR</string><string name="smear_result">Smear Result</string><string name="test_order"><b>A -- Test Order</b></string><string name="test_result"><b>B -- Test Result</b></string><string name="esr_result">ESR Result</string><string-array name="ct_scan_result_option">
+    </string-array><string name="cxr">CXR</string><string name="smear_result">Smear Result</string><string name="test_order"><b>A -- Test Order</b></string><string-array name="ct_scan_result_option">
         <item>@string/suggestive_tb</item>
         <item>@string/normal</item>
-    </string-array><string name="other_specify">Other specify</string><string-array name="histopathology_result_option">
+    </string-array><string name="test_result"><b>B -- Test Result</b></string><string name="esr_result">ESR Result</string><string name="other_specify">Other specify</string><string-array name="histopathology_result_option">
         <item>@string/suggestive_tb</item>s
         <item>@string/not_suggestive_tb</item>
     </string-array><string name="specimen_quality">Specimen quality</string><string name="mtb_burden">MTB Burden</string><string-array name="histopathology_site_options">

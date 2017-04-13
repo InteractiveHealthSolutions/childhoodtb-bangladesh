@@ -27,17 +27,18 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.Barcode;
 import com.ihsinformatics.childhoodtb_mobile.R;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyButton;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyEditText;
-import com.ihsinformatics.childhoodtb_mobile.custom.MySpinner;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -55,7 +56,7 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
     MyEditText testResultDateEditText;
 
     MyTextView esrResultTextView;
-    MySpinner esrResultSpinner;
+    MyEditText esrResultEditText;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -84,9 +85,9 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
 
         esrResultTextView = new MyTextView(context,
                 R.style.text, R.string.esr_result);
-        esrResultSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.esr_result_option),
-                R.string.esr_result, R.string.option_hint);
+        esrResultEditText = new MyEditText(context, R.string.esr_result,
+                R.string.esr_result_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 2, false);
 
         testResultDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_result_date);
@@ -115,7 +116,7 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testResultDateTextView, testResultDateEditText, esrResultTextView,
-                        esrResultSpinner,testIdTextView,testId}
+                        esrResultEditText, testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -145,7 +146,7 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId,testResultDateEditText,testId, esrResultSpinner};
+        views = new View[]{patientId, testResultDateEditText, testId, esrResultEditText};
 
 
         for (View v : views) {
@@ -182,7 +183,8 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testResultDateEditText.setOnClickListener(this);;
+        testResultDateEditText.setOnClickListener(this);
+        ;
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -206,7 +208,7 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {esrResultEditText};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
@@ -221,6 +223,15 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
             message.append(patientId.getTag().toString() + ". ");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
+        if (!RegexUtil.isNumeric(App.get(esrResultEditText), false)) {
+            valid = false;
+            message.append(esrResultEditText.getTag().toString()
+                    + ": "
+                    + getResources().getString(
+                    R.string.invalid_data) + "\n");
+            esrResultEditText.setTextColor(getResources().getColor(
+                    R.color.Red));
+        }
         ///here not check whether the Child is tb Suspected or not ....
         if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
@@ -233,6 +244,7 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
                 patientId.setTextColor(getResources().getColor(
                         R.color.Red));
             }
+
         } else {
 
             valid = false;
@@ -277,15 +289,18 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "ESR Barcode");
+
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
 
-            observations.add(new String[]{"Test ID",
+            observations.add(new String[]{"ESR Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"ESR Result",
-                    App.get(esrResultSpinner)});
+                    App.get(esrResultEditText)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -302,7 +317,7 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                         result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.ESR_RESULT, values,
                             observations.toArray(new String[][]{}));
 
@@ -353,7 +368,7 @@ public class ESRTestResultActivity extends AbstractFragmentActivity {
                     resultDate, testResultCalender
                     .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
                     testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
-        }  else if (view == firstButton) {
+        } else if (view == firstButton) {
 
             gotoFirstPage();
 

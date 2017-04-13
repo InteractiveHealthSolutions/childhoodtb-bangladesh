@@ -305,6 +305,13 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
+            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
+                valid = false;
+                message.append(testOrderDateEditText.getTag()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_future_date) + "\n");
+            }
 
         } catch (NumberFormatException e) {
         }
@@ -324,9 +331,11 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId",App.get(testId));
+            values.put("conceptName","Smear Test Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Test ID",
+            observations.add(new String[]{"Smear Test Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Month of Treatment",
                     App.get(monthOfTreatmentSpinner)});
@@ -367,7 +376,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.AFB_SMEAR_ORDER, values,
                             observations.toArray(new String[][]{}));
 

@@ -304,6 +304,14 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
+            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
+                valid = false;
+                message.append(testOrderDateEditText.getTag()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_future_date) + "\n");
+            }
+
 
         } catch (NumberFormatException e) {
         }
@@ -323,9 +331,10 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-
+            values.put("testId",App.get(testId));
+            values.put("conceptName","GXP Barcode");
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Test ID",
+            observations.add(new String[]{"GXP Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Specimen Type",
                     App.get(specimenTypeSpinner)});
@@ -364,7 +373,7 @@ public class GXPTestOrderActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.GXP_ORDER, values,
                             observations.toArray(new String[][]{}));
 

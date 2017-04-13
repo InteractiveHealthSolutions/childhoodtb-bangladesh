@@ -147,7 +147,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText, histopathologResultSpinner};
+        views = new View[]{patientId, testResultDateEditText, testId, histopathologResultSpinner};
 
 
         for (View v : views) {
@@ -279,9 +279,12 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "Histopathology Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Histopathology Barcode",
+                    App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"Histopathology Result",
@@ -302,8 +305,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    //Todo:need to complete form here....check whether this patient id is exist or not
-                    result = serverService.insertEndFollowUpForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.HISTOPATHOLOGY_RESULT, values,
                             observations.toArray(new String[][]{}));
 

@@ -175,7 +175,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{patientId, testResultDateEditText, gxpResultSpinner, rifResistanceSpinner,
-                errorCodeEditText, mtbBurdenSpinner,testId};
+                errorCodeEditText, mtbBurdenSpinner, testId};
 
 
         for (View v : views) {
@@ -319,10 +319,12 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "GXP Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Test ID",
-                    App.get(testResultDateEditText)});
+            observations.add(new String[]{"GXP Barcode",
+                    App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
             observations.add(new String[]{"GXP Result",
@@ -355,7 +357,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.GXP_RESULT, values,
                             observations.toArray(new String[][]{}));
 

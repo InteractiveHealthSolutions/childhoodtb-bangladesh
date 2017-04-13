@@ -26,6 +26,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -106,6 +107,7 @@ public class LoginActivity extends Activity implements IActivity,
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		Log.i("menu",""+item.getClass());
 		switch (item.getItemId()) {
 		case R.menu_id.itemPreferences:
 			startActivity(new Intent(this, Preferences.class));

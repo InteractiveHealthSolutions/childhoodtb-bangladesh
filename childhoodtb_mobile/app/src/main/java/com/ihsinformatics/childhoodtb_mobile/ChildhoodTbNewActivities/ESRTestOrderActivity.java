@@ -280,9 +280,12 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "ESR Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"ESR Barcode",
+                    App.get(testId)});
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateEditText)});
             observations.add(new String[]{"ESR",
@@ -303,7 +306,7 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.ESR_ORDER, values,
                             observations.toArray(new String[][]{}));
 

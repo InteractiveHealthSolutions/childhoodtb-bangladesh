@@ -27,6 +27,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.Barcode;
@@ -38,6 +39,7 @@ import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -112,7 +114,7 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testResultDateTextView, testResultDateEditText,
-                        ctScanResultTextView, ctScanResultSpinner,testIdTextView,testId
+                        ctScanResultTextView, ctScanResultSpinner, testIdTextView, testId
                 }
         };
 
@@ -143,7 +145,7 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText,ctScanResultSpinner,testId};
+        views = new View[]{patientId, testResultDateEditText, ctScanResultSpinner, testId};
 
 
         for (View v : views) {
@@ -249,6 +251,13 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
+            if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
+                valid = false;
+                message.append(testResultDateEditText.getTag()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_future_date) + "\n");
+            }
 
         } catch (NumberFormatException e) {
         }
@@ -268,9 +277,11 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "CT Scan Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Test ID",
+            observations.add(new String[]{"CT Scan Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
@@ -292,7 +303,7 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertTestOrderForm(
+                    result = serverService.insertTestOrderResultForm(
                             FormType.CT_SCAN_RESULT, values,
                             observations.toArray(new String[][]{}));
 

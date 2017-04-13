@@ -2270,7 +2270,7 @@ public class ServerService {
             json.put("username", App.getUsername());
             json.put("patient_id", patientId);
             json.put("location", location);
-            json.put("mother_name",motherName);
+            json.put("mother_name", motherName);
 
             JSONArray listOfObservations = new JSONArray();
 
@@ -2447,24 +2447,17 @@ public class ServerService {
     }
 
     /* Save TEST ORDER FORM DATA */
-    public String insertTestOrderForm(String encounterType, ContentValues values,
-                                      String[][] observations) {
-
+    public String insertTestOrderResultForm(String encounterType, ContentValues values,
+                                            String[][] observations) {
         String response = "";
+
         String patientId = values.getAsString("patientId");
         String location = values.getAsString("location");
         String formDate = values.getAsString("formDate");
+        String testId = values.getAsString("testId");
+        String conceptName = values.getAsString("conceptName");
 
         try {
-
-            if (!App.isOfflineMode()) {
-
-                String id = getPatientId(patientId);
-                if (id == null) {
-                    return context.getResources().getString(
-                            R.string.patient_id_missing);
-                }
-            }
 
             // Save Patient
             JSONObject json = new JSONObject();
@@ -2474,6 +2467,8 @@ public class ServerService {
             json.put("username", App.getUsername());
             json.put("patient_id", patientId);
             json.put("location", location);
+            json.put("test_id",testId);
+            json.put("concept_name",conceptName);
 
             JSONArray listOfObservations = new JSONArray();
 

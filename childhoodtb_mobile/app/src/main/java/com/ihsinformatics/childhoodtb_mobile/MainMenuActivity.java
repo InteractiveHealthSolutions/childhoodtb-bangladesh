@@ -601,6 +601,7 @@ public class MainMenuActivity extends Activity implements IActivity,
         Toast toast = Toast.makeText(view.getContext(), "", App.getDelay());
         toast.setGravity(Gravity.CENTER, 0, 0);
         view.startAnimation(alphaAnimation);
+
         switch (view.getId()) {
             case R.main_id.selectLocationsButton:
                 showDialog(LOCATIONS_DIALOG);
