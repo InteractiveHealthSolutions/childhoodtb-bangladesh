@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -113,94 +113,13 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
 
     String result = "";
 
-    /**
-     * Subclass representing Fragment for Pediatric-screening suspect form
-     *
-     * @author shujaat.hussain@ihsinformatics.com
-     */
-    @SuppressLint("ValidFragment")
-    class PediatricScreeningSuspectFragment extends Fragment {
-        int currentPage;
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            Bundle data = getArguments();
-            currentPage = data.getInt("current_page", 0);
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            // Return a layout of views from pre-filled ArrayList of groups
-            if (currentPage != 0 && groups.size() != 0)
-                return groups.get(currentPage - 1);
-            else
-                return null;
-        }
-    }
-
-    /**
-     * Subclass for Pager Adapter. Uses PediatricScreeningSuspect subclass as
-     * items
-     *
-     * @author owais.hussain@irdresearch.org
-     */
-    class PediatricScreeningSuspectFragmentPagerAdapter extends
-            FragmentPagerAdapter {
-        /**
-         * Constructor of the class
-         */
-        public PediatricScreeningSuspectFragmentPagerAdapter(
-                FragmentManager fragmentManager) {
-            super(fragmentManager);
-        }
-
-        /**
-         * This method will be invoked when a page is requested to create
-         */
-        @Override
-        public Fragment getItem(int arg0) {
-
-            PediatricScreeningSuspectFragment fragment = new PediatricScreeningSuspectFragment();
-            Bundle data = new Bundle();
-            data.putInt("current_page", arg0 + 1);
-            fragment.setArguments(data);
-            return fragment;
-        }
-
-        /**
-         * Returns the number of pages
-         */
-        @Override
-        public int getCount() {
-            return PAGE_COUNT;
-        }
-    }
-
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
         TAG = "PaediatricScreeningActivity";
-        PAGE_COUNT = 4;
         pager = (ViewPager) findViewById(R.template_id.pager);
-
-        navigationSeekbar.setMax(PAGE_COUNT - 1);
-        navigatorLayout = (LinearLayout) findViewById(R.template_id.navigatorLayout);
-        // If the form consists only of single page, then hide the
-        // navigatorLayout
-        if (PAGE_COUNT < 2) {
-            navigatorLayout.setVisibility(View.GONE);
-        }
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        PediatricScreeningSuspectFragmentPagerAdapter pagerAdapter = new PediatricScreeningSuspectFragmentPagerAdapter(
-                fragmentManager);
-        pager.setAdapter(pagerAdapter);
-        pager.setOffscreenPageLimit(PAGE_COUNT);
 
         // Create views for pages
         formDateTextView = new MyTextView(context, R.style.text,
@@ -333,20 +252,21 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
                 {formDateTextView, formDateButton, screenedBeforeTextView, screenedBefore, firstNameTextView, firstName, lastNameTextView, lastName,
                         genderTextView, gender,
                 },
-                {dobTextView, dobPicker, contactHistoryConclusionTextView, contactHistoryConclusion,
-                        ageTextView, age, ageModifierTextView, ageModifier, coughTextView, cough
+                {dobTextView, dobPicker, ageTextView, age, ageModifierTextView, ageModifier, coughTextView, cough,
+                        coughDurationTextView, coughDuration,
                 },
-                {coughDurationTextView, coughDuration, presumptiveTbCaseTextView, presumptiveTbCase, smokingConfirmationTextView,
+                {presumptiveTbCaseTextView, presumptiveTbCase, smokingConfirmationTextView,
                         smokingConfirmation, feverTextView, fever, nightSweatsTextView, nightSweats
                 },
 
-                {childAppetiteTextView, childAppetite, patientIdTextView, patientId, scanBarcode}
+                {weightLossTextView, weightLoss, childAppetiteTextView, childAppetite, contactHistoryConclusionTextView, contactHistoryConclusion,
+                        patientIdTextView, patientId, scanBarcode}
 
         };
 
         // Create layouts and store in ArrayList
         groups = new ArrayList<ViewGroup>();
-        for (int i = 0; i < PAGE_COUNT; i++) {
+        for (int i = 0; i < viewGroups.length; i++) {
             LinearLayout layout = new LinearLayout(context);
             layout.setOrientation(LinearLayout.VERTICAL);
             for (int j = 0; j < viewGroups[i].length; j++) {
@@ -359,6 +279,20 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
             groups.add(scrollView);
         }
 
+
+        navigationSeekbar.setMax(groups.size() - 1);
+        navigatorLayout = (LinearLayout) findViewById(R.template_id.navigatorLayout);
+        // If the form consists only of single page, then hide the navigatorLayout
+        if (groups.size() < 2) {
+            navigatorLayout.setVisibility(View.GONE);
+        }
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        PediatricScreeningFragmentPagerAdapter pagerAdapter = new PediatricScreeningFragmentPagerAdapter(
+                fragmentManager, groups.size());
+        pager.setAdapter(pagerAdapter);
+        pager.setOffscreenPageLimit(groups.size());
+
         // Set event listeners
         formDateButton.setOnClickListener(this);
         firstButton.setOnClickListener(this);
@@ -370,8 +304,8 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
 
 
         views = new View[]{ageModifier, screenedBefore,
-                cough, coughDuration, fever, nightSweats, weightLoss,
-                childAppetite, firstName, lastName, age,
+                cough, coughDuration, fever, nightSweats,
+                childAppetite, firstName, lastName, age, weightLoss,
                 patientId, contactHistoryConclusion, presumptiveTbCase, smokingConfirmation};
 
 
@@ -754,5 +688,57 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
         }
     }
 
+    @SuppressLint("ValidFragment")
+    class PediatricScreeningFragment extends Fragment {
+        int currentPage;
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            Bundle data = getArguments();
+            currentPage = data.getInt("current_page", 0);
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            // Return a layout of views from pre-filled ArrayList of groups
+            if (currentPage != 0 && groups.size() != 0)
+                return groups.get(currentPage - 1);
+            else
+                return null;
+        }
+    }
+
+    class PediatricScreeningFragmentPagerAdapter extends
+            FragmentPagerAdapter {
+        int pageCount;
+
+        public PediatricScreeningFragmentPagerAdapter(
+                FragmentManager fragmentManager, int pageCount) {
+            super(fragmentManager);
+            this.pageCount = pageCount;
+        }
+
+        /**
+         * This method will be invoked when a page is requested to create
+         */
+        @Override
+        public Fragment getItem(int arg0) {
+            PediatricScreeningFragment fragment = new PediatricScreeningFragment();
+            Bundle data = new Bundle();
+            data.putInt("current_page", arg0 + 1);
+            fragment.setArguments(data);
+            return fragment;
+        }
+
+        /**
+         * Returns the number of pages
+         */
+        @Override
+        public int getCount() {
+            return pageCount;
+        }
+    }
 
 }

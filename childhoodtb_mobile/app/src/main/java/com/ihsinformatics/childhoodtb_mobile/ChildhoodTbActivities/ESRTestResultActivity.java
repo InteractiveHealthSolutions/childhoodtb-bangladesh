@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -27,17 +27,18 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.Barcode;
 import com.ihsinformatics.childhoodtb_mobile.R;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyButton;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyEditText;
-import com.ihsinformatics.childhoodtb_mobile.custom.MySpinner;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -46,7 +47,7 @@ import java.util.Locale;
 /**
  * Created by Shujaat on 4/6/2017.
  */
-public class AFBTestResultActivity extends AbstractFragmentActivity {
+public class ESRTestResultActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
@@ -54,8 +55,8 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
     MyTextView testResultDateTextView;
     MyEditText testResultDateEditText;
 
-    MyTextView smearResultTextView;
-    MySpinner smearResultSpinner;
+    MyTextView esrResultTextView;
+    MyEditText esrResultEditText;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -67,29 +68,32 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
     String result = "";
     Calendar testResultCalender;
 
+
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        AFBTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        ESRTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "AFBTestResultActivity";
+        TAG = "ESRTestResultActivity";
+
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
         formDateButton = new MyButton(context,
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
+        esrResultTextView = new MyTextView(context,
+                R.style.text, R.string.esr_result);
+        esrResultEditText = new MyEditText(context, R.string.esr_result,
+                R.string.esr_result_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 2, false);
+
         testResultDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_result_date);
         testResultDateEditText = new MyEditText(context, R.string.test_result_date,
                 R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
-        smearResultTextView = new MyTextView(context,
-                R.style.text, R.string.smear_result);
-        smearResultSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.smear_result_options),
-                R.string.smear_result, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -111,9 +115,8 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testIdTextView, testId, testResultDateTextView, testResultDateEditText,
-                        smearResultTextView, smearResultSpinner
-                }
+                        testResultDateTextView, testResultDateEditText, esrResultTextView,
+                        esrResultEditText, testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -143,7 +146,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText, testId};
+        views = new View[]{patientId, testResultDateEditText, testId, esrResultEditText};
 
 
         for (View v : views) {
@@ -204,23 +207,34 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId, esrResultEditText};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
+
+        if (!RegexUtil.isNumeric(App.get(esrResultEditText), false)) {
+            valid = false;
+            message.append(esrResultEditText.getTag().toString()
+                    + ": "
+                    + getResources().getString(
+                    R.string.invalid_data) + "\n");
+            esrResultEditText.setTextColor(getResources().getColor(
+                    R.color.Red));
+        }
+
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
-        }
-        ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        } else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -231,6 +245,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
                 patientId.setTextColor(getResources().getColor(
                         R.color.Red));
             }
+
         } else {
 
             valid = false;
@@ -275,16 +290,18 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-            values.put("testId",App.get(testId));
-            values.put("conceptName","Smear Test Barcode");
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "ESR Barcode");
+
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Smear Test Barcode",
+
+            observations.add(new String[]{"ESR Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
-            observations.add(new String[]{"Smear Result",
-                    App.get(smearResultSpinner)});
+            observations.add(new String[]{"ESR Result",
+                    App.get(esrResultEditText)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -302,7 +319,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.AFB_SMEAR_RESULT, values,
+                            FormType.ESR_RESULT, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -318,13 +335,13 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(AFBTestResultActivity.this,
+                        App.getAlertDialog(ESRTestResultActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(AFBTestResultActivity.this,
+                        App.getAlertDialog(ESRTestResultActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -348,7 +365,8 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
 
         } else if (view == testResultDateEditText) {
 
-            new DatePickerDialog(this, resultDate, testResultCalender
+            new DatePickerDialog(this,
+                    resultDate, testResultCalender
                     .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
                     testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
         } else if (view == firstButton) {
@@ -373,6 +391,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
         updateDisplay();
     }
 
@@ -394,6 +413,7 @@ public class AFBTestResultActivity extends AbstractFragmentActivity {
         }
 
     };
+
 
     ///Barcode Scanner Result ....
     @Override

@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -14,7 +14,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,19 +46,18 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/5/2017.
+ * Created by Shujaat on 4/6/2017.
  */
-public class CXRTestOrderActivity extends AbstractFragmentActivity {
+public class AFBTestResultActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
 
-    MyTextView testOrderDateTextView;
-    MyEditText testOrderDateEditText;
+    MyTextView testResultDateTextView;
+    MyEditText testResultDateEditText;
 
-    MyTextView cxrTextView;
-    MySpinner cxrSpinner;
-
+    MyTextView smearResultTextView;
+    MySpinner smearResultSpinner;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -69,35 +67,31 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
     MyEditText testId;
 
     String result = "";
-    Calendar testOrderCalender;
-
+    Calendar testResultCalender;
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        CXRTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        AFBTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "CXRTestOrderActivity";
-
+        TAG = "AFBTestResultActivity";
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
         formDateButton = new MyButton(context,
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-        testOrderDateTextView = new MyTextView(context,
-                R.style.text, R.string.test_order_date);
-        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
-                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
+        testResultDateTextView = new MyTextView(context,
+                R.style.text, R.string.test_result_date);
+        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
+                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
-
-
-        cxrTextView = new MyTextView(context,
-                R.style.text, R.string.cxr);
-        cxrSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.cxr_options),
-                R.string.cxr, R.string.option_hint);
+        smearResultTextView = new MyTextView(context,
+                R.style.text, R.string.smear_result);
+        smearResultSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.smear_result_options),
+                R.string.smear_result, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -114,18 +108,17 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
                 R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 5, false);
-
+                R.style.edit, 10, false);
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
-                        testOrderDateEditText, cxrTextView, cxrSpinner,testIdTextView,testId
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
+                        testIdTextView, testId, testResultDateTextView, testResultDateEditText,
+                        smearResultTextView, smearResultSpinner
                 }
-
         };
 
-        // Create layouts and store in ArrayList
+        // Create layouts and store in ArrayList/also use for each loop ...
         groups = new ArrayList<ViewGroup>();
         for (int i = 0; i < viewGroups.length; i++) {
             LinearLayout layout = new LinearLayout(context);
@@ -152,7 +145,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{ patientId, testOrderDateEditText, testOrderDateEditText,testId};
+        views = new View[]{patientId, testResultDateEditText, testId};
 
 
         for (View v : views) {
@@ -189,7 +182,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testOrderDateEditText.setOnClickListener(this);
+        testResultDateEditText.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -197,39 +190,41 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testOrderDateEditText.setFocusable(false);
+        testResultDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
-        testOrderCalender = Calendar.getInstance();
+        testResultCalender = Calendar.getInstance();
         updateDisplay();
     }
 
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
-      }
+        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
+    }
 
     @Override
     public boolean validate() {
         boolean valid = true;
-        StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        StringBuilder message = new StringBuilder();
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString()  + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": "+
+                    getResources().getString(R.string.empty_data));
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -258,9 +253,9 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
-            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
+            if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testOrderDateEditText.getTag()
+                message.append(testResultDateEditText.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -285,15 +280,16 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
             values.put("testId", App.get(testId));
-            values.put("conceptName", "Chest X-Ray Barcode");
+            values.put("conceptName", "Smear Test Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Chest X-Ray Barcode",
+            observations.add(new String[]{"Smear Test Barcode",
                     App.get(testId)});
-            observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
-            observations.add(new String[]{"CXR",
-                    App.get(cxrSpinner)});
+            observations.add(new String[]{"Test Result Date",
+                    App.get(testResultDateEditText)});
+            observations.add(new String[]{"Smear Result",
+                    App.get(smearResultSpinner)});
+
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
                 @Override
@@ -308,10 +304,9 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
                             loading.show();
                         }
                     });
-                    Log.i("testDate",""+App.getSqlDate(testOrderCalender));
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.CXR_ORDER, values,
+                            FormType.AFB_SMEAR_RESULT, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -327,13 +322,13 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(CXRTestOrderActivity.this,
+                        App.getAlertDialog(AFBTestResultActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(CXRTestOrderActivity.this,
+                        App.getAlertDialog(AFBTestResultActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -355,12 +350,11 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        }else if (view == testOrderDateEditText) {
+        } else if (view == testResultDateEditText) {
 
-            new DatePickerDialog(this, date, testOrderCalender
-                    .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),
-                    testOrderCalender.get(Calendar.DAY_OF_MONTH)).show();
-
+            new DatePickerDialog(this, resultDate, testResultCalender
+                    .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
+                    testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
         } else if (view == firstButton) {
 
             gotoFirstPage();
@@ -391,19 +385,20 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
         return false;
     }
 
-    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+    final DatePickerDialog.OnDateSetListener resultDate = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
 
-            testOrderCalender.set(Calendar.YEAR, year);
-            testOrderCalender.set(Calendar.MONTH, monthOfYear);
-            testOrderCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            testResultCalender.set(Calendar.YEAR, year);
+            testResultCalender.set(Calendar.MONTH, monthOfYear);
+            testResultCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             updateDisplay();
         }
 
     };
+
     ///Barcode Scanner Result ....
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

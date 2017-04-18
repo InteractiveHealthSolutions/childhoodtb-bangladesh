@@ -7,27 +7,32 @@
     <LinearLayout
         android:id="@+main_id/locationLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <TextView
             android:id="@+main_id/textView1"
             style="@style/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/location" />
+            android:text="@string/location"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+main_id/locationTextView"
             style="@style/text"
-            android:layout_width="0dp"
-            android:layout_weight="1" />
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            />
 
         <Button
             android:id="@+main_id/selectLocationsButton"
             style="@style/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dot_dot_dot" />
+            android:text="@string/select_locations" />
     </LinearLayout>
 
     <ScrollView
@@ -135,7 +140,6 @@
                 android:tag="@string/hct_record_card"
                 android:text="@string/hct_record_card" />
             -->
-            <!--TODO:Change the name accordingly..-->
             <Button
                 android:id="@+main_id/btnPaediatricForm"
                 style="@style/button"
@@ -231,7 +235,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_test_indication"
+                android:drawableTop="@drawable/menu_blood_sugar"
                 android:tag="@string/esr_test_order_button"
                 android:text="@string/esr_test_order_button"
 
@@ -242,7 +246,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_test_indication"
+                android:drawableTop="@drawable/menu_blood_sugar"
                 android:tag="@string/esr_test_result_button"
                 android:text="@string/esr_test_result_button"
 
@@ -319,7 +323,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_test_indication"
+                android:drawableTop="@drawable/ultrasound"
                 android:tag="@string/ultrasound_test_Order_button"
                 android:text="@string/ultrasound_test_Order_button"
 
@@ -330,7 +334,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_test_indication"
+                android:drawableTop="@drawable/ultrasound"
                 android:tag="@string/ultrasound_test_result_button"
                 android:text="@string/ultrasound_test_result_button"
 
@@ -340,7 +344,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_test_indication"
+                android:drawableTop="@drawable/treatment_initiation"
                 android:tag="@string/treatment_initiation_button"
                 android:text="@string/treatment_initiation_button"
                 />
@@ -462,7 +466,9 @@
                 android:layout_height="fill_parent"
                 android:drawableTop="@drawable/menu_feedback"
                 android:tag="@string/customer_info"
-                android:text="@string/feedback" />
+                android:text="@string/feedback"
+                android:visibility="gone"
+                />
         </LinearLayout>
     </ScrollView>
 

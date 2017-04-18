@@ -496,12 +496,12 @@
         <item>@string/not_suggestive_tb</item>
     </string-array>
     <string-array name="histopathology_site_options">
-        <item>@string/dmc</item>
-        <item>@string/smc</item>
-        <item>@string/sh</item>
+        <item>@string/dhakha_medical_college</item>
+        <item>@string/salimulla_medical_college</item>
+        <item>@string/shishu_hospital</item>
         <item>@string/ich_mirpur</item>
         <item>@string/ic_matuail</item>
-        <item>@string/mag_sylhet</item>
+        <item>@string/mag_osmani_sylhet</item>
     </string-array>
     <string-array name="indexCase_diagnosis_options">
         <item>@string/ptb</item>
@@ -771,8 +771,8 @@
         <item>@string/no</item>
     </string-array>
     <string-array name="tst_result_option">
-        <item>@string/five_to_nine_mm</item>
         <item>@string/ten_mm</item>
+        <item>@string/five_to_nine_mm</item>
         <item>@string/greater_then_ten_mm</item>
     </string-array>
     <string-array name="two_options">
@@ -907,11 +907,11 @@
     <string name="Purulent">Purulent</string>
     <string name="_child_cough">Does your child have Cough?</string>
     <string name="_cough_weeks">How many weeks of cough?</string>
-    <string name="_fever">Fever </string>
+    <string name="_fever">Fever ?</string>
     <string name="_patient_id">ID assigned to the presumptive</string>
     <string name="_weight">Weight loss?</string>
     <string name="abdomen">Abdomen</string>
-    <string name="abdominal_exam">Abdominal Examination</string>
+    <string name="abdominal_exam">Abdominal Examination ?</string>
     <string name="access_granted">Access granted, you have successfully logged in.</string>
     <string name="addContact"><b> + </b></string>
     <string name="address">Address</string>
@@ -931,10 +931,10 @@
     <string name="age">Age</string>
     <string name="age_group">Age Group</string>
     <string name="age_hint">Enter Age</string>
-    <string name="age_in_year">Age in years</string>
+    <string name="age_in_year">Age in years </string>
     <string name="age_modifier">Age modifier</string>
     <string name="app_name">ChildhoodTb</string>
-    <string name="appetite_decreased">Appetite</string>
+    <string name="appetite_decreased">Appetite?</string>
     <string name="aunt">Aunt</string>
     <string name="authentication_error">Authentication failed! Please enter valid password/code</string>
     <string name="blood_sugar_order">Blood Sugar Test Order</string>
@@ -945,7 +945,7 @@
     <string name="category_one">Category 1</string>
     <string name="category_two">Category 2</string>
     <string name="chest">Chest</string>
-    <string name="chest_examination">Chest Examination</string>
+    <string name="chest_examination">Chest Examination?</string>
     <string name="chest_x_ray">Chest X-ray?</string>
     <string name="child_appetite">Child\'s Appetite</string>
     <string name="child_bcg_scar">Does the child have BCG scar?</string>
@@ -991,13 +991,13 @@
     <string name="contact_tracing_category">Contact tracing category</string>
     <string name="contact_tracing_strategy">Contact Tracing Strategy</string>
     <string name="contact_weight_loss">Weight loss?</string>
-    <string name="cough">Cough</string>
+    <string name="cough">Cough ?</string>
     <string name="cough_duration_options_hint">Select an option</string>
     <string name="cough_productive">Do you have productive cough?</string>
     <string name="cough_selection_hint">Select an option</string>
-    <string name="cough_weeks">Duration of cough in Weeks</string>
-    <string name="ct_scan">CT Scan</string>
-    <string name="ct_scan_area">CT Scan Area</string>
+    <string name="cough_weeks">Duration of cough in Weeks?</string>
+    <string name="ct_scan">CT Scan ?</string>
+    <string name="ct_scan_area">CT Scan Area ?</string>
     <string name="ct_scan_area_hint">Enter CT Scan Area</string>
     <string name="ct_scan_result">CT Scan Result</string>
     <string name="ct_scan_sit">CT Scan Site</string>
@@ -1022,10 +1022,10 @@
     <string name="designation_contact_investigator">Designation of contact investigator</string>
     <string name="designation_contact_investigator_hint">Enter designation of contact investigator</string>
     <string name="detected">Detected</string>
+    <string name="dhakha_medical_college">Dhaka Medical College</string>
     <string name="diagnosis">Diagnosis</string>
     <string name="did_not_come">Did not come</string>
     <string name="discard_forms">Discard Forms</string>
-    <string name="dmc">Dhaka Medical College</string>
     <string name="do_not_know">Do not know</string>
     <string name="dob">Date of Birth</string>
     <string name="dot_dot_dot">...</string>
@@ -1046,6 +1046,7 @@
     <string name="eleven_less_then_or_equal_to_25th_percentile">11-&lt;=25th Percentile</string>
     <string name="eligible_for_ipt">Eligible for IPT</string>
     <string name="empty_data">Empty data! Please fill in the required field(s)</string>
+    <string name="empty_data_indexId">Empty data! Please enter index id</string>
     <string name="empty_selection">At least one option must be selected form the list</string>
     <string name="empty_string"/>
     <string name="end_follow_up">End of Follow Up</string>
@@ -1089,6 +1090,7 @@
     <string name="form_unavailable">This Form/Report is not available right now</string>
     <string name="forms">Forms</string>
     <string name="gender">Gender</string>
+    <string name="get_weight_percentile">Get Weight Percentile</string>
     <string name="goto_first">&lt;&lt;</string>
     <string name="goto_last">>></string>
     <string name="grandfather">Grandfather</string>
@@ -1132,6 +1134,7 @@
     <string name="invalid_data">Invalid value(s)! Please make sure your input is in correct format</string>
     <string name="invalid_date_or_time">Date or Time is invalid. Make sure you have entered appropriate date/time</string>
     <string name="invalid_future_date">Invalid Date,Future date are not Allowed</string>
+    <string name="invalid_string_length">Name contain at least three character</string>
     <string name="item_not_found">No data was found matching the criteria</string>
     <string name="joint_spine_swelling">Joint/Spine swelling of greater than 2 weeks?</string>
     <string name="landmark">Address: Landmark</string>
@@ -1151,9 +1154,9 @@
     <string name="loss_to_followup">Loss to Follow-up</string>
     <string name="low">Low</string>
     <string name="lymph">Lymph</string>
-    <string name="lymph_node_exam">Lymph Node Examination</string>
+    <string name="lymph_node_exam">Lymph Node Examination ?</string>
     <string name="lymph_node_swelling">Lymph node swelling of greater than 2 weeks?</string>
-    <string name="mag_sylhet">MAG Osmani Medical College Sylhet</string>
+    <string name="mag_osmani_sylhet">MAG Osmani Medical College Sylhet</string>
     <string name="male">Male</string>
     <string name="mantoux">Mantoux (TST, PPD, TB Skin test)?</string>
     <string name="marital_status">Marital Status</string>
@@ -1202,22 +1205,22 @@
     <string name="number_of_contact_person">Please Select the Number of Contact person</string>
     <string name="offline">Work Offline</string>
     <string name="offline_forms">Some saved forms are waiting your attention</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="one_to_nine_afb">1-9 AFB</string>
     <string name="operation_cancelled">Operation cancelled</string>
     <string name="operation_successful">Request has been processed by the server successfully.</string>
     <string name="option_hint">Select an option</string>
     <string name="other">Other</string>
-    <string name="other__location_hint">Enter other location</string>
+    <string name="other__location_hint">Enter other specify location</string>
     <string name="other_belongs">Other(specify)</string>
-    <string name="other_belongs_hint">Enter other name</string>
+    <string name="other_belongs_hint">Enter other NID holder name</string>
     <string name="other_disease">Other Disease</string>
-    <string name="other_exam">Other examination</string>
+    <string name="other_exam">Other examination ?</string>
     <string name="other_exam_hint">Enter other examination, if any</string>
     <string name="other_facility_hint">Enter other facility name</string>
     <string name="other_facility_name">Other facility name</string>
     <string name="other_hint">Enter other reason</string>
-    <string name="other_location">From where?</string>
+    <string name="other_location">Other specify?</string>
     <string name="other_site">Enter other site</string>
     <string name="other_specify">Other specify</string>
     <string name="other_specify_hint">Enter specify radiological finding</string>
@@ -1227,7 +1230,7 @@
     <string name="outcome_code">Outcome Code</string>
     <string name="owner_name">Owner Name</string>
     <string name="owner_name_hint">Enter Owner\'s Name</string>
-    <string name="paediatric_contact_investigation_facility">Paediatric Contact investigation Facility</string>
+    <string name="paediatric_contact_investigation_facility">Paediatric Contact Investigation Facility</string>
     <string name="paediatric_contact_tracing">Paediatric Contact Tracing</string>
     <string name="paediatric_home_contact_tracing">Paediatric Home Contact Tracing</string>
     <string name="paediatric_members_with_symptoms">Total Number of Paediatric Household Members with cough, fever, weight loss or night sweats</string>
@@ -1247,7 +1250,7 @@
     <string name="patient_id_missing">Patient ID does not exist. Please make sure you have entered correct Patient ID</string>
     <string name="patient_referred_without_Registration">Patient referred out to another facility without registration</string>
     <string name="patient_registration">Patient Registration</string>
-    <string name="patient_type">patient Type</string>
+    <string name="patient_type">Patient Type</string>
     <string name="patients">Patients</string>
     <string name="patients_not_found">No Patients were found matching given parameters</string>
     <string name="pdr_tb">PDR-TB</string>
@@ -1266,6 +1269,7 @@
     <string name="positive_report">In possession of a previous positive report?</string>
     <string name="ppa_score">PPA Score</string>
     <string name="ppa_score_hint">Enter PPA score</string>
+    <string name="preferences">Preferences</string>
     <string name="presumptive_first_name">Presumptive First Name</string>
     <string name="presumptive_tb_case">Is the child a presumptive TB case?</string>
     <string name="primary_phone">Phone 1</string>
@@ -1292,11 +1296,12 @@
     <string name="reporting">Reports</string>
     <string name="reverse_contact_tracing">Reverse Contact Tracing</string>
     <string name="rif_resistance">RIF Resistance</string>
+    <string name="salimulla_medical_college">Salimulla Medical College</string>
     <string name="saliva">Saliva</string>
     <string name="save">Save</string>
     <string name="saved_forms">Saved Forms</string>
     <string name="scan_barcode">Scan Barcode</string>
-    <string name="screened_before">Were screened in the last 2 weeks</string>
+    <string name="screened_before">Were screened in the last 2 weeks?</string>
     <string name="screening">Lung Health Screen</string>
     <string name="screening_report">Screening Report</string>
     <string name="screening_type">Screening Type</string>
@@ -1304,17 +1309,17 @@
     <string name="search_patients">Search..</string>
     <string name="secondary_phone">Phone 2</string>
     <string name="secondary_phone_hint">Enter Secondary Phone Number</string>
+    <string name="select_locations">Select location</string>
     <string name="self_owned">Is this phone self-owned?</string>
     <string name="server">Server Address</string>
     <string name="server_address">61.247.187.250:8443</string>
     <string name="session_expired">Session expired! Please re-login to continue operation</string>
     <string name="session_renewed">Session has been renewed.</string>
-    <string name="sh">Shishu Hospital</string>
+    <string name="shishu_hospital">Shishu Hospital</string>
     <string name="show_saved_forms">Show Forms</string>
     <string name="similar_form_submitted">This form has already been submitted for same ID/code</string>
     <string name="sister">Sister</string>
     <string name="six_less_then_or_equal_to_10th_percentile">6-&lt;=10th Percentile</string>
-    <string name="smc">Salimulla Medical College</string>
     <string name="smear_microscopy">Smear Microscopy?</string>
     <string name="smear_result">Smear Result</string>
     <string name="smoking_confirmation_at_home">Does anybody at home smoke cigarette?</string>
@@ -1400,7 +1405,7 @@
     <string name="two_to_three_Weeks">2 to 3 Weeks</string>
     <string name="two_to_three_weeks">2 to 3 Weeks</string>
     <string name="type_of_tb">What type of TB does this family member have?</string>
-    <string name="ultrasound_abdomen">Ultrasound Abdomen</string>
+    <string name="ultrasound_abdomen">Ultrasound Abdomen ?</string>
     <string name="ultrasound_result">U/S Result</string>
     <string name="ultrasound_test_Order_button">Ultrasound Test Order</string>
     <string name="ultrasound_test_result_button">Ultrasound Test Result</string>
@@ -1419,10 +1424,10 @@
     <string name="very_low">Very Low</string>
     <string name="visit_type">Type of Visit?</string>
     <string name="week">Week(s)</string>
-    <string name="weight">Weight (Kg)</string>
+    <string name="weight">Weight (Kg)?</string>
     <string name="weight_hint">Enter Weight (Kg)</string>
     <string name="weight_loss">Unexplained weight loss?</string>
-    <string name="weight_percentile">Weight Percentile</string>
+    <string name="weight_percentile">Weight Percentile ?</string>
     <string name="weight_percentile_options"/>
     <string name="whole_body">Whole body</string>
     <string name="xpert_mtb_rif">Xpert MTB/RIF?</string>

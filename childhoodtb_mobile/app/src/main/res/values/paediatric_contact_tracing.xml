@@ -13,7 +13,7 @@ Interactive Health Solutions, hereby disclaims all copyright interest in this pr
 Contributors: Tahira Niazi -->
 
 <resources>
-    <string name="weight_percentile_options"></string>
+    <string name="weight_percentile_options" />
     <string name="contact_cough_duration">How many weeks of cough?</string>
     <string name="contact_fever">Fever?</string>
     <string name="contact_night_sweats">Night Sweats?</string>
@@ -24,7 +24,7 @@ Contributors: Tahira Niazi -->
     <string name="member_tb_type">What type of TB does this family member have?</string>
     <string name="sputum_smear_positive_tb">Do they have sputum smear positive TB?</string>
     <string name="exposure_score">Exposure Score</string>
-    <string name="exposure_value"></string>
+    <string name="exposure_value" />
     <string name="ppa_score">PPA Score</string>
     <string name="ppa_score_hint">Enter PPA score</string>
     <string name="exposure_score_hint">Enter Exposure Score</string>

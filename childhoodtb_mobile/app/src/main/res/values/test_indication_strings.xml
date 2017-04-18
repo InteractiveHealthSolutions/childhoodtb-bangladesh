@@ -5,17 +5,17 @@
         <item>@string/yes</item>
         <item>@string/no</item>
     </string-array>
-    <string name="ultrasound_abdomen">Ultrasound Abdomen</string>
+    <string name="ultrasound_abdomen">Ultrasound Abdomen ?</string>
     <string-array name="ultrasound_abdomen_options">
         <item>@string/yes</item>
         <item>@string/no</item>
     </string-array>
-    <string name="ct_scan">CT Scan</string>
+    <string name="ct_scan">CT Scan ?</string>
     <string-array name="ct_scan_options">
         <item>@string/yes</item>
         <item>@string/no</item>
     </string-array>
-    <string name="ct_scan_area">CT Scan Area</string>
+    <string name="ct_scan_area">CT Scan Area ?</string>
     <string name="ct_scan_area_hint">Enter CT Scan Area</string>
 
     <string name="xpert_mtb_rif">Xpert MTB/RIF?</string>

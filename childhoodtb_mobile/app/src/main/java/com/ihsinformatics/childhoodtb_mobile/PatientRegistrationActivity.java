@@ -670,7 +670,7 @@ public class PatientRegistrationActivity extends AbstractFragmentActivity
 			getApplicationContext().getResources().updateConfiguration(config,
 					null);
 		}
-	};
+	}
 
 	@Override
 	public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {

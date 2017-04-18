@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -14,7 +14,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,72 +46,92 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/7/2017.
+ * Created by Shujaat on 4/4/2017.
  */
-public class TSTTestResultActivity extends AbstractFragmentActivity {
+public class AFBTestOrderActivity extends AbstractFragmentActivity {
 
-    MyTextView formDateTextView;
-    MyButton formDateButton;
+    private MyTextView formDateTextView;
+    private MyButton formDateButton;
 
-    MyTextView testResultDateTextView;
-    MyEditText testResultDateEditText;
+    private MyTextView testOrderDateTextView;
+    private MyEditText testOrderDateEditText;
 
-    MyTextView tstResultTextView;
-    MySpinner tstResultSpinner;
+    private MyTextView monthOfTreatmentTextView;
+    private MySpinner monthOfTreatmentSpinner;
 
-    MyTextView interpretationOfTSTTextView;
-    MySpinner interpretationOfTSTSpinner;
+    private MyTextView specimenTypeTextView;
+    private MySpinner specimenTypeSpinner;
 
-    MyTextView patientIdTextView;
-    MyEditText patientId;
-    MyButton scanBarcode;
+    private MyTextView specimenQualityTextView;
+    private MySpinner specimenQualitySpinner;
 
-    MyTextView testIdTextView;
-    MyEditText testId;
+    private MyTextView specimenLocationTextView;
+    private MySpinner specimenLocationSpinner;
+
+    private MyTextView otherTextView;
+    private MyEditText other;
+
+    private MyTextView patientIdTextView;
+    private MyEditText patientId;
+    private MyButton scanBarcode;
+
+    private MyTextView testIdTextView;
+    private MyEditText testId;
 
     String result = "";
-    Calendar testResultCalender;
-    MyButton validatePatientId;
-    String weightPercentile = "";
+    Calendar testOrderCalender;
+    boolean isOtherSelected = false;
+
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        TSTTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        AFBTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "TSTTestResultActivity";
-
+        TAG = "AFBTestOrderActivity";
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
         formDateButton = new MyButton(context,
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-
-        testResultDateTextView = new MyTextView(context,
-                R.style.text, R.string.test_result_date);
-        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
-                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
+        testOrderDateTextView = new MyTextView(context,
+                R.style.text, R.string.test_order_date);
+        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
+                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
+        monthOfTreatmentTextView = new MyTextView(context,
+                R.style.text, R.string.month_of_treatment);
+        monthOfTreatmentSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.month_of_treatment_option),
+                R.string.month_of_treatment, R.string.option_hint);
 
-        tstResultTextView = new MyTextView(context,
-                R.style.text, R.string.tst_result);
-        tstResultSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.tst_result_option),
-                R.string.tst_result, R.string.option_hint);
-        interpretationOfTSTTextView = new MyTextView(context,
-                R.style.text, R.string.interpretation_tst);
-        interpretationOfTSTSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.interpretation_tst_option),
-                R.string.interpretation_tst, R.string.option_hint);
+        specimenTypeTextView = new MyTextView(context,
+                R.style.text, R.string.specimen_type);
+        specimenTypeSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.specimen_type_option),
+                R.string.specimen_type, R.string.option_hint);
+
+        specimenQualityTextView = new MyTextView(context,
+                R.style.text, R.string.specimen_quality);
+        specimenQualitySpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.specimen_quality_option),
+                R.string.specimen_quality, R.string.option_hint);
+
+        specimenLocationTextView = new MyTextView(context,
+                R.style.text, R.string.specimen_location);
+        specimenLocationSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.specimen_location_options),
+                R.string.specimen_location, R.string.option_hint);
+        otherTextView = new MyTextView(context,
+                R.style.text, R.string.other_location);
+        other = new MyEditText(context, R.string.other_location,
+                R.string.other__location_hint, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 25, false);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
-
-        validatePatientId = new MyButton(context, R.style.button,
-                R.drawable.custom_button_beige, R.string.validate_patient_id,
-                R.string.validate_patient_id);
 
         patientId = new MyEditText(context, R.string.patient_id,
                 R.string.patient_id_hint, InputType.TYPE_CLASS_TEXT,
@@ -125,16 +144,21 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
                 R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 5, false);
+                R.style.edit, 10, false);
+
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, validatePatientId,
-                        testResultDateTextView, testResultDateEditText, tstResultTextView, tstResultSpinner,
-                        interpretationOfTSTTextView, interpretationOfTSTSpinner, testIdTextView, testId}
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
+                        testOrderDateTextView, testOrderDateEditText, monthOfTreatmentTextView,
+                        monthOfTreatmentSpinner, specimenTypeTextView, specimenTypeSpinner,
+                        specimenQualityTextView, specimenQualitySpinner
+                },
+                {specimenLocationTextView, specimenLocationSpinner, otherTextView, other,
+                        testIdTextView, testId}
         };
 
-        // Create layouts and store in ArrayList
+        // Create layouts and store in ArrayList//we also use
         groups = new ArrayList<ViewGroup>();
         for (int i = 0; i < viewGroups.length; i++) {
             LinearLayout layout = new LinearLayout(context);
@@ -161,7 +185,8 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText, interpretationOfTSTSpinner, tstResultSpinner};
+        views = new View[]{other, patientId, testOrderDateEditText, monthOfTreatmentSpinner, specimenLocationSpinner,
+                specimenQualitySpinner, specimenTypeSpinner, testOrderDateEditText, testId};
 
 
         for (View v : views) {
@@ -198,8 +223,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        validatePatientId.setOnClickListener(this);
-        testResultDateEditText.setOnClickListener(this);
+        testOrderDateEditText.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -207,44 +231,64 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testResultDateEditText.setFocusable(false);
+        testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
-        testResultCalender = Calendar.getInstance();
+        testOrderCalender = Calendar.getInstance();
+        specimenQualityTextView.setEnabled(false);
+        specimenQualitySpinner.setEnabled(false);
+        specimenLocationTextView.setEnabled(false);
+        specimenLocationSpinner.setEnabled(false);
+        otherTextView.setEnabled(false);
+        other.setEnabled(false);
         updateDisplay();
     }
 
     @Override
     public void updateDisplay() {
+
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
+        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
     }
 
     @Override
     public boolean validate() {
         boolean valid = true;
-        StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        StringBuilder message = new StringBuilder();
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
+
+        if (isOtherSelected) {
+            if (App.get(other).equals("")) {
+                valid = false;
+                message.append(other.getTag().toString() + ". ");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (RegexUtil.isWord(App.get(other))) {
+                valid = false;
+                message.append(other.getTag().toString() + ". "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            }
+        } else {
+            initView(new View[]{other});
+        }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data));
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
-       /* if (!RegexUtil.isNumeric(App.get(errorCodeEditText), false)) {
-            valid = false;
-            message.append(errorCodeEditText.getTag().toString() + ". ");
-            errorCodeEditText.setHintTextColor(getResources().getColor(R.color.Red));
-        }*/
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -273,9 +317,9 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
-            if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
+            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testResultDateEditText.getTag()
+                message.append(testOrderDateEditText.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -300,18 +344,34 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
             values.put("testId", App.get(testId));
-            values.put("conceptName", "TST Barcode");
+            values.put("conceptName", "Smear Test Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"TST Barcode",
+            observations.add(new String[]{"Smear Test Barcode",
                     App.get(testId)});
-            observations.add(new String[]{"Test Result Date",
-                    App.get(testResultDateEditText)});
-            observations.add(new String[]{"TST Result",
-                    App.get(tstResultSpinner)});
-            Log.i("spinnerVal", "" + App.get(interpretationOfTSTSpinner));
-            observations.add(new String[]{"Interpretation of TST",
-                    App.get(interpretationOfTSTSpinner)});
+            observations.add(new String[]{"Month of Treatment",
+                    App.get(monthOfTreatmentSpinner)});
+            observations.add(new String[]{"Specimen Type",
+                    App.get(specimenTypeSpinner)});
+            if (specimenTypeSpinner.getSelectedItem().toString().equals(
+                    getResources().getString(R.string.sputum))) {
+                observations.add(new String[]{"Specimen Quality",
+                        App.get(specimenQualitySpinner)});
+            } else if (specimenTypeSpinner.getSelectedItem().toString().equals(
+                    getResources().getString(R.string.extra_pulmonary))) {
+                observations.add(new String[]{"Specimen Location",
+                        App.get(specimenLocationSpinner)});
+
+                if (specimenLocationSpinner.getSelectedItem().toString().equals(
+                        getResources().getString(R.string.other))) {
+
+                    observations.add(new String[]{"Other Location",
+                            App.get(other)});
+
+                }
+            }
+            observations.add(new String[]{"Test Order Date",
+                    App.get(testOrderDateEditText)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -329,7 +389,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.TST_RESULT, values,
+                            FormType.AFB_SMEAR_ORDER, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -339,18 +399,19 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
                 protected void onProgressUpdate(String... values) {
                 }
 
+
                 @Override
                 protected void onPostExecute(String result) {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(TSTTestResultActivity.this,
+                        App.getAlertDialog(AFBTestOrderActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(TSTTestResultActivity.this,
+                        App.getAlertDialog(AFBTestOrderActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -372,12 +433,12 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testResultDateEditText) {
+        } else if (view == testOrderDateEditText) {
 
-            new DatePickerDialog(this,
-                    resultDate, testResultCalender
-                    .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
-                    testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
+            new DatePickerDialog(this, date, testOrderCalender
+                    .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),
+                    testOrderCalender.get(Calendar.DAY_OF_MONTH)).show();
+
         } else if (view == firstButton) {
 
             gotoFirstPage();
@@ -395,73 +456,53 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
-        } else if (view == validatePatientId) {
-            final String indexPatientId = App.get(patientId);
-
-            if (!indexPatientId.equals("")) {
-                AsyncTask<String, String, Object> getTask = new AsyncTask<String, String, Object>() {
-                    @Override
-                    protected Object doInBackground(String... params) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                loading.setIndeterminate(true);
-                                loading.setCancelable(false);
-                                loading.setMessage(getResources().getString(
-                                        R.string.loading_message));
-                                loading.show();
-                            }
-                        });
-
-                        String[] response = serverService.getPatientObs(indexPatientId, "Weight Percentile");
-                        return response;
-                    }
-
-                    @Override
-                    protected void onProgressUpdate(String... values) {
-                    }
-
-                    ;
-
-                    @Override
-                    protected void onPostExecute(Object result) {
-                        super.onPostExecute(result);
-                        loading.dismiss();
-                        String[] res = (String[]) result;
-                        if (res != null && res.length > 0) {
-                            Log.i("responseString", "" + res[0].toString());
-                            weightPercentile = res[0].toString();
-                        }
-                    }
-                };
-                getTask.execute("");
-            }//end if condition
-        }//else if condition
+        }
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Log.i("weightPer", "" + weightPercentile);
+        if (adapterView == specimenTypeSpinner) {
 
-        if (adapterView == tstResultSpinner) {
-            String selectedResult = tstResultSpinner.getSelectedItem().toString();
-            if ((selectedResult.equals(getResources().getString(R.string.greater_then_ten_mm)) ||
-                    (selectedResult.equals(getResources().getString(R.string.ten_mm))))) {
-                interpretationOfTSTSpinner.setSelection(0);
-                interpretationOfTSTSpinner.setEnabled(false);
-            } else if (selectedResult.equals(getResources().getString(R.string.five_to_nine_mm)) &&
-                    weightPercentile.equals("5th Percentile or Less")) {
+            String specimenType = specimenTypeSpinner.getSelectedItem().toString();
 
-                interpretationOfTSTSpinner.setSelection(0);
-                interpretationOfTSTSpinner.setEnabled(false);
-            } else {
-                interpretationOfTSTSpinner.setSelection(1);
-                interpretationOfTSTSpinner.setEnabled(false);
+            if (specimenType.equals(getResources().getString(R.string.sputum))) {
+
+                specimenQualityTextView.setEnabled(true);
+                specimenQualitySpinner.setEnabled(true);
+                specimenLocationTextView.setEnabled(false);
+                specimenLocationSpinner.setEnabled(false);
+                otherTextView.setEnabled(false);
+                other.setEnabled(false);
+                isOtherSelected = false;
             }
+            if (specimenType.equals(getResources().getString(R.string.extra_pulmonary))) {
 
+                specimenLocationTextView.setEnabled(true);
+                specimenLocationSpinner.setEnabled(true);
+                specimenQualityTextView.setEnabled(false);
+                specimenQualitySpinner.setEnabled(false);
+                otherTextView.setEnabled(false);
+                other.setEnabled(false);
+                isOtherSelected = false;
+            }
+        }
+        if (adapterView == specimenLocationSpinner) {
+            if (specimenLocationSpinner.isEnabled()) {
+                if (specimenLocationSpinner.getSelectedItem().toString().equals(
+                        getResources().getString(R.string.other))) {
+                    otherTextView.setEnabled(true);
+                    other.setEnabled(true);
+                    isOtherSelected = true;
+                } else {
+                    otherTextView.setEnabled(false);
+                    other.setEnabled(false);
+                    isOtherSelected = false;
+                }
+            }
         }
         updateDisplay();
+
     }
 
     @Override
@@ -469,20 +510,19 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
         return false;
     }
 
-    DatePickerDialog.OnDateSetListener resultDate = new DatePickerDialog.OnDateSetListener() {
+    final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
 
-            testResultCalender.set(Calendar.YEAR, year);
-            testResultCalender.set(Calendar.MONTH, monthOfYear);
-            testResultCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            testOrderCalender.set(Calendar.YEAR, year);
+            testOrderCalender.set(Calendar.MONTH, monthOfYear);
+            testOrderCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             updateDisplay();
         }
 
     };
-
 
     ///Barcode Scanner Result ....
     @Override

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
@@ -23,6 +22,7 @@ Contributors: Tahira Niazi -->
     <string name="delete_error">Error in deleting data. Some other data may be dependent on the item you want to delete</string>
     <string name="duplication">Duplication error! Another copy of the same data or ID already exists</string>
     <string name="empty_data">Empty data! Please fill in the required field(s)</string>
+    <string name="empty_data_indexId">Empty data! Please enter index id</string>
     <string name="empty_selection">At least one option must be selected form the list</string>
     <string name="form_unavailable">This Form/Report is not available right now</string>
     <string name="insert_error">Error in inserting data. Please make sure you are not violating validation rules</string>
@@ -31,7 +31,8 @@ Contributors: Tahira Niazi -->
     <string name="invalid_data">Invalid value(s)! Please make sure your input is in correct format</string>
     <string name="invalid_date_or_time">Date or Time is invalid. Make sure you have entered appropriate date/time</string>
     <string name="non_suspect">This person was not marked as a Suspect. In order to save this form, you must mark the person as a suspect and assign a valid Patient ID</string>
- 	<string name="operation_cancelled">Operation cancelled</string>
+    <string name="operation_cancelled">Operation cancelled</string>
+    <string name="invalid_string_length">Name contain at least three character</string>
     <string name="out_of_range">Value out of range!</string>
     <string name="parameter_missing">One or more Parameters are invalid or missing. Please make sure you have defined valid parameters</string>
     <string name="parsing_error">Data cannot be parsed. Please make sure data is in valid format</string>

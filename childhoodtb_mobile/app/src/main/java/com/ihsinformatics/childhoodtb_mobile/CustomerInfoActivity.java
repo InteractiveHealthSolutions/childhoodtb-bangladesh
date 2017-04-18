@@ -287,7 +287,7 @@ public class CustomerInfoActivity extends AbstractFragmentActivity {
 	@Override
 	public boolean validate() {
 		boolean valid = true;
-		StringBuffer message = new StringBuffer();
+		StringBuilder message = new StringBuilder();
 		// Validate mandatory controls
 		View[] mandatory = { address1, town, patientId };
 		for (View v : mandatory) {
@@ -388,7 +388,7 @@ public class CustomerInfoActivity extends AbstractFragmentActivity {
 
 				@Override
 				protected void onProgressUpdate(String... values) {
-				};
+				}
 
 				@Override
 				protected void onPostExecute(String result) {

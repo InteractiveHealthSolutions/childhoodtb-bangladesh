@@ -118,11 +118,11 @@ public class CustomMessage {
 			error = "Version does not match. Make sure your application is updated to version "
 					+ App.appVersion;
 			break;
-		case TEST_ORDER_EXIST:
-			error = "Test Order is not exist against this Patient";
+		case TEST_ORDER_NOT_EXIST:
+			error = "Test Order is not exist against this Test ID";
 			break;
 		case TEST_RESULT_EXIST:
-			error = "Test Result Already exist against this Patient";
+			error = "Test Result Already exist against this Test ID";
 			break;
 		}
 		return error;

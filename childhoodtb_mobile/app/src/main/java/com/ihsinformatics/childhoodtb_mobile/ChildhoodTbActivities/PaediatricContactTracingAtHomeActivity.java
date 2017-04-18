@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -58,9 +58,8 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
             addressTextView, phoneNoTextView, dotsCenterNameTextView,
             treatmentInitiationCenterTextView, dsTBRegNoTextView, contactInvestigatorNameTextView,
             contactInvestigatorDesignationTextView, nameOfDotProviderTextView, designationOfDotProviderTextView,
-            phoneNoDotProviderTextView,
-            contactOneNameTextView, contactOneAgeTextView, contactOneGenderTextView, contactOneSymptomsTextView,
-            contactOneCoughTextView, contactOneFeverTextView, contactOneNightSweatsTextView, contactOneWeightTextView,
+            phoneNoDotProviderTextView, contactOneNameTextView, contactOneAgeTextView, contactOneGenderTextView,
+            contactOneSymptomsTextView, contactOneCoughTextView, contactOneFeverTextView, contactOneNightSweatsTextView, contactOneWeightTextView,
             contactOnePoorAppetiteTextView, referTextView, outcomeCodeTextView, remarksTextView, numberOfContactPersonTextView;
 
 

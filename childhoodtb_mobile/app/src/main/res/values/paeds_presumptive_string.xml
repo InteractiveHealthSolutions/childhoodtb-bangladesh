@@ -13,7 +13,7 @@
     </string-array>
 
     <!--cough-->
-    <string name="cough">Cough</string>
+    <string name="cough">Cough ?</string>
     <string name="_cough_weeks">How many weeks of cough?</string>
     <!--Fever-->
     <!--weight-loss-->

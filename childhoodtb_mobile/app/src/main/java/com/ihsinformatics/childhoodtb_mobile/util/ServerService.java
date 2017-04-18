@@ -488,6 +488,11 @@ public class ServerService {
 
         patientInfo = new ArrayList<Patient>();
 
+        if (!checkInternetConnection()) {
+
+            return null;
+        }
+
         JSONObject json = new JSONObject();
         try {
             json.put("app_ver", App.getVersion());
@@ -584,7 +589,16 @@ public class ServerService {
      * @return
      */
     public String[] getPatientObs(String patientId, String conceptName) {
+
         try {
+            ArrayList<String> obs = new ArrayList<String>();
+
+            if (!checkInternetConnection()) {
+
+                obs.add("InternetConnectionFail");
+                return obs.toArray(new String[]{});
+            }
+
             JSONObject json = new JSONObject();
             json.put("app_ver", App.getVersion());
             json.put("form_name", FormType.GET_PATIENT_OBS);
@@ -593,7 +607,7 @@ public class ServerService {
             String response = get("?content=" + JsonUtil.getEncodedJson(json));
             if (response != null) {
                 JSONArray jsonResponse = new JSONArray(response);
-                ArrayList<String> obs = new ArrayList<String>();
+
                 for (int i = 0; i < jsonResponse.length(); i++) {
                     try {
                         JSONObject obj = jsonResponse.getJSONObject(i);
@@ -1766,11 +1780,16 @@ public class ServerService {
         try {
 
             if (!App.isOfflineMode()) {
-
-                String id = getPatientId(patientId);
-                if (id == null)
+                if (!checkInternetConnection()) {
+                    String id = getPatientId(patientId);
+                    if (id == null)
+                        return context.getResources().getString(
+                                R.string.patient_id_missing);
+                } else {
                     return context.getResources().getString(
-                            R.string.patient_id_missing);
+                            R.string.data_connection_error);
+                }
+
             }
             // Save Patient
             JSONObject json = new JSONObject();
@@ -2263,6 +2282,12 @@ public class ServerService {
         String formDate = values.getAsString("formDate");
 
         try {
+            if (!App.isOfflineMode()) {
+                if (!checkInternetConnection()) {
+                    return context.getResources().getString(R.string.data_connection_error);
+                }
+            }
+
             // Save Patient
             JSONObject json = new JSONObject();
             json.put("app_ver", App.getVersion());
@@ -2446,7 +2471,7 @@ public class ServerService {
 
     }
 
-    /* Save TEST ORDER FORM DATA */
+    /* SAVE TEST ORDER/RESULT FORM DATA */
     public String insertTestOrderResultForm(String encounterType, ContentValues values,
                                             String[][] observations) {
         String response = "";
@@ -2458,17 +2483,20 @@ public class ServerService {
         String conceptName = values.getAsString("conceptName");
 
         try {
-
+            if (!App.isOfflineMode()) {
+                if (!checkInternetConnection())
+                    return context.getResources().getString(
+                            R.string.data_connection_error);
+            }
             // Save Patient
             JSONObject json = new JSONObject();
-
             json.put("app_ver", App.getVersion());
             json.put("form_name", encounterType);
             json.put("username", App.getUsername());
             json.put("patient_id", patientId);
             json.put("location", location);
-            json.put("test_id",testId);
-            json.put("concept_name",conceptName);
+            json.put("test_id", testId);
+            json.put("concept_name", conceptName);
 
             JSONArray listOfObservations = new JSONArray();
 
@@ -2521,7 +2549,7 @@ public class ServerService {
         String location = values.getAsString("location");
         String formDate = values.getAsString("formDate");
         String treatmentSupporterName = values.getAsString("treatmentSupporterName");
-        int treatmentSupporterPhoneNumber = values.getAsInteger("treatmentSupporterPhone");
+        String treatmentSupporterPhoneNumber = values.getAsString("treatmentSupporterPhone");
 
         try {
 

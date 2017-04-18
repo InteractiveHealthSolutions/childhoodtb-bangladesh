@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -46,9 +46,9 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/7/2017.
+ * Created by Shujaat on 4/5/2017.
  */
-public class CTScanTestOrderActivity extends AbstractFragmentActivity {
+public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
@@ -56,14 +56,11 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
     MyTextView testOrderDateTextView;
     MyEditText testOrderDateEditText;
 
-    MyTextView ctScanTextView;
-    MySpinner ctScanSpinner;
+    MyTextView histopathologyTextView;
+    MySpinner histopathologySpinner;
 
-    MyTextView ctScanSiteTextView;
-    MySpinner ctScanSiteSpinner;
-
-    MyTextView otherSiteTextView;
-    MyEditText otherSiteEditText;
+    MyTextView histopathologysiteTextView;
+    MySpinner histopathologysiteSpinner;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -79,10 +76,10 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        CTScanTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        HistopathologTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "CXRTestOrderActivity";
+        TAG = "HistopathologTestOrderActivity";
 
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
@@ -95,23 +92,16 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
         testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
                 R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
-
-        ctScanTextView = new MyTextView(context,
-                R.style.text, R.string.ct_scan);
-        ctScanSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.ct_scan_options),
-                R.string.ct_scan, R.string.option_hint);
-        ctScanSiteTextView = new MyTextView(context,
-                R.style.text, R.string.ct_scan_sit);
-        ctScanSiteSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.ct_scan_sit_option),
-                R.string.ct_scan_sit, R.string.option_hint);
-        otherSiteTextView= new MyTextView(context,
-                R.style.text, R.string.other_specify);
-
-        otherSiteEditText = new MyEditText(context, R.string.other_specify,
-                R.string.other_site, InputType.TYPE_CLASS_TEXT,
-                R.style.edit,15, false);
+        histopathologyTextView = new MyTextView(context,
+                R.style.text, R.string.histopathology);
+        histopathologySpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.histopathology_options),
+                R.string.histopathology, R.string.option_hint);
+        histopathologysiteTextView = new MyTextView(context,
+                R.style.text, R.string.histopathology_site);
+        histopathologysiteSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.histopathology_site_options),
+                R.string.histopathology_site, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -123,6 +113,7 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
+
         testIdTextView = new MyTextView(context, R.style.text,
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
@@ -132,11 +123,10 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
-                        testOrderDateEditText,ctScanTextView,ctScanSpinner,ctScanSiteTextView,ctScanSiteSpinner,
-                        otherSiteTextView,otherSiteEditText,testIdTextView,testId
-                }
-
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
+                        testOrderDateTextView, testOrderDateEditText, histopathologyTextView,
+                        histopathologySpinner, histopathologysiteTextView, histopathologysiteSpinner,
+                        testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -166,8 +156,7 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testOrderDateEditText,ctScanSpinner,
-                ctScanSiteSpinner,testId};
+        views = new View[]{patientId, testOrderDateEditText, testId, histopathologysiteSpinner, testOrderDateEditText, histopathologySpinner};
 
 
         for (View v : views) {
@@ -215,8 +204,6 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
         testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testOrderCalender = Calendar.getInstance();
-        otherSiteTextView.setEnabled(false);
-        otherSiteEditText.setEnabled(false);
         updateDisplay();
     }
 
@@ -230,23 +217,25 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -282,7 +271,6 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
-
         } catch (NumberFormatException e) {
         }
 
@@ -301,25 +289,18 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-            values.put("testId",App.get(testId));
-            values.put("conceptName","CT Scan Barcode");
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "Histopathology Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"CT Scan Barcode",
+            observations.add(new String[]{"Histopathology Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateEditText)});
-            observations.add(new String[]{"CT Scan",
-                    App.get(ctScanSpinner)});
-            observations.add(new String[]{"CT Scan Site",
-                    App.get(ctScanSiteSpinner)});
-
-            if(ctScanSiteSpinner.getSelectedItem().toString().equals(
-                    getResources().getString(R.string.other)))
-            {observations.add(new String[]{"Other Site",
-                        App.get(otherSiteEditText)});
-            }
-
+            observations.add(new String[]{"Histopathology",
+                    App.get(histopathologySpinner)});
+            observations.add(new String[]{"Histopathology Site",
+                    App.get(histopathologySpinner)});
 
 
             ///Create the AsyncTask ()
@@ -336,9 +317,9 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
                             loading.show();
                         }
                     });
-                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
+                    ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.CT_SCAN_ORDER, values,
+                            FormType.HISTOPATHOLOGY_ORDER, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -354,13 +335,13 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(CTScanTestOrderActivity.this,
+                        App.getAlertDialog(HistopathologTestOrderActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(CTScanTestOrderActivity.this,
+                        App.getAlertDialog(HistopathologTestOrderActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -410,12 +391,7 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        MySpinner spinner = (MySpinner) adapterView;
-        boolean visible = spinner.getSelectedItemPosition() == 4;
-        if (adapterView == ctScanSiteSpinner) {
-            otherSiteTextView.setEnabled(visible);
-            otherSiteEditText.setEnabled(visible);
-        }
+
         updateDisplay();
     }
 
@@ -525,4 +501,3 @@ public class CTScanTestOrderActivity extends AbstractFragmentActivity {
         }
     }
 }
-

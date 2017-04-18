@@ -339,7 +339,7 @@ public class ClinicalVisitBarriersActivity extends AbstractFragmentActivity
 
 					@Override
 					protected void onProgressUpdate(String... values) {
-					};
+					}
 
 					@Override
 					protected void onPostExecute(String[][] result) {
@@ -530,7 +530,7 @@ public class ClinicalVisitBarriersActivity extends AbstractFragmentActivity
 
 				@Override
 				protected void onProgressUpdate(String... values) {
-				};
+				}
 
 				@Override
 				protected void onPostExecute(String result) {

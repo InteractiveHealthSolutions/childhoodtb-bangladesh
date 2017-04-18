@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -208,23 +208,25 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;

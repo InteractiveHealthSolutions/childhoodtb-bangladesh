@@ -37,12 +37,13 @@ Contributors: Tahira Niazi
     <string name="feedback">Feedback</string>
     <string name="patient_registration">Patient Registration</string>
     <string name="dot_dot_dot">...</string>
+    <string name="select_locations">Select location</string>
 
     <!--new modification-->
     <string name="paediatric_screening_form">Paediatric Screening</string>
     <string name="paediatric_presumptive_form">Paediatric Presumptive</string>
     <string name="paediatric_home_contact_tracing">Paediatric Home Contact Tracing</string>
-    <string name="paediatric_contact_investigation_facility">Paediatric Contact investigation Facility</string>
+    <string name="paediatric_contact_investigation_facility">Paediatric Contact Investigation Facility</string>
     <string name="end_follow_up">End of Follow Up</string>
     <string name="test_indication_button">Test Indication</string>
     <string name="afb_test_order_button">AFB Test Order</string>

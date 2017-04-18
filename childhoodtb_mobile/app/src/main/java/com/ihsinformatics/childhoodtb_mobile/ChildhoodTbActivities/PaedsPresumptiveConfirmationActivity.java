@@ -1,8 +1,10 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
@@ -28,6 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
@@ -50,9 +53,9 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 3/28/2017.
+ * Created by Shujaat on 3/20/2017.
  */
-public class PediatricContactInvestigationAtFacilityActivity extends AbstractFragmentActivity implements TextView.OnEditorActionListener {
+public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivity implements TextView.OnEditorActionListener {
 
     MyTextView formDateTextView, patientIdTextView,
             firstNameTextView, motherNameTextView, genderTextView,
@@ -62,19 +65,20 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             lymphNodeExaminationTextView, abdominalExaminationTextView, otherExaminationTextView,
             bcgScarTextView, familyMemberTBTextView, adultFamilyMemberTBTextView, tbRootInFamilyTextView,
             formOfTbTextView, typeOfTbTextView, testAdvisedTextView,
-            probableDiagnosisTextView, contactTracingCategoryTextView, indexCaseIDTextView, indexCaseTBRegistrationNumberTextView,
-            indexCaseDiagnosisTextView, playfulnessTextView;
+            probableDiagnosisTextView;
 
 
     EditText presumptiveFirstName, presumptiveMotherName, age,
-            weight, patientId, otherExamination, indexCaseId, indexCaseTBRegistrationNumber;
+            weight, patientId, otherExamination;
+
+    MyTextView ageModifierTextView;
+    MySpinner ageModifier;
 
     MySpinner weightPercentile,
             cough, coughDuration, fever, nightSweats, weightLoss,
             poorAppetite, chestExamination, lymphNodeExamination,
             abdominalExamination, bcgScar, familyMemberTB, adultFamilyMemberTB, tbRootInFamily,
-            formOfTb, typeOfTb, testAdvised, probableDiagnosis, contactTracingCategory,
-            indexCaseDiagnosis, playfulness;
+            formOfTb, typeOfTb, testAdvised, probableDiagnosis;
 
 
     MyButton formDateButton;
@@ -83,14 +87,12 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     MyRadioGroup gender;
     MyRadioButton male, female;
     MyButton scanBarcode;
-    MyButton scanBarcodeIndexId;
     String result = "";
-    String familyName, firstName = "";
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        PediatricContactInvestigationAtFacilityActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        PaedsPresumptiveConfirmationActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
         TAG = "PaedsPresumptiveConfirmationActivity";
@@ -118,16 +120,17 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         gender = new MyRadioGroup(context,
                 new MyRadioButton[]{male, female}, R.string.gender,
                 R.style.radio, App.isLanguageRTL());
+
         ageTextView = new MyTextView(context, R.style.text, R.string.age_in_year);
         age = new MyEditText(context, R.string.age_in_year,
                 R.string.age_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 3, false);
+                R.style.edit, 2, false);
 
         weightTextView = new MyTextView(context,
                 R.style.text, R.string.weight);
         weight = new MyEditText(context, R.string.weight,
                 R.string.weight_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 3, false);
+                R.style.edit, 2, false);
         weightPercentileTextView = new MyTextView(context,
                 R.style.text, R.string.weight_percentile);
         weightPercentile = new MySpinner(context, getResources()
@@ -224,77 +227,40 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         probableDiagnosis = new MySpinner(context,
                 getResources().getStringArray(R.array.probable_diagnosis_list),
                 R.string.probable_diagnosis, R.string.option_hint);
-
-         /*new fields*/
-        contactTracingCategoryTextView = new MyTextView(context,
-                R.style.text, R.string.contact_tracing_category);
-        contactTracingCategory = new MySpinner(context,
-                getResources().getStringArray(R.array.contact_tracing_category_options),
-                R.string.contact_tracing_category, R.string.option_hint);
-        indexCaseIDTextView = new MyTextView(context,
-                R.style.text, R.string.index_case_id);
-        indexCaseId = new MyEditText(context,
-                R.string.index_case_id, R.string.index_case_id_hint,
-                InputType.TYPE_CLASS_TEXT, R.style.edit, 13, false);
-        indexCaseTBRegistrationNumberTextView = new MyTextView(context,
-                R.style.text, R.string.indexcase_tb_registration_number);
-        indexCaseTBRegistrationNumber = new MyEditText(context,
-                R.string.indexcase_tb_registration_number, R.string.indexcase_tb_registration_number_hint,
-                InputType.TYPE_CLASS_NUMBER, R.style.edit, 15, false);
-        indexCaseDiagnosisTextView = new MyTextView(context,
-                R.style.text, R.string.indexCase_diagnosis);
-        indexCaseDiagnosis = new MySpinner(context,
-                getResources().getStringArray(R.array.indexCase_diagnosis_options),
-                R.string.indexCase_diagnosis, R.string.option_hint);
-        playfulnessTextView = new MyTextView(context,
-                R.style.text, R.string.playfulness);
-        playfulness = new MySpinner(context,
-                getResources().getStringArray(R.array.playfulness_option),
-                R.string.playfulness, R.string.option_hint);
-
         patientIdTextView = new MyTextView(context, R.style.text,
-                R.string.patient_id);
+                R.string._patient_id);
 
-        patientId = new MyEditText(context, R.string.patient_id,
+        patientId = new MyEditText(context, R.string._patient_id,
                 R.string.patient_id_hint, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, RegexUtil.idLength, false);
 
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
-
-        scanBarcodeIndexId = new MyButton(context, R.style.button,
-                R.drawable.custom_button_beige, R.string.scan_barcode,
-                R.string.scan_barcode);
-
         validatePatientId = new MyButton(context, R.style.button,
-                R.drawable.custom_button_beige, R.string.validateID,
-                R.string.validateID);
-
+                R.drawable.custom_button_beige, R.string.validate_patient_id,
+                R.string.validate_patient_id);
+        ageModifierTextView = new MyTextView(context, R.style.text, R.string.age_modifier);
+        ageModifier = new MySpinner(context, getResources().getStringArray(
+                R.array.age_modifier_options), R.string.age_modifier, R.string.option_hint);
 
         View[][] viewGroups = {
-                {formDateTextView, formDateButton,
-                        contactTracingCategoryTextView, contactTracingCategory, indexCaseIDTextView, indexCaseId,
-                        scanBarcodeIndexId, validatePatientId, firstNameTextView, presumptiveFirstName, motherNameTextView,
-                        presumptiveMotherName
-                },
-                {genderTextView, gender, ageTextView, age,indexCaseTBRegistrationNumberTextView, indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView,
-                        indexCaseDiagnosis,weightTextView, weight, weightPercentileTextView, weightPercentile
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, validatePatientId, firstNameTextView, presumptiveFirstName,
+                        motherNameTextView, presumptiveMotherName, genderTextView, gender
 
                 },
-                { coughTextView, cough, coughDurationTextView, coughDuration, feverTextView, fever, nightSweatsTextView,
-                        nightSweats, lymphNodeExaminationTextView, lymphNodeExamination,abdominalExaminationTextView, abdominalExamination,
-                        otherExaminationTextView, otherExamination
+                {ageTextView, age, ageModifierTextView, ageModifier, weightTextView, weight, weightPercentileTextView, weightPercentile,
+                        coughTextView, cough, coughDurationTextView, coughDuration
                 },
-                { adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily,
-                        formOfTbTextView, formOfTb, typeOfTbTextView, typeOfTb ,testAdvisedTextView, testAdvised,
-                        probableDiagnosisTextView, probableDiagnosis,
+                {feverTextView, fever, nightSweatsTextView, nightSweats, weightLossTextView, weightLoss, poorAppetiteTextView, poorAppetite,
+                        chestExaminationTextVew, chestExamination, lymphNodeExaminationTextView, lymphNodeExamination
                 },
-                {familyMemberTBTextView, familyMemberTB, weightLossTextView, weightLoss,
-                        bcgScarTextView, bcgScar, playfulnessTextView, playfulness, patientIdTextView,
-                        patientId, scanBarcode,
-                }
+                {abdominalExaminationTextView, abdominalExamination, otherExaminationTextView, otherExamination, bcgScarTextView, bcgScar,
+                        adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily, formOfTbTextView, formOfTb,
 
+                }, {typeOfTbTextView, typeOfTb, testAdvisedTextView, testAdvised,
+                probableDiagnosisTextView, probableDiagnosis, familyMemberTBTextView, familyMemberTB
+        }
         };
 
         // Create layouts and store in ArrayList
@@ -320,8 +286,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         if (groups.size() < 2) {
             navigatorLayout.setVisibility(View.GONE);
         }
-
-        Log.i("groupSize", "" + groups.size());
         FragmentManager fragmentManager = getSupportFragmentManager();
         PediatricPresumptveFragmentPagerAdapter pagerAdapter = new PediatricPresumptveFragmentPagerAdapter(
                 fragmentManager, groups.size());
@@ -329,13 +293,12 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{
-                presumptiveMotherName,
-                presumptiveFirstName, age, weight, weightPercentile,
-                cough, coughDuration, fever, patientId, nightSweats,
+                presumptiveMotherName, presumptiveFirstName, age, weight,
+                weightPercentile, cough, coughDuration, fever, patientId, nightSweats,
                 weightLoss, abdominalExamination, bcgScar, adultFamilyMemberTB,
                 formOfTb, typeOfTb, testAdvised, familyMemberTB, probableDiagnosis,
-                otherExamination, playfulness, indexCaseTBRegistrationNumber, indexCaseDiagnosis,
-                indexCaseId
+                otherExamination, ageModifier, poorAppetite, chestExamination
+
         };
 
 
@@ -376,7 +339,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        scanBarcodeIndexId.setOnClickListener(this);
         validatePatientId.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
@@ -391,6 +353,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     public void initView(View[] views) {
         super.initView(views);
         formDate = Calendar.getInstance();
+        saveButton.setEnabled(false);
         updateDisplay();
     }
 
@@ -414,19 +377,31 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         } else if (view == saveButton) {
             submit();
         } else if (view == scanBarcode) {
-
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
-        } else if (view == scanBarcodeIndexId) {
-
-            Intent intent = new Intent(Barcode.BARCODE_INTENT);
-            intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
-            startActivityForResult(intent, Barcode.BARCODE_RESULT_INDEX_ID);
         } else if (view == validatePatientId) {
+            final String indexPatientId = App.get(patientId);
+            if (checkPatientId()) {
 
-            final String indexPatientId = App.get(indexCaseId);
-            if (!indexPatientId.equals("")) {
+               /* if (!serverService.checkInternetConnection()) {
+
+                    AlertDialog alertDialog = App.getAlertDialog(this,
+                            AlertType.ERROR,
+                            getResources()
+                                    .getString(R.string.data_connection_error));
+                    alertDialog.setTitle(getResources().getString(
+                            R.string.error_title));
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                            new AlertDialog.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+
+                                }
+                            });
+                    alertDialog.show();
+                } else {*/
 
                 AsyncTask<String, String, Object> getTask = new AsyncTask<String, String, Object>() {
                     @Override
@@ -442,6 +417,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                             }
                         });
 
+
                         ArrayList<Patient> response = serverService.getPatientInformation(indexPatientId);
                         return response;
                     }
@@ -450,58 +426,115 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                     protected void onProgressUpdate(String... values) {
                     }
 
-                    ;
-
                     @Override
                     protected void onPostExecute(Object result) {
                         super.onPostExecute(result);
                         loading.dismiss();
-                        ArrayList<Patient> patients = (ArrayList<Patient>) result;
+
+                        ArrayList<Patient> patientDetails = (ArrayList<Patient>) result;
+
                         StringBuilder errorMessage = new StringBuilder();
+                        //Handle when internet is not connectivityInternet();
+                        if (patientDetails == null) {
+                            AlertDialog alertDialog = App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
+                                    AlertType.ERROR,
+                                    getResources()
+                                            .getString(R.string.data_connection_error));
+                            alertDialog.setTitle(getResources().getString(
+                                    R.string.error_title));
+                            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                                    new AlertDialog.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog,
+                                                            int which) {
 
-                        if (result == null) {
-                            errorMessage.append(
-                                    getResources().getString(R.string.patient_id_missing)
-                            );
-                            App.getAlertDialog(PediatricContactInvestigationAtFacilityActivity.this,
-                                    AlertType.ERROR, errorMessage.toString()).show();
-                            saveButton.setEnabled(false);
+                                        }
+                                    });
+                            alertDialog.show();
                         } else {
+                            if (patientDetails.size() == 0 || patientDetails.isEmpty()) {
+                                errorMessage.append(
+                                        getResources().getString(R.string.patient_id_missing)
+                                );
+                                App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
+                                        AlertType.ERROR, errorMessage.toString()).show();
+                                //clear the data ...
+                                initView(views);
 
-                            familyName = patients.get(0).getFamilyName();
-                            firstName = patients.get(0).getFirstName();
-                            presumptiveFirstName.setText(patients.get(0).getName());
-                            presumptiveFirstName.setFocusable(false);
-                            if (patients.get(0).getMotherName().isEmpty()) {
-                                presumptiveMotherName.setText(patients.get(0).getMotherName());
-                                presumptiveMotherName.setFocusable(true);
                             } else {
-                                presumptiveMotherName.setText(patients.get(0).getMotherName());
-                                presumptiveMotherName.setFocusable(false);
+
+                                saveButton.setEnabled(true);
+                                //here  we get the age modifier of same patient...
+                                presumptiveFirstName.setText(patientDetails.get(0).getName());
+                                presumptiveFirstName.setFocusable(false);
+                                age.setText(Integer.toString(patientDetails.get(0).getAge()));
+                                age.setFocusable(false);
+                                male.setChecked(patientDetails.get(0).getGender().equals("M") ? true : false);
+                                female.setChecked(patientDetails.get(0).getGender().equals("F") ? true : false);
+                                //here  we get the age modifier of same patient...
+                                AsyncTask<String, String, Object> getValuesAgainstConceptName = new AsyncTask<String, String, Object>() {
+                                    @Override
+                                    protected Object doInBackground(String... params) {
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                            }
+                                        });
+                                        String[] response =
+                                                serverService.getPatientObs(indexPatientId, "Age Modifier");
+                                        return response;
+                                    }
+
+                                    @Override
+                                    protected void onProgressUpdate(String... values) {
+                                    }
+
+                                    @Override
+                                    protected void onPostExecute(Object result) {
+                                        super.onPostExecute(result);
+
+                                        String[] res = (String[]) result;
+
+                                        if (res.length > 0 && (res != null)) {
+                                            if (res[0].equals("InternetConnectionFail")) {
+                                                AlertDialog alertDialog = App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
+                                                        AlertType.ERROR,
+                                                        getResources()
+                                                                .getString(R.string.data_connection_error));
+                                                alertDialog.setTitle(getResources().getString(
+                                                        R.string.error_title));
+                                                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                                                        new AlertDialog.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(DialogInterface dialog,
+                                                                                int which) {
+                                                                initView(views);
+                                                            }
+                                                        });
+                                                alertDialog.show();
+                                            } else {
+                                                String[] testArray = getResources().getStringArray(R.array.age_modifier_options);
+                                                for (int i = 0; i < testArray.length; i++) {
+                                                    if (res[0].toString().equals(testArray[i])) {
+                                                        ageModifier.setSelection(i);
+                                                        ageModifier.setEnabled(false);
+                                                    }
+                                                }
+                                            }
+                                        }
+
+
+                                    }
+                                };
+                                getValuesAgainstConceptName.execute("");
                             }
-
-                            age.setText(Integer.toString(patients.get(0).getAge()));
-                            age.setFocusable(false);
-
-                            if (patients.get(0).getGender().equals("M")) {
-
-                                male.setChecked(true);
-                                female.setEnabled(false);
-
-
-                            } else if (patients.get(0).getGender().equals("F")) {
-
-                                female.setChecked(true);
-                                male.setEnabled(false);
-                            }
-                        }
+                        }//end else condition
                     }
                 };
                 getTask.execute("");
-            }
-        }//end else if condition...
 
-
+            }//end checkPatient id ..
+        }
     }
 
     @Override
@@ -533,8 +566,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         boolean valid = true;
         StringBuffer message = new StringBuffer();
         // Validate mandatory controls
-        View[] mandatory = {presumptiveFirstName, presumptiveMotherName, age, weight,
-                otherExamination, indexCaseTBRegistrationNumber};
+        View[] mandatory = {presumptiveFirstName, presumptiveMotherName, age, weight, otherExamination};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
@@ -567,13 +599,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                         + getResources().getString(R.string.invalid_data)
                         + "\n");
                 presumptiveMotherName.setTextColor(getResources().getColor(R.color.Red));
-            }
-            if (!RegexUtil.isNumeric(App.get(indexCaseTBRegistrationNumber), false)) {
-                valid = false;
-                message.append(indexCaseTBRegistrationNumber.getTag().toString() + ": "
-                        + getResources().getString(R.string.invalid_data)
-                        + "\n");
-                indexCaseTBRegistrationNumber.setTextColor(getResources().getColor(R.color.Red));
             }
         }
         ///here not check whether the Child is tb Suspected or not ....
@@ -624,13 +649,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
 
             final ContentValues values = new ContentValues();
             values.put("formDate", App.getSqlDate(formDate));
-            values.put("gender", male.isChecked() ? "M" : "F");
-            values.put("age", App.get(age));
             values.put("location", App.getLocation());
-           /* values.put("firstName", App.get(presumptiveFirstName));
-            values.put("familyName", App.get(presumptiveMotherName));*/
-            values.put("firstName", firstName);
-            values.put("familyName", familyName);
+            values.put("motherName", App.get(presumptiveMotherName));
             values.put("patientId", App.get(patientId));
 
 
@@ -685,18 +705,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                     App.get(testAdvised)});
             observations.add(new String[]{"Probable diagnosis",
                     App.get(probableDiagnosis)});
-            observations.add(new String[]{"Index Case ID",
-                    App.get(indexCaseId)});
-            observations.add(new String[]{"Index Case Diagnosis",
-                    App.get(indexCaseDiagnosis).equals(getResources().getString(R.string.ptb)) ?
-                            getResources().getString(R.string.pulmonary) :
-                            getResources().getString(R.string.extra_pulmonary)});
-            observations.add(new String[]{"Contact tracing category",
-                    App.get(contactTracingCategory)});
-            observations.add(new String[]{"Index Case TB Registration number",
-                    App.get(indexCaseTBRegistrationNumber)});
-            observations.add(new String[]{"Playfulness",
-                    App.get(playfulness)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -713,8 +721,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.paediatricContactInvestigationFacility(
-                            FormType.PAEDIATRIC_CONTACT_INVESTIGATION_FACILITY, values,
+                    result = serverService.insertPaedsPresumptiveConfirmationForm(
+                            FormType.PAEDS_PRESUMPTIVE_CONFIRMATION, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -730,13 +738,13 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(PediatricContactInvestigationAtFacilityActivity.this,
+                        App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(PediatricContactInvestigationAtFacilityActivity.this,
+                        App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -783,40 +791,45 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             config.locale = App.getCurrentLocale();
             getApplicationContext().getResources().updateConfiguration(config,
                     null);
-        } else if (requestCode == Barcode.BARCODE_RESULT_INDEX_ID) {
-            if (resultCode == RESULT_OK) {
-                String str = data.getStringExtra(Barcode.SCAN_RESULT);
-                // Check for valid Id
-                if (RegexUtil.isValidId(str)
-                        && !RegexUtil.isNumeric(str, false)) {
-                    indexCaseId.setText(str);
-                } else {
-                    App.getAlertDialog(
-                            this,
-                            AlertType.ERROR,
-                            indexCaseId.getTag().toString()
-                                    + ": "
-                                    + getResources().getString(
-                                    R.string.invalid_data)).show();
-                }
-            } else if (resultCode == RESULT_CANCELED) {
-                // Handle cancel
-                App.getAlertDialog(this, AlertType.ERROR,
-                        getResources().getString(R.string.operation_cancelled))
-                        .show();
-            }
-            // Set the locale again, since the Barcode app restores system's
-            // locale because of orientation
-            Locale.setDefault(App.getCurrentLocale());
-            Configuration config = new Configuration();
-            config.locale = App.getCurrentLocale();
-            getApplicationContext().getResources().updateConfiguration(config,
-                    null);
         }
     }
 
+    //validate the checkPatientId();
+    public boolean checkPatientId() {
+        boolean isIndexId = true;
+        final String indexPatientId = App.get(patientId);
+        if (!indexPatientId.equals("")) {
+            if (RegexUtil.matchId(App.get(patientId))) {
+
+                if (!RegexUtil.isValidId(App.get(patientId))) {
+                    isIndexId = false;
+                    App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
+                            AlertType.ERROR, patientId.getTag().toString() + ":"
+                                    + getResources().getString(R.string.invalid_data)).show();
+
+                    patientId.setTextColor(getResources().getColor(
+                            R.color.Red));
+                }
+            } else {
+                isIndexId = false;
+                App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
+                        AlertType.ERROR, patientId.getTag().toString() + ":"
+                                + getResources().getString(R.string.invalid_data)).show();
+
+                patientId.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+        } else {
+            isIndexId = false;
+            App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
+                    AlertType.ERROR, getResources().getString(R.string.empty_data_indexId)).show();
+
+        }
+        return isIndexId;
+    }
+
     @SuppressLint("ValidFragment")
-    public class PediatricPresumptiveFragment extends Fragment {
+    class PediatricPresumptiveFragment extends Fragment {
         int currentPage;
 
         @Override
@@ -869,3 +882,5 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     }
 
 }
+
+

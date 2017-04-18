@@ -16,9 +16,9 @@
         <item>@string/other</item>
     </string-array>
     <string name="other_belongs">Other(specify)</string>
-    <string name="other_belongs_hint">Enter other name</string>
+    <string name="other_belongs_hint">Enter other NID holder name</string>
 
-    <string name="patient_type">patient Type</string>
+    <string name="patient_type">Patient Type</string>
     <string-array name="patient_type_options">
         <item>@string/new_patient</item>
         <item>@string/relapse</item>

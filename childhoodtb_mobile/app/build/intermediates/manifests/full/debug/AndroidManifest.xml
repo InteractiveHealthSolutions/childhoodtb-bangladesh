@@ -76,73 +76,73 @@
             android:name="com.ihsinformatics.childhoodtb_mobile.Barcode"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaediatricScreeningActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaedsPresumptiveConfirmationActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricContactTracingAtHomeActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaediatricContactTracingAtHomeActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PediatricContactInvestigationAtFacilityActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PediatricContactInvestigationAtFacilityActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.EndFollowUpActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.EndFollowUpActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TestIndicationActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TestIndicationActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestOrderActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AFBTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestOrderActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CXRTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestOrderActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.HistopathologTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestOrderActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ESRTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestResultActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AFBTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestResultActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CXRTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestResultActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.HistopathologTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestResultActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ESRTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestOrderActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GXPTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestResultActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GXPTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestOrderActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TSTTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestResultActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TSTTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestOrderActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CTScanTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestResultActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CTScanTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestOrderActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.UltraSoundTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestResultActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.UltraSoundTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TreatmentInitiationActivity"
+            android:name="com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TreatmentInitiationActivity"
             android:configChanges="keyboardHidden|orientation" />
     </application>
 

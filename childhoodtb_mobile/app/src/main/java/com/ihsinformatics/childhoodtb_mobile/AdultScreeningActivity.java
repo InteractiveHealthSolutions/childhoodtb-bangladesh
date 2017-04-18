@@ -552,7 +552,7 @@ public class AdultScreeningActivity extends AbstractFragmentActivity implements
 
 		boolean valid = true;
 
-		StringBuffer message = new StringBuffer();
+		StringBuilder message = new StringBuilder();
 		// Validate mandatory controls
 		View[] mandatory = { firstName, lastName, age };
 		for (View v : mandatory) {
@@ -784,7 +784,7 @@ public class AdultScreeningActivity extends AbstractFragmentActivity implements
 			getApplicationContext().getResources().updateConfiguration(config,
 					null);
 		}
-	};
+	}
 
 	@Override
 	public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {

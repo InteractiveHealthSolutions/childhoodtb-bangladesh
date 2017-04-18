@@ -1,6 +1,7 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +14,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -45,41 +46,37 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 3/28/2017.
+ * Created by Shujaat on 4/7/2017.
  */
-public class EndFollowUpActivity extends AbstractFragmentActivity {
+public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
 
-    MyTextView reasonForEndOfFollowUpTextView;
-    MySpinner reasonForEndOfFollowUp;
+    MyTextView testOrderDateTextView;
+    MyEditText testOrderDateEditText;
 
-    MyTextView otherTextView;
-    MyEditText other;
-
-    MyTextView reasonForlossFollowUpTextView;
-    MyEditText reasonForlossFollowUp;
-
-    MyTextView otherFacilityNameTextView;
-    MyEditText otherFacilityName;
+    MyTextView ultrasoundAbdomenTextView;
+    MySpinner ultrasoundAbdomensSpinner;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
     MyButton scanBarcode;
-    boolean isOtherFieldIsRequired, isOtherFacilityNameIsRequired,
-            isReasonLosFollowUpIsRequired = false;
+
+    MyTextView testIdTextView;
+    MyEditText testId;
 
     String result = "";
+    Calendar testOrderCalender;
 
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        EndFollowUpActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        UltraSoundTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "EndFollowUpActivity";
+        TAG = "UltraSoundTestOrderActivity";
 
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
@@ -87,45 +84,45 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-        reasonForEndOfFollowUpTextView = new MyTextView(context,
-                R.style.text, R.string.reason_for_end_to_followup);
-        reasonForEndOfFollowUp = new MySpinner(context,
-                getResources().getStringArray(R.array.reason_for_followup_options),
-                R.string.reason_for_end_to_followup, R.string.option_hint);
-        otherTextView = new MyTextView(context,
-                R.style.text, R.string.other);
-        other = new MyEditText(context, R.string.other,
-                R.string.other_hint, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 25, false);
-        otherFacilityNameTextView = new MyTextView(context,
-                R.style.text, R.string.other_facility_name);
-        otherFacilityName = new MyEditText(context, R.string.other_facility_name,
-                R.string.other_facility_hint, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 25, false);
-        reasonForlossFollowUpTextView = new MyTextView(context,
-                R.style.text, R.string.reason_loss_to_followup);
+        testOrderDateTextView = new MyTextView(context,
+                R.style.text, R.string.test_order_date);
+        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
+                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 10, false);
 
-        reasonForlossFollowUp = new MyEditText(context, R.string.reason_loss_to_followup,
-                R.string.reason_loss_followup_hint, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 25, false);
+        ultrasoundAbdomenTextView = new MyTextView(context,
+                R.style.text, R.string.ultrasound_abdomen);
+        ultrasoundAbdomensSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.ultra_abdomen_option),
+                R.string.ultrasound_abdomen, R.string.ultrasound_abdomen);
+
 
         patientIdTextView = new MyTextView(context, R.style.text,
-                R.string._patient_id);
+                R.string.patient_id);
 
-        patientId = new MyEditText(context, R.string._patient_id,
+        patientId = new MyEditText(context, R.string.patient_id,
                 R.string.patient_id_hint, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, RegexUtil.idLength, false);
 
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
+
+
+        testIdTextView = new MyTextView(context, R.style.text,
+                R.string.test_id);
+        testId = new MyEditText(context, R.string.test_id,
+                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 5, false);
+
+
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId,
-                        scanBarcode, reasonForEndOfFollowUpTextView, reasonForEndOfFollowUp,
-                        reasonForlossFollowUpTextView, reasonForlossFollowUp, otherTextView, other,
-                        otherFacilityNameTextView, otherFacilityName,
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
+                        testOrderDateEditText, ultrasoundAbdomenTextView, ultrasoundAbdomensSpinner, testIdTextView,
+                        testId
                 }
+
         };
 
         // Create layouts and store in ArrayList
@@ -149,15 +146,13 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
             navigatorLayout.setVisibility(View.GONE);
         }
 
-        Log.i("groupSize", "" + groups.size());
         FragmentManager fragmentManager = getSupportFragmentManager();
         PediatricPresumptveFragmentPagerAdapter pagerAdapter = new PediatricPresumptveFragmentPagerAdapter(
                 fragmentManager, groups.size());
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{other, otherFacilityName, patientId,
-                reasonForEndOfFollowUp};
+        views = new View[]{patientId, testId, testOrderDateEditText, testOrderDateEditText, ultrasoundAbdomensSpinner};
 
 
         for (View v : views) {
@@ -194,6 +189,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
+        testOrderDateEditText.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -201,95 +197,41 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-
+        testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
+        testOrderCalender = Calendar.getInstance();
         updateDisplay();
-        otherFacilityNameTextView.setVisibility(View.VISIBLE);
-        other.setVisibility(View.GONE);
-        otherTextView.setVisibility(View.GONE);
-        otherFacilityName.setVisibility(View.VISIBLE);
-        reasonForlossFollowUpTextView.setVisibility(View.GONE);
-        reasonForlossFollowUp.setVisibility(View.GONE);
     }
 
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
+        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
     }
 
     @Override
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
-        if (isOtherFieldIsRequired) {
-            if (App.get(other).equals("")) {
-                valid = false;
-                message.append(other.getTag().toString() + ":\n" +
-                        getResources().getString(R.string.empty_data));
-                other.setHintTextColor(getResources().getColor(R.color.Red));
-            } else if (!RegexUtil.isWord(App.get(other))) {
-
-                valid = false;
-                message.append(other.getTag().toString()
-                        + ": "
-                        + getResources().getString(
-                        R.string.invalid_data) + "\n");
-                other.setTextColor(getResources().getColor(
-                        R.color.Red));
-            }
-        }
-        if (isReasonLosFollowUpIsRequired) {
-            if (App.get(reasonForlossFollowUp).equals("")) {
-                valid = false;
-                message.append(reasonForlossFollowUp.getTag().toString() + ":\n" +
-                        getResources().getString(R.string.empty_data));
-                reasonForlossFollowUp.setHintTextColor(getResources().getColor(R.color.Red));
-            } else if (!RegexUtil.isWord(App.get(reasonForlossFollowUp))) {
-
-                valid = false;
-                message.append(reasonForlossFollowUp.getTag().toString()
-                        + ": "
-                        + getResources().getString(
-                        R.string.invalid_data) + "\n");
-                reasonForlossFollowUp.setTextColor(getResources().getColor(
-                        R.color.Red));
-            }
-        }
-        if (isOtherFacilityNameIsRequired) {
-            if (App.get(otherFacilityName).equals("")) {
-                valid = false;
-                message.append(otherFacilityName.getTag().toString() + ":\n" +
-                        getResources().getString(R.string.empty_data));
-                otherFacilityName.setHintTextColor(getResources().getColor(R.color.Red));
-            } else if (!RegexUtil.isWord(App.get(otherFacilityName))) {
-
-                valid = false;
-                message.append(otherFacilityName.getTag().toString()
-                        + ": "
-                        + getResources().getString(
-                        R.string.invalid_data) + "\n");
-                otherFacilityName.setTextColor(getResources().getColor(
-                        R.color.Red));
-            }
-        }
-
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -318,6 +260,13 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
+            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
+                valid = false;
+                message.append(testOrderDateEditText.getTag()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_future_date) + "\n");
+            }
 
         } catch (NumberFormatException e) {
         }
@@ -337,27 +286,17 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "Ultrasound Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
+            observations.add(new String[]{"Ultrasound Barcode",
+                    App.get(testId)});
+            observations.add(new String[]{"Test Order Date",
+                    App.get(testOrderDateEditText)});
+            observations.add(new String[]{"Ultrasound Abdomen",
+                    App.get(ultrasoundAbdomensSpinner)});
 
-            observations.add(new String[]{"Reason End Follow-up",
-                    App.get(reasonForEndOfFollowUp)});
-
-            if (reasonForEndOfFollowUp.getSelectedItem().toString()
-                    .equals(getResources().getString(R.string.referred_to_another_facility))) {
-                observations.add(new String[]{"Referred to another Facility",
-                        App.get(otherFacilityName)});
-            } else if (reasonForEndOfFollowUp.getSelectedItem().toString()
-                    .equals(getResources().getString(R.string.other))) {
-                observations.add(new String[]{"Other Reason",
-                        App.get(other)});
-            } else if (reasonForEndOfFollowUp.getSelectedItem().toString()
-                    .equals(getResources().getString(R.string.loss_to_followup))) {
-                observations.add(new String[]{"Follow-up Lost",
-                        App.get(reasonForlossFollowUp)});
-            }
-            ;
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -374,8 +313,8 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertEndFollowUpForm(
-                            FormType.END_FOLLOW_UP, values,
+                    result = serverService.insertTestOrderResultForm(
+                            FormType.ULTRASOUND_ORDER, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -391,13 +330,13 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(EndFollowUpActivity.this,
+                        App.getAlertDialog(UltraSoundTestOrderActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(EndFollowUpActivity.this,
+                        App.getAlertDialog(UltraSoundTestOrderActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -418,6 +357,12 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
         if (view == formDateButton) {
 
             showDialog(DATE_DIALOG_ID);
+
+        } else if (view == testOrderDateEditText) {
+
+            new DatePickerDialog(this, date, testOrderCalender
+                    .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),
+                    testOrderCalender.get(Calendar.DAY_OF_MONTH)).show();
 
         } else if (view == firstButton) {
 
@@ -441,63 +386,27 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-        if (adapterView == reasonForEndOfFollowUp) {
-
-            if (adapterView.getSelectedItem().toString().equals(getString(R.string.referred_to_another_facility))) {
-                otherFacilityNameTextView.setVisibility(View.VISIBLE);
-                otherFacilityName.setVisibility(View.VISIBLE);
-                otherTextView.setVisibility(View.GONE);
-                other.setVisibility(View.GONE);
-                reasonForlossFollowUpTextView.setVisibility(View.GONE);
-                reasonForlossFollowUp.setVisibility(View.GONE);
-                isOtherFieldIsRequired = false;
-                isOtherFacilityNameIsRequired = true;
-                isReasonLosFollowUpIsRequired = false;
-
-            } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.other))) {
-                Log.i("test", "other");
-
-                otherTextView.setVisibility(View.VISIBLE);
-                other.setVisibility(View.VISIBLE);
-                isOtherFieldIsRequired = true;
-                otherFacilityNameTextView.setVisibility(View.GONE);
-                otherFacilityName.setVisibility(View.GONE);
-                reasonForlossFollowUpTextView.setVisibility(View.GONE);
-                reasonForlossFollowUp.setVisibility(View.GONE);
-                isOtherFacilityNameIsRequired = false;
-                isReasonLosFollowUpIsRequired = false;
-
-            } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.loss_to_followup))) {
-
-                otherTextView.setVisibility(View.GONE);
-                other.setVisibility(View.GONE);
-                otherFacilityNameTextView.setVisibility(View.GONE);
-                otherFacilityName.setVisibility(View.GONE);
-                reasonForlossFollowUpTextView.setVisibility(View.VISIBLE);
-                reasonForlossFollowUp.setVisibility(View.VISIBLE);
-                isOtherFieldIsRequired = false;
-                isOtherFacilityNameIsRequired = false;
-                isReasonLosFollowUpIsRequired = true;
-            } else {
-                otherTextView.setVisibility(View.GONE);
-                other.setVisibility(View.GONE);
-                otherFacilityNameTextView.setVisibility(View.GONE);
-                otherFacilityName.setVisibility(View.GONE);
-                reasonForlossFollowUpTextView.setVisibility(View.GONE);
-                reasonForlossFollowUp.setVisibility(View.GONE);
-                isOtherFieldIsRequired = false;
-                isOtherFacilityNameIsRequired = false;
-                isReasonLosFollowUpIsRequired = false;
-            }
-        }
-
+        updateDisplay();
     }
 
     @Override
     public boolean onLongClick(View view) {
         return false;
     }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+
+            testOrderCalender.set(Calendar.YEAR, year);
+            testOrderCalender.set(Calendar.MONTH, monthOfYear);
+            testOrderCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateDisplay();
+        }
+
+    };
 
     ///Barcode Scanner Result ....
     @Override
@@ -586,3 +495,4 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
         }
     }
 }
+

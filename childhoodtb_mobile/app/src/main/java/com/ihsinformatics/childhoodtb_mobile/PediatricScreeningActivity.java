@@ -807,9 +807,6 @@ public class PediatricScreeningActivity extends AbstractFragmentActivity
                 @Override
                 protected void onProgressUpdate(String... values) {
                 }
-
-                ;
-
                 @Override
                 protected void onPostExecute(String result) {
                     // TODO: check this method
@@ -868,8 +865,6 @@ public class PediatricScreeningActivity extends AbstractFragmentActivity
                     null);
         }
     }
-
-    ;
 
     @Override
     public boolean onEditorAction(TextView v, int arg1, KeyEvent arg2) {

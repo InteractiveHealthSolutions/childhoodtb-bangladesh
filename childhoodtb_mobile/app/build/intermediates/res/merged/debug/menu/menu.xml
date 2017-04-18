@@ -4,7 +4,7 @@
     <item
         android:id="@+menu_id/itemPreferences"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Preferences"
+        android:title="@string/preferences"
         android:enabled="true"
         android:visible="true">
     </item>

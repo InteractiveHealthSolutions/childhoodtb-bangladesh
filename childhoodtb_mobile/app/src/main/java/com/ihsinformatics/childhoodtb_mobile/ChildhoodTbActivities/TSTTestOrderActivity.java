@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -46,24 +46,18 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/6/2017.
+ * Created by Shujaat on 4/7/2017.
  */
-public class CXRTestResultActivity extends AbstractFragmentActivity {
+public class TSTTestOrderActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
 
-    MyTextView testResultDateTextView;
-    MyEditText testResultDateEditText;
+    MyTextView testOrderDateTextView;
+    MyEditText testOrderDateEditText;
 
-    MyTextView cxrResultTextView;
-    MySpinner cxrResultSpinner;
-
-    MyTextView radiologicalFindingTextView;
-    MySpinner radiologicalFindingSpinner;
-
-    MyTextView otherTextView;
-    MyEditText other;
+    MyTextView tuberculinSkinTestTextView;
+    MySpinner tuberculinSkinTestSpinner;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -73,47 +67,34 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
     MyEditText testId;
 
     String result = "";
-    Calendar testResultCalender;
-    boolean isTrue = false;
+    Calendar testOrderCalender;
+
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        CXRTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        TSTTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "CXRTestResultActivity";
-
+        TAG = "TSTTestOrderActivity";
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
         formDateButton = new MyButton(context,
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-        testResultDateTextView = new MyTextView(context,
-                R.style.text, R.string.test_result_date);
-        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
-                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
+        testOrderDateTextView = new MyTextView(context,
+                R.style.text, R.string.test_order_date);
+        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
+                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
 
-        cxrResultTextView = new MyTextView(context,
-                R.style.text, R.string.cxr_result);
-        cxrResultSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.cxr_result_option),
-                R.string.cxr_result, R.string.option_hint);
+        tuberculinSkinTestTextView = new MyTextView(context,
+                R.style.text, R.string.tst);
 
-        radiologicalFindingTextView = new MyTextView(context,
-                R.style.text, R.string.radiological_finding);
-
-        radiologicalFindingSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.radiological_finding_options),
-                R.string.radiological_finding, R.string.option_hint);
-
-        otherTextView = new MyTextView(context,
-                R.style.text, R.string.other_specify);
-        other = new MyEditText(context, R.string.other_specify,
-                R.string.other_specify_hint, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 25, false);
+        tuberculinSkinTestSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.tst_options),
+                R.string.tst, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -125,6 +106,7 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
+
         testIdTextView = new MyTextView(context, R.style.text,
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
@@ -134,10 +116,9 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testResultDateTextView, testResultDateEditText,
-                        cxrResultTextView, cxrResultSpinner, radiologicalFindingTextView, radiologicalFindingSpinner,
-                        otherTextView, other, testIdTextView, testId
-                }
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
+                        testOrderDateTextView, testOrderDateEditText, tuberculinSkinTestTextView,
+                        tuberculinSkinTestSpinner, testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -167,8 +148,8 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{other, patientId, testResultDateEditText, testId,
-                radiologicalFindingSpinner};
+        views = new View[]{patientId, testOrderDateEditText, testId, testOrderDateEditText,
+                tuberculinSkinTestSpinner};
 
 
         for (View v : views) {
@@ -205,7 +186,7 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testResultDateEditText.setOnClickListener(this);
+        testOrderDateEditText.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -213,56 +194,42 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testResultDateEditText.setFocusable(false);
+        testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
-        testResultCalender = Calendar.getInstance();
-        otherTextView.setEnabled(false);
-        other.setEnabled(false);
+        testOrderCalender = Calendar.getInstance();
         updateDisplay();
     }
 
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
+        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
     }
 
     @Override
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
-        if (isTrue) {
-            if(App.get(other).equals(""))
-            {
-                message.append(other.getTag().toString() + ". ");
-                other.setHintTextColor(getResources().getColor(R.color.Red));
-            }
 
-           else if (RegexUtil.isWord(App.get(other))) {
-                valid = false;
-                message.append(other.getTag().toString() + ". "
-                        + getResources().getString(R.string.invalid_data)
-                        + "\n");
-                other.setHintTextColor(getResources().getColor(R.color.Red));
-            }
-        }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -291,9 +258,9 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
-            if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
+            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testResultDateEditText.getTag()
+                message.append(testOrderDateEditText.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -318,22 +285,17 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
             values.put("testId", App.get(testId));
-            values.put("conceptName", "Chest X-Ray Barcode");
+            values.put("conceptName", "TST Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Chest X-Ray Barcode",
+            observations.add(new String[]{"TST Barcode",
                     App.get(testId)});
-            observations.add(new String[]{"Test Result Date",
-                    App.get(testResultDateEditText)});
-            observations.add(new String[]{"CXR Result",
-                    App.get(cxrResultSpinner)});
-            observations.add(new String[]{"Radiological finding",
-                    App.get(radiologicalFindingSpinner)});
-            if (radiologicalFindingSpinner.getSelectedItem().toString()
-                    .equals(getResources().getString(R.string.other))) {
-                observations.add(new String[]{"Other Examination",
-                        App.get(other)});
-            }
+            observations.add(new String[]{"Test Order Date",
+                    App.get(testOrderDateEditText)});
+            observations.add(new String[]{"Test Order Date",
+                    App.get(testOrderDateEditText)});
+            observations.add(new String[]{"Tuberculin Skin Test",
+                    App.get(tuberculinSkinTestSpinner)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -351,7 +313,7 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.CXR_RESULT, values,
+                            FormType.TST_ORDER, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -367,13 +329,13 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(CXRTestResultActivity.this,
+                        App.getAlertDialog(TSTTestOrderActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(CXRTestResultActivity.this,
+                        App.getAlertDialog(TSTTestOrderActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -395,12 +357,12 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testResultDateEditText) {
+        } else if (view == testOrderDateEditText) {
 
-            new DatePickerDialog(this,
-                    resultDate, testResultCalender
-                    .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
-                    testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
+            new DatePickerDialog(this, date, testOrderCalender
+                    .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),
+                    testOrderCalender.get(Calendar.DAY_OF_MONTH)).show();
+
         } else if (view == firstButton) {
 
             gotoFirstPage();
@@ -424,20 +386,6 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        if (adapterView == radiologicalFindingSpinner) {
-            String specimenType = radiologicalFindingSpinner.getSelectedItem().toString();
-            if (specimenType.equals(getResources().getString(R.string.other))) {
-                otherTextView.setEnabled(true);
-                other.setEnabled(true);
-                isTrue=true;
-
-            } else {
-                otherTextView.setEnabled(false);
-                other.setEnabled(false);
-                isTrue=false;
-            }
-        }
-        updateDisplay();
     }
 
     @Override
@@ -445,20 +393,19 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
         return false;
     }
 
-    DatePickerDialog.OnDateSetListener resultDate = new DatePickerDialog.OnDateSetListener() {
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
 
-            testResultCalender.set(Calendar.YEAR, year);
-            testResultCalender.set(Calendar.MONTH, monthOfYear);
-            testResultCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            testOrderCalender.set(Calendar.YEAR, year);
+            testOrderCalender.set(Calendar.MONTH, monthOfYear);
+            testOrderCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             updateDisplay();
         }
 
     };
-
 
     ///Barcode Scanner Result ....
     @Override
@@ -547,3 +494,4 @@ public class CXRTestResultActivity extends AbstractFragmentActivity {
         }
     }
 }
+

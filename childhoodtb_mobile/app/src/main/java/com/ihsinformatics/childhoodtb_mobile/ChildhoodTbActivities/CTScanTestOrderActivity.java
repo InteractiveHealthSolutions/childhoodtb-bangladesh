@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -46,9 +46,9 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/4/2017.
+ * Created by Shujaat on 4/7/2017.
  */
-public class AFBTestOrderActivity extends AbstractFragmentActivity {
+public class CTScanTestOrderActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
@@ -56,20 +56,14 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
     MyTextView testOrderDateTextView;
     MyEditText testOrderDateEditText;
 
-    MyTextView monthOfTreatmentTextView;
-    MySpinner monthOfTreatmentSpinner;
+    MyTextView ctScanTextView;
+    MySpinner ctScanSpinner;
 
-    MyTextView specimenTypeTextView;
-    MySpinner specimenTypeSpinner;
+    MyTextView ctScanSiteTextView;
+    MySpinner ctScanSiteSpinner;
 
-    MyTextView specimenQualityTextView;
-    MySpinner specimenQualitySpinner;
-
-    MyTextView specimenLocationTextView;
-    MySpinner specimenLocationSpinner;
-
-    MyTextView otherTextView;
-    MyEditText other;
+    MyTextView otherSiteTextView;
+    MyEditText otherSiteEditText;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -80,15 +74,17 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
 
     String result = "";
     Calendar testOrderCalender;
+    boolean isOtherFieldIsRequired = false;
 
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        AFBTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        CTScanTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "AFBTestOrderActivity";
+        TAG = "CXRTestOrderActivity";
+
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
         formDateButton = new MyButton(context,
@@ -100,34 +96,23 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
         testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
                 R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
-        monthOfTreatmentTextView = new MyTextView(context,
-                R.style.text, R.string.month_of_treatment);
-        monthOfTreatmentSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.month_of_treatment_option),
-                R.string.month_of_treatment, R.string.option_hint);
 
-        specimenTypeTextView = new MyTextView(context,
-                R.style.text, R.string.specimen_type);
-        specimenTypeSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.specimen_type_option),
-                R.string.specimen_type, R.string.option_hint);
+        ctScanTextView = new MyTextView(context,
+                R.style.text, R.string.ct_scan);
+        ctScanSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.ct_scan_options),
+                R.string.ct_scan, R.string.option_hint);
+        ctScanSiteTextView = new MyTextView(context,
+                R.style.text, R.string.ct_scan_sit);
+        ctScanSiteSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.ct_scan_sit_option),
+                R.string.ct_scan_sit, R.string.option_hint);
+        otherSiteTextView = new MyTextView(context,
+                R.style.text, R.string.other_specify);
 
-        specimenQualityTextView = new MyTextView(context,
-                R.style.text, R.string.specimen_quality);
-        specimenQualitySpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.specimen_quality_option),
-                R.string.specimen_quality, R.string.option_hint);
-
-        specimenLocationTextView = new MyTextView(context,
-                R.style.text, R.string.specimen_location);
-        specimenLocationSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.specimen_location_options),
-                R.string.specimen_location, R.string.option_hint);
-        otherTextView = new MyTextView(context,
-                R.style.text, R.string.other_location);
-        other = new MyEditText(context, R.string.other_location,
-                R.string.other__location_hint, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 25, false);
+        otherSiteEditText = new MyEditText(context, R.string.other_specify,
+                R.string.other_site, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 15, false);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -143,18 +128,16 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
                 R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 5, false);
+                R.style.edit, 10, false);
 
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testOrderDateTextView, testOrderDateEditText, monthOfTreatmentTextView,
-                        monthOfTreatmentSpinner, specimenTypeTextView, specimenTypeSpinner,
-                        specimenQualityTextView, specimenQualitySpinner
-                },
-                {specimenLocationTextView, specimenLocationSpinner, otherTextView, other,
-                        testIdTextView, testId}
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
+                        testOrderDateEditText, ctScanTextView, ctScanSpinner, ctScanSiteTextView, ctScanSiteSpinner,
+                        otherSiteTextView, otherSiteEditText, testIdTextView, testId
+                }
+
         };
 
         // Create layouts and store in ArrayList
@@ -184,8 +167,8 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{other, patientId, testOrderDateEditText, monthOfTreatmentSpinner, specimenLocationSpinner,
-                specimenQualitySpinner, specimenTypeSpinner, testOrderDateEditText, testId};
+        views = new View[]{patientId, testOrderDateEditText, testOrderDateEditText, ctScanSpinner,
+                ctScanSiteSpinner, testId};
 
 
         for (View v : views) {
@@ -233,18 +216,13 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
         testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testOrderCalender = Calendar.getInstance();
-        specimenQualityTextView.setEnabled(false);
-        specimenQualitySpinner.setEnabled(false);
-        specimenLocationTextView.setEnabled(false);
-        specimenLocationSpinner.setEnabled(false);
-        otherTextView.setEnabled(false);
-        other.setEnabled(false);
+        otherSiteTextView.setEnabled(false);
+        otherSiteEditText.setEnabled(false);
         updateDisplay();
     }
 
     @Override
     public void updateDisplay() {
-
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
         testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
     }
@@ -252,31 +230,44 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public boolean validate() {
         boolean valid = true;
-        StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        StringBuilder message = new StringBuilder();
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
+        if (isOtherFieldIsRequired) {
+            if (App.get(otherSiteEditText).equals("")) {
+                valid = false;
+                message.append(otherSiteEditText.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
+                otherSiteEditText.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isWord(App.get(otherSiteEditText))) {
+                valid = false;
+                message.append(otherSiteEditText.getTag().toString()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_data) + "\n");
+                otherSiteEditText.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+
+        }
+
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
-        if (RegexUtil.isWord(App.get(other))) {
-            valid = false;
-            message.append(other.getTag().toString() + ". "
-                    + getResources().getString(R.string.invalid_data)
-                    + "\n");
-            other.setHintTextColor(getResources().getColor(R.color.Red));
-        }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -331,35 +322,25 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-            values.put("testId",App.get(testId));
-            values.put("conceptName","Smear Test Barcode");
+            values.put("testId", App.get(testId));
+            values.put("conceptName", "CT Scan Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Smear Test Barcode",
+            observations.add(new String[]{"CT Scan Barcode",
                     App.get(testId)});
-            observations.add(new String[]{"Month of Treatment",
-                    App.get(monthOfTreatmentSpinner)});
-            observations.add(new String[]{"Specimen Type",
-                    App.get(specimenTypeSpinner)});
-            if (specimenTypeSpinner.getSelectedItem().toString().equals(
-                    getResources().getString(R.string.sputum))) {
-                observations.add(new String[]{"Specimen Quality",
-                        App.get(specimenQualitySpinner)});
-            } else if (specimenTypeSpinner.getSelectedItem().toString().equals(
-                    getResources().getString(R.string.extra_pulmonary))) {
-                observations.add(new String[]{"Specimen Location",
-                        App.get(specimenLocationSpinner)});
-
-                if (specimenLocationSpinner.getSelectedItem().toString().equals(
-                        getResources().getString(R.string.other))) {
-
-                    observations.add(new String[]{"Other Location",
-                            App.get(other)});
-
-                }
-            }
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateEditText)});
+            observations.add(new String[]{"CT Scan",
+                    App.get(ctScanSpinner)});
+            observations.add(new String[]{"CT Scan Site",
+                    App.get(ctScanSiteSpinner)});
+
+            if (ctScanSiteSpinner.getSelectedItem().toString().equals(
+                    getResources().getString(R.string.other))) {
+                observations.add(new String[]{"Other Site",
+                        App.get(otherSiteEditText)});
+            }
+
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -377,7 +358,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.AFB_SMEAR_ORDER, values,
+                            FormType.CT_SCAN_ORDER, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -393,13 +374,13 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(AFBTestOrderActivity.this,
+                        App.getAlertDialog(CTScanTestOrderActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(AFBTestOrderActivity.this,
+                        App.getAlertDialog(CTScanTestOrderActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -449,44 +430,14 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-        if (adapterView == specimenTypeSpinner) {
-
-            String specimenType = specimenTypeSpinner.getSelectedItem().toString();
-
-            if (specimenType.equals(getResources().getString(R.string.sputum))) {
-
-                specimenQualityTextView.setEnabled(true);
-                specimenQualitySpinner.setEnabled(true);
-                specimenLocationTextView.setEnabled(false);
-                specimenLocationSpinner.setEnabled(false);
-                otherTextView.setEnabled(false);
-                other.setEnabled(false);
-            }
-            if (specimenType.equals(getResources().getString(R.string.extra_pulmonary))) {
-
-                specimenLocationTextView.setEnabled(true);
-                specimenLocationSpinner.setEnabled(true);
-                specimenQualityTextView.setEnabled(false);
-                specimenQualitySpinner.setEnabled(false);
-                otherTextView.setEnabled(false);
-                other.setEnabled(false);
-            }
-        }
-        if (adapterView == specimenLocationSpinner) {
-            if (specimenLocationSpinner.isEnabled()) {
-                if (specimenLocationSpinner.getSelectedItem().toString().equals(
-                        getResources().getString(R.string.other))) {
-                    otherTextView.setEnabled(true);
-                    other.setEnabled(true);
-                } else {
-                    otherTextView.setEnabled(false);
-                    other.setEnabled(false);
-                }
-            }
+        MySpinner spinner = (MySpinner) adapterView;
+        boolean visible = spinner.getSelectedItemPosition() == 4;
+        if (adapterView == ctScanSiteSpinner) {
+            isOtherFieldIsRequired = visible;
+            otherSiteTextView.setEnabled(visible);
+            otherSiteEditText.setEnabled(visible);
         }
         updateDisplay();
-
     }
 
     @Override
@@ -541,7 +492,6 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
         }
     }
 
-
     @SuppressLint("ValidFragment")
     class PediatricPresumptiveFragment extends Fragment {
         int currentPage;
@@ -595,3 +545,4 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
         }
     }
 }
+

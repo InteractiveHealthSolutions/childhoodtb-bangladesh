@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -46,9 +46,9 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/7/2017.
+ * Created by Shujaat on 4/6/2017.
  */
-public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
+public class GXPTestOrderActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
@@ -56,8 +56,17 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
     MyTextView testOrderDateTextView;
     MyEditText testOrderDateEditText;
 
-    MyTextView ultrasoundAbdomenTextView;
-    MySpinner ultrasoundAbdomensSpinner;
+    MyTextView specimenTypeTextView;
+    MySpinner specimenTypeSpinner;
+
+    MyTextView specimenQualityTextView;
+    MySpinner specimenQualitySpinner;
+
+    MyTextView specimenLocationTextView;
+    MySpinner specimenLocationSpinner;
+
+    MyTextView otherTextView;
+    MyEditText other;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -68,16 +77,15 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
 
     String result = "";
     Calendar testOrderCalender;
-
+    boolean isOtherRequired = false;
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        UltraSoundTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        GXPTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "UltraSoundTestOrderActivity";
-
+        TAG = "GXPTestOrderActivity";
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
         formDateButton = new MyButton(context,
@@ -90,12 +98,28 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
                 R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
 
-        ultrasoundAbdomenTextView = new MyTextView(context,
-                R.style.text, R.string.ultrasound_abdomen);
-        ultrasoundAbdomensSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.ultra_abdomen_option),
-                R.string.ultrasound_abdomen, R.string.ultrasound_abdomen);
+        specimenTypeTextView = new MyTextView(context,
+                R.style.text, R.string.specimen_type);
+        specimenTypeSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.specimen_type_option),
+                R.string.specimen_type, R.string.option_hint);
 
+        specimenQualityTextView = new MyTextView(context,
+                R.style.text, R.string.specimen_quality);
+        specimenQualitySpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.specimen_quality_option),
+                R.string.specimen_quality, R.string.option_hint);
+
+        specimenLocationTextView = new MyTextView(context,
+                R.style.text, R.string.specimen_location);
+        specimenLocationSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.specimen_location_options),
+                R.string.specimen_location, R.string.option_hint);
+        otherTextView = new MyTextView(context,
+                R.style.text, R.string.other_location);
+        other = new MyEditText(context, R.string.other_location,
+                R.string.other__location_hint, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 25, false);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -108,7 +132,6 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
-
         testIdTextView = new MyTextView(context, R.style.text,
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
@@ -118,11 +141,12 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
-                        testOrderDateEditText, ultrasoundAbdomenTextView, ultrasoundAbdomensSpinner, testIdTextView,
-                        testId
-                }
-
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
+                        testOrderDateTextView, testOrderDateEditText, specimenTypeTextView,
+                        specimenTypeSpinner, specimenQualityTextView, specimenQualitySpinner
+                },
+                {specimenLocationTextView, specimenLocationSpinner, otherTextView, other,
+                        testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -152,7 +176,8 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testId, testOrderDateEditText, testOrderDateEditText, ultrasoundAbdomensSpinner};
+        views = new View[]{other, patientId, testOrderDateEditText, specimenLocationSpinner,
+                specimenQualitySpinner, specimenTypeSpinner, testId, testOrderDateEditText};
 
 
         for (View v : views) {
@@ -200,6 +225,12 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
         testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testOrderCalender = Calendar.getInstance();
+        specimenQualityTextView.setEnabled(false);
+        specimenQualitySpinner.setEnabled(false);
+        specimenLocationTextView.setEnabled(false);
+        specimenLocationSpinner.setEnabled(false);
+        otherTextView.setEnabled(false);
+        other.setEnabled(false);
         updateDisplay();
     }
 
@@ -213,23 +244,41 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
+
+        //app.get().equal tou...;;
+        if (isOtherRequired) {
+            if (App.get(other).equals("")) {
+                valid = false;
+                message.append(other.getTag().toString() + ":\n" +
+                        getResources().getString(R.string.empty_data));
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isWord(App.get(other))) {
+                valid = false;
+                message.append(other.getTag().toString() + ". "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            }
+        }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -266,6 +315,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
                         R.string.invalid_future_date) + "\n");
             }
 
+
         } catch (NumberFormatException e) {
         }
 
@@ -285,16 +335,31 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
             values.put("testId", App.get(testId));
-            values.put("conceptName", "Ultrasound Barcode");
-
+            values.put("conceptName", "GXP Barcode");
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Ultrasound Barcode",
+            observations.add(new String[]{"GXP Barcode",
                     App.get(testId)});
+            observations.add(new String[]{"Specimen Type",
+                    App.get(specimenTypeSpinner)});
+            if (specimenTypeSpinner.getSelectedItem().toString().equals(
+                    getResources().getString(R.string.sputum))) {
+                observations.add(new String[]{"Specimen Quality",
+                        App.get(specimenQualitySpinner)});
+            } else if (specimenTypeSpinner.getSelectedItem().toString().equals(
+                    getResources().getString(R.string.extra_pulmonary))) {
+                observations.add(new String[]{"Specimen Location",
+                        App.get(specimenLocationSpinner)});
+
+                if (specimenLocationSpinner.getSelectedItem().toString().equals(
+                        getResources().getString(R.string.other))) {
+
+                    observations.add(new String[]{"Other Location",
+                            App.get(other)});
+
+                }
+            }
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateEditText)});
-            observations.add(new String[]{"Ultrasound Abdomen",
-                    App.get(ultrasoundAbdomensSpinner)});
-
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -312,7 +377,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.ULTRASOUND_ORDER, values,
+                            FormType.GXP_ORDER, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -328,13 +393,13 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(UltraSoundTestOrderActivity.this,
+                        App.getAlertDialog(GXPTestOrderActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(UltraSoundTestOrderActivity.this,
+                        App.getAlertDialog(GXPTestOrderActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -384,6 +449,44 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+        if (adapterView == specimenTypeSpinner) {
+
+            String specimenType = specimenTypeSpinner.getSelectedItem().toString();
+
+            if (specimenType.equals(getResources().getString(R.string.sputum))) {
+
+                specimenQualityTextView.setEnabled(true);
+                specimenQualitySpinner.setEnabled(true);
+                specimenLocationTextView.setEnabled(false);
+                specimenLocationSpinner.setEnabled(false);
+                otherTextView.setEnabled(false);
+                other.setEnabled(false);
+                isOtherRequired = false;
+            }
+            if (specimenType.equals(getResources().getString(R.string.extra_pulmonary))) {
+
+                specimenLocationTextView.setEnabled(true);
+                specimenLocationSpinner.setEnabled(true);
+                specimenQualityTextView.setEnabled(false);
+                specimenQualitySpinner.setEnabled(false);
+            }
+        }
+        if (adapterView == specimenLocationSpinner) {
+            if (specimenLocationSpinner.isEnabled()) {
+                if (specimenLocationSpinner.getSelectedItem().toString().equals(
+                        getResources().getString(R.string.other))) {
+
+                    otherTextView.setEnabled(true);
+                    other.setEnabled(true);
+                    isOtherRequired = true;
+                } else {
+                    otherTextView.setEnabled(false);
+                    other.setEnabled(false);
+                    isOtherRequired = false;
+                }
+            }
+        }
         updateDisplay();
     }
 

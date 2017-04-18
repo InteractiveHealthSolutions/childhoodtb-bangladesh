@@ -37,7 +37,7 @@ Contributors: Tahira Niazi -->
     <string name="total_household_members_hint">Enter total number of household members</string>
     <string name="total_household_members_with_symptoms">Total Number of Household Members with cough, fever, weigh loss or night sweats</string>
     <string name="total_household_members_with_symptoms_hint">Enter total number</string>
-    <string name="total_members_count"></string>
+    <string name="total_members_count" />
     <string name="names_adult_symptomatic_members">Names of Adult Symptomatic household members</string>
     <string name="names_adult_symptomatic_members_hint">Enter names separately</string>
     <string name="names_paediatric_symptomatic_members">Names of Paediatric Symptomatic household members</string>

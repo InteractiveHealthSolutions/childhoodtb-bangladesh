@@ -1,9 +1,11 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
@@ -14,6 +16,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,18 +49,21 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/5/2017.
+ * Created by Shujaat on 4/7/2017.
  */
-public class ESRTestOrderActivity extends AbstractFragmentActivity {
+public class TSTTestResultActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
 
-    MyTextView testOrderDateTextView;
-    MyEditText testOrderDateEditText;
+    MyTextView testResultDateTextView;
+    MyEditText testResultDateEditText;
 
-    MyTextView esrTextView;
-    MySpinner esrSpinner;
+    MyTextView tstResultTextView;
+    MySpinner tstResultSpinner;
+
+    MyTextView interpretationOfTSTTextView;
+    MySpinner interpretationOfTSTSpinner;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -67,16 +73,19 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
     MyEditText testId;
 
     String result = "";
-    Calendar testOrderCalender;
-
+    Calendar testResultCalender;
+    MyButton getWeightPercentile;
+    String weightPercentile = "";
+    MyTextView weightPercentileTextView;
+    MyEditText weightPercentileEditText;
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        ESRTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        TSTTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "ESRTestOrderActivity";
+        TAG = "TSTTestResultActivity";
 
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
@@ -84,19 +93,30 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-        testOrderDateTextView = new MyTextView(context,
-                R.style.text, R.string.test_order_date);
-        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
-                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
+
+        testResultDateTextView = new MyTextView(context,
+                R.style.text, R.string.test_result_date);
+        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
+                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
-        esrTextView = new MyTextView(context,
-                R.style.text, R.string.esr);
-        esrSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.esr_options),
-                R.string.histopathology, R.string.option_hint);
+
+        tstResultTextView = new MyTextView(context,
+                R.style.text, R.string.tst_result);
+        tstResultSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.tst_result_option),
+                R.string.tst_result, R.string.option_hint);
+        interpretationOfTSTTextView = new MyTextView(context,
+                R.style.text, R.string.interpretation_tst);
+        interpretationOfTSTSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.interpretation_tst_option),
+                R.string.interpretation_tst, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
+
+        getWeightPercentile = new MyButton(context, R.style.button,
+                R.drawable.custom_button_beige, R.string.get_weight_percentile,
+                R.string.get_weight_percentile);
 
         patientId = new MyEditText(context, R.string.patient_id,
                 R.string.patient_id_hint, InputType.TYPE_CLASS_TEXT,
@@ -105,19 +125,22 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
-
         testIdTextView = new MyTextView(context, R.style.text,
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
                 R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
                 R.style.edit, 5, false);
-
+        weightPercentileTextView = new MyTextView(context, R.style.text,
+                R.string.weight_percentile);
+        weightPercentileEditText = new MyEditText(context, R.string.weight_percentile,
+                R.string.weight_percentile, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 25, false);
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testOrderDateTextView, testOrderDateEditText, esrTextView,
-                        esrSpinner, testIdTextView, testId}
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, getWeightPercentile,
+                        testResultDateTextView, testResultDateEditText, tstResultTextView, tstResultSpinner, weightPercentileTextView,
+                        weightPercentileEditText, interpretationOfTSTTextView, interpretationOfTSTSpinner, testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -147,8 +170,8 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testId,
-                testOrderDateEditText, esrSpinner};
+        views = new View[]{patientId, testResultDateEditText, interpretationOfTSTSpinner,
+                tstResultSpinner, testId};
 
 
         for (View v : views) {
@@ -185,7 +208,8 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testOrderDateEditText.setOnClickListener(this);
+        getWeightPercentile.setOnClickListener(this);
+        testResultDateEditText.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -193,39 +217,42 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testOrderDateEditText.setFocusable(false);
+        testResultDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
-        testOrderCalender = Calendar.getInstance();
+        testResultCalender = Calendar.getInstance();
+        weightPercentileEditText.setFocusable(false);
         updateDisplay();
     }
 
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
+        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
     }
 
     @Override
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -254,9 +281,9 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
-            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
+            if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testOrderDateEditText.getTag()
+                message.append(testResultDateEditText.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -281,15 +308,18 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
             values.put("testId", App.get(testId));
-            values.put("conceptName", "ESR Barcode");
+            values.put("conceptName", "TST Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"ESR Barcode",
+            observations.add(new String[]{"TST Barcode",
                     App.get(testId)});
-            observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
-            observations.add(new String[]{"ESR",
-                    App.get(esrSpinner)});
+            observations.add(new String[]{"Test Result Date",
+                    App.get(testResultDateEditText)});
+            observations.add(new String[]{"TST Result",
+                    App.get(tstResultSpinner)});
+            Log.i("spinnerVal", "" + App.get(interpretationOfTSTSpinner));
+            observations.add(new String[]{"Interpretation of TST",
+                    App.get(interpretationOfTSTSpinner)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -307,7 +337,7 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.ESR_ORDER, values,
+                            FormType.TST_RESULT, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -317,19 +347,18 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
                 protected void onProgressUpdate(String... values) {
                 }
 
-
                 @Override
                 protected void onPostExecute(String result) {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(ESRTestOrderActivity.this,
+                        App.getAlertDialog(TSTTestResultActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(ESRTestOrderActivity.this,
+                        App.getAlertDialog(TSTTestResultActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -351,12 +380,12 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testOrderDateEditText) {
+        } else if (view == testResultDateEditText) {
 
-            new DatePickerDialog(this, date, testOrderCalender
-                    .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),
-                    testOrderCalender.get(Calendar.DAY_OF_MONTH)).show();
-
+            new DatePickerDialog(this,
+                    resultDate, testResultCalender
+                    .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
+                    testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
         } else if (view == firstButton) {
 
             gotoFirstPage();
@@ -374,12 +403,92 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
-        }
+        } else if (view == getWeightPercentile) {
+            final String indexPatientId = App.get(patientId);
+
+            if (!indexPatientId.equals("")) {
+                AsyncTask<String, String, Object> getTask = new AsyncTask<String, String, Object>() {
+                    @Override
+                    protected Object doInBackground(String... params) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                loading.setIndeterminate(true);
+                                loading.setCancelable(false);
+                                loading.setMessage(getResources().getString(
+                                        R.string.loading_message));
+                                loading.show();
+                            }
+                        });
+
+                        String[] response = serverService.getPatientObs(indexPatientId, "Weight Percentile");
+                        return response;
+                    }
+
+                    @Override
+                    protected void onProgressUpdate(String... values) {
+                    }
+
+                    @Override
+                    protected void onPostExecute(Object result) {
+                        super.onPostExecute(result);
+                        loading.dismiss();
+                        String[] res = (String[]) result;
+
+                        if (res != null && res.length > 0) {
+                            if (res[0].equals("InternetConnectionFail")) {
+                                AlertDialog alertDialog = App.getAlertDialog(TSTTestResultActivity.this,
+                                        AlertType.ERROR,
+                                        getResources()
+                                                .getString(R.string.data_connection_error));
+                                alertDialog.setTitle(getResources().getString(
+                                        R.string.error_title));
+                                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                                        new AlertDialog.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog,
+                                                                int which) {
+                                                initView(views);
+                                            }
+                                        });
+                                alertDialog.show();
+                            } else {
+                                weightPercentile = res[0].toString();
+                                weightPercentileEditText.setText(weightPercentile);
+                            }
+                        }
+                    }
+                };
+                getTask.execute("");
+            }//end if condition
+        }//else if condition
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+        Log.i("weightPer", "" + weightPercentile);
+
+        if (adapterView == tstResultSpinner) {
+            String selectedResult = tstResultSpinner.getSelectedItem().toString();
+            if ((selectedResult.equals(getResources().getString(R.string.greater_then_ten_mm)) ||
+                    (selectedResult.equals(getResources().getString(R.string.ten_mm))))) {
+
+                interpretationOfTSTSpinner.setSelection(0);
+                interpretationOfTSTSpinner.setEnabled(false);
+
+            } else if (selectedResult.equals(getResources().getString(R.string.five_to_nine_mm)) &&
+                    weightPercentile.equals("5th Percentile or Less")) {
+                //get the percentile values on selection of five to nine mm...
+                interpretationOfTSTSpinner.setSelection(0);
+                interpretationOfTSTSpinner.setEnabled(false);
+
+            } else {
+                interpretationOfTSTSpinner.setSelection(1);
+                interpretationOfTSTSpinner.setEnabled(false);
+            }
+
+        }
         updateDisplay();
     }
 
@@ -388,19 +497,20 @@ public class ESRTestOrderActivity extends AbstractFragmentActivity {
         return false;
     }
 
-    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+    DatePickerDialog.OnDateSetListener resultDate = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
 
-            testOrderCalender.set(Calendar.YEAR, year);
-            testOrderCalender.set(Calendar.MONTH, monthOfYear);
-            testOrderCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            testResultCalender.set(Calendar.YEAR, year);
+            testResultCalender.set(Calendar.MONTH, monthOfYear);
+            testResultCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             updateDisplay();
         }
 
     };
+
 
     ///Barcode Scanner Result ....
     @Override

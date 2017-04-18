@@ -28,19 +28,19 @@ public interface IActivity {
 	 * 
 	 * @param view
 	 */
-	public void initView(View[] views);
+	 void initView(View[] views);
 
 	/**
 	 * Updates the values in the Views to latest
 	 */
-	public void updateDisplay();
+	 void updateDisplay();
 
 	/**
 	 * Validates the data in Views according to the rules defined
 	 * 
 	 * @return true/false
 	 */
-	public boolean validate();
+	 boolean validate();
 
 	/**
 	 * Save form
@@ -48,5 +48,5 @@ public interface IActivity {
 	 * @param view
 	 * @return true/false
 	 */
-	public boolean submit();
+	 boolean submit();
 }

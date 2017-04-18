@@ -46,7 +46,7 @@
 
     <string name="test_order"><b>A -- Test Order</b></string>
     <string name="test_result"><b>B -- Test Result</b></string>
-    <string name="other_location">From where?</string>
+    <string name="other_location">Other specify?</string>
 
     <!--CXR TEST ORDER RESULT ACTIVITY STRINGS-->
 
@@ -89,12 +89,12 @@
     <!--HISTOPATHOLOGY STRING ORDER/RESULT-->
     <string name="histopathology_site">Histopathology site</string>
     <string-array name="histopathology_site_options">
-        <item>@string/dmc</item>
-        <item>@string/smc</item>
-        <item>@string/sh</item>
+        <item>@string/dhakha_medical_college</item>
+        <item>@string/salimulla_medical_college</item>
+        <item>@string/shishu_hospital</item>
         <item>@string/ich_mirpur</item>
         <item>@string/ic_matuail</item>
-        <item>@string/mag_sylhet</item>
+        <item>@string/mag_osmani_sylhet</item>
     </string-array>
 
     <!--GXP TEST ORDER/RESULT STRINGS-->
@@ -131,8 +131,8 @@
 
     <string name="tst_result">Tuberculin Skin Test Result</string>
     <string-array name="tst_result_option">
-        <item>@string/five_to_nine_mm</item>
         <item>@string/ten_mm</item>
+        <item>@string/five_to_nine_mm</item>
         <item>@string/greater_then_ten_mm</item>
     </string-array>
     <string name="interpretation_tst">Interpretation of TST</string>

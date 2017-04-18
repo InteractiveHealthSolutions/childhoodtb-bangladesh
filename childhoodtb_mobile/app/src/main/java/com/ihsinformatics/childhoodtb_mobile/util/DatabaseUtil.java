@@ -225,6 +225,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 				} while (cursor.moveToNext());
 			}
 		}
+		cursor.close();
 		readableDatabase.close();
 		return data.toArray(new String[] {});
 	}
@@ -248,6 +249,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 					data.add(cursor.getString(i));
 			}
 		}
+		cursor.close();
 		readableDatabase.close();
 		return data.toArray(new String[] {});
 	}
@@ -289,6 +291,7 @@ public class DatabaseUtil extends SQLiteOpenHelper {
 				} while (cursor.moveToNext());
 			}
 		}
+		cursor.close();
 		readableDatabase.close();
 		return data.toArray(new String[][] {});
 	}

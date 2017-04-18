@@ -5,11 +5,11 @@
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+    <style name="AppBaseTheme" parent="android:Theme.Light" />
 
-    <style name="DayTheme" parent="@android:style/Theme.Light"></style>
+    <style name="DayTheme" parent="@android:style/Theme.Light" />
 
-    <style name="NightTheme" parent="@android:style/Theme.Black"></style>
+    <style name="NightTheme" parent="@android:style/Theme.Black" />
 
     <style name="CyanTheme" parent="@style/NightTheme">
         <item name="android:textColor">@color/WhiteSmoke</item>

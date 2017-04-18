@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -48,7 +48,7 @@ import java.util.Locale;
 /**
  * Created by Shujaat on 4/7/2017.
  */
-public class CTScanTestResultActivity extends AbstractFragmentActivity {
+public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
@@ -56,8 +56,8 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
     MyTextView testResultDateTextView;
     MyEditText testResultDateEditText;
 
-    MyTextView ctScanResultTextView;
-    MySpinner ctScanResultSpinner;
+    MyTextView ultrasoundResultTextView;
+    MySpinner ultrasoundResultSpinner;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -72,26 +72,29 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        CTScanTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        UltraSoundTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "CTScanTestResultActivity";
+        TAG = "UltraSoundTestResultActivity";
+
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
         formDateButton = new MyButton(context,
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
+
         testResultDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_result_date);
         testResultDateEditText = new MyEditText(context, R.string.test_result_date,
                 R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
-        ctScanResultTextView = new MyTextView(context,
-                R.style.text, R.string.ct_scan_result);
-        ctScanResultSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.ct_scan_result_option),
-                R.string.ct_scan_result, R.string.option_hint);
+
+        ultrasoundResultTextView = new MyTextView(context,
+                R.style.text, R.string.ultrasound_result);
+        ultrasoundResultSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.ultrasound_result_option),
+                R.string.ultrasound_result, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -103,22 +106,21 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
+
         testIdTextView = new MyTextView(context, R.style.text,
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
                 R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
                 R.style.edit, 5, false);
 
-
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testResultDateTextView, testResultDateEditText,
-                        ctScanResultTextView, ctScanResultSpinner, testIdTextView, testId
-                }
+                        testResultDateTextView, testResultDateEditText, ultrasoundResultTextView,
+                        ultrasoundResultSpinner, testIdTextView, testId}
         };
 
-        // Create layouts and store in ArrayList
+        // Create layouts and store in ArrayList.
         groups = new ArrayList<ViewGroup>();
         for (int i = 0; i < viewGroups.length; i++) {
             LinearLayout layout = new LinearLayout(context);
@@ -145,7 +147,7 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText, ctScanResultSpinner, testId};
+        views = new View[]{patientId, testResultDateEditText, testId, ultrasoundResultSpinner};
 
 
         for (View v : views) {
@@ -206,23 +208,25 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -278,15 +282,15 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
             values.put("testId", App.get(testId));
-            values.put("conceptName", "CT Scan Barcode");
+            values.put("conceptName", "Ultrasound Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"CT Scan Barcode",
+            observations.add(new String[]{"Ultrasound Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateEditText)});
-            observations.add(new String[]{"CT Scan Result",
-                    App.get(ctScanResultSpinner)});
+            observations.add(new String[]{"Ultrasound Result",
+                    App.get(ultrasoundResultSpinner)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -304,7 +308,7 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.CT_SCAN_RESULT, values,
+                            FormType.ULTRASOUND_RESULT, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -314,19 +318,18 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
                 protected void onProgressUpdate(String... values) {
                 }
 
-
                 @Override
                 protected void onPostExecute(String result) {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(CTScanTestResultActivity.this,
+                        App.getAlertDialog(UltraSoundTestResultActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(CTScanTestResultActivity.this,
+                        App.getAlertDialog(UltraSoundTestResultActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -350,7 +353,8 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
 
         } else if (view == testResultDateEditText) {
 
-            new DatePickerDialog(this, resultDate, testResultCalender
+            new DatePickerDialog(this,
+                    resultDate, testResultCalender
                     .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
                     testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
         } else if (view == firstButton) {
@@ -375,7 +379,6 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        updateDisplay();
     }
 
     @Override
@@ -396,6 +399,7 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
         }
 
     };
+
 
     ///Barcode Scanner Result ....
     @Override
@@ -484,4 +488,3 @@ public class CTScanTestResultActivity extends AbstractFragmentActivity {
         }
     }
 }
-

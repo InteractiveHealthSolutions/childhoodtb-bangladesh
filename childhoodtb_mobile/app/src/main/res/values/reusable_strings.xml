@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>per
-    <string name="dmc">Dhaka Medical College</string>
-    <string name="smc">Salimulla Medical College</string>
-    <string name="sh">Shishu Hospital</string>
+<resources>
+    <string name="preferences">Preferences</string>
+    <string name="dhakha_medical_college">Dhaka Medical College</string>
+    <string name="salimulla_medical_college">Salimulla Medical College</string>
+    <string name="shishu_hospital">Shishu Hospital</string>
     <string name="ich_mirpur">Institute of Child Health and Shishu Shastho Foundation Hospital Mirpur</string>
     <string name="ic_matuail">Institute of Child and Mother Health Matuail</string>
-    <string name="mag_sylhet">MAG Osmani Medical College Sylhet</string>
+    <string name="mag_osmani_sylhet">MAG Osmani Medical College Sylhet</string>
 
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -15,7 +16,7 @@
     <string name="two_to_three_Weeks">2 to 3 Weeks</string>
     <string name="more_then_three_weeks">More than 3 Weeks</string>
     <string name="do_not_know">Do not know</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="day">Day(s)</string>
     <string name="week">Week(s)</string>
     <string name="month">Month(s)</string>
@@ -26,17 +27,17 @@
     <string name="eleven_less_then_or_equal_to_25th_percentile">11-&lt;=25th Percentile</string>
     <string name="twentySix_less_then_or_equal_to_50th_percentile">26-&lt;=50th Percentile</string>
     <string name="greater_then_50th_percentile">&gt;50th Percentile</string>
-    <string name="weight">Weight (Kg)</string>
+    <string name="weight">Weight (Kg)?</string>
     <string name="weight_hint">Enter Weight (Kg)</string>
-    <string name="weight_percentile">Weight Percentile</string>
-    <string name="age_in_year">Age in years</string>
-    <string name="chest_examination">Chest Examination</string>
+    <string name="weight_percentile">Weight Percentile ?</string>
+    <string name="age_in_year">Age in years </string>
+    <string name="chest_examination">Chest Examination?</string>
     <string name="suggestive_tb">Suggestive of TB</string>
     <string name="strongly_suggestive_tb">Strongly Suggestive of TB </string>
     <string name="not_suggestive_tb">Not Suggestive of TB</string>
-    <string name="lymph_node_exam">Lymph Node Examination</string>
-    <string name="abdominal_exam">Abdominal Examination</string>
-    <string name="other_exam">Other examination</string>
+    <string name="lymph_node_exam">Lymph Node Examination ?</string>
+    <string name="abdominal_exam">Abdominal Examination ?</string>
+    <string name="other_exam">Other examination ?</string>
     <string name="child_bcg_scar">Does the child have BCG scar?</string>
     <string name="tb_in_family">Currently does an adult family member have TB?</string>
     <string name="adult_family_member_tb">Currently does an adult family member have TB?</string>
@@ -69,7 +70,7 @@
     <string name="symptoms">Symptoms</string>
     <string name="contact_cough">Cough of cough of &lt; 2  weeks</string>
     <string name="night_sweats">Night Sweats?</string>
-    <string name="_fever">Fever </string>
+    <string name="_fever">Fever ?</string>
     <string name="addContact"><b> + </b></string>
     <string name="number_of_contact_person">Please Select the Number of Contact person</string>
     <string name="refer">Refer</string>
@@ -97,7 +98,7 @@
     <string name="loss_to_followup">Loss to Follow-up</string>
     <string name="other_facility_name">Other facility name</string>
     <string name="other_hint">Enter other reason</string>
-    <string name="other__location_hint">Enter other location</string>
+    <string name="other__location_hint">Enter other specify location</string>
     <string name="other_facility_hint">Enter other facility name</string>
     <string name="reason_loss_followup_hint">Enter reason for loss to Follow-up</string>
 

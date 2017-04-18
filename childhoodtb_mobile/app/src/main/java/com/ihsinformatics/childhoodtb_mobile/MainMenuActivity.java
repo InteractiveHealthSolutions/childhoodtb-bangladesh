@@ -43,29 +43,29 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CTScanTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.CXRTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.ESRTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.EndFollowUpActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.GXPTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.HistopathologTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricContactTracingAtHomeActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaediatricScreeningActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PaedsPresumptiveConfirmationActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.PediatricContactInvestigationAtFacilityActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TSTTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TestIndicationActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.AFBTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.TreatmentInitiationActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities.UltraSoundTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AFBTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CTScanTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CTScanTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CXRTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CXRTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ESRTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ESRTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.EndFollowUpActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GXPTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GXPTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.HistopathologTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.HistopathologTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaediatricContactTracingAtHomeActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaediatricScreeningActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaedsPresumptiveConfirmationActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PediatricContactInvestigationAtFacilityActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TSTTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TSTTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TestIndicationActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AFBTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TreatmentInitiationActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.UltraSoundTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.UltraSoundTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.model.OpenMrsObject;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.util.DatabaseUtil;
@@ -227,7 +227,7 @@ public class MainMenuActivity extends Activity implements IActivity,
             if (v instanceof Spinner) {
                 ((Spinner) v).setOnItemSelectedListener(this);
             } else if (v instanceof Button) {
-                ((Button) v).setOnClickListener(this);
+                (v).setOnClickListener(this);
             }
         }
         initView(views);
@@ -243,7 +243,7 @@ public class MainMenuActivity extends Activity implements IActivity,
             if (count > 0) {
                 Toast.makeText(this, R.string.offline_forms, App.getDelay())
                         .show();
-                ;
+
             }
         }
     }
@@ -373,7 +373,6 @@ public class MainMenuActivity extends Activity implements IActivity,
                                         loading.setMessage(values[0]);
                                     }
 
-                                    ;
 
                                     @Override
                                     protected void onPostExecute(String result) {
@@ -512,8 +511,6 @@ public class MainMenuActivity extends Activity implements IActivity,
                                             String... values) {
                                         loading.setMessage(values[0]);
                                     }
-
-                                    ;
 
                                     @Override
                                     protected void onPostExecute(String result) {

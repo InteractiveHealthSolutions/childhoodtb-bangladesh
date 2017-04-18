@@ -12,7 +12,8 @@ Interactive Health Solutions, hereby disclaims all copyright interest in this pr
 
 Contributors: Tahira Niazi -->
 
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <color name="IRDBackground">#490A3D</color>
     <color name="IRDText">#9CA336</color>

@@ -14,7 +14,7 @@ Contributors: Tahira Niazi -->
 <resources>
 
     <string name="loading_message">Saving trees..</string>
-  <!-- <string name="app_name">TBReach-4 Pakistan(1.7.1)</string>-->
+    <!-- <string name="app_name">TBReach-4 Pakistan(1.7.1)</string>-->
     <string name="app_name">ChildhoodTb</string>
     <string name="menu_settings">Settings</string>
     <string name="server">Server Address</string>
@@ -44,12 +44,13 @@ Contributors: Tahira Niazi -->
     <string name="text_copied">Patient ID copied..</string>
     <string name="goto_first">&lt;&lt;</string>
     <string name="goto_last">>></string>
-    <string name="empty_string"></string>
+    <string name="empty_string" />
     <string name="visit_type">Type of Visit?</string>
-    <string name="screened_before">Were screened in the last 2 weeks</string>
+    <string name="screened_before">Were screened in the last 2 weeks?</string>
     <string name="validateID">Validate Index Case ID</string>
     <string name="screening_type">Screening Type</string>
     <string name="validate_patient_id">Validate Patient ID</string>
+    <string name="get_weight_percentile">Get Weight Percentile</string>
 
 
     <string name="first_name">First Name</string>
@@ -115,7 +116,6 @@ Contributors: Tahira Niazi -->
         <item>OPD Screening</item>
         <item>Field Screening</item>
     </string-array>
-
 
 
 </resources>

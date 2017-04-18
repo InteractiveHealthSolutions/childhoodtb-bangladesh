@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -46,21 +46,24 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/5/2017.
+ * Created by Shujaat on 4/6/2017.
  */
-public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
+public class CXRTestResultActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
 
-    MyTextView testOrderDateTextView;
-    MyEditText testOrderDateEditText;
+    MyTextView testResultDateTextView;
+    MyEditText testResultDateEditText;
 
-    MyTextView histopathologyTextView;
-    MySpinner histopathologySpinner;
+    MyTextView cxrResultTextView;
+    MySpinner cxrResultSpinner;
 
-    MyTextView histopathologysiteTextView;
-    MySpinner histopathologysiteSpinner;
+    MyTextView radiologicalFindingTextView;
+    MySpinner radiologicalFindingSpinner;
+
+    MyTextView otherTextView;
+    MyEditText other;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -70,16 +73,16 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     MyEditText testId;
 
     String result = "";
-    Calendar testOrderCalender;
-
+    Calendar testResultCalender;
+    boolean isOtherFieldIsRequired = false;
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        HistopathologTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        CXRTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "HistopathologTestOrderActivity";
+        TAG = "CXRTestResultActivity";
 
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
@@ -87,21 +90,30 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-        testOrderDateTextView = new MyTextView(context,
-                R.style.text, R.string.test_order_date);
-        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
-                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
+        testResultDateTextView = new MyTextView(context,
+                R.style.text, R.string.test_result_date);
+        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
+                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
-        histopathologyTextView = new MyTextView(context,
-                R.style.text, R.string.histopathology);
-        histopathologySpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.histopathology_options),
-                R.string.histopathology, R.string.option_hint);
-        histopathologysiteTextView = new MyTextView(context,
-                R.style.text, R.string.histopathology_site);
-        histopathologysiteSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.histopathology_site_options),
-                R.string.histopathology_site, R.string.option_hint);
+
+        cxrResultTextView = new MyTextView(context,
+                R.style.text, R.string.cxr_result);
+        cxrResultSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.cxr_result_option),
+                R.string.cxr_result, R.string.option_hint);
+
+        radiologicalFindingTextView = new MyTextView(context,
+                R.style.text, R.string.radiological_finding);
+
+        radiologicalFindingSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.radiological_finding_options),
+                R.string.radiological_finding, R.string.option_hint);
+
+        otherTextView = new MyTextView(context,
+                R.style.text, R.string.other_specify);
+        other = new MyEditText(context, R.string.other_specify,
+                R.string.other_specify_hint, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 25, false);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -113,20 +125,19 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         scanBarcode = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
-
         testIdTextView = new MyTextView(context, R.style.text,
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
                 R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 5, false);
+                R.style.edit, 10, false);
 
 
         //define the navigation Fragments
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testOrderDateTextView, testOrderDateEditText, histopathologyTextView,
-                        histopathologySpinner, histopathologysiteTextView, histopathologysiteSpinner,
-                        testIdTextView, testId}
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testResultDateTextView, testResultDateEditText,
+                        cxrResultTextView, cxrResultSpinner, radiologicalFindingTextView, radiologicalFindingSpinner,
+                        otherTextView, other, testIdTextView, testId
+                }
         };
 
         // Create layouts and store in ArrayList
@@ -156,7 +167,8 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testId, histopathologysiteSpinner, testOrderDateEditText, histopathologySpinner};
+        views = new View[]{other, patientId, testResultDateEditText, testId,
+                radiologicalFindingSpinner};
 
 
         for (View v : views) {
@@ -193,7 +205,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testOrderDateEditText.setOnClickListener(this);
+        testResultDateEditText.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -201,39 +213,58 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testOrderDateEditText.setFocusable(false);
+        testResultDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
-        testOrderCalender = Calendar.getInstance();
+        testResultCalender = Calendar.getInstance();
+        otherTextView.setEnabled(false);
+        other.setEnabled(false);
         updateDisplay();
     }
 
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
+        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
     }
 
     @Override
     public boolean validate() {
         boolean valid = true;
-        StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        StringBuilder message = new StringBuilder();
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data)+"\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
+
+        if (isOtherFieldIsRequired) {
+            if (App.get(other).equals("")) {
+                valid = false;
+                message.append(other.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data)+"\n");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (RegexUtil.isWord(App.get(other))) {
+                valid = false;
+                message.append(other.getTag().toString() + ". "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                other.setHintTextColor(getResources().getColor(R.color.Red));
+            }
+        }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data));
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -262,13 +293,14 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
-            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
+            if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testOrderDateEditText.getTag()
+                message.append(testResultDateEditText.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
+
         } catch (NumberFormatException e) {
         }
 
@@ -288,18 +320,22 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
             values.put("testId", App.get(testId));
-            values.put("conceptName", "Histopathology Barcode");
+            values.put("conceptName", "Chest X-Ray Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"Histopathology Barcode",
+            observations.add(new String[]{"Chest X-Ray Barcode",
                     App.get(testId)});
-            observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
-            observations.add(new String[]{"Histopathology",
-                    App.get(histopathologySpinner)});
-            observations.add(new String[]{"Histopathology Site",
-                    App.get(histopathologySpinner)});
-
+            observations.add(new String[]{"Test Result Date",
+                    App.get(testResultDateEditText)});
+            observations.add(new String[]{"CXR Result",
+                    App.get(cxrResultSpinner)});
+            observations.add(new String[]{"Radiological finding",
+                    App.get(radiologicalFindingSpinner)});
+            if (radiologicalFindingSpinner.getSelectedItem().toString()
+                    .equals(getResources().getString(R.string.other))) {
+                observations.add(new String[]{"Other Examination",
+                        App.get(other)});
+            }
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -317,7 +353,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.HISTOPATHOLOGY_ORDER, values,
+                            FormType.CXR_RESULT, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -333,13 +369,13 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(HistopathologTestOrderActivity.this,
+                        App.getAlertDialog(CXRTestResultActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(HistopathologTestOrderActivity.this,
+                        App.getAlertDialog(CXRTestResultActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -361,12 +397,12 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testOrderDateEditText) {
+        } else if (view == testResultDateEditText) {
 
-            new DatePickerDialog(this, date, testOrderCalender
-                    .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),
-                    testOrderCalender.get(Calendar.DAY_OF_MONTH)).show();
-
+            new DatePickerDialog(this,
+                    resultDate, testResultCalender
+                    .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
+                    testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
         } else if (view == firstButton) {
 
             gotoFirstPage();
@@ -390,6 +426,19 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+        if (adapterView == radiologicalFindingSpinner) {
+            String specimenType = radiologicalFindingSpinner.getSelectedItem().toString();
+            if (specimenType.equals(getResources().getString(R.string.other))) {
+                otherTextView.setEnabled(true);
+                other.setEnabled(true);
+                isOtherFieldIsRequired = true;
+
+            } else {
+                otherTextView.setEnabled(false);
+                other.setEnabled(false);
+                isOtherFieldIsRequired = false;
+            }
+        }
         updateDisplay();
     }
 
@@ -398,19 +447,20 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         return false;
     }
 
-    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+    DatePickerDialog.OnDateSetListener resultDate = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
 
-            testOrderCalender.set(Calendar.YEAR, year);
-            testOrderCalender.set(Calendar.MONTH, monthOfYear);
-            testOrderCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            testResultCalender.set(Calendar.YEAR, year);
+            testResultCalender.set(Calendar.MONTH, monthOfYear);
+            testResultCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             updateDisplay();
         }
 
     };
+
 
     ///Barcode Scanner Result ....
     @Override

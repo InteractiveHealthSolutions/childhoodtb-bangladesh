@@ -16,7 +16,7 @@
     <string name="cough_selection_hint">Select an option</string>
 
     <!--cough Durations-->
-    <string name="cough_weeks">Duration of cough in Weeks</string>
+    <string name="cough_weeks">Duration of cough in Weeks?</string>
 
     <string-array name="cough_durations">
         <item>@string/less_then_two_Weeks</item>
@@ -52,7 +52,7 @@
         <item>@string/refused</item>
     </string-array>
   <!--Appetite strings-->
-    <string name="appetite_decreased">Appetite</string>
+    <string name="appetite_decreased">Appetite?</string>
     <string-array name="appetite_decreased_options">
         <item>@string/poor</item>
         <item>@string/ok</item>

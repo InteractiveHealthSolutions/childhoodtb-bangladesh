@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -14,7 +14,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +31,6 @@ import android.widget.Spinner;
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.Barcode;
-import com.ihsinformatics.childhoodtb_mobile.MainActivity;
 import com.ihsinformatics.childhoodtb_mobile.R;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyButton;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyEditText;
@@ -45,7 +43,6 @@ import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -81,7 +78,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     MySpinner patientCategorySpinner;
 
     MyTextView nameOfSupporterTextView;
-    MyEditText nameOfSupporterSpinner;
+    MyEditText nameOfTreatmentSupporterEditText;
 
     MyTextView phoneNumberOfSupporterTextView;
     MyEditText phoneNumberOfSupporterEditText;
@@ -168,7 +165,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
         nameOfSupporterTextView = new MyTextView(context,
                 R.style.text, R.string.name_treatment_supporter);
-        nameOfSupporterSpinner = new MyEditText(context, R.string.name_treatment_supporter,
+        nameOfTreatmentSupporterEditText = new MyEditText(context, R.string.name_treatment_supporter,
                 R.string.name_treatment_supporter_hint, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 25, false);
 
@@ -216,7 +213,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                 },
                 {referredWithoutRegistrationTextView, referredWithoutRegistrationSpinner, tbRegisterNumberTextView,
                         tbRegisterNumberEditText, patientTypeTextView, patientTypeSpinner, patientCategoryTextView, patientCategorySpinner, treatmentInitiationDateTextView, treatmentInitiationDate,
-                        nameOfSupporterTextView, nameOfSupporterSpinner},
+                        nameOfSupporterTextView, nameOfTreatmentSupporterEditText},
                 {phoneNumberOfSupporterTextView, phoneNumberOfSupporterEditText, patientAndSupporterRelationTextView,
                         patientAndSupporterRelationSpinner, otherTextView, other}
         };
@@ -250,7 +247,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
         views = new View[]{other, patientId, registrationDateEditText, patientCategorySpinner,
                 patientAndSupporterRelationSpinner, phoneNumberOfSupporterEditText,
-                nameOfSupporterSpinner, otherSpecifyNIDEditText, other, nidEditText, nidBelongsSpinner, registrationDateEditText, tbRegisterNumberEditText, treatmentInitiationDate
+                nameOfTreatmentSupporterEditText, otherSpecifyNIDEditText, other, nidEditText, nidBelongsSpinner, registrationDateEditText, tbRegisterNumberEditText, treatmentInitiationDate
         };
 
 
@@ -320,22 +317,19 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {nidEditText, nameOfSupporterSpinner, phoneNumberOfSupporterEditText,
+        View[] mandatory = {nidEditText, nameOfTreatmentSupporterEditText, phoneNumberOfSupporterEditText,
                 tbRegisterNumberEditText};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
-        if (App.get(patientId).equals("")) {
-            valid = false;
-            message.append(patientId.getTag().toString() + ". ");
-            patientId.setHintTextColor(getResources().getColor(R.color.Red));
-        }
+
         if (!RegexUtil.isNumeric(App.get(phoneNumberOfSupporterEditText), false)) {
             valid = false;
             message.append(phoneNumberOfSupporterEditText.getTag().toString() + ". \n");
@@ -352,13 +346,19 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
             message.append(tbRegisterNumberEditText.getTag().toString() + ".\n ");
             tbRegisterNumberEditText.setHintTextColor(getResources().getColor(R.color.Red));
         }
-        if (!RegexUtil.isWord(App.get(nameOfSupporterSpinner))) {
+        if (App.get(nameOfTreatmentSupporterEditText).length() < 3) {
+            valid = false;
+            message.append(nameOfTreatmentSupporterEditText.getTag().toString() + ":" +
+                    getResources().getString(R.string.invalid_string_length));
+            nameOfTreatmentSupporterEditText.setHintTextColor(
+                    getResources().getColor(R.color.Red));
+        } else if (!RegexUtil.isWord(App.get(nameOfTreatmentSupporterEditText))) {
 
             valid = false;
-            message.append(nameOfSupporterSpinner.getTag().toString() + ". "
+            message.append(nameOfTreatmentSupporterEditText.getTag().toString() + ". "
                     + getResources().getString(R.string.invalid_data)
                     + "\n");
-            nameOfSupporterSpinner.setHintTextColor(getResources().getColor(R.color.Red));
+            nameOfTreatmentSupporterEditText.setHintTextColor(getResources().getColor(R.color.Red));
         }
         if (isOtherRequired) {
             if (App.get(other).equals("")) {
@@ -388,9 +388,14 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                 otherSpecifyNIDEditText.setHintTextColor(getResources().getColor(R.color.Red));
             }
         }
-
+        if (App.get(patientId).equals("")) {
+            valid = false;
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
+            patientId.setHintTextColor(getResources().getColor(R.color.Red));
+        }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -453,7 +458,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-            values.put("treatmentSupporterName", App.get(nameOfSupporterSpinner));
+            values.put("treatmentSupporterName", App.get(nameOfTreatmentSupporterEditText));
             values.put("treatmentSupporterPhone", App.get(phoneNumberOfSupporterEditText));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
@@ -461,6 +466,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                     App.get(nidEditText)});
             observations.add(new String[]{"NID Holder",
                     App.get(nidBelongsSpinner)});
+
             if (nidBelongsSpinner.getSelectedItem().toString().equals(
                     getResources().getString(R.string.other))) {
                 observations.add(new String[]{"Other",
@@ -495,8 +501,6 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                             loading.show();
                         }
                     });
-                    //TODO:NEW SERVER FOR TREATMENT INITIATION FORM ...
-                    ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTreatmentInitiationForm(
                             FormType.TREATMENT_INITIATION, values,
                             observations.toArray(new String[][]{}));

@@ -1,4 +1,4 @@
-package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbNewActivities;
+package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -46,18 +46,27 @@ import java.util.Collections;
 import java.util.Locale;
 
 /**
- * Created by Shujaat on 4/7/2017.
+ * Created by Shujaat on 4/6/2017.
  */
-public class TSTTestOrderActivity extends AbstractFragmentActivity {
+public class GXPTestResultActivity extends AbstractFragmentActivity {
 
     MyTextView formDateTextView;
     MyButton formDateButton;
 
-    MyTextView testOrderDateTextView;
-    MyEditText testOrderDateEditText;
+    MyTextView testResultDateTextView;
+    MyEditText testResultDateEditText;
 
-    MyTextView tuberculinSkinTestTextView;
-    MySpinner tuberculinSkinTestSpinner;
+    MyTextView gxpResultTextView;
+    MySpinner gxpResultSpinner;
+
+    MyTextView rifResistanceTextView;
+    MySpinner rifResistanceSpinner;
+
+    MyTextView mtbBurdenTextView;
+    MySpinner mtbBurdenSpinner;
+
+    MyTextView errorCodeTextView;
+    MyEditText errorCodeEditText;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -67,34 +76,50 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
     MyEditText testId;
 
     String result = "";
-    Calendar testOrderCalender;
+    Calendar testResultCalender;
 
 
     @Override
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
-        TSTTestOrderActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        GXPTestResultActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         pager = (ViewPager) findViewById(R.template_id.pager);
-        TAG = "TSTTestOrderActivity";
+        TAG = "GXPTestResultActivity";
+
         formDateTextView = new MyTextView(context,
                 R.style.text, R.string.form_date);
         formDateButton = new MyButton(context,
                 R.style.button, R.drawable.custom_button_beige,
                 R.string.form_date, R.string.form_date);
 
-        testOrderDateTextView = new MyTextView(context,
-                R.style.text, R.string.test_order_date);
-        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
-                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
+
+        testResultDateTextView = new MyTextView(context,
+                R.style.text, R.string.test_result_date);
+        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
+                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 10, false);
 
-        tuberculinSkinTestTextView = new MyTextView(context,
-                R.style.text, R.string.tst);
-
-        tuberculinSkinTestSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.tst_options),
-                R.string.tst, R.string.option_hint);
+        gxpResultTextView = new MyTextView(context,
+                R.style.text, R.string.gxp_result);
+        gxpResultSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.gxp_result_options),
+                R.string.gxp_result, R.string.option_hint);
+        rifResistanceTextView = new MyTextView(context,
+                R.style.text, R.string.rif_resistance);
+        rifResistanceSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.rif_resistance_options),
+                R.string.rif_resistance, R.string.option_hint);
+        mtbBurdenTextView = new MyTextView(context,
+                R.style.text, R.string.mtb_burden);
+        mtbBurdenSpinner = new MySpinner(context,
+                getResources().getStringArray(R.array.mtb_burden_option),
+                R.string.mtb_burden, R.string.option_hint);
+        errorCodeTextView = new MyTextView(context,
+                R.style.text, R.string.error_code);
+        errorCodeEditText = new MyEditText(context, R.string.error_code,
+                R.string.error_code_hint, InputType.TYPE_CLASS_NUMBER,
+                R.style.edit, 4, false);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -113,12 +138,13 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
                 R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
                 R.style.edit, 5, false);
 
-
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testOrderDateTextView, testOrderDateEditText, tuberculinSkinTestTextView,
-                        tuberculinSkinTestSpinner, testIdTextView, testId}
+                        testResultDateTextView, testResultDateEditText, gxpResultTextView, gxpResultSpinner,
+                        rifResistanceTextView, rifResistanceSpinner},
+                {mtbBurdenTextView, mtbBurdenSpinner, errorCodeTextView, errorCodeEditText,
+                        testIdTextView, testId}
         };
 
         // Create layouts and store in ArrayList
@@ -148,8 +174,8 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testId, testOrderDateEditText,
-                tuberculinSkinTestSpinner};
+        views = new View[]{patientId, testResultDateEditText, gxpResultSpinner, rifResistanceSpinner,
+                errorCodeEditText, mtbBurdenSpinner, testId};
 
 
         for (View v : views) {
@@ -186,7 +212,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testOrderDateEditText.setOnClickListener(this);
+        testResultDateEditText.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -194,40 +220,64 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testOrderDateEditText.setFocusable(false);
+        testResultDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
-        testOrderCalender = Calendar.getInstance();
+        mtbBurdenTextView.setEnabled(false);
+        mtbBurdenSpinner.setEnabled(false);
+        rifResistanceTextView.setEnabled(false);
+        rifResistanceSpinner.setEnabled(false);
+        errorCodeTextView.setEnabled(false);
+        errorCodeEditText.setEnabled(false);
+        testResultCalender = Calendar.getInstance();
         updateDisplay();
     }
 
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
+        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
     }
 
     @Override
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {};
+        View[] mandatory = {testId};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
-        if (App.get(patientId).equals("")) {
-            valid = false;
-            message.append(patientId.getTag().toString() + ". ");
-            patientId.setHintTextColor(getResources().getColor(R.color.Red));
+
+        if (gxpResultSpinner.getSelectedItem().toString().equals(getResources().getString(R.string.error))) {
+            if (App.get(errorCodeEditText).equals("")) {
+                valid = false;
+                message.append(errorCodeEditText.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
+                errorCodeEditText.setHintTextColor(getResources().getColor(R.color.Red));
+            } else if (!RegexUtil.isNumeric(App.get(errorCodeEditText), false)) {
+                valid = false;
+                message.append(errorCodeEditText.getTag().toString()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_data) + "\n");
+                errorCodeEditText.setHintTextColor(getResources().getColor(R.color.Red));
+            }
         }
 
+        if (App.get(patientId).equals("")) {
+            valid = false;
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
+            patientId.setHintTextColor(getResources().getColor(R.color.Red));
+        }
         ///here not check whether the Child is tb Suspected or not ....
-        if (RegexUtil.matchId(App.get(patientId))) {
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -256,9 +306,9 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
-            if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
+            if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testOrderDateEditText.getTag()
+                message.append(testResultDateEditText.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -283,17 +333,27 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
             values.put("testId", App.get(testId));
-            values.put("conceptName", "TST Barcode");
+            values.put("conceptName", "GXP Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-            observations.add(new String[]{"TST Barcode",
+            observations.add(new String[]{"GXP Barcode",
                     App.get(testId)});
-            observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
-            observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
-            observations.add(new String[]{"Tuberculin Skin Test",
-                    App.get(tuberculinSkinTestSpinner)});
+            observations.add(new String[]{"Test Result Date",
+                    App.get(testResultDateEditText)});
+            observations.add(new String[]{"GXP Result",
+                    App.get(gxpResultSpinner)});
+            if (gxpResultSpinner.getSelectedItem().toString().equals(
+                    getResources().getString(R.string.mtb_positive))) {
+                observations.add(new String[]{"RIF Result",
+                        App.get(rifResistanceSpinner)});
+                observations.add(new String[]{"MTB Burden",
+                        App.get(mtbBurdenSpinner)});
+            } else if (gxpResultSpinner.getSelectedItem().toString().equals(
+                    getResources().getString(R.string.error))) {
+                observations.add(new String[]{"Error Code",
+                        App.get(errorCodeEditText)});
+            }
+
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -311,7 +371,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
                     result = serverService.insertTestOrderResultForm(
-                            FormType.TST_ORDER, values,
+                            FormType.GXP_RESULT, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -327,13 +387,13 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
                     super.onPostExecute(result);
                     loading.dismiss();
                     if (result.equals("SUCCESS")) {
-                        App.getAlertDialog(TSTTestOrderActivity.this,
+                        App.getAlertDialog(GXPTestResultActivity.this,
                                 AlertType.INFO,
                                 getResources().getString(R.string.inserted))
                                 .show();
                         initView(views);
                     } else {
-                        App.getAlertDialog(TSTTestOrderActivity.this,
+                        App.getAlertDialog(GXPTestResultActivity.this,
                                 AlertType.ERROR, result).show();
                     }
                 }
@@ -355,12 +415,12 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testOrderDateEditText) {
+        } else if (view == testResultDateEditText) {
 
-            new DatePickerDialog(this, date, testOrderCalender
-                    .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),
-                    testOrderCalender.get(Calendar.DAY_OF_MONTH)).show();
-
+            new DatePickerDialog(this,
+                    resultDate, testResultCalender
+                    .get(Calendar.YEAR), testResultCalender.get(Calendar.MONTH),
+                    testResultCalender.get(Calendar.DAY_OF_MONTH)).show();
         } else if (view == firstButton) {
 
             gotoFirstPage();
@@ -383,7 +443,37 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        if (adapterView == gxpResultSpinner) {
+            String gxpValue = gxpResultSpinner.getSelectedItem().toString();
+            if (gxpValue.equals(getResources().getString(R.string.error))) {
+                mtbBurdenTextView.setEnabled(false);
+                mtbBurdenSpinner.setEnabled(false);
+                rifResistanceTextView.setEnabled(false);
+                rifResistanceSpinner.setEnabled(false);
+                errorCodeTextView.setEnabled(true);
+                errorCodeEditText.setEnabled(true);
+            } else if (gxpValue.equals(getResources().getString(R.string.mtb_positive))) {
+                mtbBurdenTextView.setEnabled(true);
+                mtbBurdenSpinner.setEnabled(true);
+                rifResistanceTextView.setEnabled(true);
+                rifResistanceSpinner.setEnabled(true);
+                errorCodeTextView.setEnabled(false);
+                errorCodeEditText.setEnabled(false);
+                initView(new View[]{errorCodeEditText});
 
+            } else {
+                mtbBurdenTextView.setEnabled(false);
+                mtbBurdenSpinner.setEnabled(false);
+                rifResistanceTextView.setEnabled(false);
+                rifResistanceSpinner.setEnabled(false);
+                errorCodeTextView.setEnabled(false);
+                errorCodeEditText.setEnabled(false);
+                initView(new View[]{errorCodeEditText});
+            }
+
+        }
+
+        updateDisplay();
     }
 
     @Override
@@ -391,19 +481,20 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
         return false;
     }
 
-    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+    DatePickerDialog.OnDateSetListener resultDate = new DatePickerDialog.OnDateSetListener() {
 
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
 
-            testOrderCalender.set(Calendar.YEAR, year);
-            testOrderCalender.set(Calendar.MONTH, monthOfYear);
-            testOrderCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            testResultCalender.set(Calendar.YEAR, year);
+            testResultCalender.set(Calendar.MONTH, monthOfYear);
+            testResultCalender.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             updateDisplay();
         }
 
     };
+
 
     ///Barcode Scanner Result ....
     @Override
@@ -492,4 +583,3 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
         }
     }
 }
-
