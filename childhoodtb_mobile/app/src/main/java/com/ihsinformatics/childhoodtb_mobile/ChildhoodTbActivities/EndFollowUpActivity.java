@@ -26,6 +26,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+
 import com.ihsinformatics.childhoodtb_mobile.AbstractFragmentActivity;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.Barcode;
@@ -37,6 +38,7 @@ import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -202,12 +204,12 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
 
         formDate = Calendar.getInstance();
         updateDisplay();
-        otherFacilityNameTextView.setVisibility(View.VISIBLE);
-        other.setVisibility(View.GONE);
-        otherTextView.setVisibility(View.GONE);
-        otherFacilityName.setVisibility(View.VISIBLE);
-        reasonForlossFollowUpTextView.setVisibility(View.GONE);
-        reasonForlossFollowUp.setVisibility(View.GONE);
+        /*otherFacilityNameTextView.setEnabled(false);
+        otherFacilityName.setEnabled(false);*/
+        other.setEnabled(false);
+        otherTextView.setEnabled(false);
+        reasonForlossFollowUpTextView.setEnabled(false);
+        reasonForlossFollowUp.setEnabled(false);
     }
 
     @Override
@@ -239,7 +241,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 valid = false;
                 message.append(other.getTag().toString() + ":\n" +
                         getResources().getString(R.string.empty_data));
-                other.setHintTextColor(getResources().getColor(R.color.Red));
+               // other.setHintTextColor(getResources().getColor(R.color.Red));
             } else if (!RegexUtil.isWord(App.get(other))) {
 
                 valid = false;
@@ -247,8 +249,8 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                         + ": "
                         + getResources().getString(
                         R.string.invalid_data) + "\n");
-                other.setTextColor(getResources().getColor(
-                        R.color.Red));
+               /* other.setTextColor(getResources().getColor(
+                        R.color.Red));*/
             }
         }
         if (isReasonLosFollowUpIsRequired) {
@@ -256,7 +258,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 valid = false;
                 message.append(reasonForlossFollowUp.getTag().toString() + ":\n" +
                         getResources().getString(R.string.empty_data));
-                reasonForlossFollowUp.setHintTextColor(getResources().getColor(R.color.Red));
+                //reasonForlossFollowUp.setHintTextColor(getResources().getColor(R.color.Red));
             } else if (!RegexUtil.isWord(App.get(reasonForlossFollowUp))) {
 
                 valid = false;
@@ -264,8 +266,8 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                         + ": "
                         + getResources().getString(
                         R.string.invalid_data) + "\n");
-                reasonForlossFollowUp.setTextColor(getResources().getColor(
-                        R.color.Red));
+               /* reasonForlossFollowUp.setTextColor(getResources().getColor(
+                        R.color.Red));*/
             }
         }
         if (isOtherFacilityNameIsRequired) {
@@ -273,7 +275,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 valid = false;
                 message.append(otherFacilityName.getTag().toString() + ":\n" +
                         getResources().getString(R.string.empty_data));
-                otherFacilityName.setHintTextColor(getResources().getColor(R.color.Red));
+               // otherFacilityName.setHintTextColor(getResources().getColor(R.color.Red));
             } else if (!RegexUtil.isWord(App.get(otherFacilityName))) {
 
                 valid = false;
@@ -281,8 +283,8 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                         + ": "
                         + getResources().getString(
                         R.string.invalid_data) + "\n");
-                otherFacilityName.setTextColor(getResources().getColor(
-                        R.color.Red));
+               /* otherFacilityName.setTextColor(getResources().getColor(
+                        R.color.Red));*/
             }
         }
 
@@ -442,47 +444,46 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
         if (adapterView == reasonForEndOfFollowUp) {
 
             if (adapterView.getSelectedItem().toString().equals(getString(R.string.referred_to_another_facility))) {
-                otherFacilityNameTextView.setVisibility(View.VISIBLE);
-                otherFacilityName.setVisibility(View.VISIBLE);
-                otherTextView.setVisibility(View.GONE);
-                other.setVisibility(View.GONE);
-                reasonForlossFollowUpTextView.setVisibility(View.GONE);
-                reasonForlossFollowUp.setVisibility(View.GONE);
+                otherFacilityNameTextView.setEnabled(true);
+                otherFacilityName.setEnabled(true);
+                other.setEnabled(false);
+                otherTextView.setEnabled(false);
+                reasonForlossFollowUpTextView.setEnabled(false);
+                reasonForlossFollowUp.setEnabled(false);
                 isOtherFieldIsRequired = false;
                 isOtherFacilityNameIsRequired = true;
                 isReasonLosFollowUpIsRequired = false;
 
             } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.other))) {
                 Log.i("test", "other");
-
-                otherTextView.setVisibility(View.VISIBLE);
-                other.setVisibility(View.VISIBLE);
+                otherFacilityNameTextView.setEnabled(false);
+                otherFacilityName.setEnabled(false);
+                other.setEnabled(true);
+                otherTextView.setEnabled(true);
+                reasonForlossFollowUpTextView.setEnabled(false);
+                reasonForlossFollowUp.setEnabled(false);
                 isOtherFieldIsRequired = true;
-                otherFacilityNameTextView.setVisibility(View.GONE);
-                otherFacilityName.setVisibility(View.GONE);
-                reasonForlossFollowUpTextView.setVisibility(View.GONE);
-                reasonForlossFollowUp.setVisibility(View.GONE);
                 isOtherFacilityNameIsRequired = false;
                 isReasonLosFollowUpIsRequired = false;
 
             } else if (adapterView.getSelectedItem().toString().equals(getString(R.string.loss_to_followup))) {
 
-                otherTextView.setVisibility(View.GONE);
-                other.setVisibility(View.GONE);
-                otherFacilityNameTextView.setVisibility(View.GONE);
-                otherFacilityName.setVisibility(View.GONE);
-                reasonForlossFollowUpTextView.setVisibility(View.VISIBLE);
-                reasonForlossFollowUp.setVisibility(View.VISIBLE);
+                otherFacilityNameTextView.setEnabled(false);
+                otherFacilityName.setEnabled(false);
+                other.setEnabled(false);
+                otherTextView.setEnabled(false);
+                reasonForlossFollowUpTextView.setEnabled(true);
+                reasonForlossFollowUp.setEnabled(true);
                 isOtherFieldIsRequired = false;
                 isOtherFacilityNameIsRequired = false;
                 isReasonLosFollowUpIsRequired = true;
             } else {
-                otherTextView.setVisibility(View.GONE);
-                other.setVisibility(View.GONE);
-                otherFacilityNameTextView.setVisibility(View.GONE);
-                otherFacilityName.setVisibility(View.GONE);
-                reasonForlossFollowUpTextView.setVisibility(View.GONE);
-                reasonForlossFollowUp.setVisibility(View.GONE);
+                otherFacilityNameTextView.setEnabled(false);
+                otherFacilityName.setEnabled(false);
+                other.setEnabled(false);
+                otherTextView.setEnabled(false);
+                reasonForlossFollowUpTextView.setEnabled(false);
+                reasonForlossFollowUp.setEnabled(false);
                 isOtherFieldIsRequired = false;
                 isOtherFacilityNameIsRequired = false;
                 isReasonLosFollowUpIsRequired = false;

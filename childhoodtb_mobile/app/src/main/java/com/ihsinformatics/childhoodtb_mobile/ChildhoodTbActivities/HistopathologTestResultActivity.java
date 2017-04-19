@@ -54,7 +54,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
     MyButton formDateButton;
 
     MyTextView testResultDateTextView;
-    MyEditText testResultDateEditText;
+    MyButton testResultDateButton;
 
     MyTextView histopathologyResultTextView;
     MySpinner histopathologResultSpinner;
@@ -92,9 +92,9 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
 
         testResultDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_result_date);
-        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
-                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+        testResultDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.test_result_date, R.string.test_result_date);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -116,7 +116,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testResultDateTextView, testResultDateEditText, histopathologyResultTextView,
+                        testResultDateTextView, testResultDateButton, histopathologyResultTextView,
                         histopathologResultSpinner, testIdTextView, testId}
         };
 
@@ -147,7 +147,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText, testId, histopathologResultSpinner};
+        views = new View[]{patientId, testResultDateButton, testId, histopathologResultSpinner};
 
 
         for (View v : views) {
@@ -184,7 +184,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testResultDateEditText.setOnClickListener(this);
+        testResultDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -192,7 +192,6 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testResultDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testResultCalender = Calendar.getInstance();
         updateDisplay();
@@ -201,7 +200,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
+        testResultDateButton.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
     }
 
     @Override
@@ -257,7 +256,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
             }
             if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testResultDateEditText.getTag()
+                message.append(testResultDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -288,7 +287,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
             observations.add(new String[]{"Histopathology Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
-                    App.get(testResultDateEditText)});
+                    App.get(testResultDateButton)});
             observations.add(new String[]{"Histopathology Result",
                     App.get(histopathologResultSpinner)});
 
@@ -351,7 +350,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testResultDateEditText) {
+        } else if (view == testResultDateButton) {
 
             new DatePickerDialog(this,
                     resultDate, testResultCalender

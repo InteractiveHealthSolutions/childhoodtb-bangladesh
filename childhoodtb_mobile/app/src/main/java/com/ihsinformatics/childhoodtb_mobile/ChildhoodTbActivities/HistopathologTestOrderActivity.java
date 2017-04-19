@@ -54,7 +54,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     MyButton formDateButton;
 
     MyTextView testOrderDateTextView;
-    MyEditText testOrderDateEditText;
+    MyButton testOrderDateButton;
 
     MyTextView histopathologyTextView;
     MySpinner histopathologySpinner;
@@ -89,9 +89,9 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
 
         testOrderDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_order_date);
-        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
-                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+        testOrderDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.test_order_date, R.string.test_order_date);
         histopathologyTextView = new MyTextView(context,
                 R.style.text, R.string.histopathology);
         histopathologySpinner = new MySpinner(context,
@@ -124,7 +124,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testOrderDateTextView, testOrderDateEditText, histopathologyTextView,
+                        testOrderDateTextView, testOrderDateButton, histopathologyTextView,
                         histopathologySpinner, histopathologysiteTextView, histopathologysiteSpinner,
                         testIdTextView, testId}
         };
@@ -156,7 +156,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testId, histopathologysiteSpinner, testOrderDateEditText, histopathologySpinner};
+        views = new View[]{patientId, testOrderDateButton, testId, histopathologysiteSpinner, testOrderDateButton, histopathologySpinner};
 
 
         for (View v : views) {
@@ -193,7 +193,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testOrderDateEditText.setOnClickListener(this);
+        testOrderDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -201,7 +201,6 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testOrderCalender = Calendar.getInstance();
         updateDisplay();
@@ -210,7 +209,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
+        testOrderDateButton.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
     }
 
     @Override
@@ -266,7 +265,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
             }
             if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testOrderDateEditText.getTag()
+                message.append(testOrderDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -296,7 +295,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
             observations.add(new String[]{"Histopathology Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
+                    App.get(testOrderDateButton)});
             observations.add(new String[]{"Histopathology",
                     App.get(histopathologySpinner)});
             observations.add(new String[]{"Histopathology Site",
@@ -363,7 +362,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testOrderDateEditText) {
+        } else if (view == testOrderDateButton) {
 
             new DatePickerDialog(this, date, testOrderCalender
                     .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),

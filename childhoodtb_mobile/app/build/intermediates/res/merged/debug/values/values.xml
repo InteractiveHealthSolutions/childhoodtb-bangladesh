@@ -1133,7 +1133,7 @@
     <string name="invalid">Invalid</string>
     <string name="invalid_data">Invalid value(s)! Please make sure your input is in correct format</string>
     <string name="invalid_date_or_time">Date or Time is invalid. Make sure you have entered appropriate date/time</string>
-    <string name="invalid_future_date">Invalid Date,Future date are not Allowed</string>
+    <string name="invalid_future_date">Invalid Date,Future date does not Allowed</string>
     <string name="invalid_string_length">Name contain at least three character</string>
     <string name="item_not_found">No data was found matching the criteria</string>
     <string name="joint_spine_swelling">Joint/Spine swelling of greater than 2 weeks?</string>

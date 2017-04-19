@@ -2347,6 +2347,8 @@ public class ServerService {
                 .getAsString("firstName"));
         String familyName = TextUtil.capitalizeFirstLetter(values
                 .getAsString("familyName"));
+        String motherName = TextUtil.capitalizeFirstLetter(values
+                .getAsString("motherName"));
         String gender = values.getAsString("gender");
         String patientId = values.getAsString("patientId");
         String location = values.getAsString("location");
@@ -2363,6 +2365,7 @@ public class ServerService {
             json.put("patient_id", patientId);
             json.put("given_name", givenName);
             json.put("family_name", familyName);
+            json.put("mother_name", motherName);
             json.put("gender", gender);
             json.put("age", age);
             json.put("location", location);

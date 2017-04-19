@@ -44,14 +44,19 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.UUID;
 
+import javassist.NotFoundException;
+import javassist.bytecode.stackmap.BasicBlock.Catch;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts.taglib.logic.PresentTag;
 import org.apache.xerces.impl.dv.util.Base64;
 import org.hibernate.NonUniqueObjectException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.omg.CORBA.UnknownUserException;
 import org.openmrs.Concept;
 import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
@@ -66,6 +71,7 @@ import org.openmrs.PersonAttribute;
 import org.openmrs.PersonAttributeType;
 import org.openmrs.PersonName;
 import org.openmrs.User;
+import org.openmrs.api.DuplicateIdentifierException;
 import org.openmrs.api.context.Context;
 import org.openmrs.api.context.ContextAuthenticationException;
 import org.openmrs.module.ModuleMustStartException;
@@ -89,8 +95,7 @@ public class MobileService {
 	private HttpServletRequest request;
 
 	// OpenMRS-related
-	// static final String propFilePath =
-	// "/usr/share/tomcat6/.OpenMRS/openmrs-runtime.properties";
+	 //static final String propFilePath = "/usr/share/tomcat6/.OpenMRS/openmrs-runtime.properties";
 	// static final String propFilePath =
 	// "c:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
 	// static final String propFilePath =
@@ -2624,9 +2629,13 @@ public class MobileService {
 		try {
 			String conceptName = values.getString("concept_name");
 			String testId = values.getString("test_id");
+			String patientId = values.getString("patient_id");
 			Concept concept = Context.getConceptService().getConceptByName(
 					conceptName);
 			String concept_id = concept.toString();
+			// also check who is the holder of this test id ....
+			// List<Obs> listObservation = Context.getObsService().getObs
+
 			String query = "select count(*) as total from openmrs.obs where value_text = ? and concept_id= ?";
 			String[][] results = executeQuery(query, new String[] { testId,
 					concept_id });
@@ -2638,10 +2647,21 @@ public class MobileService {
 							throw new FileNotFoundException();
 						else
 							throw new Exception();
-					}
+					} else {
+						boolean patientTestId = checkPatientAgainstConcept(
+								conceptName, testId, patientId);
+						if (!patientTestId) {
+
+							throw new IllegalArgumentException();
+						}
+					}// check test id exist against the Patient ...
 				}
 			}
 
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+			error = CustomMessage
+					.getErrorMessage(ErrorType.TEST_ID_NOT_BELONG_TO_PATIENT);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			error = CustomMessage
@@ -2650,10 +2670,12 @@ public class MobileService {
 			e.printStackTrace();
 			error = CustomMessage.getErrorMessage(ErrorType.TEST_RESULT_EXIST);
 
-		} finally {
+		}
+
+		finally {
 			try {
 				if (!error.equals("")) {
-					
+
 					json.put("result", "FAIL. " + error);
 					return json.toString();
 				}
@@ -2664,6 +2686,34 @@ public class MobileService {
 
 		return doGenericForm(formType, values);
 
+	}
+
+	// this method check patient and concept..
+	public boolean checkPatientAgainstConcept(String conceptName,
+			String testId, String patientId) {
+
+		List<Patient> patients = Context.getPatientService().getPatients(
+				patientId);
+		Concept concept = Context.getConceptService().getConceptByName(
+				conceptName);
+		if (patients == null) {
+			return false;
+		}
+		if (patients.isEmpty()) {
+			return false;
+		}
+		Patient patient = patients.get(0);
+
+		List<Obs> listOfObs = Context.getObsService()
+				.getObservationsByPersonAndConcept(patient, concept);
+		for (Obs o : listOfObs) {
+
+			if (testId.equalsIgnoreCase(o.getValueText())) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**
@@ -3526,6 +3576,7 @@ public class MobileService {
 			String givenName = values.getString("given_name");
 			String familyName = values.getString("family_name");
 			String encounterType = values.getString("encounter_type");
+			String motherName = values.getString("mother_name");
 			String formDate = values.getString("form_date");
 			// get the system time ...
 			Date encounterDatetime = DateTimeUtil.getDateFromString(formDate,
@@ -3580,19 +3631,22 @@ public class MobileService {
 					person.setNames(names);
 				}
 
-				/*
-				 * //create Person Attribute PersonAttributeType
-				 * personAttributeType; try { personAttributeType =
-				 * Context.getPersonService
-				 * ().getPersonAttributeTypeByName("Mother's Name");
-				 * PersonAttribute attribute = new PersonAttribute();
-				 * attribute.setAttributeType(personAttributeType);
-				 * attribute.setValue(motherName);
-				 * attribute.setCreator(creatorObj);
-				 * attribute.setDateCreated(new Date());
-				 * person.addAttribute(attribute); } catch (Exception e) {
-				 * e.printStackTrace(); }
-				 */
+				// create Person Attribute PersonAttributeType
+
+				try {
+					PersonAttributeType personAttributeType = Context
+							.getPersonService().getPersonAttributeTypeByName(
+									"Mother's Name");
+					PersonAttribute attribute = new PersonAttribute();
+					attribute.setAttributeType(personAttributeType);
+					attribute.setValue(motherName);
+					attribute.setCreator(creatorObj);
+					attribute.setDateCreated(new Date());
+					person.addAttribute(attribute);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
 				// Create Patient object
 				patietnIndetifier = new Patient(person);
 				// Create Patient identifier
@@ -3614,11 +3668,6 @@ public class MobileService {
 						patietnIndetifier);
 				error = "Patient was created with Error. ";
 
-				// /call the Person and Patient Factory...
-				/*
-				 * personAndPatientFactory(dob,patient,creatorObj,patientId,
-				 * givenName,familyName, gender,patientIdTypeObj,locationObj);
-				 */
 			}
 
 			Encounter encounter = new Encounter();
@@ -3859,7 +3908,8 @@ public class MobileService {
 			String encounterType = values.getString("encounter_type");
 			String formDate = values.getString("form_date");
 			String treatmentSupporterName = values.getString("supporter_name");
-			String treatmentSupporterPhoneNumber = values.getString("supporter_phone");
+			String treatmentSupporterPhoneNumber = values
+					.getString("supporter_phone");
 
 			// get the system time ...
 			Date encounterDatetime = DateTimeUtil.getDateFromString(formDate,

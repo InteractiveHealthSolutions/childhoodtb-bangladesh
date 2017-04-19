@@ -105,6 +105,6 @@
    </string-array>
     
     <!--Invalid Date -->
-    <string name="invalid_future_date">Invalid Date,Future date are not Allowed</string>
+    <string name="invalid_future_date">Invalid Date,Future date does not Allowed</string>
    
 </resources>

@@ -54,7 +54,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
     MyButton formDateButton;
 
     MyTextView testOrderDateTextView;
-    MyEditText testOrderDateEditText;
+    MyButton testOrderDateButton;
 
     MyTextView tuberculinSkinTestTextView;
     MySpinner tuberculinSkinTestSpinner;
@@ -85,9 +85,9 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
 
         testOrderDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_order_date);
-        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
-                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+        testOrderDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.test_order_date, R.string.test_order_date);
 
         tuberculinSkinTestTextView = new MyTextView(context,
                 R.style.text, R.string.tst);
@@ -117,7 +117,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testOrderDateTextView, testOrderDateEditText, tuberculinSkinTestTextView,
+                        testOrderDateTextView, testOrderDateButton, tuberculinSkinTestTextView,
                         tuberculinSkinTestSpinner, testIdTextView, testId}
         };
 
@@ -148,7 +148,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testId, testOrderDateEditText,
+        views = new View[]{patientId, testOrderDateButton, testId, testOrderDateButton,
                 tuberculinSkinTestSpinner};
 
 
@@ -186,7 +186,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testOrderDateEditText.setOnClickListener(this);
+        testOrderDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -194,7 +194,6 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testOrderCalender = Calendar.getInstance();
         updateDisplay();
@@ -203,7 +202,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
+        testOrderDateButton.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
     }
 
     @Override
@@ -260,7 +259,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
             }
             if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testOrderDateEditText.getTag()
+                message.append(testOrderDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -291,9 +290,9 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
             observations.add(new String[]{"TST Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
+                    App.get(testOrderDateButton)});
             observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
+                    App.get(testOrderDateButton)});
             observations.add(new String[]{"Tuberculin Skin Test",
                     App.get(tuberculinSkinTestSpinner)});
 
@@ -357,7 +356,7 @@ public class TSTTestOrderActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testOrderDateEditText) {
+        } else if (view == testOrderDateButton) {
 
             new DatePickerDialog(this, date, testOrderCalender
                     .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),

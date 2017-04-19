@@ -54,7 +54,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
     private MyButton formDateButton;
 
     private MyTextView testOrderDateTextView;
-    private MyEditText testOrderDateEditText;
+    private MyButton testOrderDateButton;
 
     private MyTextView monthOfTreatmentTextView;
     private MySpinner monthOfTreatmentSpinner;
@@ -98,9 +98,9 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
 
         testOrderDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_order_date);
-        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
-                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+        testOrderDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.test_order_date, R.string.test_order_date);
         monthOfTreatmentTextView = new MyTextView(context,
                 R.style.text, R.string.month_of_treatment);
         monthOfTreatmentSpinner = new MySpinner(context,
@@ -150,7 +150,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testOrderDateTextView, testOrderDateEditText, monthOfTreatmentTextView,
+                        testOrderDateTextView, testOrderDateButton, monthOfTreatmentTextView,
                         monthOfTreatmentSpinner, specimenTypeTextView, specimenTypeSpinner,
                         specimenQualityTextView, specimenQualitySpinner
                 },
@@ -185,8 +185,8 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{other, patientId, testOrderDateEditText, monthOfTreatmentSpinner, specimenLocationSpinner,
-                specimenQualitySpinner, specimenTypeSpinner, testOrderDateEditText, testId};
+        views = new View[]{other, patientId, testOrderDateButton, monthOfTreatmentSpinner, specimenLocationSpinner,
+                specimenQualitySpinner, specimenTypeSpinner, testOrderDateButton, testId};
 
 
         for (View v : views) {
@@ -223,7 +223,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testOrderDateEditText.setOnClickListener(this);
+        testOrderDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -231,7 +231,6 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testOrderCalender = Calendar.getInstance();
         specimenQualityTextView.setEnabled(false);
@@ -247,7 +246,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
     public void updateDisplay() {
 
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
+        testOrderDateButton.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
     }
 
     @Override
@@ -278,8 +277,6 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
                         + "\n");
                 other.setHintTextColor(getResources().getColor(R.color.Red));
             }
-        } else {
-            initView(new View[]{other});
         }
         if (App.get(patientId).equals("")) {
             valid = false;
@@ -319,7 +316,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
             }
             if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testOrderDateEditText.getTag()
+                message.append(testOrderDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -371,7 +368,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
                 }
             }
             observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
+                    App.get(testOrderDateButton)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -433,7 +430,7 @@ public class AFBTestOrderActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testOrderDateEditText) {
+        } else if (view == testOrderDateButton) {
 
             new DatePickerDialog(this, date, testOrderCalender
                     .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),

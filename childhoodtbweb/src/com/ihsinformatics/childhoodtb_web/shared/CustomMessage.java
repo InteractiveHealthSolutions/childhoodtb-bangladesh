@@ -124,6 +124,10 @@ public class CustomMessage {
 		case TEST_RESULT_EXIST:
 			error = "Test Result Already exist against this Test ID";
 			break;
+		case TEST_ID_NOT_BELONG_TO_PATIENT:
+			error = "Test ID does not belong to patient";
+			break;
+			
 		}
 		return error;
 	}

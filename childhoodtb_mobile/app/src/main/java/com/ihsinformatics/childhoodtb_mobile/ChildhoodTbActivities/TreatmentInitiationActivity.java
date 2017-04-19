@@ -63,7 +63,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     MyEditText otherSpecifyNIDEditText;
 
     MyTextView registrationDateTextView;
-    MyEditText registrationDateEditText;
+    MyButton registrationDateButton;
 
     MyTextView tbRegisterNumberTextView;
     MyEditText tbRegisterNumberEditText;
@@ -94,7 +94,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     MyButton scanBarcode;
 
     MyTextView treatmentInitiationDateTextView;
-    MyEditText treatmentInitiationDate;
+    MyButton treatmentInitiationDateButton;
 
     String result = "";
     Calendar registrationDate;
@@ -116,9 +116,9 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
         registrationDateTextView = new MyTextView(context,
                 R.style.text, R.string.registration_date);
-        registrationDateEditText = new MyEditText(context, R.string.registration_date,
-                R.string.registration_date_hint, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+        registrationDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.registration_date, R.string.registration_date);
 
         patientTypeTextView = new MyTextView(context,
                 R.style.text, R.string.patient_type);
@@ -183,10 +183,9 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
         treatmentInitiationDateTextView = new MyTextView(context,
                 R.style.text, R.string.treatment_initiation_date);
-        treatmentInitiationDate = new MyEditText(context, R.string.treatment_initiation_date,
-                R.string.treatment_initiation_date, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
-
+        treatmentInitiationDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.treatment_initiation_date, R.string.treatment_initiation_date);
         otherTextView = new MyTextView(context,
                 R.style.text, R.string.other_specify);
         other = new MyEditText(context, R.string.other_specify,
@@ -208,11 +207,11 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        registrationDateTextView, registrationDateEditText, nidTextView, nidEditText,
+                        registrationDateTextView, registrationDateButton, nidTextView, nidEditText,
                         nidBelongsTextView, nidBelongsSpinner, otherSpecifyNIDTextView, otherSpecifyNIDEditText
                 },
                 {referredWithoutRegistrationTextView, referredWithoutRegistrationSpinner, tbRegisterNumberTextView,
-                        tbRegisterNumberEditText, patientTypeTextView, patientTypeSpinner, patientCategoryTextView, patientCategorySpinner, treatmentInitiationDateTextView, treatmentInitiationDate,
+                        tbRegisterNumberEditText, patientTypeTextView, patientTypeSpinner, patientCategoryTextView, patientCategorySpinner, treatmentInitiationDateTextView, treatmentInitiationDateButton,
                         nameOfSupporterTextView, nameOfTreatmentSupporterEditText},
                 {phoneNumberOfSupporterTextView, phoneNumberOfSupporterEditText, patientAndSupporterRelationTextView,
                         patientAndSupporterRelationSpinner, otherTextView, other}
@@ -245,9 +244,9 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{other, patientId, registrationDateEditText, patientCategorySpinner,
+        views = new View[]{other, patientId, registrationDateButton, patientCategorySpinner,
                 patientAndSupporterRelationSpinner, phoneNumberOfSupporterEditText,
-                nameOfTreatmentSupporterEditText, otherSpecifyNIDEditText, other, nidEditText, nidBelongsSpinner, registrationDateEditText, tbRegisterNumberEditText, treatmentInitiationDate
+                nameOfTreatmentSupporterEditText, otherSpecifyNIDEditText, other, nidEditText, nidBelongsSpinner, registrationDateButton, tbRegisterNumberEditText, treatmentInitiationDateButton
         };
 
 
@@ -285,8 +284,8 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        registrationDateEditText.setOnClickListener(this);
-        treatmentInitiationDate.setOnClickListener(this);
+        registrationDateButton.setOnClickListener(this);
+        treatmentInitiationDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -294,8 +293,6 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        registrationDateEditText.setFocusable(false);
-        treatmentInitiationDate.setFocusable(false);
         formDate = Calendar.getInstance();
         registrationDate = Calendar.getInstance();
         treatmentInitDate = Calendar.getInstance();
@@ -309,8 +306,8 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        registrationDateEditText.setText(DateFormat.format("dd-MM-yyyy", registrationDate.getTime()));
-        treatmentInitiationDate.setText(DateFormat.format("dd-MM-yyyy", treatmentInitDate.getTime()));
+        registrationDateButton.setText(DateFormat.format("dd-MM-yyyy", registrationDate.getTime()));
+        treatmentInitiationDateButton.setText(DateFormat.format("dd-MM-yyyy", treatmentInitDate.getTime()));
     }
 
     @Override
@@ -426,14 +423,14 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
             }
             if (treatmentInitDate.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(treatmentInitiationDate.getTag()
+                message.append(treatmentInitiationDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
             }
             if (registrationDate.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(registrationDateEditText.getTag()
+                message.append(registrationDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -545,13 +542,13 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == registrationDateEditText) {
+        } else if (view == registrationDateButton) {
 
             new DatePickerDialog(this, date, registrationDate
                     .get(Calendar.YEAR), registrationDate.get(Calendar.MONTH),
                     registrationDate.get(Calendar.DAY_OF_MONTH)).show();
 
-        } else if (view == treatmentInitiationDate)
+        } else if (view == treatmentInitiationDateButton)
 
         {
 

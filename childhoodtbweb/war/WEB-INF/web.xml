@@ -11,45 +11,47 @@
 	You can also access the license on the internet at the address: http://www.gnu.org/licenses/gpl-3.0.html 
 	Interactive Health Solutions, hereby disclaims all copyright interest in 
 	this program written by the contributors. Contributors: Tahira Niazi -->
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  <welcome-file-list>
-    <welcome-file>childhoodtbweb.jsp</welcome-file>
-  </welcome-file-list>
-  <servlet>
-    <servlet-name>NonSuspectLoginServlet</servlet-name>
-    <servlet-class>com.ihsinformatics.childhoodtb_web.server.NonSuspectLoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>NonSuspectLoginServlet</servlet-name>
-    <url-pattern>/NonSuspectLoginServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>NonSuspectDataServlet</servlet-name>
-    <servlet-class>com.ihsinformatics.childhoodtb_web.server.NonSuspectDataServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>NonSuspectDataServlet</servlet-name>
-    <url-pattern>/NonSuspectDataServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>ScreeningDashboardLoginServlet</servlet-name>
-    <servlet-class>com.ihsinformatics.childhoodtb_web.server.ScreeningDashboardLoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ScreeningDashboardLoginServlet</servlet-name>
-    <url-pattern>/ScreeningDashboardLoginServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>ScreeningDashboardServlet</servlet-name>
-    <servlet-class>com.ihsinformatics.childhoodtb_web.server.ScreeningDashboardServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ScreeningDashboardServlet</servlet-name>
-    <url-pattern>/ScreeningDashboardServlet</url-pattern>
-  </servlet-mapping>
-  
-<!-- 
-  	This block makes sure that all the resources are accessed via HTTPS
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<welcome-file-list>
+		<welcome-file>childhoodtbweb.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>NonSuspectLoginServlet</servlet-name>
+		<servlet-class>com.ihsinformatics.childhoodtb_web.server.NonSuspectLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NonSuspectLoginServlet</servlet-name>
+		<url-pattern>/NonSuspectLoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>NonSuspectDataServlet</servlet-name>
+		<servlet-class>com.ihsinformatics.childhoodtb_web.server.NonSuspectDataServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NonSuspectDataServlet</servlet-name>
+		<url-pattern>/NonSuspectDataServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ScreeningDashboardLoginServlet</servlet-name>
+		<servlet-class>com.ihsinformatics.childhoodtb_web.server.ScreeningDashboardLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScreeningDashboardLoginServlet</servlet-name>
+		<url-pattern>/ScreeningDashboardLoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ScreeningDashboardServlet</servlet-name>
+		<servlet-class>com.ihsinformatics.childhoodtb_web.server.ScreeningDashboardServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScreeningDashboardServlet</servlet-name>
+		<url-pattern>/ScreeningDashboardServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- This block makes sure that all the resources are accessed via HTTPS 
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>HTTPSOnly</web-resource-name>
@@ -59,8 +61,8 @@
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
 		</user-data-constraint>
 	</security-constraint>
-	This block overrides the previous for certain resources and enables
-	them on both HTTP and HTTPS
+	This block overrides the previous for certain resources and enables 
+		them on both HTTP and HTTPS
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>HTTPSOrHTTP</web-resource-name>
@@ -71,7 +73,6 @@
 		<user-data-constraint>
 			<transport-guarantee>NONE</transport-guarantee>
 		</user-data-constraint>
-	</security-constraint>
- -->
-  
+	</security-constraint>  -->
+
 </web-app>

@@ -54,7 +54,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
     MyButton formDateButton;
 
     MyTextView testResultDateTextView;
-    MyEditText testResultDateEditText;
+    MyButton testResultDateButton;
 
     MyTextView gxpResultTextView;
     MySpinner gxpResultSpinner;
@@ -96,9 +96,9 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
 
         testResultDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_result_date);
-        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
-                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+        testResultDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.test_result_date, R.string.test_result_date);
 
         gxpResultTextView = new MyTextView(context,
                 R.style.text, R.string.gxp_result);
@@ -141,7 +141,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        testResultDateTextView, testResultDateEditText, gxpResultTextView, gxpResultSpinner,
+                        testResultDateTextView, testResultDateButton, gxpResultTextView, gxpResultSpinner,
                         rifResistanceTextView, rifResistanceSpinner},
                 {mtbBurdenTextView, mtbBurdenSpinner, errorCodeTextView, errorCodeEditText,
                         testIdTextView, testId}
@@ -174,7 +174,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText, gxpResultSpinner, rifResistanceSpinner,
+        views = new View[]{patientId, testResultDateButton, gxpResultSpinner, rifResistanceSpinner,
                 errorCodeEditText, mtbBurdenSpinner, testId};
 
 
@@ -212,7 +212,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testResultDateEditText.setOnClickListener(this);
+        testResultDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -220,7 +220,6 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testResultDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         mtbBurdenTextView.setEnabled(false);
         mtbBurdenSpinner.setEnabled(false);
@@ -235,7 +234,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
+        testResultDateButton.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
     }
 
     @Override
@@ -308,7 +307,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
             }
             if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testResultDateEditText.getTag()
+                message.append(testResultDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -339,7 +338,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
             observations.add(new String[]{"GXP Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
-                    App.get(testResultDateEditText)});
+                    App.get(testResultDateButton)});
             observations.add(new String[]{"GXP Result",
                     App.get(gxpResultSpinner)});
             if (gxpResultSpinner.getSelectedItem().toString().equals(
@@ -415,7 +414,7 @@ public class GXPTestResultActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testResultDateEditText) {
+        } else if (view == testResultDateButton) {
 
             new DatePickerDialog(this,
                     resultDate, testResultCalender

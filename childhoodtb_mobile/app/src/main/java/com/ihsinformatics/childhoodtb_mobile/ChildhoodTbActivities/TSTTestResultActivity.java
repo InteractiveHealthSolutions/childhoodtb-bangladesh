@@ -57,7 +57,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
     MyButton formDateButton;
 
     MyTextView testResultDateTextView;
-    MyEditText testResultDateEditText;
+    MyButton testResultDateButton;
 
     MyTextView tstResultTextView;
     MySpinner tstResultSpinner;
@@ -96,9 +96,9 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
 
         testResultDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_result_date);
-        testResultDateEditText = new MyEditText(context, R.string.test_result_date,
-                R.string.test_result_date, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+        testResultDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.test_result_date, R.string.test_result_date);
 
         tstResultTextView = new MyTextView(context,
                 R.style.text, R.string.tst_result);
@@ -139,7 +139,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, getWeightPercentile,
-                        testResultDateTextView, testResultDateEditText, tstResultTextView, tstResultSpinner, weightPercentileTextView,
+                        testResultDateTextView, testResultDateButton, tstResultTextView, tstResultSpinner, weightPercentileTextView,
                         weightPercentileEditText, interpretationOfTSTTextView, interpretationOfTSTSpinner, testIdTextView, testId}
         };
 
@@ -170,7 +170,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateEditText, interpretationOfTSTSpinner,
+        views = new View[]{patientId, testResultDateButton, interpretationOfTSTSpinner,
                 tstResultSpinner, testId};
 
 
@@ -209,7 +209,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
         getWeightPercentile.setOnClickListener(this);
-        testResultDateEditText.setOnClickListener(this);
+        testResultDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -217,7 +217,6 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testResultDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testResultCalender = Calendar.getInstance();
         weightPercentileEditText.setFocusable(false);
@@ -227,7 +226,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testResultDateEditText.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
+        testResultDateButton.setText(DateFormat.format("dd-MM-yyyy", testResultCalender.getTime()));
     }
 
     @Override
@@ -283,7 +282,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
             }
             if (testResultCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testResultDateEditText.getTag()
+                message.append(testResultDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -314,7 +313,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
             observations.add(new String[]{"TST Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Result Date",
-                    App.get(testResultDateEditText)});
+                    App.get(testResultDateButton)});
             observations.add(new String[]{"TST Result",
                     App.get(tstResultSpinner)});
             Log.i("spinnerVal", "" + App.get(interpretationOfTSTSpinner));
@@ -380,7 +379,7 @@ public class TSTTestResultActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testResultDateEditText) {
+        } else if (view == testResultDateButton) {
 
             new DatePickerDialog(this,
                     resultDate, testResultCalender

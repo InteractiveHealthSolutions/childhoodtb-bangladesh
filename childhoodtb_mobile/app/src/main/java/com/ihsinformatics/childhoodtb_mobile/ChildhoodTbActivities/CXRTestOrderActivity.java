@@ -55,7 +55,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
     MyButton formDateButton;
 
     MyTextView testOrderDateTextView;
-    MyEditText testOrderDateEditText;
+    MyButton testOrderDateButton;
 
     MyTextView cxrTextView;
     MySpinner cxrSpinner;
@@ -88,9 +88,9 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
 
         testOrderDateTextView = new MyTextView(context,
                 R.style.text, R.string.test_order_date);
-        testOrderDateEditText = new MyEditText(context, R.string.test_order_date,
-                R.string.test_order_date, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+        testOrderDateButton = new MyButton(context,
+                R.style.button, R.drawable.custom_button_beige,
+                R.string.test_order_date, R.string.test_order_date);
 
 
         cxrTextView = new MyTextView(context,
@@ -120,7 +120,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
-                        testOrderDateEditText, cxrTextView, cxrSpinner, testIdTextView, testId
+                        testOrderDateButton, cxrTextView, cxrSpinner, testIdTextView, testId
                 }
 
         };
@@ -152,7 +152,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateEditText, testOrderDateEditText, testId};
+        views = new View[]{patientId, testOrderDateButton, testOrderDateButton, testId};
 
 
         for (View v : views) {
@@ -189,7 +189,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testOrderDateEditText.setOnClickListener(this);
+        testOrderDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
     }
@@ -197,7 +197,6 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void initView(View[] views) {
         super.initView(views);
-        testOrderDateEditText.setFocusable(false);
         formDate = Calendar.getInstance();
         testOrderCalender = Calendar.getInstance();
         updateDisplay();
@@ -206,7 +205,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-        testOrderDateEditText.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
+        testOrderDateButton.setText(DateFormat.format("dd-MM-yyyy", testOrderCalender.getTime()));
     }
 
     @Override
@@ -262,7 +261,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
             }
             if (testOrderCalender.getTime().after(Calendar.getInstance().getTime())) {
                 valid = false;
-                message.append(testOrderDateEditText.getTag()
+                message.append(testOrderDateButton.getTag()
                         + ": "
                         + getResources().getString(
                         R.string.invalid_future_date) + "\n");
@@ -293,7 +292,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
             observations.add(new String[]{"Chest X-Ray Barcode",
                     App.get(testId)});
             observations.add(new String[]{"Test Order Date",
-                    App.get(testOrderDateEditText)});
+                    App.get(testOrderDateButton)});
             observations.add(new String[]{"CXR",
                     App.get(cxrSpinner)});
             ///Create the AsyncTask ()
@@ -357,7 +356,7 @@ public class CXRTestOrderActivity extends AbstractFragmentActivity {
 
             showDialog(DATE_DIALOG_ID);
 
-        } else if (view == testOrderDateEditText) {
+        } else if (view == testOrderDateButton) {
 
             new DatePickerDialog(this, date, testOrderCalender
                     .get(Calendar.YEAR), testOrderCalender.get(Calendar.MONTH),

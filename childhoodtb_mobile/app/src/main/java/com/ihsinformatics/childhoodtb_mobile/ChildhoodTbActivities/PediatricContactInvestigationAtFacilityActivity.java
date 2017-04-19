@@ -68,6 +68,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             probableDiagnosisTextView, contactTracingCategoryTextView, indexCaseIDTextView, indexCaseTBRegistrationNumberTextView,
             indexCaseDiagnosisTextView, playfulnessTextView;
 
+    MyTextView lastNameTextView;
+    MyEditText lastName;
 
     private MyEditText presumptiveFirstName, presumptiveMotherName, age,
             weight, patientId, otherExamination, indexCaseId, indexCaseTBRegistrationNumber;
@@ -104,6 +106,12 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         presumptiveFirstName = new MyEditText(context,
                 R.string.first_name, R.string.first_name_hint,
                 InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
+        lastNameTextView = new MyTextView(context, R.style.text,
+                R.string.last_name);
+        lastName = new MyEditText(context, R.string.last_name,
+                R.string.last_name_hint,
+                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 16,
+                false);
         motherNameTextView = new MyTextView(context,
                 R.style.text, R.string.mother_name);
         presumptiveMotherName = new MyEditText(context,
@@ -275,24 +283,25 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         View[][] viewGroups = {
                 {formDateTextView, formDateButton,
                         contactTracingCategoryTextView, contactTracingCategory, indexCaseIDTextView, indexCaseId,
-                        scanBarcodeIndexId, validatePatientId, firstNameTextView, presumptiveFirstName, motherNameTextView,
-                        presumptiveMotherName
+                        scanBarcodeIndexId, validatePatientId, firstNameTextView, presumptiveFirstName, lastNameTextView, lastName,
+                        motherNameTextView, presumptiveMotherName
                 },
                 {genderTextView, gender, ageTextView, age, indexCaseTBRegistrationNumberTextView, indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView,
                         indexCaseDiagnosis, weightTextView, weight, weightPercentileTextView, weightPercentile
 
                 },
                 {coughTextView, cough, coughDurationTextView, coughDuration, feverTextView, fever, nightSweatsTextView,
-                        nightSweats, poorAppetiteTextView, poorAppetite, playfulnessTextView, playfulness, chestExaminationTextVew, chestExamination,
-                        lymphNodeExaminationTextView, lymphNodeExamination
+                        nightSweats, poorAppetiteTextView, poorAppetite, playfulnessTextView, playfulness
                 },
-                {abdominalExaminationTextView, abdominalExamination,
-                        otherExaminationTextView, otherExamination, adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily,
-                        formOfTbTextView, formOfTb, typeOfTbTextView, typeOfTb
+                {chestExaminationTextVew, chestExamination,
+                        lymphNodeExaminationTextView, lymphNodeExamination, abdominalExaminationTextView, abdominalExamination,
+                        otherExaminationTextView, otherExamination, adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily
                 },
-                {testAdvisedTextView, testAdvised, probableDiagnosisTextView, probableDiagnosis, familyMemberTBTextView, familyMemberTB, weightLossTextView, weightLoss,
-                        bcgScarTextView, bcgScar, patientIdTextView,
-                        patientId, scanBarcode,
+                {formOfTbTextView, formOfTb, typeOfTbTextView, typeOfTb, testAdvisedTextView, testAdvised, probableDiagnosisTextView, probableDiagnosis, familyMemberTBTextView,
+                        familyMemberTB, weightLossTextView, weightLoss,
+
+                },
+                {bcgScarTextView, bcgScar, patientIdTextView, patientId, scanBarcode,
                 }
 
         };
@@ -335,7 +344,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 weightLoss, abdominalExamination, bcgScar, adultFamilyMemberTB,
                 formOfTb, typeOfTb, testAdvised, familyMemberTB, probableDiagnosis,
                 otherExamination, playfulness, indexCaseTBRegistrationNumber, indexCaseDiagnosis,
-                indexCaseId, poorAppetite
+                indexCaseId, poorAppetite, lastName
         };
 
 
@@ -485,7 +494,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
 
                             } else {
                                 saveButton.setEnabled(true);
-                                familyName = patients.get(0).getFamilyName();
+
+                              /*  familyName = patients.get(0).getFamilyName();
                                 firstName = patients.get(0).getFirstName();
                                 presumptiveFirstName.setText(patients.get(0).getName());
                                 presumptiveFirstName.setFocusable(false);
@@ -496,7 +506,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                                 } else {
                                     presumptiveMotherName.setText(patients.get(0).getMotherName());
                                     presumptiveMotherName.setFocusable(false);
-                                }
+                                }*/
 
                                 age.setText(Integer.toString(patients.get(0).getAge()));
                                 age.setFocusable(false);
@@ -542,19 +552,21 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         StringBuffer message = new StringBuffer();
         // Validate mandatory controls
         View[] mandatory = {presumptiveFirstName, presumptiveMotherName, age, weight,
-                otherExamination, indexCaseTBRegistrationNumber};
+                otherExamination, indexCaseTBRegistrationNumber, lastName};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
         }
         if (App.get(patientId).equals("")) {
             valid = false;
-            message.append(patientId.getTag().toString() + ". ");
+            message.append(patientId.getTag().toString() + ": " +
+                    getResources().getString(R.string.empty_data) + "\n");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
         if (!valid) {
@@ -568,6 +580,13 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                         + getResources().getString(R.string.invalid_data)
                         + "\n");
                 presumptiveFirstName.setTextColor(getResources().getColor(R.color.Red));
+            }
+            if (!RegexUtil.isWord(App.get(lastName))) {
+                valid = false;
+                message.append(lastName.getTag().toString() + ": "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                lastName.setTextColor(getResources().getColor(R.color.Red));
             }
             if (!RegexUtil.isWord(App.get(presumptiveMotherName))) {
                 valid = false;
@@ -635,10 +654,9 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             values.put("gender", male.isChecked() ? "M" : "F");
             values.put("age", App.get(age));
             values.put("location", App.getLocation());
-           /* values.put("firstName", App.get(presumptiveFirstName));
-            values.put("familyName", App.get(presumptiveMotherName));*/
-            values.put("firstName", firstName);
-            values.put("familyName", familyName);
+            values.put("firstName", App.get(presumptiveFirstName));
+            values.put("familyName", App.get(lastName));
+            values.put("motherName", App.get(presumptiveMotherName));
             values.put("patientId", App.get(patientId));
 
 
