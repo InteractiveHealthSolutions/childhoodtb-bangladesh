@@ -93,46 +93,46 @@
             android:name=".ChildhoodTbActivities.TestIndicationActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.AFBTestOrderActivity"
+            android:name=".ChildhoodTbActivities.AfbTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.CXRTestOrderActivity"
+            android:name=".ChildhoodTbActivities.CxrTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
             android:name=".ChildhoodTbActivities.HistopathologTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.ESRTestOrderActivity"
+            android:name=".ChildhoodTbActivities.EsrTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.AFBTestResultActivity"
+            android:name=".ChildhoodTbActivities.AfbTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.CXRTestResultActivity"
+            android:name=".ChildhoodTbActivities.CxrTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
             android:name=".ChildhoodTbActivities.HistopathologTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.ESRTestResultActivity"
+            android:name=".ChildhoodTbActivities.EsrTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.GXPTestOrderActivity"
+            android:name=".ChildhoodTbActivities.GxpTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.GXPTestResultActivity"
+            android:name=".ChildhoodTbActivities.GxpTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.TSTTestOrderActivity"
+            android:name=".ChildhoodTbActivities.TstTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.TSTTestResultActivity"
+            android:name=".ChildhoodTbActivities.TstTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.CTScanTestOrderActivity"
+            android:name=".ChildhoodTbActivities.CtScanTestOrderActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name=".ChildhoodTbActivities.CTScanTestResultActivity"
+            android:name=".ChildhoodTbActivities.CtScanTestResultActivity"
             android:configChanges="keyboardHidden|orientation" />
         <activity
             android:name=".ChildhoodTbActivities.UltraSoundTestOrderActivity"

@@ -15,8 +15,12 @@
         <EditTextPreference
             android:key="support_contact"
             android:persistent="true"
-            android:title="Support Contact" android:defaultValue="@string/support_contact"/>
-        <CheckBoxPreference android:title="@string/use_secure" android:key="use_ssl" android:defaultValue="true"/>
+            android:title="Support Contact"
+            android:defaultValue="@string/support_contact"/>
+        <CheckBoxPreference
+            android:title="@string/use_secure"
+            android:key="use_ssl"
+            android:defaultValue="false"/>
     </PreferenceCategory>
     <PreferenceCategory
         android:key="application"

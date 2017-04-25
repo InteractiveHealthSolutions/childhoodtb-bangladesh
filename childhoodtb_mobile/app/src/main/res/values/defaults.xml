@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
@@ -15,10 +14,10 @@ Contributors: Tahira Niazi -->
 <resources>
     <string name="trust_store_password">4845e7412f</string>
     <string name="server_address">61.247.187.250:8443</string>
-<!-- 	<string name="server_address">"10.0.2.2:8080"</string> -->
+    <!--<string name="server_address">199.172.1.17:80</string>-->
     <string name="http_port">80</string>
     <string name="https_port">443</string>
     <string name="support_contact">03453174270</string>
     <string name="support_email">irddmu2013@gmail.com</string>
-    
+
 </resources>

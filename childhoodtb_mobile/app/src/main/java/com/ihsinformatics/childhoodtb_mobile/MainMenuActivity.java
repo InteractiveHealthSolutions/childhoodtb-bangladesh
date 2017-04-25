@@ -27,6 +27,7 @@ import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -43,26 +44,27 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AFBTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CTScanTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CTScanTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CXRTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CXRTestResultActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ESRTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ESRTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AfbTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CtScanTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CtScanTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CxrTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CxrTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.EsrTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.EsrTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.EndFollowUpActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GXPTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GXPTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GxpTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GxpTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.HistopathologTestOrderActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.HistopathologTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.LoginSessionManager;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaediatricContactTracingAtHomeActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaediatricScreeningActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PaedsPresumptiveConfirmationActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.PediatricContactInvestigationAtFacilityActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TSTTestOrderActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TSTTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TstTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TstTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TestIndicationActivity;
-import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AFBTestOrderActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AfbTestOrderActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TreatmentInitiationActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.UltraSoundTestOrderActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.UltraSoundTestResultActivity;
@@ -556,9 +558,9 @@ public class MainMenuActivity extends Activity implements IActivity,
                         SharedPreferences preferences = PreferenceManager
                                 .getDefaultSharedPreferences(MainMenuActivity.this);
                         SharedPreferences.Editor editor = preferences.edit();
-                        editor.putBoolean(Preferences.AUTO_LOGIN, true);
+                        editor.putBoolean(Preferences.AUTO_LOGIN, false);
                         editor.apply();
-                        finish();
+                        ActivityCompat.finishAffinity(MainMenuActivity.this);
                     }
                 });
         confirmationDialog.setButton(AlertDialog.BUTTON_POSITIVE,
@@ -571,7 +573,8 @@ public class MainMenuActivity extends Activity implements IActivity,
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putBoolean(Preferences.AUTO_LOGIN, false);
                         editor.apply();
-                        finish();
+                        //todo:here we add new code for log out ...
+                        LoginSessionManager.getInstance(MainMenuActivity.this).logoutUser();
                     }
                 });
         confirmationDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getResources()
@@ -680,19 +683,19 @@ public class MainMenuActivity extends Activity implements IActivity,
                 startActivity(testIndication);
                 break;
             case R.main_id.afbSmearTestOrderButton:
-                Intent afbtestResult = new Intent(this, AFBTestOrderActivity.class);
+                Intent afbtestResult = new Intent(this, AfbTestOrderActivity.class);
                 startActivity(afbtestResult);
                 break;
             case R.main_id.afbSmearTestResultButton:
-                Intent aftbtestOrder = new Intent(this, AFBTestResultActivity.class);
+                Intent aftbtestOrder = new Intent(this, AfbTestResultActivity.class);
                 startActivity(aftbtestOrder);
                 break;
             case R.main_id.cxrTestResultButton:
-                Intent cxrtestResult = new Intent(this, CXRTestResultActivity.class);
+                Intent cxrtestResult = new Intent(this, CxrTestResultActivity.class);
                 startActivity(cxrtestResult);
                 break;
             case R.main_id.cxrTestOrderButton:
-                Intent cxrtestOrder = new Intent(this, CXRTestOrderActivity.class);
+                Intent cxrtestOrder = new Intent(this, CxrTestOrderActivity.class);
                 startActivity(cxrtestOrder);
                 break;
             case R.main_id.histopathologyTestOrderButton:
@@ -704,35 +707,35 @@ public class MainMenuActivity extends Activity implements IActivity,
                 startActivity(histopathologyTestResult);
                 break;
             case R.main_id.esrTestOrderButton:
-                Intent esrTestOrder = new Intent(this, ESRTestOrderActivity.class);
+                Intent esrTestOrder = new Intent(this, EsrTestOrderActivity.class);
                 startActivity(esrTestOrder);
                 break;
             case R.main_id.esrTestResultButton:
-                Intent esrTestResult = new Intent(this, ESRTestResultActivity.class);
+                Intent esrTestResult = new Intent(this, EsrTestResultActivity.class);
                 startActivity(esrTestResult);
                 break;
             case R.main_id.gxpTestOrderButton:
-                Intent gxpTestOrder = new Intent(this, GXPTestOrderActivity.class);
+                Intent gxpTestOrder = new Intent(this, GxpTestOrderActivity.class);
                 startActivity(gxpTestOrder);
                 break;
             case R.main_id.gxpTestResultButton:
-                Intent gxpTestResult = new Intent(this, GXPTestResultActivity.class);
+                Intent gxpTestResult = new Intent(this, GxpTestResultActivity.class);
                 startActivity(gxpTestResult);
                 break;
             case R.main_id.tstTestOrderButton:
-                Intent tstTestOrder = new Intent(this, TSTTestOrderActivity.class);
+                Intent tstTestOrder = new Intent(this, TstTestOrderActivity.class);
                 startActivity(tstTestOrder);
                 break;
             case R.main_id.tstTestResultButton:
-                Intent tstTestResult = new Intent(this, TSTTestResultActivity.class);
+                Intent tstTestResult = new Intent(this, TstTestResultActivity.class);
                 startActivity(tstTestResult);
                 break;
             case R.main_id.ctScanTestOrderButton:
-                Intent ctScanTestOrder = new Intent(this, CTScanTestOrderActivity.class);
+                Intent ctScanTestOrder = new Intent(this, CtScanTestOrderActivity.class);
                 startActivity(ctScanTestOrder);
                 break;
             case R.main_id.ctScanTestResultButton:
-                Intent ctScanTestResult = new Intent(this, CTScanTestResultActivity.class);
+                Intent ctScanTestResult = new Intent(this, CtScanTestResultActivity.class);
                 startActivity(ctScanTestResult);
                 break;
             case R.main_id.ultrasoundTestOrderButton:

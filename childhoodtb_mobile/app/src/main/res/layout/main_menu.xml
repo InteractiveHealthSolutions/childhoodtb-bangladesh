@@ -155,7 +155,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_screening"
+                android:drawableTop="@drawable/paed"
                 android:tag="@string/paediatric_presumptive_form"
                 android:text="@string/paediatric_presumptive_form" />
 
@@ -175,7 +175,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_blood_sugar_result"
+                android:drawableTop="@drawable/test_indication"
                 android:tag="@string/afb_test_order_button"
                 android:text="@string/afb_test_order_button"
 
@@ -186,7 +186,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_blood_sugar_result"
+                android:drawableTop="@drawable/test_indication"
                 android:tag="@string/afb_test_result_button"
                 android:text="@string/afb_test_result_button"
 
@@ -197,7 +197,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_patient"
+                android:drawableTop="@drawable/crx"
                 android:tag="@string/cxr_test_order_button"
                 android:text="@string/cxr_test_order_button" />
 
@@ -206,7 +206,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_patient"
+                android:drawableTop="@drawable/crx"
                 android:tag="@string/cxr_test_result_button"
                 android:text="@string/cxr_test_result_button"
 
@@ -235,7 +235,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_blood_sugar"
+                android:drawableTop="@drawable/esr_test"
                 android:tag="@string/esr_test_order_button"
                 android:text="@string/esr_test_order_button"
 
@@ -246,7 +246,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_blood_sugar"
+                android:drawableTop="@drawable/esr_test"
                 android:tag="@string/esr_test_result_button"
                 android:text="@string/esr_test_result_button"
 
@@ -279,7 +279,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_clinical_evaluation"
+                android:drawableTop="@drawable/tst_test"
                 android:tag="@string/tst_test_order_button"
                 android:text="@string/tst_test_order_button"
 
@@ -290,7 +290,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_clinical_evaluation"
+                android:drawableTop="@drawable/tst_test"
                 android:tag="@string/tst_test_result_button"
                 android:text="@string/tst_test_result_button"
 
@@ -301,7 +301,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_drugs"
+                android:drawableTop="@drawable/ct_scan"
                 android:tag="@string/ct_scan_test_Order_button"
                 android:text="@string/ct_scan_test_Order_button"
 
@@ -312,7 +312,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_drugs"
+                android:drawableTop="@drawable/ct_scan"
                 android:tag="@string/ct_scan_test_result_button"
                 android:text="@string/ct_scan_test_result_button"
 
@@ -323,7 +323,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/ultrasound"
+                android:drawableTop="@drawable/ultrasound_f"
                 android:tag="@string/ultrasound_test_Order_button"
                 android:text="@string/ultrasound_test_Order_button"
 
@@ -334,7 +334,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/ultrasound"
+                android:drawableTop="@drawable/ultrasound_f"
                 android:tag="@string/ultrasound_test_result_button"
                 android:text="@string/ultrasound_test_result_button"
 
@@ -344,7 +344,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_feedback"
+                android:drawableTop="@drawable/treatment"
                 android:tag="@string/treatment_initiation_button"
                 android:text="@string/treatment_initiation_button"
                 />
@@ -355,7 +355,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_paediatric"
+                android:drawableTop="@drawable/contact"
                 android:tag="@string/paediatric_home_contact_tracing"
                 android:text="@string/paediatric_home_contact_tracing"
                 android:visibility="gone" />
@@ -365,7 +365,7 @@
                 style="@style/button"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_screening"
+                android:drawableTop="@drawable/contact"
                 android:tag="@string/paediatric_contact_investigation_facility"
                 android:text="@string/paediatric_contact_investigation_facility" />
 

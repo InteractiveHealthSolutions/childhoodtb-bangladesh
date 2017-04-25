@@ -26,6 +26,8 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,6 +41,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.LoginSessionManager;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.util.ServerService;
 import com.ihsinformatics.childhoodtb_mobile.R;
@@ -188,6 +191,8 @@ public class LoginActivity extends Activity implements IActivity,
                         }
                         return false;
                     }
+                    Log.i("userName", "" + App.get(username));
+                    Log.i("userpASS", "" + App.get(password));
                     App.setUsername(App.get(username));
                     App.setPassword(App.get(password));
                     //App.setPassword("Mrsihs123");
@@ -205,6 +210,7 @@ public class LoginActivity extends Activity implements IActivity,
                     loading.dismiss();
                     if (result) {
                         serverService.setCurrentUser(App.get(username));
+
                         // Save username and password in preferences
                         SharedPreferences preferences = PreferenceManager
                                 .getDefaultSharedPreferences(LoginActivity.this);
@@ -214,6 +220,11 @@ public class LoginActivity extends Activity implements IActivity,
                         editor.putString(Preferences.PASSWORD,
                                 App.getPassword());
                         editor.apply();
+
+                         //this code save userName and userPassword into sharedPreference
+                        LoginSessionManager.getInstance(LoginActivity.this)
+                                .createLoginSession(App.getUsername(), App.getPassword());
+
                         Intent intent = new Intent(LoginActivity.this,
                                 MainMenuActivity.class);
                         startActivity(intent);
@@ -282,5 +293,30 @@ public class LoginActivity extends Activity implements IActivity,
                 startActivity(browserIntent);
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+       // super.onBackPressed();
+        AlertDialog confirmationDialog = new AlertDialog.Builder(this).create();
+        confirmationDialog.setTitle(getResources().getString(
+                R.string.exit_application));
+        confirmationDialog.setMessage(getResources().getString(
+                R.string.exit_operation_log));
+        confirmationDialog.setButton(AlertDialog.BUTTON_NEGATIVE,
+                getResources().getString(R.string.exit),
+                new AlertDialog.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ActivityCompat.finishAffinity(LoginActivity.this);
+                    }
+                });
+        confirmationDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getResources()
+                .getString(R.string.cancel), new AlertDialog.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        confirmationDialog.show();
     }
 }

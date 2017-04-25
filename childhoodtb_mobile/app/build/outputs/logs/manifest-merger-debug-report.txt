@@ -207,13 +207,13 @@ ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\sr
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:94:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:93:13-73
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AFBTestOrderActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AfbTestOrderActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:95:9-97:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:97:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:96:13-71
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CXRTestOrderActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CxrTestOrderActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:98:9-100:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:100:13-63
@@ -225,19 +225,19 @@ ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\sr
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:103:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:102:13-81
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ESRTestOrderActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.EsrTestOrderActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:104:9-106:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:106:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:105:13-71
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AFBTestResultActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AfbTestResultActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:107:9-109:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:109:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:108:13-72
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CXRTestResultActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CxrTestResultActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:110:9-112:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:112:13-63
@@ -249,43 +249,43 @@ ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\sr
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:115:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:114:13-82
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ESRTestResultActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.EsrTestResultActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:116:9-118:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:118:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:117:13-72
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GXPTestOrderActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GxpTestOrderActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:119:9-121:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:121:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:120:13-71
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GXPTestResultActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.GxpTestResultActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:122:9-124:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:124:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:123:13-72
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TSTTestOrderActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TstTestOrderActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:125:9-127:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:127:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:126:13-71
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TSTTestResultActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.TstTestResultActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:128:9-130:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:130:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:129:13-72
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CTScanTestOrderActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CtScanTestOrderActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:131:9-133:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:133:13-63
 	android:name
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:132:13-74
-activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CTScanTestResultActivity
+activity#com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CtScanTestResultActivity
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:134:9-136:66
 	android:configChanges
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:136:13-63

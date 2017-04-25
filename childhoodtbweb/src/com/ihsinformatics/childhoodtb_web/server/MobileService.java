@@ -101,6 +101,7 @@ public class MobileService {
 	// static final String propFilePath =
 	// "C:\\workspace\\tbreach3web\\openmrs-runtime.properties";
 	static final String propFilePath = "C:\\Users\\Shujaat\\AppData\\Roaming\\OpenMRS\\openmrs-runtime.properties";
+	//static final String propFilePath = "C:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
 
 	private static File propsFile;
 	private static Properties props;
@@ -3778,10 +3779,6 @@ public class MobileService {
 			// Get Creator
 			User creatorObj = Context.getUserService().getUserByUsername(
 					username);
-			// Get Identifier type
-			List<PatientIdentifierType> allIdTypes = Context
-					.getPatientService().getAllPatientIdentifierTypes();
-			PatientIdentifierType patientIdTypeObj = allIdTypes.get(0);
 			// Get Location
 			Location locationObj = Context.getLocationService().getLocation(
 					location);
@@ -3920,10 +3917,6 @@ public class MobileService {
 			// Get Creator
 			User creatorObj = Context.getUserService().getUserByUsername(
 					username);
-			// Get Identifier type
-			List<PatientIdentifierType> allIdTypes = Context
-					.getPatientService().getAllPatientIdentifierTypes();
-			PatientIdentifierType patientIdTypeObj = allIdTypes.get(0);
 			// Get Location
 			Location locationObj = Context.getLocationService().getLocation(
 					location);

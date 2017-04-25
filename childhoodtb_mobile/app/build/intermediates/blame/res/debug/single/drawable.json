@@ -24,8 +24,16 @@
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\exclamation.png"
     },
     {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\crx.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\crx.png"
+    },
+    {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_spinner_item_enabled.xml",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\custom_spinner_item_enabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\contact.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\contact.png"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\spinner_disabled_beige.9.png",
@@ -58,6 +66,10 @@
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_text_beige.xml",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\custom_text_beige.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\test_indication.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\test_indication.png"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\numberpicker_down_normal.9.png",
@@ -96,28 +108,12 @@
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_non_pulmonary_suspect.png"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ct_scan_50.png",
-        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\ct_scan_50.png"
-    },
-    {
-        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_patient.png",
-        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_patient.png"
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tst_test.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\tst_test.png"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\error.png",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\error.png"
-    },
-    {
-        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\intro_background.png",
-        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\intro_background.png"
-    },
-    {
-        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\gender.png",
-        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\gender.png"
-    },
-    {
-        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ihs_logo.png",
-        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\ihs_logo.png"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_customer_info.png",
@@ -128,12 +124,40 @@
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\lung_test.png"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_screening.png",
-        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_screening.png"
-    },
-    {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_edit.png",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_edit.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ct_scan_50.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\ct_scan_50.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_patient.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_patient.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ultrasound_f.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\ultrasound_f.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\intro_background.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\intro_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\esr_test.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\esr_test.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\gender.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\gender.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ihs_logo.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\ihs_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_screening.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_screening.png"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\spinner_pressed_beige.9.png",
@@ -142,6 +166,14 @@
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_drugs.png",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_drugs.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\paed.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\paed.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\treatment.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\treatment.png"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\info.png",
@@ -158,6 +190,10 @@
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_spinner_item_disabled.xml",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\custom_spinner_item_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ct_scan.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\ct_scan.png"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ird_logo.png",

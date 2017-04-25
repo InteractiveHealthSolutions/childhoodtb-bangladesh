@@ -1064,6 +1064,7 @@
     <string name="exit">Exit</string>
     <string name="exit_application">Exit Application</string>
     <string name="exit_operation">Please specify whether you want to Log out or exit without logging out.</string>
+    <string name="exit_operation_log">Do you really want to exit the Application?</string>
     <string name="exposure_score">Exposure Score</string>
     <string name="exposure_score_hint">Enter Exposure Score</string>
     <string name="exposure_value"/>

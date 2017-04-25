@@ -24,6 +24,7 @@ Contributors: Tahira Niazi -->
     <string name="deleted">Data deleted successfully.</string>
     <string name="exit_application">Exit Application</string>
     <string name="exit_operation">Please specify whether you want to Log out or exit without logging out.</string>
+    <string name="exit_operation_log">Do you really want to exit the Application?</string>
     <string name="inserted">"Data inserted successfully."</string>
     <string name="operation_successful">Request has been processed by the server successfully.</string>
     <string name="patients_not_found">No Patients were found matching given parameters</string>
