@@ -10,6 +10,16 @@
     <dimen name="huge">40dp</dimen>
     <dimen name="gigantic">52dp</dimen>
 
+    <dimen name="micro_txt">2sp</dimen>
+    <dimen name="tiny_txt">6sp</dimen>
+    <dimen name="small_txt">12sp</dimen>
+    <dimen name="medium_txt">16sp</dimen>
+    <dimen name="large_txt">20sp</dimen>
+    <dimen name="xlarge_txt">24sp</dimen>
+    <dimen name="xxlarge_txt">32sp</dimen>
+    <dimen name="huge_txt">40sp</dimen>
+    <dimen name="gigantic_txt">52sp</dimen>
+
     <string-array name="delay_summary">
         <item>Short (10 sec)</item>
         <item>Medium (30 sec)</item>
@@ -34,11 +44,14 @@
         <item>30000</item>
         <item>60000</item>
     </string-array>
-	<string-array name="language">
+    <string-array name="language">
         <item>bn - Bengali</item>
         <item>en - English</item>
         <item>in - Bahasa</item>
         <item>ur - Urdu</item>
     </string-array>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 
 </resources>

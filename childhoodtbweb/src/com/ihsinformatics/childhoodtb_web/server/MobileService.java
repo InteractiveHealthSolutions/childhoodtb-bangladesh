@@ -53,6 +53,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.taglib.logic.PresentTag;
 import org.apache.xerces.impl.dv.util.Base64;
 import org.hibernate.NonUniqueObjectException;
+import org.jfree.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -95,13 +96,15 @@ public class MobileService {
 	private HttpServletRequest request;
 
 	// OpenMRS-related
-	 //static final String propFilePath = "/usr/share/tomcat6/.OpenMRS/openmrs-runtime.properties";
+	// static final String propFilePath =
+	// "/usr/share/tomcat7/.OpenMRS/openmrs-runtime.properties";
 	// static final String propFilePath =
 	// "c:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
 	// static final String propFilePath =
 	// "C:\\workspace\\tbreach3web\\openmrs-runtime.properties";
 	static final String propFilePath = "C:\\Users\\Shujaat\\AppData\\Roaming\\OpenMRS\\openmrs-runtime.properties";
-	//static final String propFilePath = "C:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
+	// static final String propFilePath =
+	// "C:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
 
 	private static File propsFile;
 	private static Properties props;
@@ -263,7 +266,9 @@ public class MobileService {
 			else if (formType.equals(FormType.GET_PERSON_DETAIL))
 				response = getPersonDetail(formType, jsonObject);
 			else if (formType.equals(FormType.PATIENT_REGISTRATION))
-				response = doPatientRegistration(formType, jsonObject);
+				response = getPatientsAgainstObs(jsonObject);
+			/*else if (formType.equals(FormType.PATIENT_REGISTRATION))
+				response = doPatientRegistration(formType, jsonObject);*/
 			// change from Reverse Contact tracing to Contact Tracing
 			else if (formType.equals(FormType.REVERSE_CONTACT_TRACING))
 				response = doReverseContactTracing(formType, jsonObject);
@@ -649,6 +654,7 @@ public class MobileService {
 	 * @return
 	 */
 	public String getPatientDetail(String formType, JSONObject values) {
+
 		JSONObject json = new JSONObject();
 		try {
 			List<Patient> patients = new ArrayList<Patient>();
@@ -3891,7 +3897,7 @@ public class MobileService {
 
 	}
 
-	// insert the Treatment Initiation Form Data
+	// Insert the Treatment Initiation Form Data
 	public String insertTreatmentInitiationForm(String formType,
 			JSONObject values) {
 
@@ -4057,4 +4063,104 @@ public class MobileService {
 
 	}
 
+	// Get the Patients against the index case ID Observation...not solved yet 
+	public String getPatientsAgainstObs(JSONObject values) {
+		ArrayList<String> result = new ArrayList<String>();
+		JSONObject json = new JSONObject();
+		
+		try {
+			String patientId = values.getString("patient_id");
+			Concept concept = Context.getConceptService().getConceptByName(
+					"Cough");
+			String query = "select count(*) as total from openmrs.obs where concept_id= ?";
+			String[] parameterValues = new String[] { concept.toString() };
+
+			try {
+				if (conn.isClosed()) {
+					if (!openConnection()) {
+						return "error";
+					}
+				}
+				PreparedStatement statement = conn.prepareStatement(query);
+				int count = 1;
+				if (concept != null) {
+					for (String s : parameterValues) {
+						statement.setString(count++, s);
+					}
+				}
+				ResultSet resultSet = statement.executeQuery();
+				int i = 0;
+				if(!resultSet.wasNull()){
+				while (resultSet.next()) {
+					String firstVal= resultSet.getString(i);
+					if (patientId.equals(firstVal)) {
+						result.add(resultSet.getString(i));
+					}
+					i++;
+				}
+			   }//end the 
+				Log.info("" + result.size());
+				// get observation against patient id ...
+			 int  numberOfContacts = getObservationAgainstPatient(patientId,"Cough");
+			  json.put("numberContact", numberOfContacts);
+			
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} catch (JSONException e) {
+
+		}
+
+		return result.toString();
+	}
+    //get observation ..not solved yet 
+	public int getObservationAgainstPatient(String patientId,String conceptName){
+		
+		int json = 0;
+		try {
+		
+			List<Patient> patients = Context.getPatientService().getPatients(
+					patientId);
+			Concept concept = Context.getConceptService().getConceptByName(
+					conceptName);
+			if (patients == null) {
+				return json;
+			}
+			if (patients.isEmpty()) {
+				return json;
+			}
+			Patient patient = patients.get(0);
+			JSONArray obsArray = new JSONArray();
+			List<Obs> obs = new LinkedList<Obs>();
+			
+				obs = Context.getObsService()
+						.getObservationsByPersonAndConcept(patient, concept);
+			Set<String> obsValues = new HashSet<String>();
+			for (Obs o : obs) {
+				String value = "";
+				String hl7Abbreviation = concept.getDatatype()
+						.getHl7Abbreviation();
+				if (hl7Abbreviation.equals("NM")) {
+					value = o.getValueNumeric().toString();
+				} else if (hl7Abbreviation.equals("CWE")) {
+					value = o.getValueCoded().getName().getName();
+				} else if (hl7Abbreviation.equals("ST")) {
+					value = o.getValueText();
+				} else if (hl7Abbreviation.equals("DT")) {
+					value = DateTimeUtil.getSQLDate(o.getValueDate());
+				}
+				obsValues.add(value);
+			}
+			for (String value : obsValues) {
+				JSONObject jsonObj = new JSONObject();
+				jsonObj.put("value", value);
+				obsArray.put(jsonObj);
+			}
+			json = obsArray.length();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return json;
+	}
 }

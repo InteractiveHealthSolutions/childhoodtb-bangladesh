@@ -45,6 +45,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.AfbTestResultActivity;
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ContactRegistryActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CtScanTestOrderActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CtScanTestResultActivity;
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.CxrTestOrderActivity;
@@ -118,7 +119,8 @@ public class MainMenuActivity extends Activity implements IActivity,
             histopathologyTestResultButton, histopathologyTestOrderButton,
             esrTestOrderButton, esrTestResultButton, gxpTestResultButton, gxpTestOrderButton,
             tstTestOrderButton, tstTestResultButton, ctScanTestOrderButton, ctScanTestResultButton,
-            ultrasoundTestOrderButton, ultrasoundTestResultButton,treatmentInitiationButton;
+            ultrasoundTestOrderButton, ultrasoundTestResultButton, treatmentInitiationButton,
+            contactRegistryButton;
 
 
     OpenMrsObject[] locations;
@@ -170,7 +172,8 @@ public class MainMenuActivity extends Activity implements IActivity,
         ctScanTestResultButton = (Button) findViewById(R.main_id.ctScanTestResultButton);
         ultrasoundTestOrderButton = (Button) findViewById(R.main_id.ultrasoundTestOrderButton);
         ultrasoundTestResultButton = (Button) findViewById(R.main_id.ultrasoundTestResultButton);
-        treatmentInitiationButton= (Button) findViewById(R.main_id.treatmentInitiationButton);
+        treatmentInitiationButton = (Button) findViewById(R.main_id.treatmentInitiationButton);
+        contactRegistryButton = (Button) findViewById(R.main_id.contactRegistryButton);
         // nonPulmonarySuspect = (Button) findViewById;
         // (R.main_id.nonPulmonarySuspectButton);
         // customerInfoButton = (Button) findViewById
@@ -217,7 +220,8 @@ public class MainMenuActivity extends Activity implements IActivity,
                 afbSmearTestResultButton, cxrTestOrderButton, histopathologyTestOrderButton,
                 esrTestResultButton, gxpTestResultButton, gxpTestOrderButton, tstTestOrderButton,
                 tstTestResultButton, ctScanTestOrderButton, ctScanTestResultButton,
-                ultrasoundTestResultButton,ultrasoundTestOrderButton,treatmentInitiationButton/*
+                ultrasoundTestResultButton, ultrasoundTestOrderButton, treatmentInitiationButton,
+                contactRegistryButton/*
                                          * tbScreening , screening ,
 										 * nonPulmonarySuspect ,
 										 * customerInfoButton , testIndication ,
@@ -289,10 +293,10 @@ public class MainMenuActivity extends Activity implements IActivity,
                         PatientSearchActivity.class);
                 startActivity(patientSearchIntent);
                 break;
-            // case R.menu_id.reportsActivity :
-            // Intent reportsIntent = new Intent (this, ReportsActivity.class);
-            // startActivity (reportsIntent);
-            // break;
+            case R.menu_id.reportsActivity:
+                Intent reportsIntent = new Intent(this, ContactReportActivity.class);
+                startActivity(reportsIntent);
+                break;
             case R.menu_id.formsActivity:
                 Intent formsIntent = new Intent(this, SavedFormsActivity.class);
                 startActivity(formsIntent);
@@ -749,6 +753,10 @@ public class MainMenuActivity extends Activity implements IActivity,
             case R.main_id.treatmentInitiationButton:
                 Intent treatmentInitiation = new Intent(this, TreatmentInitiationActivity.class);
                 startActivity(treatmentInitiation);
+                break;
+            case R.main_id.contactRegistryButton:
+                Intent contactRegistry = new Intent(this, ContactRegistryActivity.class);
+                startActivity(contactRegistry);
                 break;
             default:
                 toast.setText(getResources().getString(R.string.form_unavailable));

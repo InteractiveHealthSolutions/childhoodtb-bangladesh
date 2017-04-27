@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="total_contact">Total Number of contacts</string>
+    <string name="total_contact_hint">Enter Number of contacts</string>
+    <string name="total_adult_contact">Total Number of adult contacts</string>
+    <string name="total_adult_contact_hint">Enter Number of adult contacts</string>
+    <string name="total_childhood_contact">Total Number of childhood contacts</string>
+    <string name="total_childhood_contact_hint">Total Number of childhood contacts</string>
+</resources>

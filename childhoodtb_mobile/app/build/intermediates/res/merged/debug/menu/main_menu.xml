@@ -11,11 +11,11 @@
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/search_patients">
     </item>
-<!--     <item -->
-<!--         android:id="@+menu_id/reportsActivity" -->
-<!--         android:icon="@android:drawable/ic_menu_agenda" -->
-<!--         android:title="@string/reporting"> -->
-<!--     </item> -->
+     <item
+         android:id="@+menu_id/reportsActivity"
+         android:icon="@android:drawable/ic_menu_agenda"
+         android:title="@string/reporting">
+     </item>
     <item
         android:id="@+menu_id/formsActivity"
         android:icon="@android:drawable/ic_menu_save"

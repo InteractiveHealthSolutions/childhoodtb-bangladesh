@@ -169,6 +169,16 @@
                 android:text="@string/test_indication_button"
 
                 />
+            <Button
+                android:id="@+main_id/contactRegistryButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_feedback"
+                android:tag="@string/Contact_Registry_button"
+                android:text="@string/Contact_Registry_button"
+
+                />
 
             <Button
                 android:id="@+main_id/afbSmearTestOrderButton"

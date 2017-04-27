@@ -2545,7 +2545,8 @@ public class ServerService {
 
     /* Save Treatment Initiation  FORM DATA */
     public String insertTreatmentInitiationForm(String encounterType, ContentValues values,
-                                                String[][] observations) {
+
+     /*this method use only when you need contact patient against the index patient id*/                                           String[][] observations) {
 
         String response = "";
         String patientId = values.getAsString("patientId");
@@ -2616,5 +2617,34 @@ public class ServerService {
         return response;
 
     }
+    public String getPatientAgainstObs(String patientId) {
 
+        String response = "";
+        ArrayList<Patient> patientInfo;
+        String[][] details = null;
+
+        patientInfo = new ArrayList<Patient>();
+
+        if (!checkInternetConnection()) {
+
+            return null;
+        }
+
+        JSONObject json = new JSONObject();
+        try {
+            json.put("app_ver", App.getVersion());
+            json.put("form_name", FormType.PATIENT_REGISTRATION);
+            json.put("patient_id", patientId);
+            response = get("?content=" + JsonUtil.getEncodedJson(json));
+            if (response == null) {
+                return null;
+            }
+            Log.i("listPatientId",""+response);
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage());
+        } catch (UnsupportedEncodingException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return "";
+    }
 }
