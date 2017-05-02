@@ -27,6 +27,7 @@ import android.util.Log;
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.model.OpenMrsObject;
 import com.ihsinformatics.childhoodtb_mobile.model.Patient;
+import com.ihsinformatics.childhoodtb_mobile.model.Report;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.shared.Metadata;
 import com.ihsinformatics.childhoodtb_mobile.R;
@@ -533,6 +534,61 @@ public class ServerService {
         return patientInfo;
     }
 
+    public ArrayList<Patient> getPatientInfo(String patientId) {
+
+        String response = "";
+        ArrayList<Patient> patientInfo;
+        String[][] details = null;
+
+        patientInfo = new ArrayList<Patient>();
+
+        if (!checkInternetConnection()) {
+
+            return null;
+        }
+
+        JSONObject json = new JSONObject();
+        try {
+            json.put("app_ver", App.getVersion());
+            json.put("form_name", FormType.CONTACT_REGISTRY_DETAIL);
+            json.put("patient_id", patientId);
+            response = get("?content=" + JsonUtil.getEncodedJson(json));
+            if (response == null) {
+                return patientInfo;
+            }
+            JSONObject jsonResponse = JsonUtil.getJSONObject(response);
+            if (jsonResponse.has("result")) {
+                return patientInfo;
+            }
+            {
+                try {
+                    String name = jsonResponse.get("name").toString();
+                    int age = jsonResponse.getInt("age");
+                    String gen = jsonResponse.get("gender").toString();
+                    String firstName = jsonResponse.get("firstName").toString();
+                    String familyName = jsonResponse.get("familyName").toString();
+                    String motherName = jsonResponse.getString("motherName").equals(null) ? "Not Given" : jsonResponse.getString("motherName");
+
+                    Patient patientInformation = new Patient();
+                    patientInformation.setName(name);
+                    patientInformation.setAge(age);
+                    patientInformation.setFirstName(firstName);
+                    patientInformation.setFamilyName(familyName);
+                    patientInformation.setGender(gen);
+                    patientInformation.setMotherName(motherName);
+                    patientInfo.add(patientInformation);
+
+                } catch (JSONException e) {
+                    Log.e(TAG, e.getMessage());
+                }
+            }
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage());
+        } catch (UnsupportedEncodingException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return patientInfo;
+    }
 
     // person detail for HCT Record Card auto-populate fields
     public String[][] getPersonDetail(String patientId) {
@@ -1320,18 +1376,17 @@ public class ServerService {
     public String savePaediatricContactTracing(String encounterType,
                                                ContentValues values, String[][] observations) {
         String response = "";
-
         // Demographics
         String givenName = TextUtil.capitalizeFirstLetter(values
                 .getAsString("firstName"));
         String familyName = TextUtil.capitalizeFirstLetter(values
                 .getAsString("lastName"));
-
+        String age = TextUtil.capitalizeFirstLetter(
+                values.getAsString("age"));
         String gender = values.getAsString("gender");
         String patientId = values.getAsString("patientId");
         String location = values.getAsString("location");
         String formDate = values.getAsString("formDate");
-        String dob = values.getAsString("dob");
 
         try {
             String id = getPatientId(patientId);
@@ -1348,7 +1403,7 @@ public class ServerService {
             json.put("family_name", familyName);
             json.put("gender", gender);
             json.put("location", location);
-            json.put("dob", dob);
+            json.put("age", age);
 
             JSONArray obs = new JSONArray();
             for (int i = 0; i < observations.length; i++) {
@@ -1373,7 +1428,6 @@ public class ServerService {
             // saveOfflineForm(encounterType, json.toString());
             // return "SUCCESS";
             // }
-
             response = post("?content=" + JsonUtil.getEncodedJson(json));
             JSONObject jsonResponse = JsonUtil.getJSONObject(response);
 
@@ -2545,8 +2599,7 @@ public class ServerService {
 
     /* Save Treatment Initiation  FORM DATA */
     public String insertTreatmentInitiationForm(String encounterType, ContentValues values,
-
-     /*this method use only when you need contact patient against the index patient id*/                                           String[][] observations) {
+                                                String[][] observations) {
 
         String response = "";
         String patientId = values.getAsString("patientId");
@@ -2617,13 +2670,85 @@ public class ServerService {
         return response;
 
     }
-    public String getPatientAgainstObs(String patientId) {
+
+    /* Save Treatment Initiation  FORM DATA */
+    public String insertContactForm(String encounterType, ContentValues values,
+                                    String[][] observations) {
 
         String response = "";
-        ArrayList<Patient> patientInfo;
-        String[][] details = null;
+        String patientId = values.getAsString("patientId");
+        String location = values.getAsString("location");
+        String formDate = values.getAsString("formDate");
+        String primaryPhone = values.getAsString("primaryPhone");
 
-        patientInfo = new ArrayList<Patient>();
+        try {
+
+            if (!App.isOfflineMode()) {
+
+                String id = getPatientId(patientId);
+                if (id == null)
+                    return context.getResources().getString(
+                            R.string.patient_id_missing);
+            }
+
+            // Save Patient
+            JSONObject json = new JSONObject();
+
+            json.put("app_ver", App.getVersion());
+            json.put("form_name", encounterType);
+            json.put("username", App.getUsername());
+            json.put("patient_id", patientId);
+            json.put("location", location);
+            json.put("primary_phone", primaryPhone);
+
+            JSONArray listOfObservations = new JSONArray();
+
+            for (int i = 0; i < observations.length; i++) {
+                if ("".equals(observations[i][0])
+                        || "".equals(observations[i][1]))
+                    continue;
+                JSONObject obsJson = new JSONObject();
+                obsJson.put("concept", observations[i][0]);
+                obsJson.put("value", observations[i][1]);
+                listOfObservations.put(obsJson);
+            }
+            json.put("encounter_type", encounterType);
+            json.put("form_date", formDate);
+            json.put("encounter_location", location);
+            json.put("provider", App.getUsername());
+            json.put("obs", listOfObservations.toString());
+            // Save form locally if in offline mode
+            if (App.isOfflineMode()) {
+                saveOfflineForm(encounterType, json.toString());
+                return "SUCCESS";
+            }
+            response = post("?content=" + JsonUtil.getEncodedJson(json));
+            JSONObject jsonResponse = JsonUtil.getJSONObject(response);
+            if (jsonResponse == null) {
+                return response;
+            }
+            if (jsonResponse.has("result")) {
+                String result = jsonResponse.getString("result");
+                return result;
+            }
+            return response;
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage());
+            response = context.getResources().getString(R.string.invalid_data);
+        } catch (UnsupportedEncodingException e) {
+            Log.e(TAG, e.getMessage());
+            response = context.getResources().getString(R.string.unknown_error);
+        }
+        return response;
+
+    }
+
+    /*Get screened  contacts*/
+    public ArrayList<Report> searchContact(String patientId) {
+
+        String response = "";
+        ArrayList<Report> screenedContact;
+        screenedContact = new ArrayList<Report>();
 
         if (!checkInternetConnection()) {
 
@@ -2639,12 +2764,36 @@ public class ServerService {
             if (response == null) {
                 return null;
             }
-            Log.i("listPatientId",""+response);
+            JSONObject jsonResponse = JsonUtil.getJSONObject(response);
+            if (jsonResponse.has("result")) {
+                String result = jsonResponse.getString("result");
+
+                return screenedContact;
+            }
+            {
+                try {
+
+                    Report contactReport = new Report();
+                    contactReport.setNumberOfContact(jsonResponse.get("numberContact").toString());
+                    contactReport.setNumberOfAdult(jsonResponse.get("numberAdult").toString());
+                    contactReport.setNumberOfChildhood(jsonResponse.get("numberChildhood").toString());
+                    contactReport.setNumberOfScreened(jsonResponse.get("screenedPatient").toString());
+                     /*contactReport.setNumberOfSymptomatic(jsonResponse.get("numberSymptomatic").toString());
+                     contactReport.setNumberOfContactsEligibleForPti(jsonResponse.get("numberEligible").toString());
+*/
+                    screenedContact.add(contactReport);
+
+                } catch (JSONException e) {
+                    Log.e(TAG, e.getMessage());
+                }
+            }
         } catch (JSONException e) {
             Log.e(TAG, e.getMessage());
         } catch (UnsupportedEncodingException e) {
             Log.e(TAG, e.getMessage());
         }
-        return "";
+        return screenedContact;
     }
+
+
 }

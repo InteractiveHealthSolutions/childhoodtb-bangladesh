@@ -1,8 +1,10 @@
 package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
@@ -39,6 +41,7 @@ import com.ihsinformatics.childhoodtb_mobile.custom.MyRadioButton;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyRadioGroup;
 import com.ihsinformatics.childhoodtb_mobile.custom.MySpinner;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
+import com.ihsinformatics.childhoodtb_mobile.model.Patient;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
@@ -54,32 +57,24 @@ import java.util.Locale;
 public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActivity implements TextView.OnEditorActionListener {
 
     MyTextView
-            formDateTextView, patientIdTextView,
-            addressTextView, phoneNoTextView, dotsCenterNameTextView,
-            treatmentInitiationCenterTextView, dsTBRegNoTextView, contactInvestigatorNameTextView,
-            contactInvestigatorDesignationTextView, nameOfDotProviderTextView, designationOfDotProviderTextView,
-            phoneNoDotProviderTextView, contactOneNameTextView, contactOneAgeTextView, contactOneGenderTextView,
-            contactOneSymptomsTextView, contactOneCoughTextView, contactOneFeverTextView, contactOneNightSweatsTextView, contactOneWeightTextView,
-            contactOnePoorAppetiteTextView, referTextView, outcomeCodeTextView, remarksTextView, numberOfContactPersonTextView;
+            formDateTextView, patientIdTextView, contactAgeTextView, contactGenderTextView,
+            contactSymptomsTextView, contactCoughTextView, contactFeverTextView, contactNightSweatsTextView,
+            contactWeightTextView, contactPoorAppetiteTextView, referTextView, outcomeCodeTextView, remarksTextView,
+            indexNameTextView, indexCaseIDTextView, contactFirstNameTextView, contactLastNameTextView;
 
 
     EditText
-            phoneNo, age, patientId, address, dotsCenterName,
-            treatmentInitiationCenter, dsTBRegNo, contactInvestigatorName,
-            contactInvestigatorDesignation, nameOfDotProvider, designationOfDotProvider,
-            phoneNoDotProvider, contactOneName, refer, remarks;
+            age, patientId, indexCaseId, indexName, contactFirstName, contactLastName, refer, remarks;
 
     MySpinner
-            contactOneSymptoms, contactWeightLoss,
-            contactOneCough, contactOneFever, contactOneNightSweats, poorAppetite,
-            numberOfContactPerson, outcomeCode;
+            contactSymptoms, contactWeightLoss, contactCough, contactFever, contactNightSweats, poorAppetite,
+            outcomeCode;
 
 
-    MyButton formDateButton;
+    MyButton formDateButton, validatePatientId, scanBarcode, scanBarcodeIndexId;
 
     MyRadioGroup gender;
     MyRadioButton male, female;
-    MyButton scanBarcode;
     String result = "";
 
 
@@ -95,71 +90,37 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         formDateButton = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.form_date,
                 R.string.form_date);
-        addressTextView = new MyTextView(context,
-                R.style.text, R.string.address);
-        address = new MyEditText(context,
-                R.string.address, R.string.address_hint,
-                InputType.TYPE_TEXT_VARIATION_POSTAL_ADDRESS, R.style.edit, 25, false);
-        phoneNoTextView = new MyTextView(context,
-                R.style.text, R.string.phone_No);
-        phoneNo = new MyEditText(context,
-                R.string.phone_No, R.string.phone_hint,
-                InputType.TYPE_CLASS_NUMBER, R.style.edit, 15, false);
-        dotsCenterNameTextView = new MyTextView(context,
-                R.style.text, R.string.dots_center_name);
-        dotsCenterName = new MyEditText(context,
-                R.string.dots_center_name, R.string.dots_center_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 15, false);
-        treatmentInitiationCenterTextView = new MyTextView(context,
-                R.style.text, R.string.treatment_initiation_center);
-        treatmentInitiationCenter = new MyEditText(context,
-                R.string.treatment_initiation_center, R.string.treatment_initiation_center_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
-        dsTBRegNoTextView = new MyTextView(context,
-                R.style.text, R.string.ds_tb_reg_no);
-        dsTBRegNo = new MyEditText(context,
-                R.string.ds_tb_reg_no, R.string.ds_tb_reg_no_hint,
-                InputType.TYPE_CLASS_NUMBER, R.style.edit, 11, false);
-        contactInvestigatorNameTextView = new MyTextView(context,
-                R.style.text, R.string.contact_investigator_name);
-        contactInvestigatorName = new MyEditText(context,
-                R.string.contact_investigator_name, R.string.contact_investigator_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
-        contactInvestigatorDesignationTextView = new MyTextView(context,
-                R.style.text, R.string.designation_contact_investigator);
-        contactInvestigatorDesignation = new MyEditText(context,
-                R.string.contact_investigator_name, R.string.contact_investigator_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 15, false);
-        nameOfDotProviderTextView = new MyTextView(context,
-                R.style.text, R.string.dot_provider_name);
-        nameOfDotProvider = new MyEditText(context,
-                R.string.dots_center_name, R.string.dots_center_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
-        designationOfDotProviderTextView = new MyTextView(context,
-                R.style.text, R.string.dot_provider_designation);
-        designationOfDotProvider = new MyEditText(context,
-                R.string.dot_provider_designation, R.string.dot_provider_designation_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 15, false);
 
-        phoneNoDotProviderTextView = new MyTextView(context,
-                R.style.text, R.string.dot_provider_phone_no);
-        phoneNoDotProvider = new MyEditText(context,
-                R.string.dot_provider_phone_no, R.string.dot_provider_phone_no_hint,
-                InputType.TYPE_CLASS_NUMBER, R.style.edit, 15, false);
-        numberOfContactPersonTextView = new MyTextView(context,
-                R.style.text, R.string.number_of_contact_person);
-        numberOfContactPerson = new MySpinner(context,
-                getResources().getStringArray(R.array.contact_person_options),
-                R.string.number_of_contact_person, R.string.option_hint);
+        indexCaseIDTextView = new MyTextView(context,
+                R.style.text, R.string.index_case_id);
+        indexCaseId = new MyEditText(context,
+                R.string.index_case_id, R.string.index_case_id_hint,
+                InputType.TYPE_CLASS_TEXT, R.style.edit, 13, false);
 
-          /* Contact persons fields */
-        contactOneNameTextView = new MyTextView(context,
-                R.style.text, R.string.contact_person_name);
-        contactOneName = new MyEditText(context,
-                R.string.contact_person_name, R.string.name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
+        scanBarcodeIndexId = new MyButton(context, R.style.button,
+                R.drawable.custom_button_beige, R.string.scan_barcode,
+                R.string.scan_barcode);
+        validatePatientId = new MyButton(context, R.style.button,
+                R.drawable.custom_button_beige, R.string.validateID,
+                R.string.validateID);
+        indexNameTextView = new MyTextView(context,
+                R.style.text, R.string.index_name);
+        indexName = new MyEditText(context, R.string.age,
+                R.string.index_name, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 25, false);
+        contactFirstNameTextView = new MyTextView(context,
+                R.style.text, R.string.contact_first_name);
+        contactFirstName = new MyEditText(context, R.string.age,
+                R.string.contact_first_name, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 25, false);
+        contactLastNameTextView = new MyTextView(context,
+                R.style.text, R.string.contact_last_name);
+        contactLastName = new MyEditText(context, R.string.age,
+                R.string.contact_last_name, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 25, false);
 
-        contactOneGenderTextView = new MyTextView(context, R.style.text, R.string.gender);
+        contactGenderTextView = new MyTextView(context,
+                R.style.text, R.string.gender);
         male = new MyRadioButton(context, R.string.male, R.style.radio,
                 R.string.male);
         female = new MyRadioButton(context, R.string.female, R.style.radio,
@@ -167,39 +128,39 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         gender = new MyRadioGroup(context,
                 new MyRadioButton[]{male, female}, R.string.gender,
                 R.style.radio, App.isLanguageRTL());
-        contactOneAgeTextView = new MyTextView(context, R.style.text, R.string.age);
+        contactAgeTextView = new MyTextView(context, R.style.text, R.string.age);
         age = new MyEditText(context, R.string.age,
                 R.string.age_hint, InputType.TYPE_CLASS_NUMBER,
                 R.style.edit, 3, false);
-        contactOneWeightTextView = new MyTextView(context,
+        contactWeightTextView = new MyTextView(context,
                 R.style.text, R.string.weight_loss);
         contactWeightLoss = new MySpinner(context,
                 getResources().getStringArray(R.array.weight_loss_options),
                 R.string.weight_loss, R.string.option_hint);
 
-        contactOneSymptomsTextView = new MyTextView(context,
+        contactSymptomsTextView = new MyTextView(context,
                 R.style.text, R.string.symptoms);
-        contactOneSymptoms = new MySpinner(context,
+        contactSymptoms = new MySpinner(context,
                 getResources().getStringArray(R.array.symptoms_options),
                 R.string.symptoms, R.string.option_hint);
 
-        contactOneCoughTextView = new MyTextView(context,
+        contactCoughTextView = new MyTextView(context,
                 R.style.text, R.string.contact_cough);
-        contactOneCough = new MySpinner(context, getResources()
+        contactCough = new MySpinner(context, getResources()
                 .getStringArray(R.array.cough_options),
                 R.string.contact_cough, R.string.option_hint);
 
-        contactOneFeverTextView = new MyTextView(context,
+        contactFeverTextView = new MyTextView(context,
                 R.style.text, R.string._fever);
-        contactOneFever = new MySpinner(context,
+        contactFever = new MySpinner(context,
                 getResources().getStringArray(R.array.fever_options)
                 , R.string._fever, R.string.option_hint);
-        contactOneNightSweatsTextView = new MyTextView(context, R.style.text,
+        contactNightSweatsTextView = new MyTextView(context, R.style.text,
                 R.string.night_sweats);
-        contactOneNightSweats = new MySpinner(context,
+        contactNightSweats = new MySpinner(context,
                 getResources().getStringArray(R.array.night_sweats_options)
                 , R.string.night_sweats, R.string.option_hint);
-        contactOnePoorAppetiteTextView = new MyTextView(context,
+        contactPoorAppetiteTextView = new MyTextView(context,
                 R.style.text, R.string.poor_appetite);
         poorAppetite = new MySpinner(context,
                 getResources().getStringArray(R.array.appetite_decreased_options),
@@ -233,17 +194,18 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
                 R.drawable.custom_button_beige, R.string.scan_barcode,
                 R.string.scan_barcode);
 
-       View[][] viewGroups = {
+        View[][] viewGroups = {
 
-                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                         phoneNoTextView, phoneNo, addressTextView, address, dotsCenterNameTextView, dotsCenterName
+                {formDateTextView, formDateButton, indexCaseIDTextView, indexCaseId, scanBarcodeIndexId,
+                        validatePatientId, indexNameTextView, indexName, contactFirstNameTextView, contactFirstName,
+                        contactLastNameTextView, contactLastName, contactAgeTextView, age
                 },
-                {treatmentInitiationCenterTextView, treatmentInitiationCenter, dsTBRegNoTextView, dsTBRegNo,
-                        contactInvestigatorNameTextView, contactInvestigatorName, contactInvestigatorDesignationTextView,
-                        contactInvestigatorDesignation, nameOfDotProviderTextView, nameOfDotProvider, designationOfDotProviderTextView,
-                        designationOfDotProvider},
-                {phoneNoDotProviderTextView, phoneNoDotProvider, numberOfContactPersonTextView, numberOfContactPerson}
-
+                {contactGenderTextView, gender, contactSymptomsTextView, contactSymptoms, patientIdTextView,
+                        contactCoughTextView, contactCough, contactFeverTextView, contactFever, contactNightSweatsTextView,
+                        contactNightSweats, contactWeightTextView, contactWeightLoss
+                },
+                {contactPoorAppetiteTextView, poorAppetite, referTextView, refer, outcomeCodeTextView, outcomeCode
+                        , remarksTextView, remarks, patientId, scanBarcode}
         };
         // Create layouts and store in ArrayList
         groups = new ArrayList<ViewGroup>();
@@ -275,13 +237,8 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{
-
-                age, contactWeightLoss, numberOfContactPerson,
-                contactOneCough, contactOneFever, patientId, contactOneNightSweats,
-                phoneNo, address, dotsCenterName, treatmentInitiationCenter, dsTBRegNo, contactInvestigatorName,
-                contactInvestigatorDesignation, designationOfDotProvider, nameOfDotProvider, phoneNoDotProvider,
-                refer, remarks
+        views = new View[]{age, contactWeightLoss, contactCough, contactFever, patientId, contactNightSweats,
+                refer, remarks, contactFirstName, contactLastName, indexCaseId, indexName
         };
 
         for (View v : views) {
@@ -320,7 +277,10 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         lastButton.setOnClickListener(this);
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
+        saveButton.setEnabled(false);
         scanBarcode.setOnClickListener(this);
+        validatePatientId.setOnClickListener(this);
+        indexName.setFocusable(false);
         navigationSeekbar.setOnSeekBarChangeListener(this);
     }
 
@@ -359,47 +319,80 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
-        }
+        } else if (view == validatePatientId) {
+            //check Patient I validation
+            if (checkPatientId()) {
+
+                AsyncTask<String, String, Object> getTask = new AsyncTask<String, String, Object>() {
+                    @Override
+                    protected Object doInBackground(String... params) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                loading.setIndeterminate(true);
+                                loading.setCancelable(false);
+                                loading.setMessage(getResources().getString(
+                                        R.string.loading_message));
+                                loading.show();
+                            }
+                        });
+
+                        ArrayList<Patient> response = serverService.getPatientInfo(App.get(indexCaseId));
+                        return response;
+                    }
+
+                    @Override
+                    protected void onProgressUpdate(String... values) {
+                    }
+
+                    @Override
+                    protected void onPostExecute(Object result) {
+                        super.onPostExecute(result);
+                        loading.dismiss();
+                        ArrayList<Patient> patients = (ArrayList<Patient>) result;
+                        StringBuilder errorMessage = new StringBuilder();
+                        if (result == null) {
+                            AlertDialog alertDialog = App.getAlertDialog(PaediatricContactTracingAtHomeActivity.this,
+                                    AlertType.ERROR,
+                                    getResources()
+                                            .getString(R.string.data_connection_error));
+                            alertDialog.setTitle(getResources().getString(
+                                    R.string.error_title));
+                            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                                    new AlertDialog.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog,
+                                                            int which) {
+                                            initView(views);
+                                        }
+                                    });
+                            alertDialog.show();
+                        } else {
+                            if (patients.size() == 0
+                                    || patients.isEmpty()) {
+                                errorMessage.append(
+                                        getResources().getString(R.string.not_found_contact_registry)
+                                );
+                                App.getAlertDialog(PaediatricContactTracingAtHomeActivity.this,
+                                        AlertType.ERROR, errorMessage.toString()).show();
+                                initView(views);
+
+                            } else {
+                                saveButton.setEnabled(true);
+                                indexName.setText(patients.get(0).getName());
+                            }//end else
+                        }
+                    }
+                };
+                getTask.execute("");
+            }
+        }//end else if condition...
 
 
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-        MySpinner spinner = (MySpinner) adapterView;
-        boolean visible = spinner.getSelectedItemPosition() == 0;
-
-        if(adapterView==numberOfContactPerson)
-        {
-           View[][] viewGroups = {
-                    {contactOneAgeTextView, age, contactOneGenderTextView, gender, contactOneSymptomsTextView,
-                            contactOneSymptoms, contactOneCoughTextView, contactOneCough,
-                            contactOneFeverTextView, contactOneFever
-                    },
-                    {referTextView, refer, outcomeCodeTextView, outcomeCode, remarksTextView, remarks,
-                            contactOneWeightTextView, contactWeightLoss, contactOnePoorAppetiteTextView,
-                            poorAppetite, contactOneNightSweatsTextView, contactOneNightSweats
-                    }
-            };
-
-            for (int k = 0; k < viewGroups.length; k++) {
-
-                LinearLayout layout = new LinearLayout(this);
-                layout.setOrientation(LinearLayout.VERTICAL);
-                for (int j = 0; j < viewGroups[k].length; j++) {
-                    layout.addView(viewGroups[k][j]);
-                }
-
-                ScrollView scrollView = new ScrollView(this);
-                scrollView.setLayoutParams(new ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                scrollView.addView(layout);
-                groups.add(scrollView);
-            }
-
-            Log.i("logTest", "" + spinner.getSelectedItem().toString());
-        }
 
     }
 
@@ -420,66 +413,50 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         boolean valid = true;
         StringBuffer message = new StringBuffer();
         // Validate mandatory controls
-        View[] mandatory = {phoneNo, address, nameOfDotProvider, dotsCenterName, treatmentInitiationCenter,
-                dsTBRegNo, contactInvestigatorDesignation, contactInvestigatorName, nameOfDotProvider,
-                phoneNoDotProvider};
+        View[] mandatory = {age, contactWeightLoss, refer, remarks, outcomeCode, contactFirstName,
+                contactLastName, indexName};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
                 valid = false;
-                message.append(v.getTag().toString() + ". ");
+                message.append(v.getTag().toString() + ": " +
+                        getResources().getString(R.string.empty_data) + "\n");
                 ((EditText) v).setHintTextColor(getResources().getColor(
                         R.color.Red));
             }
+        }
+        if (!RegexUtil.isWord(App.get(contactFirstName))) {
+            valid = false;
+            message.append(contactFirstName.getTag().toString()
+                    + ": "
+                    + getResources().getString(
+                    R.string.invalid_data) + "\n");
+            contactFirstName.setTextColor(getResources().getColor(
+                    R.color.Red));
+        }
+        if (!RegexUtil.isWord(App.get(contactLastName))) {
+            valid = false;
+            message.append(contactLastName.getTag().toString()
+                    + ": "
+                    + getResources().getString(
+                    R.string.invalid_data) + "\n");
+            contactLastName.setTextColor(getResources().getColor(
+                    R.color.Red));
+        }
+        if (!RegexUtil.isWord(App.get(refer))) {
+            valid = false;
+            message.append(refer.getTag().toString()
+                    + ": "
+                    + getResources().getString(
+                    R.string.invalid_data) + "\n");
+            refer.setTextColor(getResources().getColor(
+                    R.color.Red));
         }
         if (App.get(patientId).equals("")) {
             valid = false;
             message.append(patientId.getTag().toString() + ". ");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
-        }
-
-        if (!valid) {
-
-            message.append(getResources().getString(R.string.empty_data) + "\n");
-        }
-
-        if (valid) {
-            if (!RegexUtil.isNumeric(App.get(phoneNo), false)) {
-                valid = false;
-                message.append(phoneNo.getTag().toString() + ": "
-                        + getResources().getString(R.string.invalid_data)
-                        + "\n");
-                phoneNo.setTextColor(getResources().getColor(R.color.Red));
-            }
-            if (!RegexUtil.isWord(App.get(dotsCenterName))) {
-
-                valid = false;
-                message.append(dotsCenterName.getTag().toString() + ": "
-                        + getResources().getString(R.string.invalid_data)
-                        + "\n");
-                dotsCenterName.setTextColor(getResources().getColor(R.color.Red));
-            }
-            if (!RegexUtil.isNumeric(App.get(treatmentInitiationCenter), false)) {
-
-                valid = false;
-                message.append(treatmentInitiationCenter.getTag().toString() + ": "
-                        + getResources().getString(R.string.invalid_data)
-                        + "\n");
-                treatmentInitiationCenter.setTextColor(getResources().getColor(R.color.Red));
-            }
-            if (!RegexUtil.isWord(App.get(contactInvestigatorName))) {
-
-                valid = false;
-                message.append(contactInvestigatorName.getTag().toString() + ": "
-                        + getResources().getString(R.string.invalid_data)
-                        + "\n");
-                contactInvestigatorName.setTextColor(getResources().getColor(R.color.Red));
-            }
-
-
-        }
-
-        if (RegexUtil.matchId(App.get(patientId))) {
+        } else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;
@@ -499,6 +476,32 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
             patientId
                     .setTextColor(getResources().getColor(R.color.Red));
         }
+        ///check the index id
+        if (App.get(indexCaseId).equals("")) {
+            valid = false;
+            message.append(indexCaseId.getTag().toString() + ". ");
+            indexCaseId.setHintTextColor(getResources().getColor(R.color.Red));
+        } else if (RegexUtil.matchId(App.get(indexCaseId))) {
+            if (!RegexUtil.isValidId(App.get(indexCaseId))) {
+
+                valid = false;
+                message.append(indexCaseId.getTag().toString()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_data) + "\n");
+                indexCaseId.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+        } else {
+
+            valid = false;
+            message.append(indexCaseId.getTag().toString() + ": "
+                    + getResources().getString(R.string.invalid_data)
+                    + "\n");
+            patientId
+                    .setTextColor(getResources().getColor(R.color.Red));
+        }
+
         //check is the selected date and time is in future ...
         try {
             if (formDate.getTime().after(Calendar.getInstance().getTime())) {
@@ -528,25 +531,36 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
             values.put("formDate", App.getSqlDate(formDate));
             values.put("gender", male.isChecked() ? "M" : "F");
             values.put("age", App.get(age));
+            values.put("firstName", App.get(contactFirstName));
+            values.put("lastName", App.get(contactLastName));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
-            observations.add(new String[]{"Weight",
+            observations.add(new String[]{"Index Case ID",
+                    App.get(indexCaseId)});
+            observations.add(new String[]{"Weight Loss",
                     App.get(contactWeightLoss)});
+            observations.add(new String[]{"Symptoms",
+                    App.get(contactSymptoms)});
             observations.add(new String[]{"Fever",
-                    App.get(contactOneFever).equals(getResources().getString(R.string.do_not_know)) ?
-                            getResources().getString(R.string.unknown) : App.get(contactOneFever)});
+                    App.get(contactFever).equals(getResources().getString(R.string.do_not_know)) ?
+                            getResources().getString(R.string.unknown) : App.get(contactFever)});
             observations.add(new String[]{"Night Sweats",
-                    App.get(contactOneNightSweats).equals(getResources().getString(R.string.do_not_know)) ?
-                            getResources().getString(R.string.unknown) : App.get(contactOneNightSweats)});
+                    App.get(contactNightSweats).equals(getResources().getString(R.string.do_not_know)) ?
+                            getResources().getString(R.string.unknown) : App.get(contactNightSweats)});
             observations.add(new String[]{"Cough",
-                    App.get(contactOneCough).equals(getResources().getString(R.string.do_not_know)) ?
-                            getResources().getString(R.string.unknown) : App.get(contactOneCough)});
+                    App.get(contactCough).equals(getResources().getString(R.string.do_not_know)) ?
+                            getResources().getString(R.string.unknown) : App.get(contactCough)});
             observations.add(new String[]{"Poor Appetite",
                     App.get(poorAppetite).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(poorAppetite)});
+            observations.add(new String[]{"Reffered",
+                    App.get(refer)});
+            observations.add(new String[]{"Outcome Code",
+                    App.get(outcomeCode)});
+            observations.add(new String[]{"Remarks",
+                    App.get(remarks)});
 
 
             ///Create the AsyncTask ()
@@ -564,8 +578,8 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertPaedsPresumptiveConfirmationForm(
-                            FormType.PAEDS_PRESUMPTIVE_CONFIRMATION, values,
+                    result = serverService.savePaediatricContactTracing(
+                            FormType.PAEDIATRIC_CONTACT_TRACING, values,
                             observations.toArray(new String[][]{}));
 
                     return result;
@@ -688,5 +702,38 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         public int getCount() {
             return pageCount;
         }
+    }
+
+    public boolean checkPatientId() {
+        boolean isIndexId = true;
+        final String indexPatientId = App.get(indexCaseId);
+        if (!indexPatientId.equals("")) {
+            if (RegexUtil.matchId(App.get(indexCaseId))) {
+
+                if (!RegexUtil.isValidId(App.get(indexCaseId))) {
+                    isIndexId = false;
+                    App.getAlertDialog(PaediatricContactTracingAtHomeActivity.this,
+                            AlertType.ERROR, indexCaseId.getTag().toString() + ":"
+                                    + getResources().getString(R.string.invalid_data)).show();
+
+                    indexCaseId.setTextColor(getResources().getColor(
+                            R.color.Red));
+                }
+            } else {
+                isIndexId = false;
+                App.getAlertDialog(PaediatricContactTracingAtHomeActivity.this,
+                        AlertType.ERROR, indexCaseId.getTag().toString() + ":"
+                                + getResources().getString(R.string.invalid_data)).show();
+
+                indexCaseId.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+        } else {
+            isIndexId = false;
+            App.getAlertDialog(PaediatricContactTracingAtHomeActivity.this,
+                    AlertType.ERROR, getResources().getString(R.string.empty_data_indexId)).show();
+
+        }
+        return isIndexId;
     }
 }

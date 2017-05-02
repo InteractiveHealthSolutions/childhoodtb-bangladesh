@@ -5,14 +5,19 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.SpannableStringBuilder;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -20,6 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -71,7 +77,7 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
     MyButton formDateButton;
     MyButton scanBarcode;
     String result = "";
-
+    int totalChild, totalAdult = 0;
 
     @Override
     public void createViews(Context context) {
@@ -171,8 +177,9 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
                         contactInvestigatorNameTextView, contactInvestigatorName, contactInvestigatorDesignationTextView,
                         contactInvestigatorDesignation, nameOfDotProviderTextView, nameOfDotProvider, designationOfDotProviderTextView,
                         designationOfDotProvider},
-                {phoneNoDotProviderTextView, phoneNoDotProvider, totalNumberOfContactTextView, totalNumberOfContactEditText,
-                        totalNumberOfAdultContactsTextView, totalNumberOfAdultContactsEditText, totalNumberOfChildhoodContactTextView, totalNumberOfChildhoodContactEditText}
+                {phoneNoDotProviderTextView, phoneNoDotProvider, totalNumberOfAdultContactsTextView, totalNumberOfAdultContactsEditText,
+                        totalNumberOfChildhoodContactTextView, totalNumberOfChildhoodContactEditText, totalNumberOfContactTextView,
+                        totalNumberOfContactEditText}
 
 
         };
@@ -240,7 +247,7 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
     @Override
     protected void onStart() {
         super.onStart();
-
+        totalNumberOfContactEditText.setFocusable(false);
         //Clicked Events...
         formDateButton.setOnClickListener(this);
         firstButton.setOnClickListener(this);
@@ -249,6 +256,78 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
+
+        ///run time change after type the values in editText....
+        totalNumberOfChildhoodContactEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!charSequence.equals("") && !charSequence.toString().isEmpty()) {
+                    if (Integer.parseInt(charSequence.toString()) < 25
+                            || Integer.parseInt(charSequence.toString()) == 25) {
+
+                        totalChild = Integer.parseInt(charSequence.toString());
+
+                    } else if (Integer.parseInt(charSequence.toString()) > 25) {
+                        int color = Color.RED;
+                        String errorMessage = getResources().getString(R.string.not_allowed);
+                        ForegroundColorSpan fgColorSpan = new ForegroundColorSpan(color);
+                        SpannableStringBuilder spanableStringBuilder = new SpannableStringBuilder(errorMessage);
+                        spanableStringBuilder.setSpan(fgColorSpan, 0, errorMessage.length(), 0);
+                        totalNumberOfChildhoodContactEditText.setError(spanableStringBuilder);
+                       /* App.getAlertDialog(ContactRegistryActivity.this,
+                                AlertType.ERROR,
+                                getResources().getString(R.string.not_allowed)).show();*/
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0)
+                    totalChild = 0;
+                updateDisplay();
+            }
+        });
+        totalNumberOfAdultContactsEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!charSequence.equals("") && !charSequence.toString().isEmpty()) {
+                    if (Integer.parseInt(charSequence.toString()) < 25
+                            || Integer.parseInt(charSequence.toString()) == 25) {
+
+                        totalAdult = Integer.parseInt(charSequence.toString());
+
+                    } else if (Integer.parseInt(charSequence.toString()) > 25) {
+                        int color = Color.RED;
+                        String errorMessage = getResources().getString(R.string.not_allowed);
+                        ForegroundColorSpan fgColorSpan = new ForegroundColorSpan(color);
+                        SpannableStringBuilder spanableStringBuilder = new SpannableStringBuilder(errorMessage);
+                        spanableStringBuilder.setSpan(fgColorSpan, 0, errorMessage.length(), 0);
+                        totalNumberOfAdultContactsEditText.setError(spanableStringBuilder);
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0)
+                    totalAdult = 0;
+                updateDisplay();
+            }
+        });
+
     }
 
     @Override
@@ -303,7 +382,7 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
     @Override
     public void updateDisplay() {
         formDateButton.setText(DateFormat.format("dd-MMM-yyyy", formDate));
-
+        totalNumberOfContactEditText.setText(Integer.toString(totalChild + totalAdult));
     }
 
     @Override
@@ -334,6 +413,14 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
                         + "\n");
                 phoneNo.setTextColor(getResources().getColor(R.color.Red));
             }
+            if (!RegexUtil.isContactNumber(App.get(phoneNoDotProvider))) {
+                valid = false;
+                message.append(phoneNoDotProvider.getTag().toString() + ": "
+                        + getResources().getString(R.string.invalid_data)
+                        + "\n");
+                phoneNoDotProvider.setTextColor(getResources().getColor(R.color.Red));
+            }
+
             if (!RegexUtil.isWord(App.get(dotsCenterName))) {
 
                 valid = false;
@@ -342,7 +429,7 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
                         + "\n");
                 dotsCenterName.setTextColor(getResources().getColor(R.color.Red));
             }
-            if (!RegexUtil.isNumeric(App.get(treatmentInitiationCenter), false)) {
+            if (!RegexUtil.isWord(App.get(treatmentInitiationCenter))) {
 
                 valid = false;
                 message.append(treatmentInitiationCenter.getTag().toString() + ": "
@@ -437,9 +524,33 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
+            values.put("primaryPhone", App.get(phoneNo));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
-
+            observations.add(new String[]{"Address",
+                    App.get(address)});
+            observations.add(new String[]{"DOTS center",
+                    App.get(dotsCenterNameTextView)});
+            observations.add(new String[]{"Treatment Initiation Center",
+                    App.get(treatmentInitiationCenter)});
+            observations.add(new String[]{"contact investigator",
+                    App.get(contactInvestigatorName)});
+            observations.add(new String[]{"Designation of contact investigator",
+                    App.get(contactInvestigatorDesignation)});
+            observations.add(new String[]{"Designation of DOT Provider",
+                    App.get(designationOfDotProvider)});
+            observations.add(new String[]{"DOT provider",
+                    App.get(nameOfDotProvider)});
+            observations.add(new String[]{"DOT Provider Phone Number",
+                    App.get(phoneNoDotProvider)});
+            observations.add(new String[]{"DS TB Reg No.",
+                    App.get(dsTBRegNo)});
+            observations.add(new String[]{"Number of contacts",
+                    App.get(totalNumberOfContactEditText)});
+            observations.add(new String[]{"Number of childhood contacts",
+                    App.get(totalNumberOfChildhoodContactEditText)});
+            observations.add(new String[]{"Number of adult contacts",
+                    App.get(totalNumberOfAdultContactsEditText)});
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -455,9 +566,9 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
                             loading.show();
                         }
                     });
-                    ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
-                    result = serverService.insertPaedsPresumptiveConfirmationForm(
-                            FormType.PAEDS_PRESUMPTIVE_CONFIRMATION, values,
+
+                    result = serverService.insertContactForm(
+                            FormType.CONTACT_REGISTRY, values,
                             observations.toArray(new String[][]{}));
 
                     return result;

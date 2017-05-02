@@ -44,5 +44,7 @@ Contributors: Tahira Niazi -->
     <string name="update_error">Error in updating data. Please make sure you are not violating validation rules</string>
     <string name="user_not_found">User not found! Please enter correct user name</string>
     <string name="user_role_undefined">User role not found or undefined! Please contact Administrator or select a different Role</string>
+    <string name="not_allowed">Number exceeds the allowable limit.25 Contact is Limit.</string>
+    <string name="not_found_contact_registry">Patient Id not found in contact registry! Please make sure you fill the contact registry form.</string>
 
 </resources>

@@ -148,4 +148,8 @@
     <string name="treatment_after_default">Treatment after default</string>
     <string name="treatment_after_failure">Treatment after failure</string>
 
+    <string name="index_name">Index Name</string>
+    <string name="contact_first_name">Contact First Name</string>
+    <string name="contact_last_name">Contact Last Name</string>
+
 </resources>

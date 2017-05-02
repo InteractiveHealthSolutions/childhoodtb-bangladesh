@@ -119,9 +119,9 @@ Contributors: Tahira Niazi -->
     <string name="title_activity_contact_report">ContactReportActivity</string>
     <!--Contact Report Strings-->
     <string name="no_contact_rp">Total contacts</string>
-    <string name="no_adult_contact_rp">Adult contacts</string>
-    <string name="no_childhood_contact_rp">Childhood contacts</string>
-    <string name="no_screened_contact_rp">Contacts screened</string>
+    <string name="no_adult_contact_rp">Total adult contacts</string>
+    <string name="no_childhood_contact_rp">Total childhood contacts</string>
+    <string name="no_screened_contact_rp">Total contacts screened</string>
     <string name="no_contact_found_symptomatic_rp">Contacts symptomatic</string>
     <string name="no_contact_eligible_itp_rp">Contacts eligible</string>
 </resources>

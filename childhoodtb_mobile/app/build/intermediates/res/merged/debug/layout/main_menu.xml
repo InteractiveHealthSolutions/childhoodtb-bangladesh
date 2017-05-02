@@ -368,7 +368,7 @@
                 android:drawableTop="@drawable/contact"
                 android:tag="@string/paediatric_home_contact_tracing"
                 android:text="@string/paediatric_home_contact_tracing"
-                android:visibility="gone" />
+                />
 
             <Button
                 android:id="@+main_id/paediatricContactAtFacilityButton"

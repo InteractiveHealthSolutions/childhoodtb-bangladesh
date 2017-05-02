@@ -18,11 +18,14 @@ import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.ContactRegistryActivity;
+import com.ihsinformatics.childhoodtb_mobile.model.Report;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.util.RegexUtil;
 import com.ihsinformatics.childhoodtb_mobile.util.ServerService;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 
@@ -89,12 +92,9 @@ public class ContactReportActivity extends Activity implements View.OnClickListe
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
-        }
-        else if (view == searchContactButton) {
-
-            final String id = App.get(patientId);
-            if (!id.equals("")) {
-
+        } else if (view == searchContactButton) {
+             //checkPatientId method is use for validation of patient id ...
+            if (checkPatientId()) {
                 AsyncTask<String, String, Object> getTask = new AsyncTask<String, String, Object>() {
                     @Override
                     protected Object doInBackground(String... params) {
@@ -109,7 +109,7 @@ public class ContactReportActivity extends Activity implements View.OnClickListe
                             }
                         });
 
-                        String response = serverService.getPatientAgainstObs(id);
+                        ArrayList<Report> response = serverService.searchContact(App.get(patientId));
                         return response;
                     }
 
@@ -121,7 +121,40 @@ public class ContactReportActivity extends Activity implements View.OnClickListe
                     protected void onPostExecute(Object result) {
                         super.onPostExecute(result);
                         loading.dismiss();
+                        ArrayList<Report> reports = (ArrayList<Report>) result;
+                        StringBuilder errorMessage = new StringBuilder();
+                        if (result == null) {
+                            AlertDialog alertDialog = App.getAlertDialog(ContactReportActivity.this,
+                                    AlertType.ERROR,
+                                    getResources()
+                                            .getString(R.string.data_connection_error));
+                            alertDialog.setTitle(getResources().getString(
+                                    R.string.error_title));
+                            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                                    new AlertDialog.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog,
+                                                            int which) {
+                                            //clearScreen();
+                                        }
+                                    });
+                            alertDialog.show();
+                        } else {
+                            if (reports.size() == 0
+                                    || reports.isEmpty()) {
+                                errorMessage.append(
+                                        getResources().getString(R.string.not_found_contact_registry)
+                                );
+                                App.getAlertDialog(ContactReportActivity.this,
+                                        AlertType.ERROR, errorMessage.toString()).show();
+                            } else if (reports.size() > 0 && reports != null) {
+                                numberOfContact.setText(reports.get(0).getNumberOfContact());
+                                numberOfChildhood.setText(reports.get(0).getNumberOfChildhood());
+                                numberOfContactAdult.setText(reports.get(0).getNumberOfAdult());
+                                numberOfContactScreened.setText(reports.get(0).getNumberOfScreened());
 
+                            }
+                        }
                     }
                 };
                 getTask.execute("");
@@ -166,4 +199,46 @@ public class ContactReportActivity extends Activity implements View.OnClickListe
         }
     }
 
+    public boolean checkPatientId() {
+        boolean isIndexId = true;
+        final String indexPatientId = App.get(patientId);
+        if (!indexPatientId.equals("")) {
+            if (RegexUtil.matchId(App.get(patientId))) {
+
+                if (!RegexUtil.isValidId(App.get(patientId))) {
+                    isIndexId = false;
+                    App.getAlertDialog(ContactReportActivity.this,
+                            AlertType.ERROR, patientId.getTag().toString() + ":"
+                                    + getResources().getString(R.string.invalid_data)).show();
+
+                    patientId.setTextColor(getResources().getColor(
+                            R.color.Red));
+                }
+            } else {
+                isIndexId = false;
+                App.getAlertDialog(ContactReportActivity.this,
+                        AlertType.ERROR, patientId.getTag().toString() + ":"
+                                + getResources().getString(R.string.invalid_data)).show();
+
+                patientId.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+        } else {
+            isIndexId = false;
+            App.getAlertDialog(ContactReportActivity.this,
+                    AlertType.ERROR, getResources().getString(R.string.empty_data_indexId)).show();
+
+        }
+        return isIndexId;
+    }
+
+    private void clearScreen() {
+        patientId.setText("");
+        numberOfContact.setText("");
+        numberOfContactScreened.setText("");
+        numberOfContactAdult.setText("");
+        numberOfChildhood.setText("");
+        numberOfContactEligible.setText("");
+        numberOfSymptomatic.setText("");
+    }
 }

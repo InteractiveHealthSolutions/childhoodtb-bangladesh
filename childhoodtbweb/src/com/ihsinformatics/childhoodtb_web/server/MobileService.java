@@ -59,6 +59,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.omg.CORBA.UnknownUserException;
 import org.openmrs.Concept;
+import org.openmrs.ConceptAnswer;
 import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
 import org.openmrs.Location;
@@ -239,7 +240,8 @@ public class MobileService {
 				response = getPerformanceData(formType, jsonObject);
 			else if (formType.equals(FormType.SEARCH_PATIENTS))
 				response = searchPatients(formType, jsonObject);
-			else if (formType.equals(FormType.GET_PATIENT_DETAIL))
+			else if (formType.equals(FormType.GET_PATIENT_DETAIL)
+					|| formType.equals(FormType.CONTACT_REGISTRY_DETAIL))
 				response = getPatientDetail(formType, jsonObject);
 			else if (formType.equals(FormType.NON_SUSPECT))
 				response = doNonSuspectScreening(formType, jsonObject);
@@ -266,9 +268,11 @@ public class MobileService {
 			else if (formType.equals(FormType.GET_PERSON_DETAIL))
 				response = getPersonDetail(formType, jsonObject);
 			else if (formType.equals(FormType.PATIENT_REGISTRATION))
-				response = getPatientsAgainstObs(jsonObject);
-			/*else if (formType.equals(FormType.PATIENT_REGISTRATION))
-				response = doPatientRegistration(formType, jsonObject);*/
+				response = searchObservation(jsonObject);
+			/*
+			 * else if (formType.equals(FormType.PATIENT_REGISTRATION)) response
+			 * = doPatientRegistration(formType, jsonObject);
+			 */
 			// change from Reverse Contact tracing to Contact Tracing
 			else if (formType.equals(FormType.REVERSE_CONTACT_TRACING))
 				response = doReverseContactTracing(formType, jsonObject);
@@ -308,6 +312,8 @@ public class MobileService {
 				response = insertFollowUpForm(formType, jsonObject);
 			else if (formType.equals(FormType.TREATMENT_INITIATION))
 				response = insertTreatmentInitiationForm(formType, jsonObject);
+			else if (formType.equals(FormType.CONTACT_REGISTRY))
+				response = insertContactRegistryForm(formType, jsonObject);
 			else
 				throw new Exception();
 		} catch (NullPointerException e) {
@@ -657,8 +663,16 @@ public class MobileService {
 
 		JSONObject json = new JSONObject();
 		try {
+			
+
 			List<Patient> patients = new ArrayList<Patient>();
 			String patientId = values.getString("patient_id");
+			if (formType.equals(FormType.CONTACT_REGISTRY_DETAIL)) {
+				// check the contact registry from is fill or not ..
+				if(!checkContactRegistry(patientId)){
+					throw new Exception();
+				}
+			}
 			if (!patientId.equals("")) {
 				patients = Context.getPatientService().getPatients(patientId);
 				if (patients != null) {
@@ -693,9 +707,12 @@ public class MobileService {
 					}
 				}
 			}
-		} catch (JSONException e) {
+		}
+		catch (JSONException e) {
 			e.printStackTrace();
-		} finally {
+		} catch(Exception e){
+			e.printStackTrace();
+		}finally {
 			try {
 				if (json.length() == 0) {
 					json.put(
@@ -756,6 +773,7 @@ public class MobileService {
 			} else {
 				obs = Context.getObsService()
 						.getObservationsByPersonAndConcept(patient, concept);
+
 			}
 			Set<String> obsValues = new HashSet<String>();
 			for (Obs o : obs) {
@@ -1476,13 +1494,13 @@ public class MobileService {
 			String familyName = values.getString("family_name");
 			String encounterType = values.getString("encounter_type");
 			String formDate = values.getString("form_date");
-			String dateOfBirth = values.getString("dob");
+
 			Date dob = new Date();
-			dob = DateTimeUtil.getDateFromString(dateOfBirth,
-					DateTimeUtil.SQL_DATE);
+			int age = Integer.parseInt(values.get("age").toString());
+			dob.setYear(dob.getYear() - age);
 
 			Date encounterDatetime = DateTimeUtil.getDateFromString(formDate,
-					DateTimeUtil.SQL_DATE);
+					DateTimeUtil.DOB_FROMAT_DATE);
 			String encounterLocation = values.getString("encounter_location");
 			String provider = values.getString("provider");
 			JSONArray obs = new JSONArray(values.getString("obs"));
@@ -3765,7 +3783,13 @@ public class MobileService {
 		return json.toString();
 	}
 
-	// Insert FollowUpForm
+	/**
+	 * Insert FollowUpForm
+	 * 
+	 * @param formType
+	 * @param jsonvalues
+	 * @return String
+	 */
 	public String insertFollowUpForm(String formType, JSONObject values) {
 		JSONObject json = new JSONObject();
 		String error = "";
@@ -3897,7 +3921,172 @@ public class MobileService {
 
 	}
 
-	// Insert the Treatment Initiation Form Data
+	/**
+	 * Insert the Contact Registry Form Data
+	 * 
+	 * @param formType
+	 * @param jsonvalues
+	 * @return String
+	 */
+	public String insertContactRegistryForm(String formType, JSONObject values) {
+
+		JSONObject json = new JSONObject();
+		String error = "";
+		try {
+
+			String location = values.getString("location").toString();
+			String username = values.getString("username").toString();
+			String patientId = values.getString("patient_id");
+			String encounterType = values.getString("encounter_type");
+			String formDate = values.getString("form_date");
+			String phoneNumber = values.getString("primary_phone");
+
+			// get the system time ...
+			Date encounterDatetime = DateTimeUtil.getDateFromString(formDate,
+					DateTimeUtil.DOB_FROMAT_DATE);
+			String encounterLocation = values.getString("encounter_location");
+			String provider = values.getString("provider");
+			JSONArray obs = new JSONArray(values.getString("obs"));
+			// Get Creator
+			User creatorObj = Context.getUserService().getUserByUsername(
+					username);
+			// Get Location
+			Location locationObj = Context.getLocationService().getLocation(
+					location);
+			// Get Encounter type
+			EncounterType encounterTypeObj = Context.getEncounterService()
+					.getEncounterType(encounterType);
+
+			List<Patient> patients = Context.getPatientService().getPatients(
+					patientId);
+
+			Patient patietnIndetifier = null;
+			// check Patient Id is exist or not ...
+			if (patients != null && patients.size() > 0) {
+				// throw new Exception();
+				patietnIndetifier = patients.get(0);
+			} else {
+				try {
+					throw new Exception();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+			// create Person Attribute
+			PersonAttributeType phoneNumberAttribute;
+
+			try {
+				phoneNumberAttribute = Context.getPersonService()
+						.getPersonAttributeTypeByName("Primary Phone");
+
+				PersonAttribute attribute = new PersonAttribute();
+				attribute.setAttributeType(phoneNumberAttribute);
+				attribute.setValue(phoneNumber);
+				attribute.setCreator(creatorObj);
+				attribute.setDateCreated(new Date());
+				patietnIndetifier.addAttribute(attribute);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			Encounter encounter = new Encounter();
+			encounter.setEncounterType(encounterTypeObj);
+			encounter.setPatient(patietnIndetifier);
+			// In case of Encounter location different than login location
+			if (!encounterLocation.equalsIgnoreCase(location)) {
+				locationObj = Context.getLocationService().getLocation(
+						encounterLocation);
+			}
+			encounter.setLocation(locationObj);
+			encounter.setEncounterDatetime(encounterDatetime);
+			encounter.setCreator(creatorObj);
+			encounter.setDateCreated(new Date());
+			// Create Observations set
+			{
+				for (int i = 0; i < obs.length(); i++) {
+					Obs ob = new Obs();
+					// Create Person object
+					{
+						Person personObj = Context.getPersonService()
+								.getPerson(patietnIndetifier.getPatientId());
+						ob.setPerson(personObj);
+					}
+					// Create question/answer Concept object
+					{
+						JSONObject pair = obs.getJSONObject(i);
+						Concept concept = Context.getConceptService()
+								.getConcept(pair.getString("concept"));
+						ob.setConcept(concept);
+						String hl7Abbreviation = concept.getDatatype()
+								.getHl7Abbreviation();
+						if (hl7Abbreviation.equals("NM")) {
+							ob.setValueNumeric(Double.parseDouble(pair
+									.getString("value")));
+						} else if (hl7Abbreviation.equals("CWE")) {
+							Concept valueObj = Context.getConceptService()
+									.getConcept(pair.getString("value"));
+							ob.setValueCoded(valueObj);
+						} else if (hl7Abbreviation.equals("ST")) {
+							ob.setValueText(pair.getString("value"));
+						} else if (hl7Abbreviation.equals("DT")) {
+							ob.setValueDate(DateTimeUtil.getDateFromString(
+									pair.getString("value"),
+									DateTimeUtil.SQL_DATE));
+						}
+					}
+					ob.setObsDatetime(encounterDatetime);
+					ob.setLocation(locationObj);
+					ob.setCreator(creatorObj);
+					ob.setDateCreated(new Date());
+					encounter.addObs(ob);
+				}
+
+				if (creatorObj.getUsername().equals(provider))
+					encounter.setProvider(creatorObj);
+			}
+			Context.getEncounterService().saveEncounter(encounter);
+			json.put("result", "SUCCESS");
+		} catch (NonUniqueObjectException e) {
+			e.printStackTrace();
+			error = CustomMessage.getErrorMessage(ErrorType.DUPLICATION_ERROR);
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+			error += CustomMessage
+					.getErrorMessage(ErrorType.INVALID_DATA_ERROR);
+		} catch (IllegalArgumentException e) {
+			error += e.getMessage();
+			e.printStackTrace();
+			error += CustomMessage
+					.getErrorMessage(ErrorType.INVALID_DATA_ERROR);
+		} catch (JSONException e) {
+			e.printStackTrace();
+			error += CustomMessage
+					.getErrorMessage(ErrorType.INVALID_DATA_ERROR);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			error += CustomMessage.getErrorMessage(ErrorType.PARSING_ERROR);
+		} finally {
+			try {
+				if (!json.has("result")) {
+					json.put("result", "FAIL. " + error);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return json.toString();
+
+	}
+
+	/**
+	 * Insert the Treatment Initiation Form Data
+	 * 
+	 * @param formType
+	 * @param jsonvalues
+	 * @return String
+	 */
 	public String insertTreatmentInitiationForm(String formType,
 			JSONObject values) {
 
@@ -4063,63 +4252,75 @@ public class MobileService {
 
 	}
 
-	// Get the Patients against the index case ID Observation...not solved yet 
-	public String getPatientsAgainstObs(JSONObject values) {
-		ArrayList<String> result = new ArrayList<String>();
-		JSONObject json = new JSONObject();
-		
-		try {
-			String patientId = values.getString("patient_id");
-			Concept concept = Context.getConceptService().getConceptByName(
-					"Cough");
-			String query = "select count(*) as total from openmrs.obs where concept_id= ?";
-			String[] parameterValues = new String[] { concept.toString() };
+	// Get the Patients against the index case ID Observation...not solved yet
+	public String searchObservation(JSONObject values) {
 
-			try {
-				if (conn.isClosed()) {
-					if (!openConnection()) {
-						return "error";
-					}
-				}
-				PreparedStatement statement = conn.prepareStatement(query);
-				int count = 1;
-				if (concept != null) {
-					for (String s : parameterValues) {
-						statement.setString(count++, s);
-					}
-				}
-				ResultSet resultSet = statement.executeQuery();
-				int i = 0;
-				if(!resultSet.wasNull()){
-				while (resultSet.next()) {
-					String firstVal= resultSet.getString(i);
-					if (patientId.equals(firstVal)) {
-						result.add(resultSet.getString(i));
-					}
-					i++;
-				}
-			   }//end the 
-				Log.info("" + result.size());
-				// get observation against patient id ...
-			 int  numberOfContacts = getObservationAgainstPatient(patientId,"Cough");
-			  json.put("numberContact", numberOfContacts);
+		String screenedForm = "";
+		JSONObject jsonObj = new JSONObject();
+		try {
+
+			String indexId = values.getString("patient_id");
+			Concept concept = Context.getConceptService().getConcept(
+					"Index Case ID");
+			String concept_id = concept.toString();
+
+			String query = "select count(*) as total from openmrs.obs where value_text = ? and concept_id= ?";
+			String[][] results = executeQuery(query, new String[] { indexId,
+					concept_id });
+			int records = Integer.parseInt(results[0][0]);
+			if (records == 0)
+				screenedForm = "";
+			else
+				screenedForm = Integer.toString(records);
+			jsonObj.put("screenedPatient", screenedForm);
+			String numberContact = getObsByConceptAndPatientId(indexId,
+					"Number of contacts");
+			jsonObj.put("numberContact", numberContact);
+			String numberChildhood = getObsByConceptAndPatientId(indexId,
+					"Number of childhood contacts");
+			jsonObj.put("numberChildhood", numberChildhood);
+			String numberAdult = getObsByConceptAndPatientId(indexId,
+					"Number of adult contacts");
+			jsonObj.put("numberAdult", numberAdult);
 			
+		/*	String query2 = "select count(*) as total from openmrs.obs where  concept_id= ?";
+			Concept concept2 = Context.getConceptService().getConcept(
+					"Outcome Code");
+			String concept_id2 = concept2.toString();
+			String[][] results2 = executeQuery(query2, new String[] {concept_id2 });
+			int records2 = Integer.parseInt(results2[0][0]);
+			String name = results2[0][1].toString();*/
+			
+
+		} catch (JSONException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (jsonObj.length() == 0
+						|| (jsonObj.get("screenedPatient").equals("")
+								&& jsonObj.get("numberContact").equals("")
+								&& jsonObj.get("numberChildhood").equals("") && jsonObj
+								.get("numberAdult").equals(""))) {
+					jsonObj.put(
+							"result",
+							"FAIL. "
+									+ CustomMessage
+											.getErrorMessage(ErrorType.ITEM_NOT_FOUND));
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
-		} catch (JSONException e) {
-
 		}
+		return jsonObj.toString();
 
-		return result.toString();
 	}
-    //get observation ..not solved yet 
-	public int getObservationAgainstPatient(String patientId,String conceptName){
-		
-		int json = 0;
+
+	// Get observation against the concept id and patient id..
+	public String getObsByConceptAndPatientId(String patientId,
+			String conceptName) {
+		String value = "";
+		String json = null;
 		try {
-		
 			List<Patient> patients = Context.getPatientService().getPatients(
 					patientId);
 			Concept concept = Context.getConceptService().getConceptByName(
@@ -4131,14 +4332,14 @@ public class MobileService {
 				return json;
 			}
 			Patient patient = patients.get(0);
-			JSONArray obsArray = new JSONArray();
+			//JSONArray obsArray = new JSONArray();
 			List<Obs> obs = new LinkedList<Obs>();
-			
-				obs = Context.getObsService()
-						.getObservationsByPersonAndConcept(patient, concept);
+			obs = Context.getObsService().getObservationsByPersonAndConcept(
+					patient, concept);
+
 			Set<String> obsValues = new HashSet<String>();
 			for (Obs o : obs) {
-				String value = "";
+
 				String hl7Abbreviation = concept.getDatatype()
 						.getHl7Abbreviation();
 				if (hl7Abbreviation.equals("NM")) {
@@ -4152,15 +4353,35 @@ public class MobileService {
 				}
 				obsValues.add(value);
 			}
-			for (String value : obsValues) {
-				JSONObject jsonObj = new JSONObject();
-				jsonObj.put("value", value);
-				obsArray.put(jsonObj);
-			}
-			json = obsArray.length();
-		} catch (JSONException e) {
+			/*
+			 * for (String value : obsValues) { JSONObject jsonObj = new
+			 * JSONObject(); jsonObj.put("value", value); obsArray.put(jsonObj);
+			 * }
+			 */
+			// json = obsArray.toString();
+			json = value;
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return json;
 	}
+
+	// Check the Patient have contact registry form ....
+	public boolean checkContactRegistry(String patientId) {
+
+		boolean isExist = false;
+		// 72 is encounter type id of contact registry form ...
+		String query = "select count(*) as total from openmrs.encounter where encounter_type = 72 and patient_id = ?";
+		String[][] results = executeQuery(query, new String[] { patientId });
+		int records = Integer.parseInt(results[0][0]);
+		if (records > 0)
+			isExist = true;
+
+		return isExist;
+	}
+    //check the number of symptomatics and contact eligible 
+	
+	
+
 }

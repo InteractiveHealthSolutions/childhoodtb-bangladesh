@@ -56,7 +56,7 @@ import java.util.Locale;
  */
 public class PediatricContactInvestigationAtFacilityActivity extends AbstractFragmentActivity implements TextView.OnEditorActionListener {
 
-    private MyTextView
+    MyTextView
             formDateTextView, patientIdTextView,
             firstNameTextView, motherNameTextView, genderTextView,
             ageTextView, weightTextView, weightPercentileTextView,
@@ -71,10 +71,10 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     MyTextView lastNameTextView;
     MyEditText lastName;
 
-    private MyEditText presumptiveFirstName, presumptiveMotherName, age,
-            weight, patientId, otherExamination, indexCaseId, indexCaseTBRegistrationNumber;
+    MyEditText presumptiveFirstName, presumptiveMotherName, age, weight, patientId, otherExamination, indexCaseId,
+            indexCaseTBRegistrationNumber;
 
-    private MySpinner weightPercentile,
+    MySpinner weightPercentile,
             cough, coughDuration, fever, nightSweats, weightLoss,
             poorAppetite, chestExamination, lymphNodeExamination,
             abdominalExamination, bcgScar, familyMemberTB, adultFamilyMemberTB, tbRootInFamily,
@@ -82,12 +82,12 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             indexCaseDiagnosis, playfulness;
 
 
-    private MyButton formDateButton, validatePatientId, scanBarcode, scanBarcodeIndexId;
+    MyButton formDateButton, validatePatientId, scanBarcode, scanBarcodeIndexId;
 
-    private MyRadioGroup gender;
-    private MyRadioButton male, female;
-    private String result = "";
-    private String familyName, firstName = "";
+    MyRadioGroup gender;
+    MyRadioButton male, female;
+    String result = "";
+    String familyName, firstName = "";
 
     @Override
     public void createViews(Context context) {
