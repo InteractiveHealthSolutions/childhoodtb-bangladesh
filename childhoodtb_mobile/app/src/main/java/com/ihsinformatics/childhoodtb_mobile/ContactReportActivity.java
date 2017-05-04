@@ -86,14 +86,14 @@ public class ContactReportActivity extends Activity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-
+        view.startAnimation(alphaAnimation);
         if (view == scanBarcodeButton) {
 
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
         } else if (view == searchContactButton) {
-             //checkPatientId method is use for validation of patient id ...
+            //checkPatientId method is use for validation of patient id ...
             if (checkPatientId()) {
                 AsyncTask<String, String, Object> getTask = new AsyncTask<String, String, Object>() {
                     @Override
@@ -148,11 +148,13 @@ public class ContactReportActivity extends Activity implements View.OnClickListe
                                 App.getAlertDialog(ContactReportActivity.this,
                                         AlertType.ERROR, errorMessage.toString()).show();
                             } else if (reports.size() > 0 && reports != null) {
+
                                 numberOfContact.setText(reports.get(0).getNumberOfContact());
                                 numberOfChildhood.setText(reports.get(0).getNumberOfChildhood());
                                 numberOfContactAdult.setText(reports.get(0).getNumberOfAdult());
                                 numberOfContactScreened.setText(reports.get(0).getNumberOfScreened());
-
+                                numberOfSymptomatic.setText(reports.get(0).getNumberOfSymptomatic());
+                                numberOfContactEligible.setText(reports.get(0).getNumberOfContactsEligibleForPti());
                             }
                         }
                     }

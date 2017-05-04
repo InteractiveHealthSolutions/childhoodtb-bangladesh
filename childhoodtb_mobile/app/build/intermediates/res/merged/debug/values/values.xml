@@ -1116,6 +1116,7 @@
     <string name="gxp_test_order_button">GXP Test Order</string>
     <string name="gxp_test_result_button">GXP Test Result</string>
     <string name="head">Head</string>
+    <string name="heading_text">Total number of contacts at Home</string>
     <string name="healthy">Healthy</string>
     <string name="high">High</string>
     <string name="histopathology">Histopathology</string>
@@ -1211,13 +1212,13 @@
     <string name="nid_hint">Enter National ID</string>
     <string name="night_sweats">Night Sweats?</string>
     <string name="no">No</string>
-    <string name="no_adult_contact_rp">Total adult contacts</string>
-    <string name="no_childhood_contact_rp">Total childhood contacts</string>
-    <string name="no_contact_eligible_itp_rp">Contacts eligible</string>
-    <string name="no_contact_found_symptomatic_rp">Contacts symptomatic</string>
-    <string name="no_contact_rp">Total contacts</string>
+    <string name="no_adult_contact_rp">Adult:</string>
+    <string name="no_childhood_contact_rp">Childhood:</string>
+    <string name="no_contact_eligible_itp_rp">Eligible for IPT:</string>
+    <string name="no_contact_found_symptomatic_rp">Symptomatic:</string>
+    <string name="no_contact_rp">Registry contacts:</string>
     <string name="no_result">No Result</string>
-    <string name="no_screened_contact_rp">Total contacts screened</string>
+    <string name="no_screened_contact_rp">Screened:</string>
     <string name="non_pulmonary_suspect">Non-Pulmonary Suspect</string>
     <string name="non_suspect">This person was not marked as a Suspect. In order to save this form, you must mark the person as a suspect and assign a valid Patient ID</string>
     <string name="normal">Normal</string>

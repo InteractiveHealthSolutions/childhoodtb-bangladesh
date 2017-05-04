@@ -2766,8 +2766,6 @@ public class ServerService {
             }
             JSONObject jsonResponse = JsonUtil.getJSONObject(response);
             if (jsonResponse.has("result")) {
-                String result = jsonResponse.getString("result");
-
                 return screenedContact;
             }
             {
@@ -2778,9 +2776,8 @@ public class ServerService {
                     contactReport.setNumberOfAdult(jsonResponse.get("numberAdult").toString());
                     contactReport.setNumberOfChildhood(jsonResponse.get("numberChildhood").toString());
                     contactReport.setNumberOfScreened(jsonResponse.get("screenedPatient").toString());
-                     /*contactReport.setNumberOfSymptomatic(jsonResponse.get("numberSymptomatic").toString());
-                     contactReport.setNumberOfContactsEligibleForPti(jsonResponse.get("numberEligible").toString());
-*/
+                    contactReport.setNumberOfSymptomatic(jsonResponse.get("numberSymptomatic").toString());
+                    contactReport.setNumberOfContactsEligibleForPti(jsonResponse.get("numberIptEligible").toString());
                     screenedContact.add(contactReport);
 
                 } catch (JSONException e) {

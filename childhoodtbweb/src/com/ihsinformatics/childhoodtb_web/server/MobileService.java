@@ -21,6 +21,7 @@ import java.io.Console;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.nio.file.FileAlreadyExistsException;
 import java.security.Provider;
 import java.sql.Connection;
@@ -53,6 +54,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.taglib.logic.PresentTag;
 import org.apache.xerces.impl.dv.util.Base64;
 import org.hibernate.NonUniqueObjectException;
+import org.hibernate.loader.custom.Return;
 import org.jfree.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -663,13 +665,12 @@ public class MobileService {
 
 		JSONObject json = new JSONObject();
 		try {
-			
 
 			List<Patient> patients = new ArrayList<Patient>();
 			String patientId = values.getString("patient_id");
 			if (formType.equals(FormType.CONTACT_REGISTRY_DETAIL)) {
 				// check the contact registry from is fill or not ..
-				if(!checkContactRegistry(patientId)){
+				if (!checkContactRegistry(patientId)) {
 					throw new Exception();
 				}
 			}
@@ -707,12 +708,11 @@ public class MobileService {
 					}
 				}
 			}
-		}
-		catch (JSONException e) {
+		} catch (JSONException e) {
 			e.printStackTrace();
-		} catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
 				if (json.length() == 0) {
 					json.put(
@@ -4252,7 +4252,12 @@ public class MobileService {
 
 	}
 
-	// Get the Patients against the index case ID Observation...not solved yet
+	/**
+	 * Search the values against the index case id ...
+	 * 
+	 * @param jsonvalues
+	 * @return String
+	 */
 	public String searchObservation(JSONObject values) {
 
 		String screenedForm = "";
@@ -4275,32 +4280,53 @@ public class MobileService {
 			jsonObj.put("screenedPatient", screenedForm);
 			String numberContact = getObsByConceptAndPatientId(indexId,
 					"Number of contacts");
-			jsonObj.put("numberContact", numberContact);
+			// Integer.parseInt(String.valueOf(numberContact).split("\\.")[0])...
+			// this line of code is use to remove the decimal point ...
+			jsonObj.put("numberContact", Integer.parseInt(String.valueOf(
+					numberContact).split("\\.")[0]));
 			String numberChildhood = getObsByConceptAndPatientId(indexId,
 					"Number of childhood contacts");
-			jsonObj.put("numberChildhood", numberChildhood);
+			jsonObj.put(
+					"numberChildhood",
+					Integer.parseInt(String.valueOf(numberChildhood).split(
+							"\\.")[0]));
 			String numberAdult = getObsByConceptAndPatientId(indexId,
 					"Number of adult contacts");
-			jsonObj.put("numberAdult", numberAdult);
-			
-		/*	String query2 = "select count(*) as total from openmrs.obs where  concept_id= ?";
-			Concept concept2 = Context.getConceptService().getConcept(
-					"Outcome Code");
-			String concept_id2 = concept2.toString();
-			String[][] results2 = executeQuery(query2, new String[] {concept_id2 });
-			int records2 = Integer.parseInt(results2[0][0]);
-			String name = results2[0][1].toString();*/
-			
+			jsonObj.put("numberAdult", Integer.parseInt(String.valueOf(
+					numberAdult).split("\\.")[0]));
+			int symptomaticLength = 0, iptEligibleLength = 0;
+			// /getPatientByObs return the list of person id ..
+			ArrayList<String> patientId = getPatientsByObs(indexId);
+			for (String pId : patientId) {
+				String SymptomaticQuery = "select count(*) as total from openmrs.obs where  concept_id= ? and person_id = ? and value_coded = 1";
+				String concept_id_symptom = Integer.toString(718);
+				String[][] resultSymptom = executeQuery(SymptomaticQuery,
+						new String[] { concept_id_symptom, pId });
+				int recordSymptom = Integer.parseInt(resultSymptom[0][0]);
+				symptomaticLength += recordSymptom;
+				System.out.println(":" + symptomaticLength);
+
+				String EligibleQuery = "select count(*) as total from openmrs.obs where  concept_id= ? and value_text = ? and person_id = ?";
+				String concept_id_eligible = Integer.toString(719);
+				String conceptAnswer = "Eligible for IPT";
+				String[][] resultEligible = executeQuery(
+						EligibleQuery,
+						new String[] { concept_id_eligible, conceptAnswer, pId });
+				int recordEligible = Integer.parseInt(resultEligible[0][0]);
+				iptEligibleLength += recordEligible;
+
+				System.out.println(":" + iptEligibleLength);
+			}
+			System.out.println("Eligible:" + iptEligibleLength + "\n"
+					+ "Symptom:" + symptomaticLength);
+			jsonObj.put("numberSymptomatic", symptomaticLength);
+			jsonObj.put("numberIptEligible", iptEligibleLength);
 
 		} catch (JSONException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if (jsonObj.length() == 0
-						|| (jsonObj.get("screenedPatient").equals("")
-								&& jsonObj.get("numberContact").equals("")
-								&& jsonObj.get("numberChildhood").equals("") && jsonObj
-								.get("numberAdult").equals(""))) {
+			try { // need to recheck this code ...
+				if (jsonObj.length() == 0) {
 					jsonObj.put(
 							"result",
 							"FAIL. "
@@ -4315,9 +4341,16 @@ public class MobileService {
 
 	}
 
+	
+	/**
+	 * values against the index case id ...
+	 * @param patientId 
+	 * @param conceptName
+	 * @return String
+	 */
+
 	// Get observation against the concept id and patient id..
-	public String getObsByConceptAndPatientId(String patientId,
-			String conceptName) {
+public String getObsByConceptAndPatientId(String patientId,String conceptName) {
 		String value = "";
 		String json = null;
 		try {
@@ -4332,7 +4365,7 @@ public class MobileService {
 				return json;
 			}
 			Patient patient = patients.get(0);
-			//JSONArray obsArray = new JSONArray();
+			// JSONArray obsArray = new JSONArray();
 			List<Obs> obs = new LinkedList<Obs>();
 			obs = Context.getObsService().getObservationsByPersonAndConcept(
 					patient, concept);
@@ -4353,12 +4386,7 @@ public class MobileService {
 				}
 				obsValues.add(value);
 			}
-			/*
-			 * for (String value : obsValues) { JSONObject jsonObj = new
-			 * JSONObject(); jsonObj.put("value", value); obsArray.put(jsonObj);
-			 * }
-			 */
-			// json = obsArray.toString();
+
 			json = value;
 
 		} catch (Exception e) {
@@ -4367,6 +4395,11 @@ public class MobileService {
 		return json;
 	}
 
+   /**
+    * this method use to check whether the patient have contact registry or not ...
+    * @param patientId
+    * @return boolean
+    * */
 	// Check the Patient have contact registry form ....
 	public boolean checkContactRegistry(String patientId) {
 
@@ -4377,11 +4410,42 @@ public class MobileService {
 		int records = Integer.parseInt(results[0][0]);
 		if (records > 0)
 			isExist = true;
-
 		return isExist;
 	}
-    //check the number of symptomatics and contact eligible 
-	
-	
+   
+	/**
+	 * this method is used to get all the person id or patient id against the  Index case id and index case value....
+	 * @param indexId
+	 * @return ArrayList<String>
+	 * 
+	 * */
+	public ArrayList<String> getPatientsByObs(String indexId) {
+		String query = "select person_id from openmrs.obs where concept_id=599  and value_text='"
+				+ indexId + "'";
+		ArrayList<String> personId = new ArrayList<String>();
+		try {
+			if (conn.isClosed()) {
+				if (!openConnection()) {
+					return personId;
+				}
+			}
+			PreparedStatement statement = conn.prepareStatement(query);
+			ResultSet resultSet = statement.executeQuery();
+			resultSet.last();
+			resultSet.beforeFirst();
+			int columns = resultSet.getMetaData().getColumnCount();
+			while (resultSet.next()) {
+				for (int j = 0; j < columns; j++) {
+					personId.add(resultSet.getString(j + 1));
+				}
+			}
+			statement.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			personId = null;
+		}
+		return personId;
+
+	}
 
 }
