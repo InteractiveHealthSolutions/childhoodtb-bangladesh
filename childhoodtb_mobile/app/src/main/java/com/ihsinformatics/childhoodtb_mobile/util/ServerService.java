@@ -22,11 +22,14 @@ import android.content.res.Resources.NotFoundException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
+import android.text.format.DateFormat;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.ihsinformatics.childhoodtb_mobile.App;
 import com.ihsinformatics.childhoodtb_mobile.model.OpenMrsObject;
 import com.ihsinformatics.childhoodtb_mobile.model.Patient;
+import com.ihsinformatics.childhoodtb_mobile.model.Percentile;
 import com.ihsinformatics.childhoodtb_mobile.model.Report;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
 import com.ihsinformatics.childhoodtb_mobile.shared.Metadata;
@@ -37,6 +40,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -44,6 +49,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author owais.hussain@irdresearch.org
@@ -236,6 +242,83 @@ public class ServerService {
             Log.e(TAG, e.getMessage());
         }
         return user;
+    }
+
+    //Insert the percentile
+    public boolean insertPercentile(ArrayList<Percentile> listPercentiles) {
+        boolean isInserted = false;
+        ContentValues contentValues;
+
+        for (Percentile pVal : listPercentiles) {
+
+            contentValues = new ContentValues();
+            contentValues.put(Metadata.PERCENTILE_COLUMN_GENDER, pVal.getGender());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_AGE, pVal.getAge());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P3, pVal.getP3());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P5, pVal.getP5());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P10, pVal.getP10());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P25, pVal.getP25());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P50, pVal.getP50());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P75, pVal.getP75());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P90, pVal.getP90());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P95, pVal.getP95());
+            contentValues.put(Metadata.PERCENTILE_COLUMN_P97, pVal.getP97());
+
+            isInserted = dbUtil.insert(Metadata.PERCENTILE_MEASUREMENT, contentValues);
+        }
+
+
+        return isInserted;
+    }
+
+    //Insert the percentile
+    public String getPercentile(String age, String gender, String weight) {
+        String condition = Metadata.PERCENTILE_COLUMN_AGE + "=" + age + " AND " +
+                Metadata.PERCENTILE_COLUMN_GENDER + "=" + gender;
+
+        String query = "SELECT * FROM " + Metadata.PERCENTILE_MEASUREMENT +
+                "  WHERE  " + condition;
+
+        String[][] tableData = dbUtil.getTableData(query);
+
+        return calculatePercentile(tableData, weight);
+    }
+
+    //Calculate the percentile  against the weight
+    public String calculatePercentile(String[][] tableData, String weight) {
+
+        double weightInDouble = Double.parseDouble(weight);
+        ///this Parse is not required if we store data in Double(when read )..
+        double p3 = Double.parseDouble(tableData[0][2]);
+        double p5 = Double.parseDouble(tableData[0][3]);
+        double p10 = Double.parseDouble(tableData[0][4]);
+        double p25 = Double.parseDouble(tableData[0][5]);
+        double p50 = Double.parseDouble(tableData[0][6]);
+        double p75 = Double.parseDouble(tableData[0][7]);
+        double p90 = Double.parseDouble(tableData[0][8]);
+        double p95 = Double.parseDouble(tableData[0][9]);
+        double p97 = Double.parseDouble(tableData[0][10]);
+
+        if (weightInDouble <= p50) { //if weight or height less or equal to medium
+            if (weightInDouble <= p5) {
+                return "≤5th percentile";
+            } else if (weightInDouble <= p10) {
+                return "6-≤10th percentile";
+            } else if (weightInDouble <= p25) {
+                return "11-≤25th percentile";
+            } else if (weightInDouble <= p50) {
+                return "26-≤50th percentile";
+            }
+
+        } else if (weightInDouble > p50) {//if weight or height greater then  medium
+            return " >50th percentile";
+        }
+        return "";
+    }
+
+    //delete all the data from Percentile table
+    public boolean deletePercentile() {
+        return dbUtil.delete(Metadata.PERCENTILE_MEASUREMENT, null, null);
     }
 
     public OpenMrsObject getLocation(String name) {
@@ -486,7 +569,7 @@ public class ServerService {
         String response = "";
         ArrayList<Patient> patientInfo;
         String[][] details = null;
-
+        int age = 0;
         patientInfo = new ArrayList<Patient>();
 
         if (!checkInternetConnection()) {
@@ -500,19 +583,29 @@ public class ServerService {
             json.put("form_name", FormType.GET_PATIENT_DETAIL);
             json.put("patient_id", patientId);
             response = get("?content=" + JsonUtil.getEncodedJson(json));
+            Log.i("response", "" + response);
+            String requiredSubString = response.substring(6, 12);
+
             if (response == null) {
-                return null;
+                return patientInfo;
+            } else if (requiredSubString.equals("result")) {
+                return patientInfo;
             }
             JSONObject jsonResponse = JsonUtil.getJSONObject(response);
             {
                 try {
+                    //this call for getting the age modifier.
+                    String[] ageModifierArray = getPatientObs(patientId, "Age Modifier");
+                    String ageModifier = ageModifierArray[0].toString();
                     String name = jsonResponse.get("name").toString();
-                    int age = jsonResponse.getInt("age");
+                    //int age = jsonResponse.getInt("age");
+                    String birthday = jsonResponse.getString("birthdate");
+                    //get the age
+                    age = calculateAge(birthday, ageModifier);
                     String gen = jsonResponse.get("gender").toString();
                     String firstName = jsonResponse.get("firstName").toString();
                     String familyName = jsonResponse.get("familyName").toString();
                     String motherName = jsonResponse.getString("motherName").equals(null) ? "Not Given" : jsonResponse.getString("motherName");
-
                     Patient patientInformation = new Patient();
                     patientInformation.setName(name);
                     patientInformation.setAge(age);
@@ -520,6 +613,7 @@ public class ServerService {
                     patientInformation.setFamilyName(familyName);
                     patientInformation.setGender(gen);
                     patientInformation.setMotherName(motherName);
+                    patientInformation.setAgeModifier(ageModifier);
                     patientInfo.add(patientInformation);
 
                 } catch (JSONException e) {
@@ -532,6 +626,38 @@ public class ServerService {
             Log.e(TAG, e.getMessage());
         }
         return patientInfo;
+    }
+
+    //calculate the age from current date
+    public int calculateAge(String birthday, String ageModifier) {
+
+        int months = 0, days = 0;
+        Date BirthDate = null, currentDate = null;
+        SimpleDateFormat myFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar c = Calendar.getInstance();
+        String current = DateFormat.format("yyyy-MM-dd", c.getTime()).toString();
+        try {
+
+            currentDate = myFormat.parse(current);
+            BirthDate = myFormat.parse(birthday);
+            long diff = currentDate.getTime() - BirthDate.getTime();
+            /*long differenceMonth = Math.abs(currentDate.getMonth() - BirthDate.getMonth());
+            months = (int) (differenceMonth);*/
+            days = (int) (TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if (ageModifier.equalsIgnoreCase("Year(s)")) {
+            return days / 365;
+        } else if (ageModifier.equalsIgnoreCase("Month(s)")) {
+            return days / 30;
+        } else if (ageModifier.equalsIgnoreCase("Day(s)")) {
+            return days;
+        } else if (ageModifier.equalsIgnoreCase("Week(s)")) {
+            return days / 7;
+        } else {
+            return 0;
+        }
     }
 
     public ArrayList<Patient> getPatientInfo(String patientId) {
@@ -1387,6 +1513,7 @@ public class ServerService {
         String patientId = values.getAsString("patientId");
         String location = values.getAsString("location");
         String formDate = values.getAsString("formDate");
+        String indexId = values.getAsString("index_id");
 
         try {
             String id = getPatientId(patientId);
@@ -1404,6 +1531,7 @@ public class ServerService {
             json.put("gender", gender);
             json.put("location", location);
             json.put("age", age);
+            json.put("index_id", indexId);
 
             JSONArray obs = new JSONArray();
             for (int i = 0; i < observations.length; i++) {
@@ -1834,14 +1962,16 @@ public class ServerService {
         try {
 
             if (!App.isOfflineMode()) {
+
                 if (!checkInternetConnection()) {
-                    String id = getPatientId(patientId);
-                    if (id == null)
-                        return context.getResources().getString(
-                                R.string.patient_id_missing);
-                } else {
                     return context.getResources().getString(
                             R.string.data_connection_error);
+                } else {
+                    String id = getPatientId(patientId);
+                    if (id == null) {
+                        return context.getResources().getString(
+                                R.string.patient_id_missing);
+                    }
                 }
 
             }

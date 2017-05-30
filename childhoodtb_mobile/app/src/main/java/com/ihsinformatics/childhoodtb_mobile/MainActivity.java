@@ -58,20 +58,7 @@ public class MainActivity extends Activity {
         String versionMatch = "SUCCESS";
         // versionMatch = serverService.matchVersions();
         if (versionMatch.equals("SUCCESS")) {
-            // runTests ();
-
             LoginSessionManager.getInstance(MainActivity.this).checkLogin();
-            /*if(!LoginSessionManager.getInstance(MainActivity.this).isLoggedIn())
-            {
-                Intent loggedIn= new Intent(this,LoginActivity.class);
-                startActivity(loggedIn);
-                //finish();
-            }
-            else {
-                Intent mainMenu= new Intent(this,MainMenuActivity.class);
-                startActivity(mainMenu);
-                //finish();
-            }*/
 
         } else {
             AlertDialog alertDialog = App.getAlertDialog(this, AlertType.ERROR,

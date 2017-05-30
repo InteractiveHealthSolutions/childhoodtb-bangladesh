@@ -30,6 +30,7 @@
     <string name="weight">Weight (Kg)?</string>
     <string name="weight_hint">Enter Weight (Kg)</string>
     <string name="weight_percentile">Weight Percentile ?</string>
+    <string name="weight_percentile_hint">Calculate Weight Percentile</string>
     <string name="age_in_year">Age in years </string>
     <string name="chest_examination">Chest Examination?</string>
     <string name="suggestive_tb">Suggestive of TB</string>
@@ -64,6 +65,7 @@
     <string name="not_tb_presumptive">Not a TB Presumptive</string>
     <string name="bt_presumptive_confirmed">TB Presumptive confirmed</string>
     <string name="presumptive_first_name">Presumptive First Name</string>
+    <string name="presumptive_last_name">Presumptive Last Name</string>
     <string name="phone_No">Phone No</string>
     <string name="phone_hint">Enter Phone Number</string>
     <string name="name_hint">Enter Name</string>

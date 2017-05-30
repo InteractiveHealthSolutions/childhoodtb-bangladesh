@@ -577,7 +577,6 @@ public class MainMenuActivity extends Activity implements IActivity,
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putBoolean(Preferences.AUTO_LOGIN, false);
                         editor.apply();
-                        //todo:here we add new code for log out ...
                         LoginSessionManager.getInstance(MainMenuActivity.this).logoutUser();
                     }
                 });

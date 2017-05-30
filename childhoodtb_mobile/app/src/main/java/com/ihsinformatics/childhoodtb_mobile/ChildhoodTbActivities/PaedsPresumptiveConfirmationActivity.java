@@ -13,7 +13,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Gravity;
@@ -63,21 +65,21 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
             coughTextView, coughDurationTextView, feverTextView,
             nightSweatsTextView, weightLossTextView, poorAppetiteTextView, chestExaminationTextVew,
             lymphNodeExaminationTextView, abdominalExaminationTextView, otherExaminationTextView,
-            bcgScarTextView, familyMemberTBTextView, adultFamilyMemberTBTextView, tbRootInFamilyTextView,
+            bcgScarTextView, familyMemberTBTextView, adultFamilyMemberTBTextView,
             formOfTbTextView, typeOfTbTextView, testAdvisedTextView,
             probableDiagnosisTextView;
 
 
     EditText presumptiveFirstName, presumptiveMotherName, age,
-            weight, patientId, otherExamination;
+            weight, patientId, otherExamination, weightPercentile;
 
     MyTextView ageModifierTextView;
     MySpinner ageModifier;
 
-    MySpinner weightPercentile,
+    MySpinner
             cough, coughDuration, fever, nightSweats, weightLoss,
             poorAppetite, chestExamination, lymphNodeExamination,
-            abdominalExamination, bcgScar, familyMemberTB, adultFamilyMemberTB, tbRootInFamily,
+            abdominalExamination, bcgScar, familyMemberTB, adultFamilyMemberTB,
             formOfTb, typeOfTb, testAdvised, probableDiagnosis;
 
 
@@ -121,8 +123,8 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
                 new MyRadioButton[]{male, female}, R.string.gender,
                 R.style.radio, App.isLanguageRTL());
 
-        ageTextView = new MyTextView(context, R.style.text, R.string.age_in_year);
-        age = new MyEditText(context, R.string.age_in_year,
+        ageTextView = new MyTextView(context, R.style.text, R.string.age);
+        age = new MyEditText(context, R.string.age,
                 R.string.age_hint, InputType.TYPE_CLASS_NUMBER,
                 R.style.edit, 2, false);
 
@@ -133,9 +135,10 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
                 R.style.edit, 2, false);
         weightPercentileTextView = new MyTextView(context,
                 R.style.text, R.string.weight_percentile);
-        weightPercentile = new MySpinner(context, getResources()
-                .getStringArray(R.array.weight_percentile_list),
-                R.string.weight_percentile, R.string.option_hint);
+        weightPercentile = new MyEditText(context, R.string.weight_percentile,
+                R.string.weight_percentile_hint, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 50, false);
+
         coughTextView = new MyTextView(context,
                 R.style.text, R.string.cough);
         cough = new MySpinner(context, getResources()
@@ -202,11 +205,6 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
         adultFamilyMemberTB = new MySpinner(context,
                 getResources().getStringArray(R.array.adult_tb_in_family_list),
                 R.string.adult_family_member_tb, R.string.option_hint);
-        tbRootInFamilyTextView = new MyTextView(context,
-                R.style.text, R.string.member_family_tb);
-        tbRootInFamily = new MySpinner(context,
-                getResources().getStringArray(R.array.family_members),
-                R.string.member_family_tb, R.string.option_hint);
         formOfTbTextView = new MyTextView(context,
                 R.style.text, R.string.form_of_tb);
         formOfTb = new MySpinner(context,
@@ -256,11 +254,12 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
                         chestExaminationTextVew, chestExamination, lymphNodeExaminationTextView, lymphNodeExamination
                 },
                 {abdominalExaminationTextView, abdominalExamination, otherExaminationTextView, otherExamination, bcgScarTextView, bcgScar,
-                        adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily, formOfTbTextView, formOfTb,
+                        adultFamilyMemberTBTextView, adultFamilyMemberTB, familyMemberTBTextView, familyMemberTB, formOfTbTextView, formOfTb
 
-                }, {typeOfTbTextView, typeOfTb, testAdvisedTextView, testAdvised,
-                probableDiagnosisTextView, probableDiagnosis, familyMemberTBTextView, familyMemberTB
-        }
+                },
+                {typeOfTbTextView, typeOfTb, testAdvisedTextView, testAdvised,
+                        probableDiagnosisTextView, probableDiagnosis
+                }
         };
 
         // Create layouts and store in ArrayList
@@ -339,8 +338,37 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
+        weightPercentile.setFocusable(false);
+        presumptiveFirstName.setFocusable(false);
         validatePatientId.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
+
+        //weight Text Watcher
+        weight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() > 0) {
+                    if (male.isChecked()) {
+                        weightPercentile.setText(serverService.getPercentile(App.get(age), "1", editable.toString()));
+                    } else if (female.isChecked()) {
+                        weightPercentile.setText(serverService.getPercentile(App.get(age), "2", editable.toString()));
+                    }
+                }
+                updateDisplay();
+            }
+        });
+
 
     }
 
@@ -383,25 +411,6 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
         } else if (view == validatePatientId) {
             final String indexPatientId = App.get(patientId);
             if (checkPatientId()) {
-
-               /* if (!serverService.checkInternetConnection()) {
-
-                    AlertDialog alertDialog = App.getAlertDialog(this,
-                            AlertType.ERROR,
-                            getResources()
-                                    .getString(R.string.data_connection_error));
-                    alertDialog.setTitle(getResources().getString(
-                            R.string.error_title));
-                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
-                            new AlertDialog.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog,
-                                                    int which) {
-
-                                }
-                            });
-                    alertDialog.show();
-                } else {*/
 
                 AsyncTask<String, String, Object> getTask = new AsyncTask<String, String, Object>() {
                     @Override
@@ -471,62 +480,14 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
                                 age.setFocusable(false);
                                 male.setChecked(patientDetails.get(0).getGender().equals("M") ? true : false);
                                 female.setChecked(patientDetails.get(0).getGender().equals("F") ? true : false);
-                                //here  we get the age modifier of same patient...
-                                AsyncTask<String, String, Object> getValuesAgainstConceptName = new AsyncTask<String, String, Object>() {
-                                    @Override
-                                    protected Object doInBackground(String... params) {
-                                        runOnUiThread(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                            }
-                                        });
-                                        String[] response =
-                                                serverService.getPatientObs(indexPatientId, "Age Modifier");
-                                        return response;
+                                //here we set the age modifier..
+                                String[] testArray = getResources().getStringArray(R.array.age_modifier_options);
+                                for (int i = 0; i < testArray.length; i++) {
+                                    if (patientDetails.get(0).getAgeModifier().equals(testArray[i])) {
+                                        ageModifier.setSelection(i);
+                                        ageModifier.setEnabled(false);
                                     }
-
-                                    @Override
-                                    protected void onProgressUpdate(String... values) {
-                                    }
-
-                                    @Override
-                                    protected void onPostExecute(Object result) {
-                                        super.onPostExecute(result);
-
-                                        String[] res = (String[]) result;
-
-                                        if (res.length > 0 && (res != null)) {
-                                            if (res[0].equals("InternetConnectionFail")) {
-                                                AlertDialog alertDialog = App.getAlertDialog(PaedsPresumptiveConfirmationActivity.this,
-                                                        AlertType.ERROR,
-                                                        getResources()
-                                                                .getString(R.string.data_connection_error));
-                                                alertDialog.setTitle(getResources().getString(
-                                                        R.string.error_title));
-                                                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
-                                                        new AlertDialog.OnClickListener() {
-                                                            @Override
-                                                            public void onClick(DialogInterface dialog,
-                                                                                int which) {
-                                                                initView(views);
-                                                            }
-                                                        });
-                                                alertDialog.show();
-                                            } else {
-                                                String[] testArray = getResources().getStringArray(R.array.age_modifier_options);
-                                                for (int i = 0; i < testArray.length; i++) {
-                                                    if (res[0].toString().equals(testArray[i])) {
-                                                        ageModifier.setSelection(i);
-                                                        ageModifier.setEnabled(false);
-                                                    }
-                                                }
-                                            }
-                                        }
-
-
-                                    }
-                                };
-                                getValuesAgainstConceptName.execute("");
+                                }
                             }
                         }//end else condition
                     }
@@ -545,6 +506,11 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
         if (adapterView == cough) {
             coughDurationTextView.setEnabled(visible);
             coughDuration.setEnabled(visible);
+        }
+        if (adapterView == adultFamilyMemberTB) {
+
+            familyMemberTBTextView.setEnabled(visible);
+            familyMemberTB.setEnabled(visible);
         }
 
     }
@@ -695,8 +661,11 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
             observations.add(new String[]{"Adult Family Member TB",
                     App.get(adultFamilyMemberTB).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(adultFamilyMemberTB)});
-            observations.add(new String[]{"Member TB",
-                    App.get(familyMemberTB)});
+            if (App.get(adultFamilyMemberTB).equals(
+                    getResources().getString(R.string.yes))) {
+                observations.add(new String[]{"Member TB",
+                        App.get(familyMemberTB)});
+            }
             observations.add(new String[]{"Family TB Form",
                     App.get(formOfTb)});
             observations.add(new String[]{"Family TB Type",

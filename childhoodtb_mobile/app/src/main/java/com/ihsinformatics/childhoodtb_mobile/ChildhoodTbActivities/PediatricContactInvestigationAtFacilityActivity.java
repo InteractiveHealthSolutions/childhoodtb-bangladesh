@@ -63,8 +63,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             coughTextView, coughDurationTextView, feverTextView,
             nightSweatsTextView, weightLossTextView, poorAppetiteTextView, chestExaminationTextVew,
             lymphNodeExaminationTextView, abdominalExaminationTextView, otherExaminationTextView,
-            bcgScarTextView, familyMemberTBTextView, adultFamilyMemberTBTextView, tbRootInFamilyTextView,
-            formOfTbTextView, typeOfTbTextView, testAdvisedTextView,
+            bcgScarTextView, adultFamilyMemberTBTextView, tbRootInFamilyTextView,
+            formOfTbTextView, typeOfTbTextView,
             probableDiagnosisTextView, contactTracingCategoryTextView, indexCaseIDTextView, indexCaseTBRegistrationNumberTextView,
             indexCaseDiagnosisTextView, playfulnessTextView;
 
@@ -78,7 +78,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             cough, coughDuration, fever, nightSweats, weightLoss,
             poorAppetite, chestExamination, lymphNodeExamination,
             abdominalExamination, bcgScar, familyMemberTB, adultFamilyMemberTB, tbRootInFamily,
-            formOfTb, typeOfTb, testAdvised, probableDiagnosis, contactTracingCategory,
+            formOfTb, typeOfTb,probableDiagnosis, contactTracingCategory,
             indexCaseDiagnosis, playfulness;
 
 
@@ -87,7 +87,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     MyRadioGroup gender;
     MyRadioButton male, female;
     String result = "";
-    String familyName, firstName = "";
 
     @Override
     public void createViews(Context context) {
@@ -107,7 +106,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 R.string.first_name, R.string.first_name_hint,
                 InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
         lastNameTextView = new MyTextView(context, R.style.text,
-                R.string.last_name);
+                R.string.presumptive_last_name);
         lastName = new MyEditText(context, R.string.last_name,
                 R.string.last_name_hint,
                 InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 16,
@@ -196,11 +195,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         bcgScar = new MySpinner(context,
                 getResources().getStringArray(R.array.bcg_scar_list)
                 , R.string.child_bcg_scar, R.string.option_hint);
-        familyMemberTBTextView = new MyTextView(context,
-                R.style.text, R.string.member_family_tb);
-        familyMemberTB = new MySpinner(context,
-                getResources().getStringArray(R.array.family_members),
-                R.string.member_family_tb, R.string.option_hint);
 
         adultFamilyMemberTBTextView = new MyTextView(context,
                 R.style.text, R.string.adult_family_member_tb);
@@ -222,11 +216,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         typeOfTb = new MySpinner(context,
                 getResources().getStringArray(R.array.type_of_tb_list),
                 R.string.type_of_tb, R.string.option_hint);
-        testAdvisedTextView = new MyTextView(context,
-                R.style.text, R.string.test_advised);
-        testAdvised = new MySpinner(context,
-                getResources().getStringArray(R.array.test_advised_list),
-                R.string.test_advised, R.string.option_hint);
         probableDiagnosisTextView = new MyTextView(context,
                 R.style.text, R.string.probable_diagnosis);
         probableDiagnosis = new MySpinner(context,
@@ -281,27 +270,26 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
 
 
         View[][] viewGroups = {
-                {formDateTextView, formDateButton,
-                        contactTracingCategoryTextView, contactTracingCategory, indexCaseIDTextView, indexCaseId,
-                        scanBarcodeIndexId, validatePatientId, firstNameTextView, presumptiveFirstName, lastNameTextView, lastName,
-                        motherNameTextView, presumptiveMotherName
+                {formDateTextView, formDateButton, indexCaseIDTextView, indexCaseId, scanBarcodeIndexId,validatePatientId,
+                        contactTracingCategoryTextView, contactTracingCategory, firstNameTextView, presumptiveFirstName,
+                        lastNameTextView, lastName, motherNameTextView, presumptiveMotherName
                 },
                 {genderTextView, gender, ageTextView, age, indexCaseTBRegistrationNumberTextView, indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView,
                         indexCaseDiagnosis, weightTextView, weight, weightPercentileTextView, weightPercentile
 
                 },
                 {coughTextView, cough, coughDurationTextView, coughDuration, feverTextView, fever, nightSweatsTextView,
-                        nightSweats, poorAppetiteTextView, poorAppetite, playfulnessTextView, playfulness
+                        nightSweats,weightLossTextView,weightLoss,poorAppetiteTextView, poorAppetite
                 },
-                {chestExaminationTextVew, chestExamination,
+                {playfulnessTextView, playfulness,chestExaminationTextVew, chestExamination,
                         lymphNodeExaminationTextView, lymphNodeExamination, abdominalExaminationTextView, abdominalExamination,
-                        otherExaminationTextView, otherExamination, adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily
+                        otherExaminationTextView, otherExamination,bcgScarTextView, bcgScar
                 },
-                {formOfTbTextView, formOfTb, typeOfTbTextView, typeOfTb, testAdvisedTextView, testAdvised, probableDiagnosisTextView, probableDiagnosis, familyMemberTBTextView,
-                        familyMemberTB, weightLossTextView, weightLoss,
+                {adultFamilyMemberTBTextView, adultFamilyMemberTB,tbRootInFamilyTextView, tbRootInFamily,formOfTbTextView, formOfTb,
+                        typeOfTbTextView, typeOfTb,probableDiagnosisTextView, probableDiagnosis
 
                 },
-                {bcgScarTextView, bcgScar, patientIdTextView, patientId, scanBarcode,
+                { patientIdTextView, patientId, scanBarcode,
                 }
 
         };
@@ -342,7 +330,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 presumptiveFirstName, age, weight, weightPercentile,
                 cough, coughDuration, fever, patientId, nightSweats,
                 weightLoss, abdominalExamination, bcgScar, adultFamilyMemberTB,
-                formOfTb, typeOfTb, testAdvised, familyMemberTB, probableDiagnosis,
+                formOfTb, typeOfTb,familyMemberTB, probableDiagnosis,
                 otherExamination, playfulness, indexCaseTBRegistrationNumber, indexCaseDiagnosis,
                 indexCaseId, poorAppetite, lastName
         };
@@ -707,8 +695,6 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                     App.get(formOfTb)});
             observations.add(new String[]{"Family TB Type",
                     App.get(typeOfTb)});
-            observations.add(new String[]{"Test Advised",
-                    App.get(testAdvised)});
             observations.add(new String[]{"Probable diagnosis",
                     App.get(probableDiagnosis)});
             observations.add(new String[]{"Index Case ID",

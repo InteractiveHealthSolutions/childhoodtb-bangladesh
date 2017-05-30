@@ -30,6 +30,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -48,6 +49,7 @@ import java.util.UUID;
 import javassist.NotFoundException;
 import javassist.bytecode.stackmap.BasicBlock.Catch;
 
+import javax.naming.LimitExceededException;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
@@ -94,20 +96,11 @@ import com.ihsinformatics.childhoodtb_web.shared.FormType;
  * 
  */
 public class MobileService {
-	/**
-	 */
 	private HttpServletRequest request;
 
 	// OpenMRS-related
-	// static final String propFilePath =
-	// "/usr/share/tomcat7/.OpenMRS/openmrs-runtime.properties";
-	// static final String propFilePath =
-	// "c:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
-	// static final String propFilePath =
-	// "C:\\workspace\\tbreach3web\\openmrs-runtime.properties";
+	//static final String propFilePath ="/usr/share/tomcat6/.OpenMRS/openmrs-runtime.properties";
 	static final String propFilePath = "C:\\Users\\Shujaat\\AppData\\Roaming\\OpenMRS\\openmrs-runtime.properties";
-	// static final String propFilePath =
-	// "C:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
 
 	private static File propsFile;
 	private static Properties props;
@@ -129,7 +122,6 @@ public class MobileService {
 			tbreachProps.load(tbreachPropertiesInput);
 
 			appMajorMinorVersion = (String) tbreachProps.get("major.minor");
-			// appMajorMinorVersion = "1.6";
 
 			OpenmrsUtil.loadProperties(props, propsFile);
 			url = (String) props.get("connection.url");
@@ -159,12 +151,15 @@ public class MobileService {
 	 */
 	private boolean openConnection() {
 		try {
+			System.out.println("URL"+url.substring(0, url.lastIndexOf('/'))+""+username+""+ password);
 			conn = DriverManager.getConnection(
 					url.substring(0, url.lastIndexOf('/')), username, password);
 		} catch (SQLException e) {
 			e.printStackTrace();
+			System.out.println("DatabaseConnection:is Closed");
 			return false;
 		}
+		System.out.println("DatabaseConnection:is Open ");
 		return true;
 	}
 
@@ -668,9 +663,13 @@ public class MobileService {
 
 			List<Patient> patients = new ArrayList<Patient>();
 			String patientId = values.getString("patient_id");
+			
+			
 			if (formType.equals(FormType.CONTACT_REGISTRY_DETAIL)) {
 				// check the contact registry from is fill or not ..
-				if (!checkContactRegistry(patientId)) {
+				patients = Context.getPatientService().getPatients(patientId);
+				Patient p = patients.get(0);
+				if (!checkContactRegistry(p.toString())) {
 					throw new Exception();
 				}
 			}
@@ -684,7 +683,7 @@ public class MobileService {
 					json.put("familyName", p.getPersonName().getFamilyName());
 					json.put("gender", p.getGender());
 					json.put("age", p.getAge());
-
+					json.put("birthdate", p.getBirthdate());
 					PersonAttribute pa = p.getAttribute("Mother's Name");
 
 					if (pa != null)
@@ -707,6 +706,7 @@ public class MobileService {
 						json.put("encounters", encountersArray.toString());
 					}
 				}
+
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -1230,11 +1230,10 @@ public class MobileService {
 							DateTimeUtil.DOB_FROMAT_DATE);
 				}
 				person.setBirthdate(dob);
-				// person.setBirthdateEstimated(true);
+				person.setBirthdateEstimated(true);
 				person.setGender(gender);
 				person.setCreator(creatorObj);
 				person.setDateCreated(new Date());
-
 				// Create names set
 				{
 					SortedSet<PersonName> names = new TreeSet<PersonName>();
@@ -1485,7 +1484,7 @@ public class MobileService {
 		JSONObject json = new JSONObject();
 		String error = "";
 		try {
-			// int age = Integer.parseInt (values.get ("age").toString ());
+
 			String gender = values.getString("gender").toString();
 			String location = values.getString("location").toString();
 			String username = values.getString("username").toString();
@@ -1494,7 +1493,11 @@ public class MobileService {
 			String familyName = values.getString("family_name");
 			String encounterType = values.getString("encounter_type");
 			String formDate = values.getString("form_date");
+			String indexId = values.getString("index_id");
 
+			if (checkContactScreened(indexId)) {
+				throw new LimitExceededException();
+			}
 			Date dob = new Date();
 			int age = Integer.parseInt(values.get("age").toString());
 			dob.setYear(dob.getYear() - age);
@@ -1521,12 +1524,6 @@ public class MobileService {
 			{
 				// Create Person object
 				Person person = new Person();
-				// else if(encounterType.equals(FormType.PAEDIATRIC_SCREENING))
-				// {
-				// String dateOfBirth = values.getString("dob");
-				// dob = DateTimeUtil.getDateFromString(dateOfBirth,
-				// DateTimeUtil.SQL_DATE);
-				// }
 				person.setBirthdate(dob);
 				person.setBirthdateEstimated(true);
 				person.setGender(gender);
@@ -1639,6 +1636,9 @@ public class MobileService {
 		} catch (ParseException e) {
 			e.printStackTrace();
 			error += CustomMessage.getErrorMessage(ErrorType.PARSING_ERROR);
+		} catch (LimitExceededException e) {
+			e.printStackTrace();
+			error += CustomMessage.getErrorMessage(ErrorType.LIMIT_EXCEEDED);
 		} finally {
 			try {
 				if (!json.has("result")) {
@@ -1694,12 +1694,6 @@ public class MobileService {
 					int age = Integer.parseInt(values.get("age").toString());
 					dob.setYear(dob.getYear() - age);
 				}
-				// else if(encounterType.equals(FormType.PAEDIATRIC_SCREENING))
-				// {
-				// String dateOfBirth = values.getString("dob");
-				// dob = DateTimeUtil.getDateFromString(dateOfBirth,
-				// DateTimeUtil.SQL_DATE);
-				// }
 				person.setBirthdate(dob);
 				person.setBirthdateEstimated(true);
 				person.setGender(gender);
@@ -2664,6 +2658,7 @@ public class MobileService {
 			String query = "select count(*) as total from openmrs.obs where value_text = ? and concept_id= ?";
 			String[][] results = executeQuery(query, new String[] { testId,
 					concept_id });
+			System.err.println("ReturnResult:-" + results.toString());
 			if (results != null) {
 				if (results.length > 0) {
 					int records = Integer.parseInt(results[0][0]);
@@ -3268,13 +3263,16 @@ public class MobileService {
 	 */
 	public String[][] executeQuery(String query, String[] parameterValues) {
 		String[][] result = null;
+		System.out.println("Execute Method Called");
+	 
 		try {
-			if (conn.isClosed()) {
+			//if (conn == null || conn.isClosed()) {
 				if (!openConnection()) {
+					System.out.println("Connection is Fail:-" + result);
 					return result;
-				}
-			}
+			       }
 			PreparedStatement statement = conn.prepareStatement(query);
+			System.out.println("PreparedStatement is execute");
 			int count = 1;
 			if (parameterValues != null) {
 				for (String s : parameterValues) {
@@ -3297,8 +3295,10 @@ public class MobileService {
 			statement.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+			System.out.println("Connection thrown Exception");
 			result = null;
 		}
+
 		return result;
 	}
 
@@ -4341,16 +4341,17 @@ public class MobileService {
 
 	}
 
-	
 	/**
 	 * values against the index case id ...
-	 * @param patientId 
+	 * 
+	 * @param patientId
 	 * @param conceptName
 	 * @return String
 	 */
 
 	// Get observation against the concept id and patient id..
-public String getObsByConceptAndPatientId(String patientId,String conceptName) {
+	public String getObsByConceptAndPatientId(String patientId,
+			String conceptName) {
 		String value = "";
 		String json = null;
 		try {
@@ -4395,12 +4396,13 @@ public String getObsByConceptAndPatientId(String patientId,String conceptName) {
 		return json;
 	}
 
-   /**
-    * this method use to check whether the patient have contact registry or not ...
-    * @param patientId
-    * @return boolean
-    * */
-	// Check the Patient have contact registry form ....
+	/**
+	 * this method use to check whether the patient have contact registry or not
+	 * ...
+	 * 
+	 * @param patientId
+	 * @return boolean
+	 * */
 	public boolean checkContactRegistry(String patientId) {
 
 		boolean isExist = false;
@@ -4412,9 +4414,11 @@ public String getObsByConceptAndPatientId(String patientId,String conceptName) {
 			isExist = true;
 		return isExist;
 	}
-   
+
 	/**
-	 * this method is used to get all the person id or patient id against the  Index case id and index case value....
+	 * this method is used to get all the person id or patient id against the
+	 * Index case id and index case value....
+	 * 
 	 * @param indexId
 	 * @return ArrayList<String>
 	 * 
@@ -4446,6 +4450,34 @@ public String getObsByConceptAndPatientId(String patientId,String conceptName) {
 		}
 		return personId;
 
+	}
+
+	/**
+	 * check wether the Contacts Screeened is coomplete against the indext id
+	 * not tested ...
+	 * 
+	 * @param indexId
+	 * **/
+	public boolean checkContactScreened(String indexId) {
+		boolean isComplete = false;
+
+		Concept concept = Context.getConceptService().getConcept(
+				"Index Case ID");
+		String concept_id = concept.toString();
+
+		String query = "select count(*) as total from openmrs.obs where value_text = ? and concept_id= ?";
+		String[][] results = executeQuery(query, new String[] { indexId,
+				concept_id });
+		int records = Integer.parseInt(results[0][0]);
+		String numberContact = getObsByConceptAndPatientId(indexId,
+				"Number of contacts");
+		int numberScreened = Integer.parseInt(String.valueOf(numberContact)
+				.split("\\.")[0]);
+
+		if (records > numberScreened || records == numberScreened)
+			isComplete = true;
+
+		return isComplete;
 	}
 
 }

@@ -241,7 +241,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 valid = false;
                 message.append(other.getTag().toString() + ":\n" +
                         getResources().getString(R.string.empty_data));
-               // other.setHintTextColor(getResources().getColor(R.color.Red));
+                // other.setHintTextColor(getResources().getColor(R.color.Red));
             } else if (!RegexUtil.isWord(App.get(other))) {
 
                 valid = false;
@@ -275,7 +275,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 valid = false;
                 message.append(otherFacilityName.getTag().toString() + ":\n" +
                         getResources().getString(R.string.empty_data));
-               // otherFacilityName.setHintTextColor(getResources().getColor(R.color.Red));
+                // otherFacilityName.setHintTextColor(getResources().getColor(R.color.Red));
             } else if (!RegexUtil.isWord(App.get(otherFacilityName))) {
 
                 valid = false;
@@ -440,10 +440,24 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        MySpinner spinner = (MySpinner) adapterView;
+        boolean visibleOtherFacility = spinner.getSelectedItemPosition() == 0;
+        boolean visibleOther = spinner.getSelectedItemPosition() == 8;
+        boolean visibleLossFollowUp = spinner.getSelectedItemPosition() == 7;
 
         if (adapterView == reasonForEndOfFollowUp) {
 
-            if (adapterView.getSelectedItem().toString().equals(getString(R.string.referred_to_another_facility))) {
+            otherFacilityNameTextView.setEnabled(visibleOtherFacility);
+            otherFacilityName.setEnabled(visibleOtherFacility);
+            isOtherFacilityNameIsRequired = visibleOtherFacility;
+            otherTextView.setEnabled(visibleOther);
+            other.setEnabled(visibleOther);
+            isOtherFieldIsRequired = visibleOther;
+            reasonForlossFollowUpTextView.setEnabled(visibleLossFollowUp);
+            reasonForlossFollowUp.setEnabled(visibleLossFollowUp);
+            isReasonLosFollowUpIsRequired = visibleLossFollowUp;
+
+            /*if (adapterView.getSelectedItem().toString().equals(getString(R.string.referred_to_another_facility))) {
                 otherFacilityNameTextView.setEnabled(true);
                 otherFacilityName.setEnabled(true);
                 other.setEnabled(false);
@@ -487,7 +501,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 isOtherFieldIsRequired = false;
                 isOtherFacilityNameIsRequired = false;
                 isReasonLosFollowUpIsRequired = false;
-            }
+            }*/
         }
 
     }

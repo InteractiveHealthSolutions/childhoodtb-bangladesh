@@ -45,6 +45,7 @@ public class Preferences extends PreferenceActivity implements
 	public static final String USERNAME = "username";
 	public static final String LOCATION = "location";
 	public static final String AUTO_LOGIN = "auto_login";
+	public static final String IS_PERCENTILE_READ = "percentile_read";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +110,10 @@ public class Preferences extends PreferenceActivity implements
 		} else if (key.equals(AUTO_LOGIN)) {
 			App.setAutoLogin(sharedPreferences.getBoolean(key,
 					App.isAutoLogin()));
+		}
+		else if (key.equals(IS_PERCENTILE_READ)) {
+			App.setIsPercentileRead(sharedPreferences.getBoolean(key,
+					App.isPercentileRead()));
 		}
 	}
 }

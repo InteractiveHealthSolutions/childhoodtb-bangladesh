@@ -119,7 +119,7 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
                 R.string.ct_scan, R.string.option_hint);
 
         ctScanAreaTextView = new MyTextView(context,
-                R.style.text, R.string.ct_scan);
+                R.style.text, R.string.ct_scan_area);
         ctScanAreaEditText = new MyEditText(context, R.string.ct_scan_area,
                 R.string.ct_scan_area_hint, InputType.TYPE_CLASS_TEXT,
                 R.style.edit, 25, false);
@@ -176,12 +176,12 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        chestXrayTextView, chestXraySpinner, ctScanTextView, ctScanSpinner,
-                        ctScanAreaTextView, ctScanAreaEditText,ultrasoundAbdomenTextView, ultrasoundAbdomenSpinner
+                        chestXrayTextView, chestXraySpinner,ultrasoundAbdomenTextView, ultrasoundAbdomenSpinner,
+                        ctScanTextView, ctScanSpinner, ctScanAreaTextView, ctScanAreaEditText
                 },
-                { mantouxTextView, mantouxSpinner, smearMicroscopyTextView,
-                        smearMicroscopySpinner, xpertMTBRIFTextView, xpertMtbRifSpinner, histopathologyTextView, histopathologySpinner, histopathologySampleTextView,
-                        histopathologySampleSiteEditText, esrTextView, esrSpinner,
+                {xpertMTBRIFTextView, xpertMtbRifSpinner, mantouxTextView, mantouxSpinner, smearMicroscopyTextView,
+                        smearMicroscopySpinner,  histopathologyTextView, histopathologySpinner, histopathologySampleTextView,
+                        histopathologySampleSiteEditText, esrTextView, esrSpinner
                 }
         };
 
@@ -262,11 +262,6 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
         super.initView(views);
 
         formDate = Calendar.getInstance();
-        ctScanAreaTextView.setEnabled(false);
-        ctScanAreaEditText.setEnabled(false);
-        histopathologySampleTextView.setEnabled(false);
-        histopathologySampleSiteEditText.setEnabled(false);
-
         updateDisplay();
     }
 
@@ -285,7 +280,12 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
             message.append(patientId.getTag().toString() + ". ");
             patientId.setHintTextColor(getResources().getColor(R.color.Red));
         }
-        if (RegexUtil.matchId(App.get(patientId))) {
+        if (!valid) {
+
+            message.append(getResources().getString(R.string.empty_data) + "\n");
+        }
+
+        else if (RegexUtil.matchId(App.get(patientId))) {
             if (!RegexUtil.isValidId(App.get(patientId))) {
 
                 valid = false;

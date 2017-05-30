@@ -79,7 +79,7 @@ public class FormType {
     public static final String END_FOLLOW_UP = "End Follow-Up";
     public static final String TREATMENT_INITIATION = "Treatment Initiation";
     public static final String CONTACT_REGISTRY = "Contact Registry";
-    public static final String CONTACT_REGISTRY_DETAIL = "Contact Registry";
+    public static final String CONTACT_REGISTRY_DETAIL = "Contact Registry Detail";
 
 
 }

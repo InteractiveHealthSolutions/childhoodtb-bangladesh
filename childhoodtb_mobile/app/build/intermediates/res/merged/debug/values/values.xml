@@ -679,6 +679,12 @@
         <item>@string/sputum</item>
         <item>@string/extra_pulmonary</item>
     </string-array>
+    <string-array name="swelling_option">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
     <string-array name="symptoms_options">
         <item>@string/yes</item>
         <item>@string/no</item>
@@ -690,21 +696,34 @@
             name TEXT NOT NULL COLLATE NOCASE,
             PRIMARY KEY (id, type))
 		</item>
-		<item>CREATE TABLE IF NOT EXISTS forms (
+        <item>CREATE TABLE IF NOT EXISTS forms (
             form_date DATETIME,
             timestamp DATETIME NOT NULL,
             form TEXT NOT NULL COLLATE NOCASE,
             content TEXT NOT NULL COLLATE NOCASE,
             obs TEXT NOT NULL COLLATE NOCASE)
 		</item>
-		<item>CREATE TABLE IF NOT EXISTS offline_forms (
+        <item>CREATE TABLE IF NOT EXISTS offline_forms (
             timestamp DATETIME NOT NULL,
 		    username TEXT NOT NULL COLLATE NOCASE,
             form TEXT NOT NULL COLLATE NOCASE,
             json TEXT NOT NULL COLLATE NOCASE, 
             PRIMARY KEY (timestamp))
 		</item>
-	</string-array>
+        <item>CREATE TABLE IF NOT EXISTS  percentile_measurement(
+            gender TEXT NOT NULL COLLATE NOCASE,
+            age TEXT NOT NULL COLLATE NOCASE,
+            P3 TEXT NOT NULL COLLATE NOCASE,
+            P5 TEXT NOT NULL COLLATE NOCASE,
+            P10 TEXT NOT NULL COLLATE NOCASE,
+            P25 TEXT NOT NULL COLLATE NOCASE,
+            P50 TEXT NOT NULL COLLATE NOCASE,
+            P75 TEXT NOT NULL COLLATE NOCASE,
+            P90 TEXT NOT NULL COLLATE NOCASE,
+            P95 TEXT NOT NULL COLLATE NOCASE,
+            P97 TEXT NOT NULL COLLATE NOCASE)
+        </item>
+    </string-array>
     <string-array name="tb_forms">
         <item>Susceptible TB</item>
         <item>DR-TB</item>
@@ -1296,6 +1315,7 @@
     <string name="ppa_score_hint">Enter PPA score</string>
     <string name="preferences">Preferences</string>
     <string name="presumptive_first_name">Presumptive First Name</string>
+    <string name="presumptive_last_name">Presumptive Last Name</string>
     <string name="presumptive_tb_case">Is the child a presumptive TB case?</string>
     <string name="primary_phone">Phone 1</string>
     <string name="primary_phone_hint">Enter Phone Number</string>
@@ -1373,6 +1393,7 @@
     <string name="support_email">irddmu2013@gmail.com</string>
     <string name="supporter_other_hint">Enter other specify name</string>
     <string name="susceptible_tb">Susceptible TB</string>
+    <string name="swelling">Swelling on any part of the body?</string>
     <string name="symptoms">Symptoms</string>
     <string name="tb_before">Have you ever had TB before?</string>
     <string name="tb_in_family">Currently does an adult family member have TB?</string>
@@ -1460,6 +1481,7 @@
     <string name="weight_hint">Enter Weight (Kg)</string>
     <string name="weight_loss">Unexplained weight loss?</string>
     <string name="weight_percentile">Weight Percentile ?</string>
+    <string name="weight_percentile_hint">Calculate Weight Percentile</string>
     <string name="weight_percentile_options"/>
     <string name="whole_body">Whole body</string>
     <string name="xpert_mtb_rif">Xpert MTB/RIF?</string>

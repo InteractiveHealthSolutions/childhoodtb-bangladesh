@@ -18,6 +18,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
@@ -105,7 +106,6 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
     public void createViews(Context context) {
         //this  piece of code is used for  hide the softKey from the screen initially ...
         TreatmentInitiationActivity.this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
         pager = (ViewPager) findViewById(R.template_id.pager);
         TAG = "TreatmentInitiationActivity";
         formDateTextView = new MyTextView(context,
@@ -154,7 +154,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                 R.style.text, R.string.nid);
         nidEditText = new MyEditText(context, R.string.nid,
                 R.string.nid_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 25, false);
+                R.style.edit, 15, false);
 
         nidBelongsTextView = new MyTextView(context,
                 R.style.text, R.string.nid_belongs);
@@ -173,7 +173,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                 R.style.text, R.string.treatment_supporter_phone_Number);
         phoneNumberOfSupporterEditText = new MyEditText(context, R.string.treatment_supporter_phone_Number,
                 R.string.treatment_supporter_phone_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 15, false);
+                R.style.edit, 13, false);
 
         patientAndSupporterRelationTextView = new MyTextView(context,
                 R.style.text, R.string.treatment_supporter_relationship);
@@ -211,8 +211,9 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                         nidBelongsTextView, nidBelongsSpinner, otherSpecifyNIDTextView, otherSpecifyNIDEditText
                 },
                 {referredWithoutRegistrationTextView, referredWithoutRegistrationSpinner, tbRegisterNumberTextView,
-                        tbRegisterNumberEditText, patientTypeTextView, patientTypeSpinner, patientCategoryTextView, patientCategorySpinner, treatmentInitiationDateTextView, treatmentInitiationDateButton,
-                        nameOfSupporterTextView, nameOfTreatmentSupporterEditText},
+                        tbRegisterNumberEditText, patientTypeTextView, patientTypeSpinner, patientCategoryTextView, patientCategorySpinner,
+                        treatmentInitiationDateTextView, treatmentInitiationDateButton,nameOfSupporterTextView, nameOfTreatmentSupporterEditText
+                },
                 {phoneNumberOfSupporterTextView, phoneNumberOfSupporterEditText, patientAndSupporterRelationTextView,
                         patientAndSupporterRelationSpinner, otherTextView, other}
         };
@@ -327,11 +328,12 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
             }
         }
 
-        if (!RegexUtil.isNumeric(App.get(phoneNumberOfSupporterEditText), false)) {
+        if (!RegexUtil.isContactNumber(App.get(phoneNumberOfSupporterEditText))) {
             valid = false;
-            message.append(phoneNumberOfSupporterEditText.getTag().toString() + ". \n");
-            phoneNumberOfSupporterEditText.setHintTextColor(
-                    getResources().getColor(R.color.Red));
+            message.append(phoneNumberOfSupporterEditText.getTag().toString() + ". "
+                    + getResources().getString(R.string.invalid_data)
+                    + "\n");
+            phoneNumberOfSupporterEditText.setHintTextColor(getResources().getColor(R.color.Red));
         }
         if (!RegexUtil.isNumeric(App.get(nidEditText), false)) {
             valid = false;

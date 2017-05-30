@@ -25,6 +25,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
@@ -43,6 +44,7 @@ import android.widget.Toast;
 
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.LoginSessionManager;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
+import com.ihsinformatics.childhoodtb_mobile.util.CsvReader;
 import com.ihsinformatics.childhoodtb_mobile.util.ServerService;
 import com.ihsinformatics.childhoodtb_mobile.R;
 
@@ -191,11 +193,8 @@ public class LoginActivity extends Activity implements IActivity,
                         }
                         return false;
                     }
-                    Log.i("userName", "" + App.get(username));
-                    Log.i("userpASS", "" + App.get(password));
                     App.setUsername(App.get(username));
                     App.setPassword(App.get(password));
-                    //App.setPassword("Mrsihs123");
                     boolean exists = serverService.authenticate();
                     return exists;
                 }
@@ -210,7 +209,6 @@ public class LoginActivity extends Activity implements IActivity,
                     loading.dismiss();
                     if (result) {
                         serverService.setCurrentUser(App.get(username));
-
                         // Save username and password in preferences
                         SharedPreferences preferences = PreferenceManager
                                 .getDefaultSharedPreferences(LoginActivity.this);
@@ -219,9 +217,16 @@ public class LoginActivity extends Activity implements IActivity,
                                 App.getUsername());
                         editor.putString(Preferences.PASSWORD,
                                 App.getPassword());
+                        editor.putBoolean(Preferences.AUTO_LOGIN,
+                                true);
                         editor.apply();
 
-                         //this code save userName and userPassword into sharedPreference
+                        ///here we fill the Percentile data in Local database from CSV file
+                        Log.i("isPercentile", "" + App.isPercentileRead());
+                        if (!App.isPercentileRead())
+                            CsvReader.getInstance(LoginActivity.this).getPercentileVal();
+
+                        //this code save userName and userPassword into sharedPreference
                         LoginSessionManager.getInstance(LoginActivity.this)
                                 .createLoginSession(App.getUsername(), App.getPassword());
 
@@ -229,6 +234,7 @@ public class LoginActivity extends Activity implements IActivity,
                                 MainMenuActivity.class);
                         startActivity(intent);
                         finish();
+
                     } else {
                         App.setUsername("");
                         App.setPassword("");
@@ -297,7 +303,7 @@ public class LoginActivity extends Activity implements IActivity,
 
     @Override
     public void onBackPressed() {
-       // super.onBackPressed();
+        // super.onBackPressed();
         AlertDialog confirmationDialog = new AlertDialog.Builder(this).create();
         confirmationDialog.setTitle(getResources().getString(
                 R.string.exit_application));

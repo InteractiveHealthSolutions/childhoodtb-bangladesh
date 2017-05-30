@@ -103,8 +103,17 @@
        <item>@string/refused</item>
 
    </string-array>
-    
+
+    <string name="swelling">Swelling on any part of the body?</string>
+    <string-array name="swelling_option">
+        <item>@string/yes</item>
+        <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+
     <!--Invalid Date -->
     <string name="invalid_future_date">Invalid Date,Future date does not Allowed</string>
-   
+
+
 </resources>

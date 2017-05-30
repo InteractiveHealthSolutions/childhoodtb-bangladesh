@@ -3,6 +3,7 @@ package com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
 import com.ihsinformatics.childhoodtb_mobile.LoginActivity;
 import com.ihsinformatics.childhoodtb_mobile.MainMenuActivity;
 
@@ -26,6 +27,8 @@ public class LoginSessionManager {
     public static final String KEY_NAME = "userName";
     // User Password
     public static final String KEY_PASS = "userPassword";
+    //Key for csv file
+    public static final String KEY_PERCENTILE = "csvPercentile";
 
     ///Class constructor
     public LoginSessionManager(Context context) {
@@ -70,13 +73,11 @@ public class LoginSessionManager {
             // Staring Login Activity
             context.startActivity(intentLoggin);
         } else {
-
             Intent mainMenuActivity = new Intent(context, MainMenuActivity.class);
             mainMenuActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             // Add new Flag to start new Activity
             mainMenuActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(mainMenuActivity);
-
         }
 
     }
@@ -102,4 +103,14 @@ public class LoginSessionManager {
         context.startActivity(intetnLoggin);
     }
 
+    //Create  csvFile reader session
+    public void createCsvReader() {
+        editor.putBoolean(KEY_PERCENTILE, true);
+        editor.commit();
+    }
+    // Get Login State
+    public boolean isPercentileDataLoaded() {
+
+        return pref.getBoolean(KEY_PERCENTILE, false);
+    }
 }

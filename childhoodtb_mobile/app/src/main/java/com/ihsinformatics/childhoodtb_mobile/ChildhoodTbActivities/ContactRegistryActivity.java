@@ -171,13 +171,13 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
         View[][] viewGroups = {
 
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        phoneNoTextView, phoneNo, addressTextView, address, dotsCenterNameTextView, dotsCenterName
+                        addressTextView, address, phoneNoTextView, phoneNo, dotsCenterNameTextView, dotsCenterName,
+                        treatmentInitiationCenterTextView, treatmentInitiationCenter
                 },
-                {treatmentInitiationCenterTextView, treatmentInitiationCenter, dsTBRegNoTextView, dsTBRegNo,
-                        contactInvestigatorNameTextView, contactInvestigatorName, contactInvestigatorDesignationTextView,
+                {dsTBRegNoTextView, dsTBRegNo, contactInvestigatorNameTextView, contactInvestigatorName, contactInvestigatorDesignationTextView,
                         contactInvestigatorDesignation, nameOfDotProviderTextView, nameOfDotProvider, designationOfDotProviderTextView,
-                        designationOfDotProvider},
-                {phoneNoDotProviderTextView, phoneNoDotProvider, totalNumberOfAdultContactsTextView, totalNumberOfAdultContactsEditText,
+                        designationOfDotProvider, phoneNoDotProviderTextView, phoneNoDotProvider},
+                {totalNumberOfAdultContactsTextView, totalNumberOfAdultContactsEditText,
                         totalNumberOfChildhoodContactTextView, totalNumberOfChildhoodContactEditText, totalNumberOfContactTextView,
                         totalNumberOfContactEditText}
 

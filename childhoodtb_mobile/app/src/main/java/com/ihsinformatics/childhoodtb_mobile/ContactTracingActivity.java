@@ -106,7 +106,6 @@ public class ContactTracingActivity extends AbstractFragmentActivity implements
 
 	// MyTextView namesSymptomaticMembersTextView;
 	// MyEditText namesSymptomaticMembers;
-
 	MyButton scanBarcode;
 
 	/**

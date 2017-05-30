@@ -127,7 +127,9 @@ public class CustomMessage {
 		case TEST_ID_NOT_BELONG_TO_PATIENT:
 			error = "Test ID does not belong to patient";
 			break;
-			
+		case LIMIT_EXCEEDED:
+			error = "Screened contact has reached the limit";
+           break;			
 		}
 		return error;
 	}

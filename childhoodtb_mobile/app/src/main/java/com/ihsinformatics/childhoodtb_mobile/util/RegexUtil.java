@@ -107,7 +107,7 @@ public class RegexUtil {
     public static final String alphaNumPattern = "^[A-Za-z0-9]+";
     public static final String emailPattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     public static final String contactNoPattern = "^[0-9]{4}-{0,1}[0-9]{7}";
-    public static final String contactNoBanPattern = "^(?:\\+88|01)?\\d{11}\\r?$";
+    public static final String contactNoBanPattern = "^(?:\\+?(?:88|01)?)(?:\\d{11}|\\d{13})";
     public static final String datePattern = "(0[1-9]|[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[012]|[1-9])[-/](19|20)\\d{2}";
     public static final String timePattern_am_pm = "(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)";
     public static final String timePattern_24 = "([01]?[0-9]|2[0-3]):[0-5][0-9]";

@@ -52,9 +52,9 @@ public class App {
     private static boolean useSsl = true;
     private static boolean autoLogin = true;
     private static boolean offlineMode = false;
-
     private static OpenMrsObject currentUser;
     private static Locale currentLocale;
+    private  static boolean isPercentileRead =false;
 
     public static void setThreadSafety(boolean state) {
         StrictMode.ThreadPolicy policy = StrictMode.getThreadPolicy();
@@ -144,6 +144,14 @@ public class App {
 
     public static void setAutoLogin(boolean autoLogin) {
         App.autoLogin = autoLogin;
+    }
+
+    public static boolean isPercentileRead() {
+        return isPercentileRead;
+    }
+
+    public static void setIsPercentileRead(boolean isPercentileRead) {
+        App.isPercentileRead = isPercentileRead;
     }
 
     public static void setUseSsl(boolean useSsl) {

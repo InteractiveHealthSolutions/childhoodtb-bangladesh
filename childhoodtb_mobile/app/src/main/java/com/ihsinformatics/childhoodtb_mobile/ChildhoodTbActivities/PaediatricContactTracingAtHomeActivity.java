@@ -200,12 +200,12 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
                         validatePatientId, indexNameTextView, indexName, contactFirstNameTextView, contactFirstName,
                         contactLastNameTextView, contactLastName, contactAgeTextView, age
                 },
-                {contactGenderTextView, gender, contactSymptomsTextView, contactSymptoms, patientIdTextView,
+                {contactGenderTextView, gender, contactSymptomsTextView, contactSymptoms,
                         contactCoughTextView, contactCough, contactFeverTextView, contactFever, contactNightSweatsTextView,
                         contactNightSweats, contactWeightTextView, contactWeightLoss
                 },
                 {contactPoorAppetiteTextView, poorAppetite, referTextView, refer, outcomeCodeTextView, outcomeCode
-                        , remarksTextView, remarks, patientId, scanBarcode}
+                        , remarksTextView, remarks,patientIdTextView, patientId, scanBarcode}
         };
         // Create layouts and store in ArrayList
         groups = new ArrayList<ViewGroup>();
@@ -230,7 +230,6 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
             navigatorLayout.setVisibility(View.GONE);
         }
 
-        Log.i("groupSize", "" + groups.size());
         FragmentManager fragmentManager = getSupportFragmentManager();
         PediatricPresumptveFragmentPagerAdapter pagerAdapter = new PediatricPresumptveFragmentPagerAdapter(
                 fragmentManager, groups.size());
@@ -523,7 +522,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
     }
 
     @Override
-    public boolean submit() {
+    public boolean submit()     {
 
         if (validate()) {
 
@@ -535,7 +534,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
             values.put("lastName", App.get(contactLastName));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-
+            values.put("index_id",App.get(indexCaseId));
             final ArrayList<String[]> observations = new ArrayList<String[]>();
             observations.add(new String[]{"Index Case ID",
                     App.get(indexCaseId)});

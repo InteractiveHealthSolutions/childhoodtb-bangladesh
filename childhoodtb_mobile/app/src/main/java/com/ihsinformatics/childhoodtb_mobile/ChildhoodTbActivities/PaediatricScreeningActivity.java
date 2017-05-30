@@ -11,8 +11,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -100,6 +103,9 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
     MyTextView contactHistoryConclusionTextView;
     MySpinner contactHistoryConclusion;
 
+    MyTextView swellingTextView;
+    MySpinner swelling;
+
     MyTextView presumptiveTbCaseTextView;
     MySpinner presumptiveTbCase;
 
@@ -112,7 +118,8 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
     MyButton scanBarcode;
 
     String result = "";
-
+    static boolean isFever = false, isNightSweats = false, isWeightLoss = false, isSwelling = false,
+            isContactValid = false, isCoughValid = false, isValid = false;
 
     @Override
     public void createViews(Context context) {
@@ -229,10 +236,17 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
                 R.array.presumptive_tb_case_options),
                 R.string.presumptive_tb_case, R.string.option_hint);
 
-        smokingConfirmationTextView = new MyTextView(context, R.style.text, R.string.smoking_confirmation_at_home);
+        smokingConfirmationTextView = new MyTextView(context, R.style.text,
+                R.string.smoking_confirmation_at_home);
         smokingConfirmation = new MySpinner(context, getResources().getStringArray(
                 R.array.smoking_confirmation_options),
                 R.string.smoking_confirmation_at_home, R.string.option_hint);
+
+        swellingTextView = new MyTextView(context, R.style.text,
+                R.string.swelling);
+        swelling = new MySpinner(context, getResources().getStringArray(
+                R.array.swelling_option),
+                R.string.swelling, R.string.option_hint);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string._patient_id);
@@ -255,12 +269,11 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
                 {dobTextView, dobPicker, ageTextView, age, ageModifierTextView, ageModifier, coughTextView, cough,
                         coughDurationTextView, coughDuration,
                 },
-                {presumptiveTbCaseTextView, presumptiveTbCase, smokingConfirmationTextView,
-                        smokingConfirmation, feverTextView, fever, nightSweatsTextView, nightSweats
+                {feverTextView, fever, nightSweatsTextView, nightSweats, swellingTextView, swelling, weightLossTextView, weightLoss, childAppetiteTextView, childAppetite,
+                        contactHistoryConclusionTextView, contactHistoryConclusion
                 },
 
-                {weightLossTextView, weightLoss, childAppetiteTextView, childAppetite, contactHistoryConclusionTextView, contactHistoryConclusion,
-                        patientIdTextView, patientId, scanBarcode}
+                {presumptiveTbCaseTextView, presumptiveTbCase, smokingConfirmationTextView, smokingConfirmation, patientIdTextView, patientId, scanBarcode}
 
         };
 
@@ -306,7 +319,7 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
         views = new View[]{ageModifier, screenedBefore,
                 cough, coughDuration, fever, nightSweats,
                 childAppetite, firstName, lastName, age, weightLoss,
-                patientId, contactHistoryConclusion, presumptiveTbCase, smokingConfirmation};
+                patientId, swelling, contactHistoryConclusion, presumptiveTbCase, smokingConfirmation};
 
 
         for (View v : views) {
@@ -339,6 +352,29 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
                 }
             }
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //run time change after type the values in editText...
+        age.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                updateDob();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0)
+                     updateDob();
+            }
+        });
     }
 
     @Override
@@ -390,17 +426,60 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
         MySpinner spinner = (MySpinner) parent;
         boolean visible = spinner.getSelectedItemPosition() == 0;
         if (parent == cough) {
-
             coughDurationTextView.setEnabled(visible);
             coughDuration.setEnabled(visible);
 
+            if (!isContactValid) {
+                presumptiveTbCase.setEnabled(visible);
+                presumptiveTbCaseTextView.setEnabled(visible);
+                isCoughValid = visible;
+            } else {
+                isCoughValid = visible;
+            }
+        } else if (parent == contactHistoryConclusion) {
+
+            if (!isCoughValid) {
+                presumptiveTbCase.setEnabled(visible);
+                presumptiveTbCaseTextView.setEnabled(visible);
+                isContactValid = visible;
+            } else {
+                isContactValid = visible;
+            }
+        } else if (parent == fever) {
+            isFever = visible;
+        } else if (parent == nightSweats) {
+            isNightSweats = visible;
+        } else if (parent == weightLoss) {
+            isWeightLoss = visible;
+        } else if (parent == swelling) {
+            isSwelling = visible;
         } else if (parent == ageModifier) {
             if (!"".equals(App.get(age))) {
                 updateDob();
             }
         }
+        Log.i("coughAndContact", "" + isCoughValid + ":Contact" + isContactValid);
+        if (!(isCoughValid || isContactValid)) {
+            if ((isFever && isNightSweats) || (isFever && isWeightLoss)
+                    || (isFever && isSwelling) || (isNightSweats && isWeightLoss)
+                    || (isNightSweats && isSwelling) || (isWeightLoss && isSwelling)) {
 
+                presumptiveTbCase.setEnabled(true);
+                presumptiveTbCaseTextView.setEnabled(true);
+                isValid = true;
+            }
+            if (!isValid) {
+                presumptiveTbCase.setEnabled(false);
+                presumptiveTbCaseTextView.setEnabled(false);
+                isValid = true;
+            }
+            if (isValid) {
 
+                isValid = false;
+            }
+        }
+
+        //check is there any two symptoms are present or not if is there any then presumptive tb case should be display other wise this field is disable
         updateDisplay();
     }
 
@@ -464,7 +543,6 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
         if (!valid) {
             message.append(getResources().getString(R.string.empty_data) + "\n");
         }
-
         // Validate data
         if (valid) {
             if (!RegexUtil.isWord(App.get(firstName))) {
@@ -569,20 +647,26 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
             observations.add(new String[]{"Night Sweats",
                     App.get(nightSweats).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(nightSweats)});
+
+            observations.add(new String[]{"Swelling",
+                    App.get(swelling).equals(getResources().getString(R.string.do_not_know)) ?
+                            getResources().getString(R.string.unknown) : App.get(swelling)});
             observations.add(new String[]{"Weight Loss",
                     App.get(weightLoss).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(weightLoss)});
             observations.add(new String[]{"Contact History",
                     App.get(contactHistoryConclusion).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(contactHistoryConclusion)});
-            observations.add(new String[]{"TB Suspect",
-                    App.get(presumptiveTbCase)});
+
+            if (presumptiveTbCase.isEnabled()) {
+                observations.add(new String[]{"TB Suspect",
+                        App.get(presumptiveTbCase)});
+            }
             observations.add(new String[]{"Family Smoking",
                     App.get(smokingConfirmation)});
             observations.add(new String[]{"Appetite",
                     App.get(childAppetite).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(childAppetite)});
-
 
             ///Create the AsyncTask ()
             AsyncTask<String, String, String> updateTask = new AsyncTask<String, String, String>() {
@@ -599,6 +683,7 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
                         }
                     });
                     ///insertPaediatricScreenForm method use to Server call and also use for makign the JsonObject..
+                    Log.i("ArrayString", "" + observations.toString());
                     result = serverService.insertPaediatricScreenForm(
                             FormType.PAEDIATRIC_SCREENING, values,
                             observations.toArray(new String[][]{}));

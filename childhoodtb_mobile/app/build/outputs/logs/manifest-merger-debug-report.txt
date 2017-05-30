@@ -1,8 +1,6 @@
 -- Merging decision tree log ---
 manifest
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:2:1-157:12
-	xmlns:android
-		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:2:11-69
 	package
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml
@@ -15,9 +13,11 @@ ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\sr
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:4:5-28
 		INJECTED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Shujaat\.android\build-cache\f404d558fabee91d6e5ae1df74ea09bc2b44d52c\output\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:9:9-38
 		INJECTED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml
@@ -64,7 +64,7 @@ ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\sr
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:19:22-72
 application
 ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:21:5-155:19
-MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.1] C:\Users\Shujaat\.android\build-cache\f404d558fabee91d6e5ae1df74ea09bc2b44d52c\output\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\AndroidManifest.xml:24:9-41
 	android:allowBackup

@@ -14,14 +14,28 @@ Contributors: Tahira Niazi */
 package com.ihsinformatics.childhoodtb_mobile.shared;
 
 public class Metadata {
-	public static final String METADATA_TABLE = "identifiers";
-	public static final String CONCEPT = "concept";
-	public static final String ENCOUNTER_TYPE = "encountertype";
-	public static final String FORM = "form";
-	public static final String IDENTIFIER_TYPE = "patientidentifiertype";
-	public static final String LOCATION = "location";
-	public static final String PERSON_ATTRIBUTE_TYPE = "personattributetype";
-	public static final String PROVIDER = "provider";
-	public static final String USER = "user";
 
+    public static final String METADATA_TABLE = "identifiers";
+    public static final String CONCEPT = "concept";
+    public static final String ENCOUNTER_TYPE = "encountertype";
+    public static final String FORM = "form";
+    public static final String IDENTIFIER_TYPE = "patientidentifiertype";
+    public static final String LOCATION = "location";
+    public static final String PERSON_ATTRIBUTE_TYPE = "personattributetype";
+    public static final String PROVIDER = "provider";
+    public static final String USER = "user";
+    public static final String PERCENTILE_MEASUREMENT = "percentile_measurement";
+
+    /*this fields i used in creation of table */
+    public static final String PERCENTILE_COLUMN_GENDER = "gender";
+    public static final String PERCENTILE_COLUMN_AGE = "age";
+    public static final String PERCENTILE_COLUMN_P3 = "P3";
+    public static final String PERCENTILE_COLUMN_P5 = "P5";
+    public static final String PERCENTILE_COLUMN_P10 = "P10";
+    public static final String PERCENTILE_COLUMN_P25 = "P25";
+    public static final String PERCENTILE_COLUMN_P50 = "P50";
+    public static final String PERCENTILE_COLUMN_P75 = "P75";
+    public static final String PERCENTILE_COLUMN_P90 = "P90";
+    public static final String PERCENTILE_COLUMN_P95 = "P95";
+    public static final String PERCENTILE_COLUMN_P97 = "P97";
 }
