@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright(C) 2015 Interactive Health Solutions, Pvt. Ltd.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
 published by the Free Software Foundation; either version 3 of the License (GPLv3), or any later version.
@@ -28,6 +27,8 @@ Contributors: Tahira Niazi -->
     <string name="phone2_hint">Enter Phone Number 2</string>
     <string name="address">Address</string>
     <string name="address_hint">Complete Address</string>
+    <string name="address_road_no">Enter road no.</string>
+    <string name="address_mohalla">Enter Para/Moholla</string>
     <string name="house_number">Address: House number</string>
     <string name="house_number_hint">Enter House Number</string>
     <string name="street_name">Address: Street Name/Number</string>
@@ -40,48 +41,48 @@ Contributors: Tahira Niazi -->
     <string name="city_hint">Enter City</string>
     <string name="landmark">Address: Landmark</string>
     <string name="landmark_hint">Enter Landmark</string>
-    
-    
+
+
     <string-array name="marital_options">
-		<item >Single</item>
-		<item >Married</item>
-		<item >Divorced</item>
-		<item >Widow</item>
-		<item >Refused</item>
-		<item >Child</item>
-	</string-array>
-    
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Widow</item>
+        <item>Refused</item>
+        <item>Child</item>
+    </string-array>
+
     <string-array name="ethnicity_options">
-        <item >Sindhi</item>
-        <item >Muhajir</item>
-        <item >Pakthoon</item>
-        <item >Punjabi</item>
-        <item >Balochi</item>
-        <item >Bengali</item>
-        <item >Bihari</item>
-        <item >Memon</item>
-        <item >Gujrati</item>
-        <item >Brohi</item>
-        <item >Hindko</item>
-        <item >Saraiki</item>
-        <item >Jadgal</item>
-        <item >Kathiawari</item>
-        <item >Other Ethnicity</item>
-        <item >Unknown</item>
-        <item >Refused</item>
+        <item>Sindhi</item>
+        <item>Muhajir</item>
+        <item>Pakthoon</item>
+        <item>Punjabi</item>
+        <item>Balochi</item>
+        <item>Bengali</item>
+        <item>Bihari</item>
+        <item>Memon</item>
+        <item>Gujrati</item>
+        <item>Brohi</item>
+        <item>Hindko</item>
+        <item>Saraiki</item>
+        <item>Jadgal</item>
+        <item>Kathiawari</item>
+        <item>Other Ethnicity</item>
+        <item>Unknown</item>
+        <item>Refused</item>
     </string-array>
-    
+
     <string-array name="cnic_holder_options">
-        <item >Self</item>
-        <item >Mother</item>
-        <item >Father</item>
-        <item >Sister</item>
-        <item >Brother</item>
-        <item >Grandfather</item>
-        <item >Grandmother</item>
-        <item >Uncle</item>
-        <item >Aunt</item>
-        <item >Other</item>
+        <item>Self</item>
+        <item>Mother</item>
+        <item>Father</item>
+        <item>Sister</item>
+        <item>Brother</item>
+        <item>Grandfather</item>
+        <item>Grandmother</item>
+        <item>Uncle</item>
+        <item>Aunt</item>
+        <item>Other</item>
     </string-array>
-    
+
 </resources>

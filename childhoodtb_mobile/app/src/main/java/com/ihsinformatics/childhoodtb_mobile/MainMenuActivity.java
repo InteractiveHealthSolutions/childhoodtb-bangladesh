@@ -429,6 +429,7 @@ public class MainMenuActivity extends Activity implements IActivity,
                 final EditText locationText = new EditText(this);
                 locationText.setTag("Location");
                 locationText.setHint(R.string.location_hint);
+                locationText.setMaxLines(1);
                 builder.setView(locationText);
                 builder.setPositiveButton(R.string.save,
                         new DialogInterface.OnClickListener() {

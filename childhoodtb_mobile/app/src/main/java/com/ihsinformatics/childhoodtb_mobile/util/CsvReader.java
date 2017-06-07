@@ -70,8 +70,6 @@ public class CsvReader {
         }
         //first delete the old data
         if (serverService.deletePercentile()) {
-            Toast.makeText(context, "Successfully delete the Percentile Values",
-                    Toast.LENGTH_SHORT).show();
         }
         //here we pass the list value for insertion purpose
         if (serverService.insertPercentile(listPercentile)) {
@@ -79,10 +77,6 @@ public class CsvReader {
                     .getDefaultSharedPreferences(context);
             SharedPreferences.Editor editor = preferences.edit();
             App.setIsPercentileRead(preferences.getBoolean(Preferences.IS_PERCENTILE_READ, true));
-            Toast.makeText(context, "Successfully Insert the Percentile Values", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, context.getResources().getString(R.string.insert_error), Toast.LENGTH_SHORT).show();
-
         }
 
     }

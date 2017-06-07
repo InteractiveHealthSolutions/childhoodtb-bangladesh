@@ -272,7 +272,6 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
                 {feverTextView, fever, nightSweatsTextView, nightSweats, swellingTextView, swelling, weightLossTextView, weightLoss, childAppetiteTextView, childAppetite,
                         contactHistoryConclusionTextView, contactHistoryConclusion
                 },
-
                 {presumptiveTbCaseTextView, presumptiveTbCase, smokingConfirmationTextView, smokingConfirmation, patientIdTextView, patientId, scanBarcode}
 
         };

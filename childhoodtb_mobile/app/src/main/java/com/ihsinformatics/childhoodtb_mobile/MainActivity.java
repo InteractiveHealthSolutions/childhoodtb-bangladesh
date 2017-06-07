@@ -25,7 +25,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Button;
-
 import com.ihsinformatics.childhoodtb_mobile.ChildhoodTbActivities.LoginSessionManager;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.util.DatabaseUtil;
@@ -58,6 +57,7 @@ public class MainActivity extends Activity {
         String versionMatch = "SUCCESS";
         // versionMatch = serverService.matchVersions();
         if (versionMatch.equals("SUCCESS")) {
+
             LoginSessionManager.getInstance(MainActivity.this).checkLogin();
 
         } else {

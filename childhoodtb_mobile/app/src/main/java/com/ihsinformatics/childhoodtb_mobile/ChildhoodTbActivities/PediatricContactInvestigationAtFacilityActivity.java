@@ -13,7 +13,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Gravity;
@@ -72,13 +74,13 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
     MyEditText lastName;
 
     MyEditText presumptiveFirstName, presumptiveMotherName, age, weight, patientId, otherExamination, indexCaseId,
-            indexCaseTBRegistrationNumber;
+            indexCaseTBRegistrationNumber, weightPercentile;
 
-    MySpinner weightPercentile,
+    MySpinner
             cough, coughDuration, fever, nightSweats, weightLoss,
             poorAppetite, chestExamination, lymphNodeExamination,
             abdominalExamination, bcgScar, familyMemberTB, adultFamilyMemberTB, tbRootInFamily,
-            formOfTb, typeOfTb,probableDiagnosis, contactTracingCategory,
+            formOfTb, typeOfTb, probableDiagnosis, contactTracingCategory,
             indexCaseDiagnosis, playfulness;
 
 
@@ -137,9 +139,9 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 R.style.edit, 3, false);
         weightPercentileTextView = new MyTextView(context,
                 R.style.text, R.string.weight_percentile);
-        weightPercentile = new MySpinner(context, getResources()
-                .getStringArray(R.array.weight_percentile_list),
-                R.string.weight_percentile, R.string.option_hint);
+        weightPercentile = new MyEditText(context, R.string.weight_percentile,
+                R.string.weight_percentile_hint, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 50, false);
         coughTextView = new MyTextView(context,
                 R.style.text, R.string.cough);
         cough = new MySpinner(context, getResources()
@@ -232,7 +234,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 R.style.text, R.string.index_case_id);
         indexCaseId = new MyEditText(context,
                 R.string.index_case_id, R.string.index_case_id_hint,
-                InputType.TYPE_CLASS_TEXT, R.style.edit, 13, false);
+                InputType.TYPE_CLASS_TEXT, R.style.edit, RegexUtil.idLength, false);
         indexCaseTBRegistrationNumberTextView = new MyTextView(context,
                 R.style.text, R.string.indexcase_tb_registration_number);
         indexCaseTBRegistrationNumber = new MyEditText(context,
@@ -270,26 +272,24 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
 
 
         View[][] viewGroups = {
-                {formDateTextView, formDateButton, indexCaseIDTextView, indexCaseId, scanBarcodeIndexId,validatePatientId,
+                {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         contactTracingCategoryTextView, contactTracingCategory, firstNameTextView, presumptiveFirstName,
                         lastNameTextView, lastName, motherNameTextView, presumptiveMotherName
                 },
-                {genderTextView, gender, ageTextView, age, indexCaseTBRegistrationNumberTextView, indexCaseTBRegistrationNumber, indexCaseDiagnosisTextView,
-                        indexCaseDiagnosis, weightTextView, weight, weightPercentileTextView, weightPercentile
+                {genderTextView, gender, ageTextView, age, indexCaseIDTextView, indexCaseId, scanBarcodeIndexId, validatePatientId, indexCaseTBRegistrationNumberTextView, indexCaseTBRegistrationNumber,
+                        indexCaseDiagnosisTextView, indexCaseDiagnosis
 
                 },
-                {coughTextView, cough, coughDurationTextView, coughDuration, feverTextView, fever, nightSweatsTextView,
-                        nightSweats,weightLossTextView,weightLoss,poorAppetiteTextView, poorAppetite
+                {weightTextView, weight, weightPercentileTextView, weightPercentile, coughTextView, cough, coughDurationTextView, coughDuration, feverTextView, fever, nightSweatsTextView,
+                        nightSweats, weightLossTextView, weightLoss
                 },
-                {playfulnessTextView, playfulness,chestExaminationTextVew, chestExamination,
+                {poorAppetiteTextView, poorAppetite, playfulnessTextView, playfulness, chestExaminationTextVew, chestExamination,
                         lymphNodeExaminationTextView, lymphNodeExamination, abdominalExaminationTextView, abdominalExamination,
-                        otherExaminationTextView, otherExamination,bcgScarTextView, bcgScar
+                        otherExaminationTextView, otherExamination
                 },
-                {adultFamilyMemberTBTextView, adultFamilyMemberTB,tbRootInFamilyTextView, tbRootInFamily,formOfTbTextView, formOfTb,
-                        typeOfTbTextView, typeOfTb,probableDiagnosisTextView, probableDiagnosis
+                {bcgScarTextView, bcgScar, adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily, formOfTbTextView, formOfTb,
+                        typeOfTbTextView, typeOfTb, probableDiagnosisTextView, probableDiagnosis
 
-                },
-                { patientIdTextView, patientId, scanBarcode,
                 }
 
         };
@@ -330,7 +330,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 presumptiveFirstName, age, weight, weightPercentile,
                 cough, coughDuration, fever, patientId, nightSweats,
                 weightLoss, abdominalExamination, bcgScar, adultFamilyMemberTB,
-                formOfTb, typeOfTb,familyMemberTB, probableDiagnosis,
+                formOfTb, typeOfTb, familyMemberTB, probableDiagnosis,
                 otherExamination, playfulness, indexCaseTBRegistrationNumber, indexCaseDiagnosis,
                 indexCaseId, poorAppetite, lastName
         };
@@ -373,9 +373,37 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
+        weightPercentile.setFocusable(false);
         scanBarcodeIndexId.setOnClickListener(this);
         validatePatientId.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
+        age.setFocusable(false);
+        //weight Text Watcher
+        weight.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() > 0) {
+                    if (male.isChecked()) {
+                        weightPercentile.setText(serverService.getPercentile(App.get(age), "1", editable.toString()));
+                    } else if (female.isChecked()) {
+                        weightPercentile.setText(serverService.getPercentile(App.get(age), "2", editable.toString()));
+                    }
+                }
+                updateDisplay();
+            }
+        });
+
 
     }
 
@@ -389,6 +417,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         super.initView(views);
         formDate = Calendar.getInstance();
         saveButton.setEnabled(false);
+        male.setChecked(true);
         updateDisplay();
     }
 

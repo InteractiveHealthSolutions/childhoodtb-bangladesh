@@ -92,12 +92,12 @@ public class LoginActivity extends Activity implements IActivity,
 
     @Override
     public void initView(View[] views) {
-        if (App.isAutoLogin()) {
+        /*if (App.isAutoLogin()) {
             serverService.setCurrentUser(App.get(username));
             Intent intent = new Intent(this, MainMenuActivity.class);
             startActivity(intent);
             finish();
-        }
+        }*/
         username.setText(App.getUsername());
     }
 

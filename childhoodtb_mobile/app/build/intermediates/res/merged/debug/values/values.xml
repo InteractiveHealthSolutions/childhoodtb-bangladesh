@@ -531,13 +531,13 @@
         <item>@string/no</item>
     </string-array>
     <string-array name="marital_options">
-		<item>Single</item>
-		<item>Married</item>
-		<item>Divorced</item>
-		<item>Widow</item>
-		<item>Refused</item>
-		<item>Child</item>
-	</string-array>
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Widow</item>
+        <item>Refused</item>
+        <item>Child</item>
+    </string-array>
     <string-array name="month_of_treatment_option">
         <item>1</item>
         <item>2</item>
@@ -947,6 +947,8 @@
     <string name="addContact"><b> + </b></string>
     <string name="address">Address</string>
     <string name="address_hint">Complete Address</string>
+    <string name="address_mohalla">Enter Para/Moholla</string>
+    <string name="address_road_no">Enter road no.</string>
     <string name="adenopathy">Adenopathy</string>
     <string name="adult_cough">Do you have Cough?</string>
     <string name="adult_cough_duration">Duration of cough in Weeks	</string>

@@ -7,8 +7,7 @@
     <LinearLayout
         android:id="@+main_id/locationLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+main_id/textView1"
@@ -16,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/location"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+main_id/locationTextView"
@@ -24,8 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:ellipsize="end"
-            android:singleLine="true"
-            />
+            android:singleLine="true" />
 
         <Button
             android:id="@+main_id/selectLocationsButton"
@@ -169,16 +167,7 @@
                 android:text="@string/test_indication_button"
 
                 />
-            <Button
-                android:id="@+main_id/contactRegistryButton"
-                style="@style/button"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:drawableTop="@drawable/menu_feedback"
-                android:tag="@string/Contact_Registry_button"
-                android:text="@string/Contact_Registry_button"
 
-                />
 
             <Button
                 android:id="@+main_id/afbSmearTestOrderButton"
@@ -349,6 +338,7 @@
                 android:text="@string/ultrasound_test_result_button"
 
                 />
+
             <Button
                 android:id="@+main_id/treatmentInitiationButton"
                 style="@style/button"
@@ -356,8 +346,7 @@
                 android:layout_height="fill_parent"
                 android:drawableTop="@drawable/treatment"
                 android:tag="@string/treatment_initiation_button"
-                android:text="@string/treatment_initiation_button"
-                />
+                android:text="@string/treatment_initiation_button" />
 
 
             <Button
@@ -367,8 +356,7 @@
                 android:layout_height="fill_parent"
                 android:drawableTop="@drawable/contact"
                 android:tag="@string/paediatric_home_contact_tracing"
-                android:text="@string/paediatric_home_contact_tracing"
-                />
+                android:text="@string/paediatric_home_contact_tracing" />
 
             <Button
                 android:id="@+main_id/paediatricContactAtFacilityButton"
@@ -378,6 +366,17 @@
                 android:drawableTop="@drawable/contact"
                 android:tag="@string/paediatric_contact_investigation_facility"
                 android:text="@string/paediatric_contact_investigation_facility" />
+
+            <Button
+                android:id="@+main_id/contactRegistryButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/menu_feedback"
+                android:tag="@string/Contact_Registry_button"
+                android:text="@string/Contact_Registry_button"
+
+                />
 
             <Button
                 android:id="@+main_id/endFollowUpButton"
@@ -477,8 +476,7 @@
                 android:drawableTop="@drawable/menu_feedback"
                 android:tag="@string/customer_info"
                 android:text="@string/feedback"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
 

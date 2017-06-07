@@ -228,58 +228,6 @@ public class DatabaseUtil extends SQLiteOpenHelper {
         return data.toArray(new String[]{});
     }
 
-    /**
-     * Get a list of values in a column from local database using given query
-     *
-     * @param query
-     * @return array list
-     */
-    public ArrayList<Percentile> getPercentileData(String query) {
-        DatabaseUtil util = new DatabaseUtil(context);
-        SQLiteDatabase readableDatabase = util.getReadableDatabase();
-        ArrayList<Percentile> listPercentile = new ArrayList<Percentile>();
-        Cursor cursor = readableDatabase.rawQuery(query, null);
-        if (cursor != null)
-        // nothing
-        {
-            if (cursor.moveToFirst()) {
-
-                do {
-                    // Set information in model.
-                    Percentile agents = new Percentile();
-                    agents.setGender(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_GENDER)));
-                    agents.setAge(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_AGE)));
-                    agents.setP3(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P3)));
-                    agents.setP5(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P5)));
-                    agents.setP10(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P10)));
-                    agents.setP25(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P25)));
-                    agents.setP50(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P50)));
-                    agents.setP75(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P75)));
-                    agents.setP90(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P90)));
-                    agents.setP95(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P95)));
-                    agents.setP97(cursor.getString(cursor
-                            .getColumnIndex(Metadata.PERCENTILE_COLUMN_P97)));
-
-                    listPercentile.add(agents);
-                } while (cursor.moveToNext());
-            }
-            cursor.close();
-        }
-
-        util.close();
-
-        return listPercentile;
-    }
 
     /**
      * Get a single record local database using given query and return the

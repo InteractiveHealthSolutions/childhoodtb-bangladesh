@@ -95,7 +95,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
                 R.style.text, R.string.index_case_id);
         indexCaseId = new MyEditText(context,
                 R.string.index_case_id, R.string.index_case_id_hint,
-                InputType.TYPE_CLASS_TEXT, R.style.edit, 13, false);
+                InputType.TYPE_CLASS_TEXT, R.style.edit, RegexUtil.idLength, false);
 
         scanBarcodeIndexId = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.scan_barcode,
@@ -272,6 +272,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
 
         //Clicked Events...
         formDateButton.setOnClickListener(this);
+        male.setChecked(true);
         firstButton.setOnClickListener(this);
         lastButton.setOnClickListener(this);
         clearButton.setOnClickListener(this);

@@ -333,6 +333,7 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
 
         //Clicked Events...
         formDateButton.setOnClickListener(this);
+        male.setChecked(true);
         firstButton.setOnClickListener(this);
         lastButton.setOnClickListener(this);
         clearButton.setOnClickListener(this);

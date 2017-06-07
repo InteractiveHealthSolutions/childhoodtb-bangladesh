@@ -264,14 +264,14 @@
         <item>@string/suggestive_tb</item>
         <item>@string/strongly_suggestive_tb</item>
         <item>@string/not_suggestive_tb</item>
-    </string-array></file><file path="C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\res\values\patient_registration_strings.xml" qualifiers=""><string name="phone1_hint">Enter Phone Number 1</string><string name="colony_name">Address: Colony Name</string><string name="ethnicity">Ethnicity</string><string name="town">Address: Town</string><string name="town_hint">Enter Town</string><string name="cnic_hint">Enter CNIC</string><string name="city_hint">Enter City</string><string name="cnic">CNIC</string><string-array name="marital_options">
-		<item>Single</item>
-		<item>Married</item>
-		<item>Divorced</item>
-		<item>Widow</item>
-		<item>Refused</item>
-		<item>Child</item>
-	</string-array><string name="father_in_law_name">Suspect\'s Grandfather\'s Name/Father-in-Law\'s Name</string><string name="father_husband_name_hint">Enter Name</string><string name="street_name">Address: Street Name/Number</string><string name="address">Address</string><string name="cnic_holder">Whose CNIC is this?</string><string name="address_hint">Complete Address</string><string name="father_husband_name">Suspect\'s Father\'s Name/Husband\'s Name</string><string-array name="cnic_holder_options">
+    </string-array></file><file path="C:\Users\Shujaat\git\childhoodtb-bangladesh\childhoodtb_mobile\app\src\main\res\values\patient_registration_strings.xml" qualifiers=""><string name="phone1_hint">Enter Phone Number 1</string><string name="colony_name">Address: Colony Name</string><string name="ethnicity">Ethnicity</string><string name="town">Address: Town</string><string name="town_hint">Enter Town</string><string name="address_road_no">Enter road no.</string><string name="cnic_hint">Enter CNIC</string><string name="city_hint">Enter City</string><string name="cnic">CNIC</string><string name="address_mohalla">Enter Para/Moholla</string><string-array name="marital_options">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Widow</item>
+        <item>Refused</item>
+        <item>Child</item>
+    </string-array><string name="father_in_law_name">Suspect\'s Grandfather\'s Name/Father-in-Law\'s Name</string><string name="father_husband_name_hint">Enter Name</string><string name="street_name">Address: Street Name/Number</string><string name="address">Address</string><string name="cnic_holder">Whose CNIC is this?</string><string name="address_hint">Complete Address</string><string name="father_husband_name">Suspect\'s Father\'s Name/Husband\'s Name</string><string-array name="cnic_holder_options">
         <item>Self</item>
         <item>Mother</item>
         <item>Father</item>

@@ -25,7 +25,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -41,9 +40,6 @@ import com.ihsinformatics.childhoodtb_mobile.Barcode;
 import com.ihsinformatics.childhoodtb_mobile.R;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyButton;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyEditText;
-import com.ihsinformatics.childhoodtb_mobile.custom.MyRadioButton;
-import com.ihsinformatics.childhoodtb_mobile.custom.MyRadioGroup;
-import com.ihsinformatics.childhoodtb_mobile.custom.MySpinner;
 import com.ihsinformatics.childhoodtb_mobile.custom.MyTextView;
 import com.ihsinformatics.childhoodtb_mobile.shared.AlertType;
 import com.ihsinformatics.childhoodtb_mobile.shared.FormType;
@@ -68,7 +64,7 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
 
 
     EditText
-            phoneNo, patientId, address, dotsCenterName, treatmentInitiationCenter,
+            phoneNo, patientId, addressRoadNo, addressMoholla, dotsCenterName, treatmentInitiationCenter,
             dsTBRegNo, contactInvestigatorName, contactInvestigatorDesignation,
             nameOfDotProvider, designationOfDotProvider, phoneNoDotProvider, totalNumberOfContactEditText,
             totalNumberOfAdultContactsEditText, totalNumberOfChildhoodContactEditText;
@@ -93,9 +89,15 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
                 R.string.form_date);
         addressTextView = new MyTextView(context,
                 R.style.text, R.string.address);
-        address = new MyEditText(context,
-                R.string.address, R.string.address_hint,
-                InputType.TYPE_TEXT_VARIATION_POSTAL_ADDRESS, R.style.edit, 25, false);
+        addressRoadNo = new MyEditText(context,
+                R.string.address, R.string.address_road_no,
+                InputType.TYPE_TEXT_VARIATION_POSTAL_ADDRESS,
+                R.style.edit, 25, false);
+        addressMoholla = new MyEditText(context,
+                R.string.address, R.string.address_mohalla,
+                InputType.TYPE_TEXT_VARIATION_POSTAL_ADDRESS,
+                R.style.edit, 25, false);
+
         phoneNoTextView = new MyTextView(context,
                 R.style.text, R.string.phone_No);
         phoneNo = new MyEditText(context,
@@ -171,7 +173,7 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
         View[][] viewGroups = {
 
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
-                        addressTextView, address, phoneNoTextView, phoneNo, dotsCenterNameTextView, dotsCenterName,
+                        addressTextView, addressRoadNo, addressMoholla, phoneNoTextView, phoneNo, dotsCenterNameTextView, dotsCenterName,
                         treatmentInitiationCenterTextView, treatmentInitiationCenter
                 },
                 {dsTBRegNoTextView, dsTBRegNo, contactInvestigatorNameTextView, contactInvestigatorName, contactInvestigatorDesignationTextView,
@@ -213,7 +215,7 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{patientId, totalNumberOfAdultContactsEditText, totalNumberOfChildhoodContactEditText,
-                phoneNo, address, dotsCenterName, treatmentInitiationCenter, dsTBRegNo, contactInvestigatorName,
+                phoneNo, addressRoadNo, addressMoholla, dotsCenterName, treatmentInitiationCenter, dsTBRegNo, contactInvestigatorName,
                 contactInvestigatorDesignation, designationOfDotProvider, nameOfDotProvider, phoneNoDotProvider,
                 totalNumberOfContactEditText
         };
@@ -391,7 +393,7 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
         boolean valid = true;
         StringBuffer message = new StringBuffer();
         // Validate mandatory controls
-        View[] mandatory = {totalNumberOfChildhoodContactEditText, phoneNo, address, nameOfDotProvider,
+        View[] mandatory = {totalNumberOfChildhoodContactEditText, phoneNo, addressRoadNo, addressMoholla, nameOfDotProvider,
                 dotsCenterName, treatmentInitiationCenter, dsTBRegNo, contactInvestigatorDesignation,
                 contactInvestigatorName, nameOfDotProvider, phoneNoDotProvider, totalNumberOfAdultContactsEditText,
                 totalNumberOfContactEditText, designationOfDotProvider};
@@ -527,8 +529,9 @@ public class ContactRegistryActivity extends AbstractFragmentActivity implements
             values.put("primaryPhone", App.get(phoneNo));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
+            String completeAddress = App.get(addressRoadNo) + "," + App.get(addressMoholla);
             observations.add(new String[]{"Address",
-                    App.get(address)});
+                    completeAddress});
             observations.add(new String[]{"DOTS center",
                     App.get(dotsCenterNameTextView)});
             observations.add(new String[]{"Treatment Initiation Center",

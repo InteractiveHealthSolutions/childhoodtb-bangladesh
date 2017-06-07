@@ -668,8 +668,8 @@ public class MobileService {
 			if (formType.equals(FormType.CONTACT_REGISTRY_DETAIL)) {
 				// check the contact registry from is fill or not ..
 				patients = Context.getPatientService().getPatients(patientId);
-				Patient p = patients.get(0);
-				if (!checkContactRegistry(p.toString())) {
+        		int p = patients.get(0).getPatientId();
+				if (!checkContactRegistry(Integer.toString(p))) {
 					throw new Exception();
 				}
 			}
@@ -3965,6 +3965,11 @@ public class MobileService {
 			if (patients != null && patients.size() > 0) {
 				// throw new Exception();
 				patietnIndetifier = patients.get(0);
+				int p = patietnIndetifier.getPatientId();
+				if(checkContactRegistry(Integer.toString(p))){
+				    throw new DuplicateIdentifierException();
+				   }
+				//check this 
 			} else {
 				try {
 					throw new Exception();
@@ -4051,7 +4056,12 @@ public class MobileService {
 		} catch (NonUniqueObjectException e) {
 			e.printStackTrace();
 			error = CustomMessage.getErrorMessage(ErrorType.DUPLICATION_ERROR);
-		} catch (NullPointerException e) {
+		} 
+		catch (DuplicateIdentifierException e) {
+			e.printStackTrace();
+			error = CustomMessage.getErrorMessage(ErrorType.DUPLICATION_ERROR);
+		}
+		catch (NullPointerException e) {
 			e.printStackTrace();
 			error += CustomMessage
 					.getErrorMessage(ErrorType.INVALID_DATA_ERROR);
