@@ -130,7 +130,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                 R.style.text, R.string.other_belongs);
         otherSpecifyNIDEditText = new MyEditText(context, R.string.other_belongs,
                 R.string.other_belongs_hint, InputType.TYPE_CLASS_TEXT,
-                R.style.edit, 10, false);
+                R.style.edit, 15, false);
 
         tbRegisterNumberTextView = new MyTextView(context,
                 R.style.text, R.string.tb_reg_number);

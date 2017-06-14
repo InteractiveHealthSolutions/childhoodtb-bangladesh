@@ -620,13 +620,34 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
             values.put("motherName", App.get(presumptiveMotherName));
             values.put("patientId", App.get(patientId));
 
+            String weightPercent = App.get(weightPercentile);
+            Log.d(TAG, "submit: " + App.get(weightPercentile));
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
 
             observations.add(new String[]{"Weight",
                     App.get(weight)});
-            observations.add(new String[]{"Weight Percentile",
-                    App.get(weightPercentile)});
+            if (weightPercent.equals(getResources().getString(
+                    R.string.less_then_or_equal_5th_percentile))) {
+                observations.add(new String[]{"Weight Percentile",
+                        getResources().getString(R.string.five_Percentile_or_Less)});
+            } else if (weightPercent.equals(getString(
+                    R.string.six_less_then_or_equal_to_10th_percentile))) {
+                observations.add(new String[]{"Weight Percentile",
+                        getString(R.string.six_to_ten_percentile)});
+            } else if (weightPercent.equals(getString(
+                    R.string.eleven_less_then_or_equal_to_25th_percentile))) {
+                observations.add(new String[]{"Weight Percentile",
+                        getString(R.string.eleven_to_twenty_five_percentile)});
+            } else if (weightPercent.equals(getString(
+                    R.string.twentySix_less_then_or_equal_to_50th_percentile))) {
+                observations.add(new String[]{"Weight Percentile",
+                        getString(R.string.twenty_six_to_fifty_percentile)});
+            } else if (weightPercent.equals(getString(
+                    R.string.greater_then_50th_percentile))) {
+                observations.add(new String[]{"Weight Percentile",
+                        getString(R.string.more_then_fifty_percentile)});
+            }
             observations.add(new String[]{"Fever",
                     App.get(fever).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(fever)});

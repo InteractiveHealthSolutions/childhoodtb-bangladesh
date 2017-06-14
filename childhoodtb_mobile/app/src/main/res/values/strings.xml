@@ -38,6 +38,7 @@ Contributors: Tahira Niazi -->
     <string name="age_group">Age Group</string>
     <string name="patient_id">Patient ID</string>
     <string name="patient_id_hint">Enter ID (12 characters)</string>
+    <string name="test_id_hint">Enter ID (10 characters)</string>
     <string name="refresh_database">Refresh Database</string>
     <string name="search_patients">Search..</string>
     <string name="scan_barcode">Scan Barcode</string>

@@ -279,6 +279,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         saveButton.setOnClickListener(this);
         saveButton.setEnabled(false);
         scanBarcode.setOnClickListener(this);
+        scanBarcodeIndexId.setOnClickListener(this);
         validatePatientId.setOnClickListener(this);
         indexName.setFocusable(false);
         navigationSeekbar.setOnSeekBarChangeListener(this);
@@ -316,10 +317,17 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         } else if (view == saveButton) {
             submit();
         } else if (view == scanBarcode) {
+
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
-        } else if (view == validatePatientId) {
+
+        }else if (view ==scanBarcodeIndexId){
+            Intent intent = new Intent(Barcode.BARCODE_INTENT);
+            intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
+            startActivityForResult(intent, Barcode.BARCODE_RESULT_INDEX_ID);
+          }
+        else if (view == validatePatientId) {
             //check Patient I validation
             if (checkPatientId()) {
 
@@ -643,6 +651,30 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
             }
             // Set the locale again, since the Barcode app restores system's
             // locale because of orientation
+            Locale.setDefault(App.getCurrentLocale());
+            Configuration config = new Configuration();
+            config.locale = App.getCurrentLocale();
+            getApplicationContext().getResources().updateConfiguration(config,
+                    null);
+        }
+       else if (requestCode == Barcode.BARCODE_RESULT_INDEX_ID) {
+            if (resultCode == RESULT_OK) {
+                String str = data.getStringExtra(Barcode.SCAN_RESULT);
+                // Check for valid Id
+                if (RegexUtil.isValidId(str) && !RegexUtil.isNumeric(str, false)) {
+                    indexCaseId.setText(str);
+                } else {
+                    App.getAlertDialog(this, AlertType.ERROR, indexCaseId.getTag().toString()
+                            + ": "
+                            + getResources().getString(
+                            R.string.invalid_data)).show();
+                }
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+                App.getAlertDialog(this, AlertType.ERROR,
+                        getResources().getString(R.string.operation_cancelled))
+                        .show();
+            }
             Locale.setDefault(App.getCurrentLocale());
             Configuration config = new Configuration();
             config.locale = App.getCurrentLocale();

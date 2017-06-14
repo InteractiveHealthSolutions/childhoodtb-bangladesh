@@ -65,6 +65,7 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
 
     MyTextView testIdTextView;
     MyEditText testId;
+    MyButton testIdScanBarcode;
 
     String result = "";
     Calendar testResultCalender;
@@ -110,14 +111,17 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
         testIdTextView = new MyTextView(context, R.style.text,
                 R.string.test_id);
         testId = new MyEditText(context, R.string.test_id,
-                R.string.test_id_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 5, false);
+                R.string.test_id_hint, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, RegexUtil.testIdLength, false);
+        testIdScanBarcode = new MyButton(context, R.style.button,
+                R.drawable.custom_button_beige, R.string.scan_barcode,
+                R.string.scan_barcode);
 
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testResultDateTextView, testResultDateButton, ultrasoundResultTextView,
-                        ultrasoundResultSpinner, testIdTextView, testId}
+                        ultrasoundResultSpinner, testIdTextView, testId, testIdScanBarcode}
         };
 
         // Create layouts and store in ArrayList.
@@ -184,6 +188,7 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
+        testIdScanBarcode.setOnClickListener(this);
         testResultDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
@@ -243,6 +248,27 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
                     + getResources().getString(R.string.invalid_data)
                     + "\n");
             patientId
+                    .setTextColor(getResources().getColor(R.color.Red));
+        }
+        //check validation of testId
+        if (RegexUtil.isMatchTestId(App.get(testId))) {
+            if (!RegexUtil.isValidId(App.get(testId))) {
+
+                valid = false;
+                message.append(testId.getTag().toString()
+                        + ": "
+                        + getResources().getString(
+                        R.string.invalid_data) + "\n");
+                testId.setTextColor(getResources().getColor(
+                        R.color.Red));
+            }
+        } else {
+
+            valid = false;
+            message.append(testId.getTag().toString() + ": "
+                    + getResources().getString(R.string.invalid_data)
+                    + "\n");
+            testId
                     .setTextColor(getResources().getColor(R.color.Red));
         }
         //check is the selected date and time is in future ...
@@ -373,7 +399,12 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
             Intent intent = new Intent(Barcode.BARCODE_INTENT);
             intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
             startActivityForResult(intent, Barcode.BARCODE_RESULT);
+        } else if (view == testIdScanBarcode) {
+            Intent intent = new Intent(Barcode.BARCODE_INTENT);
+            intent.putExtra(Barcode.SCAN_MODE, Barcode.QR_MODE);
+            startActivityForResult(intent, Barcode.BARCODE_RESULT_TEST_ID);
         }
+
     }
 
     @Override
@@ -425,6 +456,29 @@ public class UltraSoundTestResultActivity extends AbstractFragmentActivity {
             }
             // Set the locale again, since the Barcode app restores system's
             // locale because of orientation
+            Locale.setDefault(App.getCurrentLocale());
+            Configuration config = new Configuration();
+            config.locale = App.getCurrentLocale();
+            getApplicationContext().getResources().updateConfiguration(config,
+                    null);
+        } else if (requestCode == Barcode.BARCODE_RESULT_TEST_ID) {
+            if (resultCode == RESULT_OK) {
+                String str = data.getStringExtra(Barcode.SCAN_RESULT);
+                // Check for valid Id
+                if (RegexUtil.isValidId(str) && !RegexUtil.isNumeric(str, false)) {
+                    testId.setText(str);
+                } else {
+                    App.getAlertDialog(this, AlertType.ERROR, testId.getTag().toString()
+                            + ": "
+                            + getResources().getString(
+                            R.string.invalid_data)).show();
+                }
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+                App.getAlertDialog(this, AlertType.ERROR,
+                        getResources().getString(R.string.operation_cancelled))
+                        .show();
+            }
             Locale.setDefault(App.getCurrentLocale());
             Configuration config = new Configuration();
             config.locale = App.getCurrentLocale();

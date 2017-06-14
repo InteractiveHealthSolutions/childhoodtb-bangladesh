@@ -242,7 +242,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 message.append(other.getTag().toString() + ":\n" +
                         getResources().getString(R.string.empty_data));
                 // other.setHintTextColor(getResources().getColor(R.color.Red));
-            } else if (!RegexUtil.isWord(App.get(other))) {
+            } else if (!RegexUtil.isText(App.get(other))) {
 
                 valid = false;
                 message.append(other.getTag().toString()
@@ -259,7 +259,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 message.append(reasonForlossFollowUp.getTag().toString() + ":\n" +
                         getResources().getString(R.string.empty_data));
                 //reasonForlossFollowUp.setHintTextColor(getResources().getColor(R.color.Red));
-            } else if (!RegexUtil.isWord(App.get(reasonForlossFollowUp))) {
+            } else if (!RegexUtil.isText(App.get(reasonForlossFollowUp))) {
 
                 valid = false;
                 message.append(reasonForlossFollowUp.getTag().toString()
@@ -276,7 +276,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
                 message.append(otherFacilityName.getTag().toString() + ":\n" +
                         getResources().getString(R.string.empty_data));
                 // otherFacilityName.setHintTextColor(getResources().getColor(R.color.Red));
-            } else if (!RegexUtil.isWord(App.get(otherFacilityName))) {
+            } else if (!RegexUtil.isText(App.get(otherFacilityName))) {
 
                 valid = false;
                 message.append(otherFacilityName.getTag().toString()

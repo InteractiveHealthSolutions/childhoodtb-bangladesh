@@ -18,15 +18,15 @@ package com.ihsinformatics.childhoodtb_mobile;
 
 /**
  * @author owais.hussain@irdresearch.org
- * 
  */
 public class Barcode {
 
-	public static final int BARCODE_RESULT = 0;
-	public static final int BARCODE_RESULT_INDEX_ID = 1;
-	public static final String BARCODE_INTENT = "com.google.zxing.client.android.SCAN";
-	public static final String SCAN_MODE = "SCAN_MODE";
-	public static final String QR_MODE = "QR_MODE";
-	public static final String SCAN_RESULT = "SCAN_RESULT";
-	public static final String SCAN_RESULT_FORMAT = "SCAN_RESULT_FORMAT";
+    public static final int BARCODE_RESULT = 0;
+    public static final int BARCODE_RESULT_INDEX_ID = 1;
+    public static final int BARCODE_RESULT_TEST_ID = 2;
+    public static final String BARCODE_INTENT = "com.google.zxing.client.android.SCAN";
+    public static final String SCAN_MODE = "SCAN_MODE";
+    public static final String QR_MODE = "QR_MODE";
+    public static final String SCAN_RESULT = "SCAN_RESULT";
+    public static final String SCAN_RESULT_FORMAT = "SCAN_RESULT_FORMAT";
 }

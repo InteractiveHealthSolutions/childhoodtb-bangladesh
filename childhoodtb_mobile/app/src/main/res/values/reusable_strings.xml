@@ -27,6 +27,12 @@
     <string name="eleven_less_then_or_equal_to_25th_percentile">11-&lt;=25th Percentile</string>
     <string name="twentySix_less_then_or_equal_to_50th_percentile">26-&lt;=50th Percentile</string>
     <string name="greater_then_50th_percentile">&gt;50th Percentile</string>
+    <string name="five_Percentile_or_Less">5th Percentile or Less</string>
+    <string name="six_to_ten_percentile">Six to 10th Percentile</string>
+    <string name="eleven_to_twenty_five_percentile">Eleven to 25th Percentile</string>
+    <string name="twenty_six_to_fifty_percentile">Twenty Six to 50th Percentile</string>
+    <string name="more_then_fifty_percentile">More than 50th Percentile</string>
+
     <string name="weight">Weight (Kg)?</string>
     <string name="weight_hint">Enter Weight (Kg)</string>
     <string name="weight_percentile">Weight Percentile ?</string>
@@ -113,7 +119,7 @@
     <string name="pus">Pus</string>
     <string name="negative">Negative</string>
     <string name="one_to_nine_afb">1-9 AFB</string>
-    <string name="normal">Normal</string>
+    <string name="normal">Normal(Newborn: 0-2 mm/hour Children:3-13 mm/hour)</string>
     <string name="adenopathy">Adenopathy</string>
     <string name="infiltration">Infiltration</string>
     <string name="consolidation">Consolidation</string>

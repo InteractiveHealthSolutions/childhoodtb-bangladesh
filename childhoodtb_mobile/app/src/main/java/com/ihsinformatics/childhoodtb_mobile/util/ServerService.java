@@ -301,17 +301,17 @@ public class ServerService {
 
         if (weightInDouble <= p50) { //if weight or height less or equal to medium
             if (weightInDouble <= p5) {
-                return "≤5th percentile";
+                return context.getString(R.string.less_then_or_equal_5th_percentile);
             } else if (weightInDouble <= p10) {
-                return "6-≤10th percentile";
+                return context.getString(R.string.six_less_then_or_equal_to_10th_percentile);
             } else if (weightInDouble <= p25) {
-                return "11-≤25th percentile";
+                return context.getString(R.string.eleven_less_then_or_equal_to_25th_percentile);
             } else if (weightInDouble <= p50) {
-                return "26-≤50th percentile";
+                return context.getString(R.string.twentySix_less_then_or_equal_to_50th_percentile);
             }
 
         } else if (weightInDouble > p50) {//if weight or height greater then  medium
-            return " >50th percentile";
+            return context.getString(R.string.greater_then_50th_percentile);
         }
         return "";
     }

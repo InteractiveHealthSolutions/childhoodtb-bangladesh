@@ -1079,6 +1079,7 @@
     <string name="duplication">Duplication error! Another copy of the same data or ID already exists</string>
     <string name="effusion">Effusion</string>
     <string name="eleven_less_then_or_equal_to_25th_percentile">11-&lt;=25th Percentile</string>
+    <string name="eleven_to_twenty_five_percentile">Eleven to 25th Percentile</string>
     <string name="eligible_for_ipt">Eligible for IPT</string>
     <string name="empty_data">Empty data! Please fill in the required field(s)</string>
     <string name="empty_data_indexId">Empty data! Please enter index id</string>
@@ -1118,6 +1119,7 @@
     <string name="fever_weeks">Have you had fever in the last two weeks?</string>
     <string name="first_name">First Name</string>
     <string name="first_name_hint">Enter First Name</string>
+    <string name="five_Percentile_or_Less">5th Percentile or Less</string>
     <string name="five_to_nine_mm">5-9 mm</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="form_closing">Closing this form</string>
@@ -1209,6 +1211,7 @@
     <string name="month_of_treatment">Month of Treatment</string>
     <string name="more_than_one_source_case">Is there more than one source case in child\'s household?</string>
     <string name="more_than_three_weeks">More than 3 Weeks</string>
+    <string name="more_then_fifty_percentile">More than 50th Percentile</string>
     <string name="more_then_three_weeks">More than 3 Weeks</string>
     <string name="mother">Mother</string>
     <string name="mother_name">Presumptive Mother Name</string>
@@ -1242,7 +1245,7 @@
     <string name="no_screened_contact_rp">Screened:</string>
     <string name="non_pulmonary_suspect">Non-Pulmonary Suspect</string>
     <string name="non_suspect">This person was not marked as a Suspect. In order to save this form, you must mark the person as a suspect and assign a valid Patient ID</string>
-    <string name="normal">Normal</string>
+    <string name="normal">Normal(Newborn: 0-2 mm/hour Children:3-13 mm/hour)</string>
     <string name="not_allowed">Number exceeds the allowable limit.25 Contact is Limit.</string>
     <string name="not_detected">Not Detected</string>
     <string name="not_found_contact_registry">Patient Id not found in contact registry! Please make sure you fill the contact registry form.</string>
@@ -1367,6 +1370,7 @@
     <string name="similar_form_submitted">This form has already been submitted for same ID/code</string>
     <string name="sister">Sister</string>
     <string name="six_less_then_or_equal_to_10th_percentile">6-&lt;=10th Percentile</string>
+    <string name="six_to_ten_percentile">Six to 10th Percentile</string>
     <string name="smear_microscopy">Smear Microscopy?</string>
     <string name="smear_result">Smear Result</string>
     <string name="smoking_confirmation_at_home">Does anybody at home smoke cigarette?</string>
@@ -1407,7 +1411,7 @@
     <string name="ten_mm">10mm</string>
     <string name="test_advised">Test advised</string>
     <string name="test_id">Test ID</string>
-    <string name="test_id_hint">Enter test Id</string>
+    <string name="test_id_hint">Enter ID (10 characters)</string>
     <string name="test_id_missing">Test ID does not exist. Please make sure you have entered correct Test ID</string>
     <string name="test_indication">Test Indication</string>
     <string name="test_indication_button">Test Indication</string>
@@ -1457,6 +1461,7 @@
     <string name="tst_test_order_button">TST Test Order</string>
     <string name="tst_test_result_button">TST Test Result</string>
     <string name="twentySix_less_then_or_equal_to_50th_percentile">26-&lt;=50th Percentile</string>
+    <string name="twenty_six_to_fifty_percentile">Twenty Six to 50th Percentile</string>
     <string name="two_to_three_Weeks">2 to 3 Weeks</string>
     <string name="two_to_three_weeks">2 to 3 Weeks</string>
     <string name="type_of_tb">What type of TB does this family member have?</string>
