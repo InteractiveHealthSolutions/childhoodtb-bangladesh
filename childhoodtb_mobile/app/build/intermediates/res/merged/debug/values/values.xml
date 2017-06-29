@@ -34,6 +34,12 @@
 
     </string-array>
     <string-array name="appetite_decreased_options">
+        <item>@string/ok</item>
+        <item>@string/poor</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="appetite_decreased_options_screen">
         <item>@string/poor</item>
         <item>@string/ok</item>
         <item>@string/do_not_know</item>
@@ -107,9 +113,15 @@
         <item>@string/do_not_know</item>
         <item>@string/refused</item>
     </string-array>
-    <string-array name="cough_options">
+    <string-array name="cough_option_screen">
         <item>@string/yes</item>
         <item>@string/no</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="cough_options">
+        <item>@string/no</item>
+        <item>@string/yes</item>
         <item>@string/do_not_know</item>
         <item>@string/refused</item>
     </string-array>
@@ -402,7 +414,7 @@
     </string-array>
     <string-array name="esr_result_option">
         <item>@string/high</item>
-        <item>@string/normal</item>
+        <item>@string/normal_n</item>
     </string-array>
     <string-array name="ethnicity_options">
         <item>Sindhi</item>
@@ -440,6 +452,13 @@
         <item>Other</item>
     </string-array>
     <string-array name="fever_options">
+        <item>@string/no</item>
+        <item>@string/yes</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+
+    </string-array>
+    <string-array name="fever_options_screen">
         <item>@string/yes</item>
         <item>@string/no</item>
         <item>@string/do_not_know</item>
@@ -566,6 +585,12 @@
         <item>@string/other</item>
     </string-array>
     <string-array name="night_sweats_options">
+        <item>@string/no</item>
+        <item>@string/yes</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="night_sweats_options_screen">
         <item>@string/yes</item>
         <item>@string/no</item>
         <item>@string/do_not_know</item>
@@ -831,6 +856,12 @@
         <item>Home Visit</item>
     </string-array>
     <string-array name="weight_loss_options">
+        <item>@string/no</item>
+        <item>@string/yes</item>
+        <item>@string/do_not_know</item>
+        <item>@string/refused</item>
+    </string-array>
+    <string-array name="weight_loss_options_screen">
         <item>@string/yes</item>
         <item>@string/no</item>
         <item>@string/do_not_know</item>
@@ -1118,7 +1149,7 @@
     <string name="fever_week">Fever more than two weeks?</string>
     <string name="fever_weeks">Have you had fever in the last two weeks?</string>
     <string name="first_name">First Name</string>
-    <string name="first_name_hint">Enter First Name</string>
+    <string name="first_name_hint">Enter Name</string>
     <string name="five_Percentile_or_Less">5th Percentile or Less</string>
     <string name="five_to_nine_mm">5-9 mm</string>
     <string name="forgot_password">Forgot Password</string>
@@ -1155,6 +1186,7 @@
     <string name="https_port">443</string>
     <string name="ic_matuail">Institute of Child and Mother Health Matuail</string>
     <string name="ich_mirpur">Institute of Child Health and Shishu Shastho Foundation Hospital Mirpur</string>
+    <string name="if_eptb_other">If other, from where?</string>
     <string name="incomplete_operation">Incomplete operation error! Patient created but encounter and observations were not saved</string>
     <string name="indeterminate">Indeterminate</string>
     <string name="indexCase_diagnosis">Index Case Diagnosis</string>
@@ -1245,7 +1277,8 @@
     <string name="no_screened_contact_rp">Screened:</string>
     <string name="non_pulmonary_suspect">Non-Pulmonary Suspect</string>
     <string name="non_suspect">This person was not marked as a Suspect. In order to save this form, you must mark the person as a suspect and assign a valid Patient ID</string>
-    <string name="normal">Normal(Newborn: 0-2 mm/hour Children:3-13 mm/hour)</string>
+    <string name="normal">Normal</string>
+    <string name="normal_n">Normal (Newborn: 0-2 mm/hour Children:3-13 mm/hour)</string>
     <string name="not_allowed">Number exceeds the allowable limit.25 Contact is Limit.</string>
     <string name="not_detected">Not Detected</string>
     <string name="not_found_contact_registry">Patient Id not found in contact registry! Please make sure you fill the contact registry form.</string>
@@ -1321,6 +1354,7 @@
     <string name="preferences">Preferences</string>
     <string name="presumptive_first_name">Presumptive First Name</string>
     <string name="presumptive_last_name">Presumptive Last Name</string>
+    <string name="presumptive_name">Presumptive Name</string>
     <string name="presumptive_tb_case">Is the child a presumptive TB case?</string>
     <string name="primary_phone">Phone 1</string>
     <string name="primary_phone_hint">Enter Phone Number</string>

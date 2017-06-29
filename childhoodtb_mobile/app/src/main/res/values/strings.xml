@@ -55,7 +55,7 @@ Contributors: Tahira Niazi -->
 
 
     <string name="first_name">First Name</string>
-    <string name="first_name_hint">Enter First Name</string>
+    <string name="first_name_hint">Enter Name</string>
     <string name="last_name">Last Name</string>
     <string name="last_name_hint">Enter Last Name</string>
     <string name="gender">Gender</string>

@@ -71,6 +71,7 @@
     <string name="not_tb_presumptive">Not a TB Presumptive</string>
     <string name="bt_presumptive_confirmed">TB Presumptive confirmed</string>
     <string name="presumptive_first_name">Presumptive First Name</string>
+    <string name="presumptive_name">Presumptive Name</string>
     <string name="presumptive_last_name">Presumptive Last Name</string>
     <string name="phone_No">Phone No</string>
     <string name="phone_hint">Enter Phone Number</string>
@@ -119,7 +120,8 @@
     <string name="pus">Pus</string>
     <string name="negative">Negative</string>
     <string name="one_to_nine_afb">1-9 AFB</string>
-    <string name="normal">Normal(Newborn: 0-2 mm/hour Children:3-13 mm/hour)</string>
+    <string name="normal">Normal</string>
+    <string name="normal_n">Normal (Newborn: 0-2 mm/hour Children:3-13 mm/hour)</string>
     <string name="adenopathy">Adenopathy</string>
     <string name="infiltration">Infiltration</string>
     <string name="consolidation">Consolidation</string>

@@ -272,9 +272,32 @@ public class ServerService {
     }
 
     //Insert the percentile
-    public String getPercentile(String age, String gender, String weight) {
-        String condition = Metadata.PERCENTILE_COLUMN_AGE + "=" + age + " AND " +
-                Metadata.PERCENTILE_COLUMN_GENDER + "=" + gender;
+    public String getPercentile(String age, String gender, String weight, String ageModifier) {
+
+        int newAge = Integer.parseInt(age);
+        int ageInMonth = 0;
+        //we need age in month so we need to convert age into month
+        if (ageModifier.equalsIgnoreCase("Year(s)")) {
+            ageInMonth = newAge / 30;
+        } else if (ageModifier.equalsIgnoreCase("Day(s)")) {
+            ageInMonth = newAge / 30;
+        } else if (ageModifier.equalsIgnoreCase("Week(s)")) {
+            ageInMonth = newAge / 30;
+        } else {
+            ageInMonth = newAge;
+        }
+
+        //restricted here for only 2 year (only 12 month)
+        String condition;
+        if (ageInMonth > 12) {
+
+            String fixedAge = "12";
+            condition = Metadata.PERCENTILE_COLUMN_AGE + "=" + fixedAge + " AND " +
+                    Metadata.PERCENTILE_COLUMN_GENDER + "=" + gender;
+        } else {
+            condition = Metadata.PERCENTILE_COLUMN_AGE + "=" + ageInMonth + " AND " +
+                    Metadata.PERCENTILE_COLUMN_GENDER + "=" + gender;
+        }
 
         String query = "SELECT * FROM " + Metadata.PERCENTILE_MEASUREMENT +
                 "  WHERE  " + condition;
@@ -594,9 +617,12 @@ public class ServerService {
             JSONObject jsonResponse = JsonUtil.getJSONObject(response);
             {
                 try {
+                    String ageModifier = "";
                     //this call for getting the age modifier.
                     String[] ageModifierArray = getPatientObs(patientId, "Age Modifier");
-                    String ageModifier = ageModifierArray[0].toString();
+                    if (ageModifierArray.length > 0 && ageModifierArray != null)
+                        ageModifier = ageModifierArray[0].toString();
+
                     String name = jsonResponse.get("name").toString();
                     //int age = jsonResponse.getInt("age");
                     String birthday = jsonResponse.getString("birthdate");

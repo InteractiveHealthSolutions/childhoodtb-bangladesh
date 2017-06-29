@@ -157,7 +157,7 @@ public class EndFollowUpActivity extends AbstractFragmentActivity {
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{other, otherFacilityName, patientId,
-                reasonForEndOfFollowUp};
+                reasonForEndOfFollowUp, reasonForlossFollowUp};
 
 
         for (View v : views) {

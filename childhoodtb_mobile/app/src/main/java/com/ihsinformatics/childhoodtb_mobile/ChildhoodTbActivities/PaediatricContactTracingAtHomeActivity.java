@@ -277,7 +277,6 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
         lastButton.setOnClickListener(this);
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
-        saveButton.setEnabled(false);
         scanBarcode.setOnClickListener(this);
         scanBarcodeIndexId.setOnClickListener(this);
         validatePatientId.setOnClickListener(this);
@@ -294,6 +293,7 @@ public class PaediatricContactTracingAtHomeActivity extends AbstractFragmentActi
     public void initView(View[] views) {
         super.initView(views);
         formDate = Calendar.getInstance();
+        saveButton.setEnabled(false);
         updateDisplay();
     }
 

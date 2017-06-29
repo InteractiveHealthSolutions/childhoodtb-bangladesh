@@ -104,9 +104,9 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
                 R.drawable.custom_button_beige, R.string.form_date,
                 R.string.form_date);
         firstNameTextView = new MyTextView(context,
-                R.style.text, R.string.presumptive_first_name);
+                R.style.text, R.string.presumptive_name);
         presumptiveFirstName = new MyEditText(context,
-                R.string.first_name, R.string.first_name_hint,
+                R.string.presumptive_name, R.string.first_name_hint,
                 InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
         motherNameTextView = new MyTextView(context,
                 R.style.text, R.string.mother_name);
@@ -361,9 +361,9 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
             public void afterTextChanged(Editable editable) {
                 if (editable.length() > 0) {
                     if (male.isChecked()) {
-                        weightPercentile.setText(serverService.getPercentile(App.get(age), "1", editable.toString()));
+                        weightPercentile.setText(serverService.getPercentile(App.get(age), "1", editable.toString(), App.get(ageModifier)));
                     } else if (female.isChecked()) {
-                        weightPercentile.setText(serverService.getPercentile(App.get(age), "2", editable.toString()));
+                        weightPercentile.setText(serverService.getPercentile(App.get(age), "2", editable.toString(), App.get(ageModifier)));
                     }
                 }
                 updateDisplay();
@@ -504,14 +504,20 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
 
         MySpinner spinner = (MySpinner) adapterView;
         boolean visible = spinner.getSelectedItemPosition() == 0;
+        boolean coughVisibe = spinner.getSelectedItemPosition() == 1;
         if (adapterView == cough) {
-            coughDurationTextView.setEnabled(visible);
-            coughDuration.setEnabled(visible);
+            coughDurationTextView.setEnabled(coughVisibe);
+            coughDuration.setEnabled(coughVisibe);
         }
         if (adapterView == adultFamilyMemberTB) {
 
             familyMemberTBTextView.setEnabled(visible);
             familyMemberTB.setEnabled(visible);
+            formOfTbTextView.setEnabled(visible);
+            formOfTb.setEnabled(visible);
+            typeOfTbTextView.setEnabled(visible);
+            typeOfTb.setEnabled(visible);
+
         }
 
     }
@@ -533,7 +539,7 @@ public class PaedsPresumptiveConfirmationActivity extends AbstractFragmentActivi
         boolean valid = true;
         StringBuffer message = new StringBuffer();
         // Validate mandatory controls
-        View[] mandatory = {presumptiveFirstName, presumptiveMotherName, age, weight, otherExamination};
+        View[] mandatory = {presumptiveFirstName, presumptiveMotherName, age, weight};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {

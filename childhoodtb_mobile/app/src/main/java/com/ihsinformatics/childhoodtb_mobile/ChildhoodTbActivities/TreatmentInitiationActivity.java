@@ -154,7 +154,7 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                 R.style.text, R.string.nid);
         nidEditText = new MyEditText(context, R.string.nid,
                 R.string.nid_hint, InputType.TYPE_CLASS_NUMBER,
-                R.style.edit, 15, false);
+                R.style.edit, 17, false);
 
         nidBelongsTextView = new MyTextView(context,
                 R.style.text, R.string.nid_belongs);
@@ -335,10 +335,14 @@ public class TreatmentInitiationActivity extends AbstractFragmentActivity {
                     + "\n");
             phoneNumberOfSupporterEditText.setHintTextColor(getResources().getColor(R.color.Red));
         }
-        if (!RegexUtil.isNumeric(App.get(nidEditText), false)) {
+        if (!RegexUtil.isCnic(App.get(nidEditText))) {
             valid = false;
-            message.append(nidEditText.getTag().toString() + ".\n ");
-            nidEditText.setHintTextColor(getResources().getColor(R.color.Red));
+            message.append(nidEditText.getTag().toString()
+                    + ": "
+                    + getResources().getString(
+                    R.string.invalid_data) + "\n");
+            nidEditText.setTextColor(getResources().getColor(
+                    R.color.Red));
         }
         if (!RegexUtil.isNumeric(App.get(tbRegisterNumberEditText), false)) {
             valid = false;

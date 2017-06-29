@@ -106,7 +106,7 @@ public class RegexUtil {
 
     public static final String floatingPointPattern = "^[0-9]+.{0,1}[0-9]*";
     public static final String alphaPattern = "^[A-Za-z_ ]+";
-    public static final String textFieldPattern = "^[a-zA-Z0-9,#.-]+";
+    public static final String textFieldPattern = "[a-zA-Z0-9\\-#@$_^~!\\.\\(\\)\\/%&\\s\\w]+";
     public static final String alphaNumPattern = "^[A-Za-z0-9]+";
     public static final String emailPattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     public static final String contactNoPattern = "^[0-9]{4}-{0,1}[0-9]{7}";
@@ -120,6 +120,8 @@ public class RegexUtil {
     public static final String idPattern = "^[0-9]{10}-[0-9]{1}";
     public static final String testIdPattern = "^[0-9]{8}-[0-9]{1}";
     public static final String cnicPattern = "^[0-9]{5}-{0,1}[0-9]{7}-{0,1}[0-9]{1}";
+    //public static final String nidPattern =  "^[0-9]{4}-[0-9]{2}-[0-9]{1}-[0-9]{2}-[0-9]{2}-{0,1}[0-9]{6}";
+    public static final String nidPattern =  "^[0-9]{17}";
 
     public static final int idLength = 12;
     public static final int testIdLength = 10;
@@ -219,7 +221,7 @@ public class RegexUtil {
 
     public static boolean isCnic(String string) {
         try {
-            return string.matches(cnicPattern);
+            return string.matches(nidPattern);
         } catch (Exception e) {
             e.printStackTrace();
             return false;

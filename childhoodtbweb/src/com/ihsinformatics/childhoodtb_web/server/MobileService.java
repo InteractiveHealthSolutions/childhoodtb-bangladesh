@@ -98,10 +98,10 @@ import com.ihsinformatics.childhoodtb_web.shared.FormType;
 public class MobileService {
 	private HttpServletRequest request;
 
-	// OpenMRS-related
+	 // OpenMRS-related
 	static final String propFilePath = "C:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
 	//static final String propFilePath ="/usr/share/tomcat6/.OpenMRS/openmrs-runtime.properties";
-	// final String propFilePath = "C:\\Users\\Shujaat\\AppData\\Roaming\\OpenMRS\\openmrs-runtime.properties";
+    //final String propFilePath = "C:\\Users\\Shujaat\\AppData\\Roaming\\OpenMRS\\openmrs-runtime.properties";
 
 	private static File propsFile;
 	private static Properties props;
@@ -4280,7 +4280,7 @@ public class MobileService {
 					"Index Case ID");
 			String concept_id = concept.toString();
 
-			String query = "select count(*) as total from openmrs.obs where value_text = ? and concept_id= ?";
+			String query = "select count(*) as total from openmrs.obs o,openmrs.encounter en,openmrs.encounter_type ent where o.encounter_id = en.encounter_id and en.encounter_type = ent.encounter_type_id and ent.encounter_type_id = 56 and o.value_text = ? and o.concept_id= ?";
 			String[][] results = executeQuery(query, new String[] { indexId,
 					concept_id });
 			int records = Integer.parseInt(results[0][0]);
@@ -4476,7 +4476,7 @@ public class MobileService {
 				"Index Case ID");
 		String concept_id = concept.toString();
 
-		String query = "select count(*) as total from openmrs.obs where value_text = ? and concept_id= ?";
+		String query = "select count(*) as total from openmrs.obs o,openmrs.encounter en,openmrs.encounter_type ent where o.encounter_id = en.encounter_id and en.encounter_type = ent.encounter_type_id and ent.encounter_type_id = 56 and value_text = ? and concept_id= ?";
 		String[][] results = executeQuery(query, new String[] { indexId,
 				concept_id });
 		int records = Integer.parseInt(results[0][0]);

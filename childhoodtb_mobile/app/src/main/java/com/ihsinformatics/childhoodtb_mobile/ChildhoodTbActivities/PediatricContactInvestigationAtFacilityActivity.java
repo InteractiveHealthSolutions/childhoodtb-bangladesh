@@ -72,6 +72,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
 
     MyTextView lastNameTextView;
     MyEditText lastName;
+    MyTextView ageModifierTextView;
+    MySpinner ageModifier;
 
     MyEditText presumptiveFirstName, presumptiveMotherName, age, weight, patientId, otherExamination, indexCaseId,
             indexCaseTBRegistrationNumber, weightPercentile;
@@ -106,18 +108,18 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 R.style.text, R.string.presumptive_first_name);
         presumptiveFirstName = new MyEditText(context,
                 R.string.first_name, R.string.first_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 10, false);
+                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
         lastNameTextView = new MyTextView(context, R.style.text,
                 R.string.presumptive_last_name);
         lastName = new MyEditText(context, R.string.last_name,
                 R.string.last_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 10,
+                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25,
                 false);
         motherNameTextView = new MyTextView(context,
                 R.style.text, R.string.mother_name);
         presumptiveMotherName = new MyEditText(context,
                 R.string.mother_name, R.string.mother_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 10, false);
+                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25, false);
 
         genderTextView = new MyTextView(context, R.style.text, R.string.gender);
         male = new MyRadioButton(context, R.string.male, R.style.radio,
@@ -127,8 +129,8 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         gender = new MyRadioGroup(context,
                 new MyRadioButton[]{male, female}, R.string.gender,
                 R.style.radio, App.isLanguageRTL());
-        ageTextView = new MyTextView(context, R.style.text, R.string.age_in_year);
-        age = new MyEditText(context, R.string.age_in_year,
+        ageTextView = new MyTextView(context, R.style.text, R.string.age);
+        age = new MyEditText(context, R.string.age,
                 R.string.age_hint, InputType.TYPE_CLASS_NUMBER,
                 R.style.edit, 3, false);
 
@@ -145,7 +147,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         coughTextView = new MyTextView(context,
                 R.style.text, R.string.cough);
         cough = new MySpinner(context, getResources()
-                .getStringArray(R.array.cough_options),
+                .getStringArray(R.array.cough_option_screen),
                 R.string.weight_percentile, R.string.option_hint);
         coughDurationTextView = new MyTextView(context,
                 R.style.text, R.string._cough_weeks);
@@ -155,23 +157,23 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         feverTextView = new MyTextView(context,
                 R.style.text, R.string._fever);
         fever = new MySpinner(context,
-                getResources().getStringArray(R.array.fever_options)
+                getResources().getStringArray(R.array.fever_options_screen)
                 , R.string._fever, R.string.option_hint);
         nightSweatsTextView = new MyTextView(context,
                 R.style.text, R.string.night_sweats);
         nightSweats = new MySpinner(context,
-                getResources().getStringArray(R.array.night_sweats_options)
+                getResources().getStringArray(R.array.night_sweats_options_screen)
                 , R.string.night_sweats, R.string.option_hint
         );
         weightLossTextView = new MyTextView(context,
                 R.style.text, R.string._weight);
         weightLoss = new MySpinner(context,
-                getResources().getStringArray(R.array.weight_loss_options),
+                getResources().getStringArray(R.array.weight_loss_options_screen),
                 R.string.weight_loss, R.string.option_hint);
         poorAppetiteTextView = new MyTextView(context,
                 R.style.text, R.string.poor_appetite);
         poorAppetite = new MySpinner(context,
-                getResources().getStringArray(R.array.appetite_decreased_options),
+                getResources().getStringArray(R.array.appetite_decreased_options_screen),
                 R.string.poor_appetite, R.string.option_hint);
         chestExaminationTextVew = new MyTextView(context,
                 R.style.text, R.string.chest_examination);
@@ -269,6 +271,9 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         validatePatientId = new MyButton(context, R.style.button,
                 R.drawable.custom_button_beige, R.string.validateID,
                 R.string.validateID);
+        ageModifierTextView = new MyTextView(context, R.style.text, R.string.age_modifier);
+        ageModifier = new MySpinner(context, getResources().getStringArray(
+                R.array.age_modifier_options), R.string.age_modifier, R.string.option_hint);
 
 
         View[][] viewGroups = {
@@ -276,18 +281,19 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                         contactTracingCategoryTextView, contactTracingCategory, firstNameTextView, presumptiveFirstName,
                         lastNameTextView, lastName, motherNameTextView, presumptiveMotherName
                 },
-                {genderTextView, gender, ageTextView, age, indexCaseIDTextView, indexCaseId, scanBarcodeIndexId, validatePatientId, indexCaseTBRegistrationNumberTextView, indexCaseTBRegistrationNumber,
-                        indexCaseDiagnosisTextView, indexCaseDiagnosis
+                {genderTextView, gender, ageTextView, age, ageModifierTextView, ageModifier, indexCaseIDTextView, indexCaseId, scanBarcodeIndexId,
+                        validatePatientId, indexCaseTBRegistrationNumberTextView, indexCaseTBRegistrationNumber
 
                 },
-                {weightTextView, weight, weightPercentileTextView, weightPercentile, coughTextView, cough, coughDurationTextView, coughDuration, feverTextView, fever, nightSweatsTextView,
-                        nightSweats, weightLossTextView, weightLoss
+                {indexCaseDiagnosisTextView, indexCaseDiagnosis, weightTextView, weight, weightPercentileTextView, weightPercentile,
+                        coughTextView, cough, coughDurationTextView, coughDuration, feverTextView, fever, nightSweatsTextView,
+                        nightSweats
                 },
-                {poorAppetiteTextView, poorAppetite, playfulnessTextView, playfulness, chestExaminationTextVew, chestExamination,
-                        lymphNodeExaminationTextView, lymphNodeExamination, abdominalExaminationTextView, abdominalExamination,
-                        otherExaminationTextView, otherExamination
+                {weightLossTextView, weightLoss, poorAppetiteTextView, poorAppetite, playfulnessTextView, playfulness, chestExaminationTextVew, chestExamination,
+                        lymphNodeExaminationTextView, lymphNodeExamination, abdominalExaminationTextView, abdominalExamination
                 },
-                {bcgScarTextView, bcgScar, adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView, tbRootInFamily, formOfTbTextView, formOfTb,
+                {otherExaminationTextView, otherExamination, bcgScarTextView, bcgScar, adultFamilyMemberTBTextView, adultFamilyMemberTB, tbRootInFamilyTextView,
+                        tbRootInFamily, formOfTbTextView, formOfTb,
                         typeOfTbTextView, typeOfTb, probableDiagnosisTextView, probableDiagnosis
 
                 }
@@ -332,7 +338,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                 weightLoss, abdominalExamination, bcgScar, adultFamilyMemberTB,
                 formOfTb, typeOfTb, familyMemberTB, probableDiagnosis,
                 otherExamination, playfulness, indexCaseTBRegistrationNumber, indexCaseDiagnosis,
-                indexCaseId, poorAppetite, lastName
+                indexCaseId, poorAppetite, lastName, ageModifier
         };
 
 
@@ -378,6 +384,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
         validatePatientId.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
         age.setFocusable(false);
+        ageModifier.setEnabled(false);
         //weight Text Watcher
         weight.addTextChangedListener(new TextWatcher() {
             @Override
@@ -395,9 +402,9 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             public void afterTextChanged(Editable editable) {
                 if (editable.length() > 0) {
                     if (male.isChecked()) {
-                        weightPercentile.setText(serverService.getPercentile(App.get(age), "1", editable.toString()));
+                        weightPercentile.setText(serverService.getPercentile(App.get(age), "1", editable.toString(), App.get(ageModifier)));
                     } else if (female.isChecked()) {
-                        weightPercentile.setText(serverService.getPercentile(App.get(age), "2", editable.toString()));
+                        weightPercentile.setText(serverService.getPercentile(App.get(age), "2", editable.toString(), App.get(ageModifier)));
                     }
                 }
                 updateDisplay();
@@ -529,6 +536,14 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
                                 age.setFocusable(false);
                                 male.setChecked(patients.get(0).getGender().equals("M") ? true : false);
                                 female.setChecked(patients.get(0).getGender().equals("F") ? true : false);
+                                //here we set the age modifier..
+                                String[] testArray = getResources().getStringArray(R.array.age_modifier_options);
+                                for (int i = 0; i < testArray.length; i++) {
+                                    if (patients.get(0).getAgeModifier().equals(testArray[i])) {
+                                        ageModifier.setSelection(i);
+                                        ageModifier.setEnabled(false);
+                                    }
+                                }
                             }//end else
                         }
                     }

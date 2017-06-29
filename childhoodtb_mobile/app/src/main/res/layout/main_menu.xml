@@ -348,16 +348,6 @@
                 android:tag="@string/treatment_initiation_button"
                 android:text="@string/treatment_initiation_button" />
 
-
-            <Button
-                android:id="@+main_id/paedsContactTracingAtHomeButton"
-                style="@style/button"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:drawableTop="@drawable/contact"
-                android:tag="@string/paediatric_home_contact_tracing"
-                android:text="@string/paediatric_home_contact_tracing" />
-
             <Button
                 android:id="@+main_id/paediatricContactAtFacilityButton"
                 style="@style/button"
@@ -377,6 +367,17 @@
                 android:text="@string/Contact_Registry_button"
 
                 />
+
+
+            <Button
+                android:id="@+main_id/paedsContactTracingAtHomeButton"
+                style="@style/button"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/contact"
+                android:tag="@string/paediatric_home_contact_tracing"
+                android:text="@string/paediatric_home_contact_tracing" />
+
 
             <Button
                 android:id="@+main_id/endFollowUpButton"

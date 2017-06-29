@@ -146,13 +146,13 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
 
         firstName = new MyEditText(context, R.string.first_name,
                 R.string.first_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 16,
+                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25,
                 false);
         lastNameTextView = new MyTextView(context, R.style.text,
                 R.string.last_name);
         lastName = new MyEditText(context, R.string.last_name,
                 R.string.last_name_hint,
-                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 16,
+                InputType.TYPE_TEXT_VARIATION_PERSON_NAME, R.style.edit, 25,
                 false);
 
         genderTextView = new MyTextView(context, R.style.text, R.string.gender);
@@ -191,7 +191,7 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
         coughTextView = new MyTextView(context, R.style.text,
                 R.string.cough);
         cough = new MySpinner(context, getResources().getStringArray(
-                R.array.cough_options), R.string.cough,
+                R.array.cough_option_screen), R.string.cough,
                 R.string.cough_selection_hint);
 
         coughDurationTextView = new MyTextView(context, R.style.text,
@@ -205,25 +205,25 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
                 R.string.fever_week);
 
         fever = new MySpinner(context, getResources().getStringArray(
-                R.array.fever_options), R.string.fever_week,
+                R.array.fever_options_screen), R.string.fever_week,
                 R.string.option_hint);
 
         nightSweatsTextView = new MyTextView(context, R.style.text,
                 R.string.night_sweats);
         nightSweats = new MySpinner(context, getResources().getStringArray(
-                R.array.night_sweats_options), R.string.night_sweats,
+                R.array.night_sweats_options_screen), R.string.night_sweats,
                 R.string.option_hint);
 
         weightLossTextView = new MyTextView(context, R.style.text,
                 R.string.weight_loss);
         weightLoss = new MySpinner(context, getResources().getStringArray(
-                R.array.weight_loss_options), R.string.weight_loss,
+                R.array.weight_loss_options_screen), R.string.weight_loss,
                 R.string.option_hint);
 
         childAppetiteTextView = new MyTextView(context, R.style.text,
                 R.string.appetite_decreased);
         childAppetite = new MySpinner(context, getResources().getStringArray(
-                R.array.appetite_decreased_options), R.string.appetite_decreased,
+                R.array.appetite_decreased_options_screen), R.string.appetite_decreased,
                 R.string.option_hint);
 
         contactHistoryConclusionTextView = new MyTextView(context, R.style.text, R.string.conclusion);
@@ -424,6 +424,7 @@ public class PaediatricScreeningActivity extends AbstractFragmentActivity implem
 
         MySpinner spinner = (MySpinner) parent;
         boolean visible = spinner.getSelectedItemPosition() == 0;
+
         if (parent == cough) {
             coughDurationTextView.setEnabled(visible);
             coughDuration.setEnabled(visible);

@@ -46,6 +46,7 @@
     <string name="test_order"><b>A -- Test Order</b></string>
     <string name="test_result"><b>B -- Test Result</b></string>
     <string name="other_location">Other specify?</string>
+    <string name="if_eptb_other">If other, from where?</string>
 
     <!--CXR TEST ORDER RESULT ACTIVITY STRINGS-->
 
@@ -82,7 +83,7 @@
     <string name="esr_result_hint">Enter ESR Result</string>
     <string-array name="esr_result_option">
         <item>@string/high</item>
-        <item>@string/normal</item>
+        <item>@string/normal_n</item>
     </string-array>
 
     <!--HISTOPATHOLOGY STRING ORDER/RESULT-->
