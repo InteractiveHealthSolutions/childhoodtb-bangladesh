@@ -15,7 +15,7 @@ Contributors: Tahira Niazi -->
 
     <string name="loading_message">Saving trees..</string>
     <!-- <string name="app_name">TBReach-4 Pakistan(1.7.1)</string>-->
-    <string name="app_name">ChildhoodTb</string>
+    <string name="app_name">ChildhoodTb-Bangladesh</string>
     <string name="menu_settings">Settings</string>
     <string name="server">Server Address</string>
     <string name="use_secure">Use SSL/TLS</string>
@@ -38,7 +38,7 @@ Contributors: Tahira Niazi -->
     <string name="age_group">Age Group</string>
     <string name="patient_id">Patient ID</string>
     <string name="patient_id_hint">Enter ID (12 characters)</string>
-    <string name="test_id_hint">Enter ID (10 characters)</string>
+    <string name="test_id_hint">Enter ID (11 characters)</string>
     <string name="refresh_database">Refresh Database</string>
     <string name="search_patients">Search..</string>
     <string name="scan_barcode">Scan Barcode</string>

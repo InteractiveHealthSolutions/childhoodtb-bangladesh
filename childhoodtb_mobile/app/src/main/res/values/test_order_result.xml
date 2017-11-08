@@ -88,6 +88,7 @@
 
     <!--HISTOPATHOLOGY STRING ORDER/RESULT-->
     <string name="histopathology_site">Histopathology site</string>
+    <string name="histopathology_site_hint">Enter Histopathology site</string>
     <string-array name="histopathology_site_options">
         <item>@string/dhakha_medical_college</item>
         <item>@string/salimulla_medical_college</item>

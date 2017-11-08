@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- Header -->
+    <include layout="@layout/header"
+        android:id="@+id/include" />
+
+    <!-- Footer -->
+    <include layout="@layout/footer"
+        android:id="@+id/include2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
+
+    <!-- Content below header and above footer -->
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_below="@+id/include"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/include2">
+         <TextView
+             android:id="@+id/childhood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHILDHOOD"
+             android:gravity="center"
+        android:textSize="32sp"/>
+        <TextView
+            android:id="@+id/tb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TB"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_below="@+id/childhood" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BANGLADESH"
+            android:textSize="32sp"
+            android:layout_below="@+id/tb"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

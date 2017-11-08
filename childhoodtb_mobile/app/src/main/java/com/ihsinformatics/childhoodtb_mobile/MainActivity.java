@@ -57,9 +57,7 @@ public class MainActivity extends Activity {
         String versionMatch = "SUCCESS";
         // versionMatch = serverService.matchVersions();
         if (versionMatch.equals("SUCCESS")) {
-
-            LoginSessionManager.getInstance(MainActivity.this).checkLogin();
-
+           LoginSessionManager.getInstance(MainActivity.this).checkLogin();
         } else {
             AlertDialog alertDialog = App.getAlertDialog(this, AlertType.ERROR,
                     versionMatch);

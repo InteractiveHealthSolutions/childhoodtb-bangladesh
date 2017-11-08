@@ -99,10 +99,10 @@ public class MobileService {
 	private HttpServletRequest request;
 
 	 // OpenMRS-related
-	static final String propFilePath = "C:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
-	//static final String propFilePath ="/usr/share/tomcat6/.OpenMRS/openmrs-runtime.properties";
-    //final String propFilePath = "C:\\Users\\Shujaat\\AppData\\Roaming\\OpenMRS\\openmrs-runtime.properties";
-
+	//static final String propFilePath = "C:\\Application Data\\OpenMRS\\openmrs-runtime.properties";
+ 	//static final String propFilePath ="/usr/share/tomcat6/.OpenMRS/openmrs-runtime.properties";
+      final String propFilePath = "C:\\Users\\Shujaat\\AppData\\Roaming\\OpenMRS\\openmrs-runtime.properties";
+ 
 	private static File propsFile;
 	private static Properties props;
 	private static Properties tbreachProps;
@@ -174,6 +174,7 @@ public class MobileService {
 		try {
 			// Check if the login credentials are provided in request as plain
 			// text
+		
 			String username = null;
 			String password = null;
 			try {
@@ -2603,10 +2604,16 @@ public class MobileService {
 		return doGenericForm(formType, values);
 	}
 
-	/** Handle all the Order form ..create by shujaat */
+	/** Handle all the Order form .. */
 	public String doTestOrderForm(String formType, JSONObject values) {
-
-		JSONObject json = new JSONObject();
+		try {
+			
+		String testId = values.getString("test_id");
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		/*JSONObject json = new JSONObject();
 		String error = "";
 		try {
 			String conceptName = values.getString("concept_name");
@@ -2637,14 +2644,14 @@ public class MobileService {
 			} catch (JSONException ex) {
 				ex.printStackTrace();
 			}
-		}
+		}*/
 		return doGenericForm(formType, values);
 
 	}
 
 	/** Handle all the Result form */
 	public String doTestResultForm(String formType, JSONObject values) {
-		JSONObject json = new JSONObject();
+		/*JSONObject json = new JSONObject();
 		String error = "";
 		try {
 			String conceptName = values.getString("concept_name");
@@ -2704,7 +2711,7 @@ public class MobileService {
 				ex.printStackTrace();
 			}
 		}
-
+*/
 		return doGenericForm(formType, values);
 
 	}

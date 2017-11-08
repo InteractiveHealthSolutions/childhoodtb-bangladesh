@@ -736,7 +736,7 @@ public class PediatricContactInvestigationAtFacilityActivity extends AbstractFra
             observations.add(new String[]{"Weight Loss",
                     App.get(weightLoss).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(weightLoss)});
-            observations.add(new String[]{"Poor Appetite",
+                observations.add(new String[]{"Poor Appetite",
                     App.get(poorAppetite).equals(getResources().getString(R.string.do_not_know)) ?
                             getResources().getString(R.string.unknown) : App.get(poorAppetite)});
             observations.add(new String[]{"Chest Examination",

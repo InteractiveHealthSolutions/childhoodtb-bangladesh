@@ -997,7 +997,7 @@
     <string name="age_hint">Enter Age</string>
     <string name="age_in_year">Age in years </string>
     <string name="age_modifier">Age modifier</string>
-    <string name="app_name">ChildhoodTb</string>
+    <string name="app_name">ChildhoodTb-Bangladesh</string>
     <string name="appetite_decreased">Appetite?</string>
     <string name="aunt">Aunt</string>
     <string name="authentication_error">Authentication failed! Please enter valid password/code</string>
@@ -1178,6 +1178,7 @@
     <string name="histopathology_sample">Site for histopathology sample</string>
     <string name="histopathology_sample_hint">Enter Site for histopathology sample</string>
     <string name="histopathology_site">Histopathology site</string>
+    <string name="histopathology_site_hint">Enter Histopathology site</string>
     <string name="histopathology_test_order_button">Histopathology Test Order</string>
     <string name="histopathology_test_result_button">Histopathology Test Result</string>
     <string name="house_number">Address: House number</string>
@@ -1265,7 +1266,7 @@
     <string name="new_patient">New</string>
     <string name="nid">NID</string>
     <string name="nid_belongs">Whose NID is this?</string>
-    <string name="nid_hint">Enter National ID</string>
+    <string name="nid_hint">Enter National ID (17 digits)</string>
     <string name="night_sweats">Night Sweats?</string>
     <string name="no">No</string>
     <string name="no_adult_contact_rp">Adult:</string>
@@ -1445,7 +1446,7 @@
     <string name="ten_mm">10mm</string>
     <string name="test_advised">Test advised</string>
     <string name="test_id">Test ID</string>
-    <string name="test_id_hint">Enter ID (10 characters)</string>
+    <string name="test_id_hint">Enter ID (11 characters)</string>
     <string name="test_id_missing">Test ID does not exist. Please make sure you have entered correct Test ID</string>
     <string name="test_indication">Test Indication</string>
     <string name="test_indication_button">Test Indication</string>

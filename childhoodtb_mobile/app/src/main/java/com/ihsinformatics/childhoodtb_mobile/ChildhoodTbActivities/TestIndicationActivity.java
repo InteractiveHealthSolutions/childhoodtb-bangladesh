@@ -80,7 +80,7 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
     MySpinner esrSpinner;
 
     MyTextView histopathologySampleTextView;
-    MySpinner histopathologysiteSpinner;
+    MyEditText histopathologysiteEditText;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -156,9 +156,9 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
 
         histopathologySampleTextView = new MyTextView(context, R.style.text,
                 R.string.histopathology_sample);
-        histopathologysiteSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.histopathology_site_options),
-                R.string.histopathology_site, R.string.option_hint);
+        histopathologysiteEditText = new MyEditText(context, R.string.histopathology_site,
+                R.string.histopathology_sample_hint, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 25, false);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -180,7 +180,7 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
                 },
                 {xpertMTBRIFTextView, xpertMtbRifSpinner, mantouxTextView, mantouxSpinner, smearMicroscopyTextView,
                         smearMicroscopySpinner, histopathologyTextView, histopathologySpinner, histopathologySampleTextView,
-                        histopathologysiteSpinner, esrTextView, esrSpinner
+                       histopathologysiteEditText, esrTextView, esrSpinner
                 }
         };
 
@@ -213,7 +213,7 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
         pager.setOffscreenPageLimit(groups.size());
 
         views = new View[]{ctScanSpinner, chestXraySpinner,
-                ultrasoundAbdomenSpinner, esrSpinner, xpertMtbRifSpinner, histopathologysiteSpinner, histopathologySpinner,
+                ultrasoundAbdomenSpinner, esrSpinner, xpertMtbRifSpinner,histopathologysiteEditText, histopathologySpinner,
                 formDateButton, ctScanSpinner, ctScanAreaEditText, smearMicroscopySpinner, mantouxSpinner,
                 patientId};
 
@@ -302,6 +302,11 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
             patientId
                     .setTextColor(getResources().getColor(R.color.Red));
         }
+        if (App.get(histopathologysiteEditText).equals("")){
+            valid = false;
+            message.append(histopathologysiteEditText.getTag().toString() + ". ");
+            histopathologysiteEditText.setHintTextColor(getResources().getColor(R.color.Red));
+        }
 
         if (ctScanSpinner.getSelectedItem().toString()
                 .equals(getResources().getString(R.string.yes))
@@ -372,7 +377,7 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
             if (histopathologySpinner.getSelectedItem().toString()
                     .equals(getResources().getString(R.string.yes))) {
                 observations.add(new String[]{"Histopathology Site",
-                        App.get(histopathologysiteSpinner)});
+                        App.get(histopathologysiteEditText)});
             }
 
             observations.add(new String[]{"ESR",
@@ -469,10 +474,8 @@ public class TestIndicationActivity extends AbstractFragmentActivity {
         }
         if (parent == histopathologySpinner) {
             histopathologySampleTextView.setEnabled(visible);
-            histopathologysiteSpinner.setEnabled(visible);
-
+            histopathologysiteEditText.setEnabled(visible);
         }
-
         updateDisplay();
 
     }

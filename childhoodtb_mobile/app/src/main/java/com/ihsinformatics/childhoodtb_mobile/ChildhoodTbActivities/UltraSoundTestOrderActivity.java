@@ -49,7 +49,11 @@ import java.util.Locale;
  * Created by Shujaat on 4/7/2017.
  */
 public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
-
+    /**
+     * Current i have skip the testId, blc client don't required. in future if
+     * they need, then add testid in viewGroup, uncomment the testId validation code and
+     * also also replace the patientId with testid in submit()method.
+     */
     MyTextView formDateTextView;
     MyButton formDateButton;
 
@@ -123,8 +127,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
         //define the navigation Fragments
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode, testOrderDateTextView,
-                        testOrderDateButton, ultrasoundAbdomenTextView, ultrasoundAbdomensSpinner, testIdTextView,
-                        testId, testIdScanBarcode
+                        testOrderDateButton, ultrasoundAbdomenTextView, ultrasoundAbdomensSpinner
                 }
 
         };
@@ -156,7 +159,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testId, testOrderDateButton, testOrderDateButton, ultrasoundAbdomensSpinner};
+        views = new View[]{patientId, testOrderDateButton, testOrderDateButton, ultrasoundAbdomensSpinner};
 
 
         for (View v : views) {
@@ -193,7 +196,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testIdScanBarcode.setOnClickListener(this);
+        //testIdScanBarcode.setOnClickListener(this);
         testOrderDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
@@ -217,7 +220,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {testId};
+        View[] mandatory = {};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
@@ -255,7 +258,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
             patientId
                     .setTextColor(getResources().getColor(R.color.Red));
         }
-        //check validation of testId
+       /* //check validation of testId
         if (RegexUtil.isMatchTestId(App.get(testId))) {
             if (!RegexUtil.isValidId(App.get(testId))) {
 
@@ -275,7 +278,7 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
                     + "\n");
             testId
                     .setTextColor(getResources().getColor(R.color.Red));
-        }
+        }*/
         //check is the selected date and time is in future ...
         try {
             if (formDate.getTime().after(Calendar.getInstance().getTime())) {
@@ -311,12 +314,12 @@ public class UltraSoundTestOrderActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-            values.put("testId", App.get(testId));
+            values.put("testId", App.get(patientId));
             values.put("conceptName", "Ultrasound Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
             observations.add(new String[]{"Ultrasound Barcode",
-                    App.get(testId)});
+                    App.get(patientId)});
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateButton)});
             observations.add(new String[]{"Ultrasound Abdomen",

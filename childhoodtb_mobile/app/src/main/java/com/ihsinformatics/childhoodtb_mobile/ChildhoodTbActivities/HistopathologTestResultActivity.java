@@ -49,7 +49,11 @@ import java.util.Locale;
  * Created by Shujaat on 4/6/2017.
  */
 public class HistopathologTestResultActivity extends AbstractFragmentActivity {
-
+    /**
+     * Current i have skip the testId, blc client don't required. in future if
+     * they need, then add testid in viewGroup, uncomment the testId validation code and
+     * also also replace the patientId with testid in submit()method.
+     */
     MyTextView formDateTextView;
     MyButton formDateButton;
 
@@ -122,7 +126,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testResultDateTextView, testResultDateButton, histopathologyResultTextView,
-                        histopathologResultSpinner, testIdTextView, testId, testIdScanBarcode}
+                        histopathologResultSpinner}
         };
 
         // Create layouts and store in ArrayList
@@ -152,7 +156,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testResultDateButton, testId, histopathologResultSpinner};
+        views = new View[]{patientId, testResultDateButton,histopathologResultSpinner};
 
 
         for (View v : views) {
@@ -189,7 +193,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testIdScanBarcode.setOnClickListener(this);
+        //testIdScanBarcode.setOnClickListener(this);
         testResultDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
@@ -213,7 +217,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {testId};
+        View[] mandatory = {};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
@@ -251,7 +255,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
             patientId
                     .setTextColor(getResources().getColor(R.color.Red));
         }
-        //check validation of testId
+       /* //check validation of testId
         if (RegexUtil.isMatchTestId(App.get(testId))) {
             if (!RegexUtil.isValidId(App.get(testId))) {
 
@@ -271,7 +275,7 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
                     + "\n");
             testId
                     .setTextColor(getResources().getColor(R.color.Red));
-        }
+        }*/
         //check is the selected date and time is in future ...
         try {
             if (formDate.getTime().after(Calendar.getInstance().getTime())) {
@@ -307,12 +311,12 @@ public class HistopathologTestResultActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-            values.put("testId", App.get(testId));
+            values.put("testId", App.get(patientId));
             values.put("conceptName", "Histopathology Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
             observations.add(new String[]{"Histopathology Barcode",
-                    App.get(testId)});
+                    App.get(patientId)});
             observations.add(new String[]{"Test Result Date",
                     App.get(testResultDateButton)});
             observations.add(new String[]{"Histopathology Result",

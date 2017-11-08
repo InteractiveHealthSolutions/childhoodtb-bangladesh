@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\footer.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\footer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\splash_screen.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\splash_screen.xml"
+    },
+    {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_contact_repor.xml",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\activity_contact_repor.xml"
     },
@@ -22,6 +30,10 @@
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\saved_forms.xml",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\saved_forms.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header.xml",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\layout\\header.xml"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\layout\\patient_search.xml",

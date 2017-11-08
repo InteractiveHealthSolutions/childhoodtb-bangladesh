@@ -72,12 +72,12 @@
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_drugs.png"
     },
     {
-        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_feedback.png",
-        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_feedback.png"
-    },
-    {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ct_scan_50.png",
         "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\ct_scan_50.png"
+    },
+    {
+        "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_feedback.png",
+        "source": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\src\\main\\res\\drawable\\menu_feedback.png"
     },
     {
         "merged": "C:\\Users\\Shujaat\\git\\childhoodtb-bangladesh\\childhoodtb_mobile\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_spinner_beige.xml",

@@ -49,7 +49,11 @@ import java.util.Locale;
  * Created by Shujaat on 4/5/2017.
  */
 public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
-
+    /**
+     * Current i have skip the testId, blc client don't required. in future if
+     * they need, then add testid in viewGroup, uncomment the testId validation code and
+     * also also replace the patientId with testid in submit()method.
+     */
     MyTextView formDateTextView;
     MyButton formDateButton;
 
@@ -60,7 +64,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     MySpinner histopathologySpinner;
 
     MyTextView histopathologysiteTextView;
-    MySpinner histopathologysiteSpinner;
+    MyEditText histopathologyEditText;
 
     MyTextView patientIdTextView;
     MyEditText patientId;
@@ -100,9 +104,9 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
                 R.string.histopathology, R.string.option_hint);
         histopathologysiteTextView = new MyTextView(context,
                 R.style.text, R.string.histopathology_site);
-        histopathologysiteSpinner = new MySpinner(context,
-                getResources().getStringArray(R.array.histopathology_site_options),
-                R.string.histopathology_site, R.string.option_hint);
+        histopathologyEditText= new MyEditText(context, R.string.histopathology_site,
+                R.string.histopathology_site_hint, InputType.TYPE_CLASS_TEXT,
+                R.style.edit, 25, false);
 
         patientIdTextView = new MyTextView(context, R.style.text,
                 R.string.patient_id);
@@ -128,8 +132,8 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         View[][] viewGroups = {
                 {formDateTextView, formDateButton, patientIdTextView, patientId, scanBarcode,
                         testOrderDateTextView, testOrderDateButton, histopathologyTextView,
-                        histopathologySpinner, histopathologysiteTextView, histopathologysiteSpinner,
-                        testIdTextView, testId, testIdScanBarcode}
+                        histopathologySpinner, histopathologysiteTextView,
+                        histopathologyEditText}
         };
 
         // Create layouts and store in ArrayList
@@ -159,7 +163,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         pager.setAdapter(pagerAdapter);
         pager.setOffscreenPageLimit(groups.size());
 
-        views = new View[]{patientId, testOrderDateButton, testId, histopathologysiteSpinner, testOrderDateButton, histopathologySpinner};
+        views = new View[]{patientId, testOrderDateButton,histopathologyEditText, testOrderDateButton, histopathologySpinner};
 
 
         for (View v : views) {
@@ -196,7 +200,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
         clearButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         scanBarcode.setOnClickListener(this);
-        testIdScanBarcode.setOnClickListener(this);
+        //testIdScanBarcode.setOnClickListener(this);
         testOrderDateButton.setOnClickListener(this);
         navigationSeekbar.setOnSeekBarChangeListener(this);
 
@@ -220,7 +224,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
     public boolean validate() {
         boolean valid = true;
         StringBuffer message = new StringBuffer();
-        View[] mandatory = {testId};
+        View[] mandatory = {histopathologyEditText};
 
         for (View v : mandatory) {
             if (App.get(v).equals("")) {
@@ -258,7 +262,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
             patientId
                     .setTextColor(getResources().getColor(R.color.Red));
         }
-        //check validation of testId
+       /* //check validation of testId
         if (RegexUtil.isMatchTestId(App.get(testId))) {
             if (!RegexUtil.isValidId(App.get(testId))) {
 
@@ -278,7 +282,7 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
                     + "\n");
             testId
                     .setTextColor(getResources().getColor(R.color.Red));
-        }
+        }*/
         //check is the selected date and time is in future ...
         try {
             if (formDate.getTime().after(Calendar.getInstance().getTime())) {
@@ -313,18 +317,19 @@ public class HistopathologTestOrderActivity extends AbstractFragmentActivity {
             values.put("formDate", App.getSqlDate(formDate));
             values.put("location", App.getLocation());
             values.put("patientId", App.get(patientId));
-            values.put("testId", App.get(testId));
+            values.put("testId", App.get(patientId));
             values.put("conceptName", "Histopathology Barcode");
 
             final ArrayList<String[]> observations = new ArrayList<String[]>();
             observations.add(new String[]{"Histopathology Barcode",
-                    App.get(testId)});
+                    App.get(patientId)});
             observations.add(new String[]{"Test Order Date",
                     App.get(testOrderDateButton)});
             observations.add(new String[]{"Histopathology",
                     App.get(histopathologySpinner)});
             observations.add(new String[]{"Histopathology Site",
-                    App.get(histopathologySpinner)});
+                        App.get(histopathologyEditText)});
+
 
 
             ///Create the AsyncTask ()

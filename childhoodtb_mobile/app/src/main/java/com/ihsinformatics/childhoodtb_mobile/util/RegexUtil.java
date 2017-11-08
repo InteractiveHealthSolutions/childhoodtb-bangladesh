@@ -118,13 +118,14 @@ public class RegexUtil {
     public static final String urlPattern = "^(((ht|f)tp(s?))\\://)?(www.|[a-zA-Z].)[a-zA-Z0-9\\-\\.]+\\.(com|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk|pk|co|)(\\:[0-9]+)*(/($|[a-zA-Z0-9\\.\\,\\;\\?\\'\\\\\\+&amp;%\\$#\\=~_\\-]+))*$";
     public static final String smsPattern = "[A-Z0-9]{2,2}[0-9]{9,9} [0-3][0-9](JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)20[1-3][0-9] [YN]";
     public static final String idPattern = "^[0-9]{10}-[0-9]{1}";
-    public static final String testIdPattern = "^[0-9]{8}-[0-9]{1}";
+    public static final String testIdPattern = "^[0-9]{9}-[0-9]{1}";
     public static final String cnicPattern = "^[0-9]{5}-{0,1}[0-9]{7}-{0,1}[0-9]{1}";
     //public static final String nidPattern =  "^[0-9]{4}-[0-9]{2}-[0-9]{1}-[0-9]{2}-[0-9]{2}-{0,1}[0-9]{6}";
-    public static final String nidPattern =  "^[0-9]{17}";
+    public static final String nidPattern =  "^(?=(?:.{10}|.{13}|.{17})$)[0-9]*$";
+    //public  static final String nidPattern = "/^(\\d{10}|\\d{13}|\\d{17})$/";
 
     public static final int idLength = 12;
-    public static final int testIdLength = 10;
+    public static final int testIdLength = 11;
 
     /**
      * Checks if given input is a valid number

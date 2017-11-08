@@ -60,9 +60,9 @@ public class LoginActivity extends Activity implements IActivity,
     EditText password;
     Button login;
     CheckBox offline;
-    FrameLayout ihsLogo;
+   /* FrameLayout ihsLogo;
     FrameLayout irdLogo;
-    FrameLayout openmrsLogo;
+    FrameLayout openmrsLogo;*/
     View[] views;
     Animation alphaAnimation;
 
@@ -76,15 +76,15 @@ public class LoginActivity extends Activity implements IActivity,
         password = (EditText) findViewById(R.login_id.passwordEditText);
         login = (Button) findViewById(R.login_id.loginButton);
         offline = (CheckBox) findViewById(R.login_id.offlineCheckBox);
-        ihsLogo = (FrameLayout) findViewById(R.login_id.ihsLogo);
+       /* ihsLogo = (FrameLayout) findViewById(R.login_id.ihsLogo);
         irdLogo = (FrameLayout) findViewById(R.login_id.irdLogo);
-        openmrsLogo = (FrameLayout) findViewById(R.login_id.openmrsLogo);
+        openmrsLogo = (FrameLayout) findViewById(R.login_id.openmrsLogo);*/
         alphaAnimation = AnimationUtils.loadAnimation(this,
                 R.anim.alpha_animation);
         login.setOnClickListener(this);
-        ihsLogo.setOnClickListener(this);
+       /* ihsLogo.setOnClickListener(this);
         irdLogo.setOnClickListener(this);
-        openmrsLogo.setOnClickListener(this);
+        openmrsLogo.setOnClickListener(this);*/
         views = new View[]{username, password, login};
         super.onCreate(savedInstanceState);
         initView(views);
@@ -283,7 +283,7 @@ public class LoginActivity extends Activity implements IActivity,
                     submit();
                 }
                 break;
-            case R.login_id.ihsLogo:
+            /*case R.login_id.ihsLogo:
                 browserIntent = new Intent("android.intent.action.VIEW",
                         Uri.parse("http://www.ihsinformatics.com"));
                 startActivity(browserIntent);
@@ -297,7 +297,7 @@ public class LoginActivity extends Activity implements IActivity,
                 browserIntent = new Intent("android.intent.action.VIEW",
                         Uri.parse("http://www.openmrs.org"));
                 startActivity(browserIntent);
-                break;
+                break;*/
         }
     }
 

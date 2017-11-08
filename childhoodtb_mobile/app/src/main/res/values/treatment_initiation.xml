@@ -2,7 +2,7 @@
 <resources>
     <string name="registration_date_hint">Enter registration Date</string>
     <string name="nid">NID</string>
-    <string name="nid_hint">Enter National ID</string>
+    <string name="nid_hint">Enter National ID (17 digits)</string>
     <string name="nid_belongs">Whose NID is this?</string>
     <string-array name="nid_belongs_options">
         <item>@string/mother</item>
